@@ -1,0 +1,46 @@
+\begin{thebibliography}{AHDFG11}
+\expandafter\ifx\csname fonteauteurs\endcsname\relax
+\def\fonteauteurs{\scshape}\fi
+
+\bibitem[AHDFG11]{arias-hernandez_visual_2011}
+Richard \bgroup\fonteauteurs\bgroup Arias-Hernández\egroup\egroup{}, John
+  \bgroup\fonteauteurs\bgroup Dill\egroup\egroup{}, Brian
+  \bgroup\fonteauteurs\bgroup Fisher\egroup\egroup{} et Tera~Marie
+  \bgroup\fonteauteurs\bgroup Green\egroup\egroup{} :
+\newblock Visual {Analytics} and {Human}-computer {Interaction}.
+\newblock {\em interactions}, 18(1)\string:\penalty500\relax 51--55, janvier
+  2011.
+
+\bibitem[CKB08]{cockburn2008review}
+Andy \bgroup\fonteauteurs\bgroup Cockburn\egroup\egroup{}, Amy
+  \bgroup\fonteauteurs\bgroup Karlson\egroup\egroup{} et Benjamin~B
+  \bgroup\fonteauteurs\bgroup Bederson\egroup\egroup{} :
+\newblock A review of overview+ detail, zooming, and focus+ context interfaces.
+\newblock {\em ACM Computing Surveys (CSUR)}, 41(1)\string:\penalty500\relax 2,
+  2008.
+
+\bibitem[CM08]{chein2008graph}
+Michel \bgroup\fonteauteurs\bgroup Chein\egroup\egroup{} et Marie-Laure
+  \bgroup\fonteauteurs\bgroup Mugnier\egroup\egroup{} :
+\newblock {\em Graph-based knowledge representation: computational foundations
+  of conceptual graphs}.
+\newblock Springer Science \& Business Media, 2008.
+
+\bibitem[CT05]{cook_illuminating_2005}
+Kristin~A. \bgroup\fonteauteurs\bgroup Cook\egroup\egroup{} et James~J.
+  \bgroup\fonteauteurs\bgroup Thomas\egroup\egroup{} :
+\newblock Illuminating the {Path}: {The} {Research} and {Development} {Agenda}
+  for {Visual} {Analytics}.
+\newblock Rapport technique PNNL-SA-45230, Pacific Northwest National
+  Laboratory (PNNL), Richland, WA (US), mai 2005.
+
+\bibitem[KKEM10]{keim2010mastering}
+Daniel~A \bgroup\fonteauteurs\bgroup Keim\egroup\egroup{}, J{\"o}rn
+  \bgroup\fonteauteurs\bgroup Kohlhammer\egroup\egroup{}, Geoffrey
+  \bgroup\fonteauteurs\bgroup Ellis\egroup\egroup{} et Florian
+  \bgroup\fonteauteurs\bgroup Mansmann\egroup\egroup{} :
+\newblock {\em Mastering the information age-solving problems with visual
+  analytics}.
+\newblock Florian Mansmann, 2010.
+
+\end{thebibliography}

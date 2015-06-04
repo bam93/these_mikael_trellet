@@ -1,0 +1,322 @@
+\documentclass[a4paper,11pt]{book}
+
+% ============== Style sections ============ VOIR MACROS pour régler la mise en page
+\setcounter{secnumdepth}{2}% enlève la numérotation après les sections
+\usepackage{titlesec}
+\titleformat{\subsubsection}
+   {\normalfont\fontsize{11pt}{13pt}\selectfont\bfseries}% apparence commune au titre et au numéro
+   {\thesubsubsection}% apparence du numéro
+   {1em}% espacement numéro/texte
+   {}% apparence du titre
+
+\usepackage[a4paper]{geometry}
+%\geometry{vmargin=3.8cm,hmargin=3.3cm} % marges verticales et horizontales
+%\geometry{left=2.5cm,right=2.5cm,top=1.5cm,bottom=2cm} % marges verticales et
+% horizontales ministérielles (minimales)
+
+%\geometry{left=3.25cm,right=2.25cm,top=3.cm, bottom=3.5cm} % proposition pour impression (marge différente page droite page gauche)
+\geometry{left=2.75cm,right=2.75cm,top=3.cm, bottom=3.5cm} % proposition pour PDF
+
+%%%%%%%%%%%%%%\headsep = 30pt\footskip = 30pt 
+
+% \usepackage[latin1]{inputenc}
+%\usepackage{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} % accent
+\usepackage{tipa} % pour alphabet phonétique
+\usepackage{url} % mettre des liens internet et adresse mails
+% pour les url
+% \url{http://linuxfr.org}
+% pour les mails
+% \urlstyle{rm}
+% \url{meuuuuh@le_pays_des_vaches.net} ou ..{mailto:adresse@domaine.com}
+
+\usepackage{lipsum} %Pour faire des essais avec du texte random
+
+% Choix de la langue
+\usepackage[english,francais]{babel}
+%% Pour une thèse en français et en anglais
+% puis dans le corps du document utiliser...
+%\selectlanguage{francais} % pour écrire en français
+%\selectlanguage{english} % pour ecrire en anglais
+
+% Lmodern et substitution des petites capitales grasses manquantes
+\usepackage{lmodern}
+\rmfamily
+\DeclareFontShape{T1}{lmr}{b}{sc}{<->ssub*cmr/bx/sc}{}
+\DeclareFontShape{T1}{lmr}{bx}{sc}{<->ssub*cmr/bx/sc}{}
+
+% Différents paquets pour les maths
+\usepackage{amssymb,amsmath,amsthm,amscd}
+\usepackage{mathrsfs}
+
+% =========== hyperref ============
+
+% Pour avoir des liens hypertexte dans le document compilé
+\usepackage{hyperref}
+%\usepackage{nohyperref} % à utiliser pour pouvoir compiler sans générer des liens
+
+% pdfborder= couleur de l'encadrement des hyperliens ; désactivé si colorlinks est on
+\hypersetup{pdfborder=0 1 0}
+%\hypersetup{citebordercolor=0 1 0} %The color of the box around citations
+%\hypersetup{filebordercolor=0 .5 .5} %The color of the box around links to files	
+%\hypersetup{linkbordercolor=1 0 0} %The color of the box around normal links
+%\hypersetup{menubordercolor=1 0 0} %The color of the box around Acrobat menu links
+%\hypersetup{urlbordercolor= 0 1 1} %The color of the box around links to URLs
+%\hypersetup{runbordercolor=0 .7 .7} %color of border around ?run? links
+%pdfborder 0 0 1 %The style of box around links; defaults to a box with lines of 1pt thickness, but the colorlinks option resets it to produce no border
+
+%% colorlinks=true met une couleur au texte pour chaque type de lien ; désactive pdfborder
+\hypersetup{colorlinks=true, linkcolor=blue}
+\hypersetup{pdfhighlight=/P} %How link buttons behave when selected; /I is for inverse (the default); the other possibilities are /N (no effect), /O (outline), and /P (inset high-lighting)
+%
+%\hypersetup{frenchlinks=true}
+%\hypersetup{raiselinks=true} %raise up links (for HyperTEX backend)
+%\hypersetup{runbordercolor=0 .7 .7} %color of border around ?run? links
+%\hypersetup{urlbordercolor=0 1 1} %color of border around URL links
+%\hypersetup{urlcolor=magenta} %color of URL links
+%
+\usepackage{bookmark} % pour finir une artet revenir au niveau Root dans la table des matières
+% ==========================
+
+% Pour les figures
+\usepackage{subfig}
+
+%Pour la page de garde
+\usepackage{tabularx} % Permet d'utiliser l'environnement tabularx
+\usepackage{calc} % Pour pouvoir donner des formules dans les définitions de longueur
+\usepackage{graphicx} % Pour inclure des graphiques 
+% Attention : pour inclure des .jpg comme dans l'exemple (ou des .png ou .pdf)
+% il faut compiler directement en pdf (commande pdflatex).
+% Pour inclure des .eps, il faut compiler avec latex + dvips + ps2pdf.
+
+% on change la couleur des parties dans la TdM
+\newcommand{\parttoccolor}{black} 
+\newcommand{\chaptertoccolor}{black}
+\newcommand{\sectiontoccolor}{black}
+
+% Pour mettre la bibliographie dans la table des matières avec le bon numéro de page (voir plus loin)
+\usepackage[nottoc]{tocbibind}
+
+% Pour l'index des notations
+\usepackage{makeidx}
+\makeindex
+
+% pour avoir des option dans \begin{enumerate}
+\usepackage{enumitem}
+
+% pour gérer délimiteurs dans tableau (ex : \begin{array}({cc}) )
+\usepackage{delarray}
+
+% pour fusionner ligne dans tableau
+\usepackage{multirow}
+
+% texte en couleur et surlignage
+\usepackage{color}
+\usepackage{xcolor}
+
+% pour forcer les images etre positionné a des endroits précis [H]
+\usepackage{float}
+
+% permet d'indiquer a LAtex où découper des mots qu'il ne connait pas
+\hyphenation{au-tres}
+
+% multicolonne (le texte passe d'une colonne à l'autre)
+\usepackage{multicol}
+
+% pour pouvoir commencer sur une page paire : insérer à l'endroit voulu \skiptoevenpage
+\usepackage{changepage,ifthen}
+\newcommand\skiptoevenpage{%
+   \checkoddpage
+   \ifthenelse{\boolean{oddpage}}%
+      {\null\clearpage}%
+      {\null\clearpage \null \clearpage}%
+}
+
+%\usepackage{natbib}
+
+
+% =========================== TABLE DES MATIERES PAR CHAPITRE
+% Il faut utiliser \minitoc à  chaque fois qu'on veut insérer une table des matières
+\usepackage[french]{minitoc}
+%\usepackage[french]{minitoc}
+\setcounter{minitocdepth}{4}
+\mtcindent=15pt
+%% minitoc ne s'affichait pas car j'utilisait dans le macro la commande \addcontentsline{toc}{chapter}{blabla}. En la remplaçant par \addstarredchapter{blabla}, a marche
+
+%\usepackage{tocbibind}
+
+
+
+
+% =========================== Commandes diverses ===============================
+
+% Macros-commandes : appel des fichiers extérieurs
+\input{./macros/macros} % macros diverses personnelles 
+% (en-tetes et pieds de page, environnements de theoremes) - voir macros.tex
+\input{./macros/macrosmath} % macros mathematiques - voir le fichier macrosmath.tex
+
+
+% =========================== Info du document =================================
+
+\title{Exploration et analyse interactive de données moléculaires en condition immersive}
+\author{Mikael Trellet}
+
+
+% =========================== Choix des fichiers compilés ======================
+
+% \includeonly{
+%   biblio,  	
+%   pagedegarde, 
+%   dedicace,   
+%   remerciements,
+%   %audiovideo,
+%   introduction,
+%   notations,
+%   chapitre1,
+%   % partie1,
+%   chapitre2,
+%   chapitre3,
+%   partie2,
+% 	% chapitre6, 
+% 	% chapitre4,
+%   % chapitre5,
+%   % conclusion ,
+% 	% annexe,
+% 	ann_pub,
+%   resume
+% } 
+% Pendant le travail, commenter tous les fichiers sauf celui en cours.
+% �a permet de compiler plus vite, tout en gardant des r�f�rences crois�es et
+% de num�ros de pages corrects.
+
+
+% ================================ Debut du document ===========================
+\begin{document}
+
+%%\frontmatter
+%% Pour basculer la num�rotation des pages en chiffres romains, jusqu'� la
+%% table des mati�res. D�conseill� par le minist�re !
+
+%% Page de garde
+\include{pagedegarde}
+
+%% Dedicace et epigraphe
+\include{dedicace}
+
+%% Remerciements
+\cleardoublepage
+\pdfbookmark[0]{Remerciements}{remerciements}
+\include{remerciements}
+
+
+% Table des mati�res
+\cleardoublepage
+\setcounter{tocdepth}{2} % pour r�gler sa profondeur - par d�faut : 2
+\pdfbookmark[0]{Table des matières}{tablematieres} % pour ajouter la table des mati�res dans l'``index'' du fichier compil�
+\dominitoc
+\tableofcontents  % pour afficher la table des mati�res
+
+
+%\adjustmtc[-1] % pour recaler compteur de \minitoc si besoin
+
+%\mainmatter
+% On bascule la num�rotation des pages en chiffres arabes jusqu'� la fin du
+% document - la num�rotation reprend � 1 (toujours d�conseill� par le minist�re)
+
+
+% Notations
+\include{notations}
+
+% Liste fichiers audioVideo
+\include{list_resources}
+
+% Introduction
+\include{introduction}
+\bookmarksetup{startatroot}% package bookmark --> pour sortir de la "part" précédente (pour les liens pdfbookmark dans le pdf)
+\addtocontents{toc}{\bigskip}% rajoute un espace dans la tbale des matières
+
+
+% Chapitres de la thèse
+% \include{chapitre1}
+% \include{./pa1/partie1}
+% \include{chapitre2}
+\include{chapitre3}
+% \include{partie2}
+% \include{./ch4/chapitre4}
+% \include{./ch5/chapitre5}
+% \include{./ch6/chapitre6}
+
+\bookmarksetup{startatroot}% package bookmark --> pour sortir de la "part" pr�c�dente (pour les liens pdfbookmark dans le pdf)
+\addtocontents{toc}{\bigskip}% rajoute un espace dans la tbale des mati�res
+%% Conclusion et Perpectives
+\include{conclusion}
+
+
+%% Annexes
+\partstar{ANNEXES} % 
+~ % sinon, il met la 1ere annexe avant la partie dans le sommaire , je ne sais pas why.
+%\addstarredpart{Annexes} % Pour ajouter une partie fictive dans la table des mati�re
+%\phantomsection % 
+
+\appendix
+% \include{annexe} % chorus digitalis
+% \include{ann_tps} % aspects techniques pour le temps r�el
+% \include{ann_pub} % Liste des publications
+
+\bookmarksetup{startatroot}% package bookmark --> pour sortir de la "part" pr�c�dente (pour les liens pdfbookmark dans le pdf)
+\addtocontents{toc}{\bigskip}% rajoute un espace dans la tbale des mati�res
+
+\listoftables  		% Liste des tableaux
+\mtcaddchapter % pour �viter d�calage de \minitoc
+\listoffigures      % Liste des figures
+\mtcaddchapter % pour �viter d�calage de \minitoc
+
+
+% =============== BIBLIOGRAPHIE ================
+
+%% Choix du style 
+%% En fran�ais
+%\bibliographystyle{apalike-fr} 
+\bibliographystyle{./macros/alpha-fr} % style alphab�tique en fran�ais
+%% En anglais
+%\bibliographystyle{alpha} % style alphab�tique en anglais
+%\bibliographystyle{plain} % style num�rot� en anglais
+%% Il y a plein d'autres possibilit�s
+%% Fabrication de la biblio
+\bibliography{these} % pour afficher la biblio
+% utilise le fichier biblio.bib
+
+% Remarque : l'ajout de la biblio � la table des mati�res se fait par le
+% paquet tocbibind (car la commande addcontentsline ne fabrique pas le bon
+% num�ro de page)
+
+%% =========== 4eme de couverture / Pour version PDF seulement ============ 
+%%\newpage
+%%\clearpage
+%%\cleardoublepage
+
+%%%%%%%%% Pour version PDF  !!!!!!!!!!!
+%%\newpage
+%%\clearpage
+%%\skiptoevenpage
+
+\include{resume}
+\addcontentsline{toc}{part}{Résumé / Abstract}  % la d�claration en "part" permet de le mettre en valeur dans la table des mati�res
+\skiptoevenpage % Puis manuellement, mettre l'abstract une page apr�s, puis supprimer les pages blanches de fin (j'ai pas trouv� d'autres mani�res de faire pour avoir une page blanche avant l'abstract et que les liens de la tables des mati�res soient respect�s)
+
+%%~ % pour que la page soit la bonne dans la table des mati�re 
+
+%%%%%%%%%% Pour version papier !!!!!!!!!!!!!! penser � mettre marge diff�rentes pour page gauche et droite (voir tout en haut)
+%\skiptoevenpage
+%\cleardoublepage
+
+
+%% =============================== INDEX DES NOTATIONS ==========================
+%
+%\cleardoublepage % pour forcer l'index � appara�tre sur une page impaire
+%\renewcommand{\indexname}{Index des notations} % pour changer le nom de l'index
+%\printindex % pour afficher l'index
+%
+
+\end{document}

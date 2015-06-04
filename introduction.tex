@@ -1,0 +1,30 @@
+%\chapterstar{INTRODUCTION}
+% Pour des renseignements sur \chapterstar : voir le fichier macros.tex
+
+\chapter*{Introduction} % "*" pour que l'introduction ne s'affiche pas dans la table des matières, sinon elle s'y affichera comme un chapitre d
+\mtcaddchapter
+\addstarredpart{INTRODUCTION} % Pour ajouter une partie ("part") fictive dans la table des matières
+\mtcaddpart
+\markboth{Introduction}{Introduction}  %% header manuel car sinon, ils me marquent le header du dernier \chapter{?} (on est dans un \chapter*{?} )
+\selectlanguage{francais}
+
+L'introduction nous permettra tout d'abord de poser le contexte et la problématique liés au sujet de la thèse. Dans un deuxième temps, nous exposerons brièvement l'approche générale choisie afin de répondre à cette problématique et enfin nous présenterons un plan général du manuscrit.
+
+\subsection*{Contexte et problématique}
+
+En science, la croissance exponentielle des outils de calcul informatique permet aujourd'hui de générer des volumes de données considérables. Ceci est particulièrement vrai pour le domaine de la biologie structurale qui voit ses modèles moléculaires croître rapidement, à la fois en précision et en taille. Cela est rendu possible par l'efficacité croissante des programmes de simulation qui peuvent désormais donner une image des évolutions temporelles d'une structure moléculaire avec une précision atomique pour des structures atteignant plusieurs millions de particules. L'augmentation des moyens de calcul n'est malheureusement pas directement corrélé à l'augmentation des moyens d'analyse et la quantité générée de données est bien souvent très supérieure à la quantité de données traitée par les experts scientifiques. De même, les capacités de calcul ont depuis longtemps dépassé les capacités de stockage, pourtant elles-mêmes en croissance permanente. Enfin, la taille des données impacte directement l'efficacité et la rapidité des communications entre les machines impliquées dans le processus de calcul. Il est donc nécessaire de minimiser ces échanges de données. 
+
+L'ajout d'un moyen de contrôle sur la génération des données, parallèlement à la simulation, pourrait permettre de filtrer les données obtenues. Ce contrôle doit impérativement être sans pertes pour la compréhension finale du phénomène étudié. Il est donc possible dans une certaine mesure d'automatiser ce filtrage mais il reste un besoin évident pour l'expertise humaine afin d'avoir un impact réel et positif. La volonté de mettre l'expert scientifique au centre de la boucle de décision passe par la mise en place d'éléments d'analyse et de visualisation appropriés. Ceux-ci doivent permettre de présenter les données de façon à ce que l'utilisateur puisse appréhender dans les meilleures conditions le phénomène observé. Ces deux composantes, visuelles et analytiques, amènent avec elles des problématiques précises auxquelles il est nécessaire de répondre pour pouvoir implémenter tout élément supplémentaire de contrôle. Tout d'abord, la taille des systèmes moléculaires ne cessant d'augmenter, la visualisation de ceux-ci doit passer par des espaces plus importants et plus adaptés. Directement impactée par l'adaptation des espaces de visualisation, la navigation dans ces derniers doit évoluer dans la même continuité. Le traitement analytique des données se fait en parallèle de leur observation et peut constituer un espace indépendant mais se doit cependant d'être cohérent avec le rendu visuel des données. La dimension immersive apporte une première réponse à ces problèmes en fournissant un espace d'affichage suffisamment important pour traiter des complexes moléculaires entiers dans leur environnement. De plus, la profondeur apporté par la stéréoscopie dans les dispositifs immersifs permet une meilleur perception des objets observés. Cependant, l'immersion comporte également ses limites. La navigation au sein de dispositifs immersifs dans des données abstraites est un premier obstacle. Egalement présent lors de l'évolution d'un utilisateur dans des scènes réalistes, le mal du virtuel est un frein non négligeable à l'expérience de l'utilisateur. Parallèlement, en immersif, les interactions entre l'utilisateur et son espace de travail sont limitées par l'absence de dispositifs précis comme la combinaison clavier/souris en conditions standards. Afin de garantir une immersion optimale, les menus et commandes textuelles habituelles sont mis de côté au profit d'interactions plus naturelles déclenchées par des interactions directement avec les objets virtuels présentés via des gestes et/ou par des commandes vocales qui peuvent leur être associés ou non.
+
+ 
+\subsection*{Approche générale}
+
+Notre première démarche au sein de ce travail de thèse fut de fournir un premier contrôle de l'évolution d'une simulation moléculaire à un expert scientifique. Ce contrôle doit permettre d'appréhender la direction vers laquelle tend la simulation et éventuellement mettre en évidence une évolution ne respectant pas les contraintes imposées et l'évolution attendue. 
+
+la taille des systèmes étudiés et la possibilité de lui ajouter un espace d'analyse motive le besoin d'augmenter considérablement l'espace d'affichage nécessaire. Ainsi, dans une situation en temps réel, un enjeu majeur est de réduire les données échangées entre les composants de simulation, de visualisation et d'analyse pour permettre à un utilisateur de contrôler ces trois composants de façon optimale. Or, le traitement en temps réel est l'un des enjeux majeurs de la visualisation de données en condition immersive. Le choix de la visualisation en condition immersive Une étape cruciale de l'analyse de données en modélisation moléculaire est donc en train de se jouer afin de réduire les données générées quotidiennement tout en gardant la même précision et surtout la même pertinence lorsqu'il s'agit de répondre à un problème biologique précis.
+
+
+\subsection*{Plan du manuscrit}
+
+
+\lipsum[1-3]

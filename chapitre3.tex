@@ -1,0 +1,109 @@
+\chapter[Lier l'analyse à la visualisation dans un même espace de travail]{Raccourcir la boucle de décision et de conclusion de l'expert}
+\label{Sec:visuAna}
+\minitoc
+\cleardoublepage
+
+% \bibliography{/Users/trellet/Documents/Manuscript_these/biblio}
+%% Commentaire : la commande \texorpdfstring permet de déclarer un titre de
+%% chapitre (ou section, sous-section) alternatif en texte seul, si besoin, qui
+%% est utilisé par hyperref pour fabriquer un menu dans les fichiers compilés
+
+%\chapter{\texorpdfstring{Contrôle gestuel de l'articulation}{Contrôle gestuel de l'articulation}}
+%% Commentaire : la commande \texorpdfstring permet de déclarer un titre de
+%% chapitre (ou section, sous-section) alternatif en texte seul, si besoin, qui
+%% est utilisé par hyperref pour fabriquer un menu dans les fichiers compilés
+
+%Exemple de notation qui sera reprise dans l'index : soit $\Q$\index{Q@$\Q$} le corps des nombres rationnels.
+
+\section{Introduction}
+
+Dans le schéma standard de l'étude d'un phénomène biologique à l'échelle atomique, la mise en place d'hypothèses de travail se fait suite à l'analyse standardisée d'une simulation moléculaire. Cette simulation, dans le meilleur des cas, aura mis en avant plusieurs pistes de réflexion provenant de changements structuraux ou énergétiques du complexe moléculaire d'intérêt. Cependant, la majorité des simulations amènent que peu d'informations utilisables pour émettre de nouvelles hypothèse et seule une suite de simulations dont les paramètres ont évolué progressivement permet de dégager un résultat significatif. La simulation et son analyse sont deux des quatre tâches identifiées dans la boucle séquentielle de la biologie structurale que nous avons exposé en introduction. La succession de simulation->analyse->nouveaux paramètres->simulation->analyse... est un processus long et coûteux. Tant en terme de quantité de données à traiter qu'en terme de temps de traitement et de communication des données. Notre approche vise à raccourcir ce processus en combinant simulation et analyses afin de:
+\begin{enumerate}
+    \item Identifier et reconnaître les acteurs importants d'une simulation moléculaire de façon rapide mais complète
+    \item Réduire la quantité de données générée afin de ne garder que la partie pertinente pour les hypothèses
+    \item Apporter à l'utilisateur les outils de décision adaptés en lui fournissant les liens logiques entre ses données
+    \item Orienter la simulation vers des paramètres plus pertinents suivant les décisions de l'utilisateur
+\end{enumerate}
+
+% Intro Visu Analytics
+\subsection{Visualisation analytique}
+Afin de mettre en place une communication entre visualisation et analyses, nous pouvons nous inspirer des outils de visualisation analytique (Visual Analytics en anglais), domaine d'étude défini par le "raisonnement analytique au travers d'interfaces visuelles interactives" \cite{cook_illuminating_2005}. 
+
+L'association étroite entre la visualisation d'informations scientifiques et les analyses associées, dans un même espace et simultanément, met en avant des techniques de visualisation connues et souvent définies en visualisation analytique. Cette discipline récente a en effet pour but de faciliter l'analyse visuelle de données complexes et/ou scientifiques. Elle se place à la frontière de nombreux domaines de visualisation, d'interaction ou de perception afin de mettre en avant des informations qui n'auraient pu apparaître lors de l'utilisation cloisonnée des différents domaines mis en jeu. La visualisation analytique s'appuie sur des méthodes de visualisation simples et compréhensibles par l'être humain auxquelles elle ajoute une dimension interactive afin de les relier entre elles. Elle s'inspire donc par plusieurs niveaux aux études d'interactions homme-machine dont la réalité virtuelle s'inspire également \cite{arias-hernandez_visual_2011}. Son principal but est de mettre l'être humain au centre d'une boucle de décision qui sera facilitée par la mise en relation de données de différentes natures et de différentes sources. Ce contexte de travail généré par la visualisation analytique doit être cohérent pour le chercheur. C'est à ce niveau que le domaine de la perception et des études cognitives interviennent afin d'assurer une pleine compréhension et utilisation de l'espace de travail.
+
+La visualisation analytique vise donc à combiner la visualisation de données passées en entrée et leurs analyses afin de créer de nouvelles connaissances qui pourront elles-mêmes être utilisées par la suite en entrée de la boucle. Ce processus, expliqué par Keim et al. \cite{keim2010mastering}, forme ainsi une boucle d'analyse fermée qui vient raccourcir considérablement la boucle habituelle présentée dans la figure X. Une nouvelle représentation de cette boucle intégrant la visualisation analytique peut être observée dans la figure Y.
+
+% Intro sémantique / données liées
+\subsection{Représentation des connaissances}
+Ce raccourcissement dans le processus d'étude d'une molécule est aussi motivé par l'espace de travail que l'on lui dédie. En effet, la réalité virtuelle doit par nature se défaire du carcan clavier/souris et mettre en jeu des techniques d'interaction directes plus simples. Le nombre d'entrées possibles pour interagir avec l'environnement est réduit comparé aux possibilités en conditions de bureau standards. Chaque commande impliquant l'utilisation d'une combinaison de touche de clavier et/ou souris ne peuvent être toutes remplacées par une équivalence en terme de boutons de joystick ou même de commandes vocales. Ceci est particulièrement vrai en visualisation moléculaire où les possibilités de rendus et de manipulation des objets sont très nombreuses. En parallèle de la mutualisation des activités visualisation et analyse, il est donc nécessaire de mutualiser certaines actions afin de réduire le nombre d'étapes que l'utilisateur devra suivre pour arriver à un résultat. Cette mutualisation a fait l'objet de nombreuses recherches en interaction homme-machine et plusieurs solutions matérielles et logicielles existent afin de prendre en compte des mouvements ou des commandes vocales en entrée pour s'affranchir d'un maximum de dispositifs d'interaction. 
+Il est néanmoins possible d'aller plus loin lorsque l'on se concentre sur un domaine d'étude en particulier. En effet, la connaissance du domaine doit permettre de prédire et de fournir des outils dont l'utilisateur aura besoin suivant l'étape du processus dans laquelle il se trouve et ses actions au sein de celle-ci. Comme nous venons de l'énoncer, cela ne peut se faire qu'à travers une excellent connaissance du métier et du domaine. Notre étude nous a donc mené à nous interroger sur la possibilité de formaliser les concepts qui sont utilisés dans le processus d'étude d'une molécule.
+La notion de représentation des concepts et des liaisons qui les relient est connue des sciences informatiques et plusieurs formalismes en découlent. Les graphes conceptuels sont un premier moyen de formaliser les connaissances \cite{chein2008graph}. Dans cette représentation, les concepts et les relations sont des noeuds reliés par des arcs orientés.
+
+\section{Visualisation analytique de données de biologie structurale}
+\label{Sec:visuAnalyticsStructBio}
+
+\subsection{Outils et techniques}
+
+Plusieurs outils ou techniques découlent de ce couplage étroit entre visualisation de données brutes et analyses associées caractéristique de la visualisation analytique \cite{cockburn2008review}:
+
+\begin{enumerate}
+    \item "Focus+Context": Cette technique permet à l'utilisateur de se concentrer sur une partie intéressante des données visualiser sans perdre le contexte global dans lequel s'inscrivent ces données. Les informations présentées dans le contexte global ne sont pas nécessairement identiques à celles présentées en détail mais les deux échelles d'information peuvent être associées à travers un affichage dynamique simple. par exemple, si différents sets de données ont leurs entrées liées par au minimum une propriété équivalente, la sélection d'un point dans un set particulier sélectionne également toutes les points correspondants à ce point dans les autres sets. La figure X nous montre par exemple la sélection d'un modèle Y dans un set de données de simulation moléculaire. Toutes les représentations du modèle Y dans l'espace de visualisation ou d'analyse sont également mises en avant. Cette exemple spécifique est appelé "brush and link".
+    \item "Overview+Detail": Cette technique fournit plusieurs vues, dont une présente une vue globale, dans des espaces distincts. Les vues peuvent être synchrones ou asynchrones et cette asynchronisme peut être propre à la vue globale ou à la vue en détails. Une interaction dans l'une ou les autres des vues n'a donc pas forcément une conséquence dans les autres vues, cependant, dans la plupart des cas, il existe une synchronisation assurant une cohérence et un lien entre les données affichées. Un exemple connu est Google Maps illustré dans la figure X qui présente deux échelles spatiales différentes dans deux fenêtres distinctes. Seule l'interaction dans la fenêtre de contexte globale (la plus grande / principale) a un effet dans la seconde fenêtre.
+    \item "Zooming": Cette technique se base cette fois sur une séparation temporelle des vues. Un zoom avant amènera une vue plus détaillée d'une scène alors qu'un zoom arrière apportera une vue plus globale.
+    \item "Cue-based techniques"
+\end{enumerate}
+
+
+\subsection{Application en RV}
+
+Parmi les différents aspects de visualisation analytique, celui du Focus+Context, et plus spécifiquement de la technique du brush-and-link, apparait comme particulièrement adaptée pour mettre en avant des informations cachées au sein des analyses indépendantes effectuées sur une simulation. Cette technique consiste à mettre en relation les différentes représentations d'analyses en connectant les points possédant un dénominateur commun. Dans notre cas, le dénominateur commun sera le plus souvent un sous-ensemble d'atomes. Celui-ci pourra être 
+
+La visualisation analytique possède donc les outils nécessaires au couplage visualisation et analyses propres à l'étude d'une simulation moléculaire. En reprenant le schéma de la visualisation analytique proposé par Keim \textit{et al.} il est facile de considérer, dans notre cas, les données en entrée comme les coordonnées 3D des modèles générés à chaque pas de temps de la simulation ainsi que les propriétés physico-chimiques associées. Il est également possible d'y ajouter des résultats d'analyses. En utilisant des rendus visuels définis pour chaque information à observer (rendu 3D navigable pour les coordonnées 3D des complexes moléculaires, plots et graphes pour les données d'analyses, etc...) et en liant ces rendus entre-eux, il est possible de mettre en place des techniques de Focus+Context ou de Overview+Detail détaillés précédemment. Chaque point d'un graphique devra avoir son équivalent représenté dans le rendu visuel 3D afin de pouvoir créer un lien entre les deux et ainsi ressortir un comportement commun lors de la sélection de ce point particulier par l'utilisateur.
+
+
+
+\section{Sémantique et données liées}
+
+\subsection{Ontologie OWL}
+
+\subsection{Base de données RDF/(S)}
+
+\subsection{Moteur de conversion mots-clés -> RDF -> commandes}
+
+\subsection{Requêtes SPARQL comme base logicielle}
+
+Ces outils ne sont pas suffisant à eux seuls pour répondre à notre problématique. En effet, l'idée principale de notre approche vise à mettre en place une plateforme logicielle souple et générique afin de prendre en compte un nombre important de données différentes en entrée sans nécessité de nouveaux développements pour assurer son fonctionnement. Cette généricité doit passer par une certaine automatisation des étapes de liaison entre les données hétéroclites que peuvent être des données dédiées à la visualisation 3D et des données provenant d'analyses ou de propriétés physico-chimiques.
+Il est donc nécessaire de mettre en place un vocabulaire générique que manipulera la plateforme et que l'utilisateur aura simplement à remplir avec ses données spécifiques. Les concepts mis en jeu au sein de la plateforme ont besoin d'être bien défini pour que l'utilisateur sache comment enrichir la base de données qui sera prise en entrée par les modules et pour que les données puissent être liées entre elles de façon optimale. La mise en place d'une ontologie permet que ces deux requis soient respectés. En informatique, une ontologie est un système de représentation des connaissances constituée d'un ensemble de concepts et de liens entre ces concepts afin de décrire un environnement de façon précise et surtout standardisée. L'ontologie est largement utilisée lors de l'élaboration de base de données liées comme cela peut être fait en web sémantique. Le web sémantique tend à lier et structurer les données de façon à faciliter l'accès aux connaissances qu'elles contiennent. C'est également le but de notre étude et il semble donc adapté de reprendre les principes de cette approche afin de mettre en place la structure de notre base de données. Plusieurs avantages qu'offre la mise en place de données liées et d'une ontologie définissant les concepts étudiées peuvent être énumérés:
+
+\begin{itemize}
+	\item La plateforme peut identifier à chaque étape les concepts mis en jeu par l'utilisateur et donc proposer des actions adaptées
+	\item L'utilisateur dispose d'une définition précise de l'implémentation des concepts et peut ainsi fournir ses données en accord avec celle-ci
+	\item Il est possible de partager les données utilisées puisqu'elles sont clairement définies par une ontologie
+	\item Les liaisons entre les concepts définies dans l'ontologie peuvent être utilisés à l'identique pour relier des modules différents (visualisation/analyses/interactions/...)
+	\item La base de données primaire créées à partir des données de l'utilisateur peut évoluer à chaque instant et grandir grâce à de nouvelles données obtenues à partir des premières
+\end{itemize}
+
+Le langage de base du web sémantique est le Resource Description Framework (RDF) qui est un modèle de graphe destiné à décrire de façon formelle des ressources et leurs métadonnées associées. C'est un équivalent des graphes conceptuels (GC) qui possèdent le même but mais disposent d'opérations différentes.
+
+
+% \section{Détachement des interactions standards clavier/souris via sémantique}
+% \label{Sec:ModCtrSyl}
+
+% \subsection{Subsection1}
+% \label{sec:dynPhaseArti}
+
+% \subsection{Subsection2}
+% \label{sec:hypoarticulation}
+% \lipsum[1-2]
+
+% \subsection{Subsection3}
+% \label{Sec:hypoarticulation}
+% \lipsum[1-2]
+
+% \section[Modèle de contrôle alternatif utilisant des gestes de sélection]{Modèle de contrôle alternatif utilisant des gestes de sélection pour le déclenchement des phases VC et CV}
+% \lipsum[1-2]
+
+\section{Résumé et conclusion}
+\label{sec:ConclusionDigitartic}
+\lipsum[1-2]
+

@@ -1,0 +1,128 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% EN-TETES ET PIEDS DE PAGE
+\usepackage{fancyhdr}
+\pagestyle{fancy}% pour activer le style de pages personnalis�
+\fancyhf{}%remise � z�ro des en-t�te et pied de page
+\setlength{\headheight}{28.1pt} % pour fixer la hauteur de l'espace r�serv� � l'en-t�te du haut
+
+%%% Pas de num�ro de page sur la premi�re page des chapitres
+\makeatletter
+\let\ps@plain=\ps@empty
+\makeatother
+
+%===================== Style 1 =================================================
+%En-t�te : 
+% * dans la boite de droite (R), pour les pages impaires (O)
+% * et dans la boite de gauche (L), pour les pages paires (E)
+% mettre le num�ro de page (\thepage).
+\fancyhead[RO,LE]{% 
+\thepage
+}
+\fancyhead[LO]{\fontsize{9.5}{11} \selectfont \scshape \nouppercase{\rightmark} }  %%%Section
+\fancyhead[RE]{\fontsize{9.5}{11} \selectfont \scshape \nouppercase{\leftmark} } %%% Chapitre 
+\renewcommand{\headrulewidth}{.4pt}
+\fancyfoot{}
+
+
+%\pagestyle{fancy}     
+%\fancyhead{} % clear all header fields
+%\fancyhead[L]{\fontsize{10}{12} \selectfont Personal Statement}
+%
+%\pagestyle{fancy}
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+%\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+%\fancyhf{} \fancyhead[LE,RO]{\bfseries\thepage}
+%\fancyhead[LO]{\bfseries\rightmark}
+%\fancyhead[RE]{\bfseries\leftmark}
+%\renewcommand{\headrulewidth}{0.5pt}
+%\addtolength{\headheight}{0.5pt}
+%\renewcommand{\footrulewidth}{0pt}
+%\fancypagestyle{plain}{ \fancyhead{}
+%\renewcommand{\headrulewidth}{0pt}} 
+
+%================================== Style 2 ====================================
+
+% \fancyfoot[RO,LE]{% Boite de droite (R), pages impaires(O) et Boites de gauche pages paires
+% \thepage
+% }
+% \fancyhead[CO]{\slshape \nouppercase{\rightmark}}  %%%Section
+% \fancyhead[CE]{\slshape \nouppercase{\leftmark}} %%% Chapitre 
+% \renewcommand{\headrulewidth}{.4pt}
+
+% Remarques generales :
+% nouppercase permet l'affichage en minuscules au lieu de majuscules
+% slshape permet l'affichage en lettres pench�s
+% scshape permet l'affichage en petites capitales
+
+% Pour que les pages paires sans texte (par exemple, � la fin d'un chapitre et
+% avant un autre), ne contiennent ni en-t�te ni pied de page (source :
+% http://www.tex.ac.uk/cgi-bin/texfaq2html?label=reallyblank)
+\let\origdoublepage\cleardoublepage
+\newcommand{\clearemptydoublepage}{%
+  \clearpage
+  {\pagestyle{empty}\origdoublepage}%
+}
+\let\cleardoublepage\clearemptydoublepage
+
+% R�glage fin des notes de bas de page
+\FrenchFootnotes % pour les notes de bas de page � la fran�aise
+\AddThinSpaceBeforeFootnotes % pour avoir une espace fine entre le mot et l'appel de note
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% CHAPITRE ETOILE
+%% avec r�f�rence dans la table des mati�res et les bons en-t�tes
+%% il sert pour l'introduction, la page de notations.
+\newcommand*\chapterstar[1]{%
+  \chapter*{#1}%
+%  \addcontentsline{toc}{chapter}{#1}%
+ \addstarredchapter{#1} 
+  \markboth{#1}{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PARTIE ETOILE
+%% avec r�f�rence dans la table des mati�res et les bons en-t�tes
+%% il sert pour l'introduction, la page de notations.
+\newcommand*\partstar[1]{%
+  \part*{#1}%
+%  \addcontentsline{toc}{chapter}{#1}%
+ \addstarredpart{#1} 
+  \markboth{#1}{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ENVIRONNEMENTS DE THEOREMES
+\theoremstyle{plain} % style plain
+\newtheorem{theo}{Th�or�me}[chapter]
+\newtheorem{cor}[theo]{Corollaire}
+\newtheorem{prop}[theo]{Proposition}
+\newtheorem{lem}[theo]{Lemme}
+\newtheorem{conj}[theo]{Conjecture}
+\newtheorem*{theoetoile}{Th�or�me} % th�or�me non num�rot�
+\newtheorem*{conjetoile}{Conjecture} % conjecture non num�rot�e
+
+\theoremstyle{definition} % style definition
+\newtheorem{defi}[theo]{D�finition}
+\newtheorem{exemple}[theo]{Exemple}
+\newtheorem{question}[theo]{Question}
+\newtheorem{remarque}[theo]{Remarque}
+\newtheorem{notation}[theo]{Notation}
+
+% Pour renommer ``preuve'' en ``d�monstration''
+\renewcommand{\proofname}{D�monstration}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ENVIRONNEMENTS DEDICACE ET EPIGRAPHE
+\newenvironment{dedicace}{%
+  \newpage\thispagestyle{empty}
+  \hfill\begin{minipage}{100mm}\begin{flushright}\it}{%
+  \end{flushright}\end{minipage}\vfill}
+
+\newenvironment{epigraphe}{%
+  \hfill\begin{minipage}{60mm}\begin{flushright}\footnotesize\it}{%
+  \end{flushright}\end{minipage}\hspace*{7mm}\vfill}
+
+
+
+
