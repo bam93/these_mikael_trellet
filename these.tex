@@ -229,7 +229,7 @@
 \include{notations}
 
 % Liste fichiers audioVideo
-\include{list_resources}
+% \include{list_resources}
 
 % Introduction
 \include{introduction}
@@ -238,28 +238,29 @@
 
 
 % Chapitres de la thèse
-% \include{chapitre1}
+\include{chapitre1}
 % \include{./pa1/partie1}
-% \include{chapitre2}
+\include{chapitre2}
 \include{chapitre3}
 % \include{partie2}
-% \include{./ch4/chapitre4}
-% \include{./ch5/chapitre5}
-% \include{./ch6/chapitre6}
+\include{chapitre4}
+% \include{chapitre5}
+% \include{chapitre6}
 
 \bookmarksetup{startatroot}% package bookmark --> pour sortir de la "part" pr�c�dente (pour les liens pdfbookmark dans le pdf)
 \addtocontents{toc}{\bigskip}% rajoute un espace dans la tbale des mati�res
+
 %% Conclusion et Perpectives
-\include{conclusion}
+% \include{conclusion}
 
 
 %% Annexes
-\partstar{ANNEXES} % 
+% \partstar{ANNEXES} % // TO UNCOMMENT
 ~ % sinon, il met la 1ere annexe avant la partie dans le sommaire , je ne sais pas why.
 %\addstarredpart{Annexes} % Pour ajouter une partie fictive dans la table des mati�re
 %\phantomsection % 
 
-\appendix
+% \appendix // TO UNCOMMENT
 % \include{annexe} % chorus digitalis
 % \include{ann_tps} % aspects techniques pour le temps r�el
 % \include{ann_pub} % Liste des publications
