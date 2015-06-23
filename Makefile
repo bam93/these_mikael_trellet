@@ -1,4 +1,4 @@
-SOURCES=ann_cho.tex ann_pub.tex chapitre1.tex chapitre2.tex chapitre3.tex chapitre4.tex chapitre5.tex chapitre6.tex audiovideo.tex dedicace.tex introduction.tex notations.tex pagedegarde.tex pagedegarde_orig.tex remerciements.tex conclusion.tex resume.tex macros.tex macrosmath.tex partie1.tex partie2.tex these.tex
+SOURCES=ann_pub.tex chapitre1.tex chapitre2.tex chapitre3.tex chapitre4.tex chapitre5.tex chapitre6.tex dedicace.tex introduction.tex notations.tex pagedegarde.tex remerciements.tex conclusion.tex resume.tex partie1.tex partie2.tex these.tex
 NAME=these
 VIEWPDF=skim
 AUX=auxi
