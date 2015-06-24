@@ -1,6 +1,32 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
 \begin{thebibliography}{AHDFG11}
 \expandafter\ifx\csname fonteauteurs\endcsname\relax
 \def\fonteauteurs{\scshape}\fi
+
+\bibitem[ABB{\etalchar{+}}00]{ashburner_gene_2000}
+Michael \bgroup\fonteauteurs\bgroup Ashburner\egroup\egroup{}, Catherine~A.
+  \bgroup\fonteauteurs\bgroup Ball\egroup\egroup{}, Judith~A.
+  \bgroup\fonteauteurs\bgroup Blake\egroup\egroup{}, David
+  \bgroup\fonteauteurs\bgroup Botstein\egroup\egroup{}, Heather
+  \bgroup\fonteauteurs\bgroup Butler\egroup\egroup{}, J.~Michael
+  \bgroup\fonteauteurs\bgroup Cherry\egroup\egroup{}, Allan~P.
+  \bgroup\fonteauteurs\bgroup Davis\egroup\egroup{}, Kara
+  \bgroup\fonteauteurs\bgroup Dolinski\egroup\egroup{}, Selina~S.
+  \bgroup\fonteauteurs\bgroup Dwight\egroup\egroup{}, Janan~T.
+  \bgroup\fonteauteurs\bgroup Eppig\egroup\egroup{}, Midori~A.
+  \bgroup\fonteauteurs\bgroup Harris\egroup\egroup{}, David~P.
+  \bgroup\fonteauteurs\bgroup Hill\egroup\egroup{}, Laurie
+  \bgroup\fonteauteurs\bgroup Issel-Tarver\egroup\egroup{}, Andrew
+  \bgroup\fonteauteurs\bgroup Kasarskis\egroup\egroup{}, Suzanna
+  \bgroup\fonteauteurs\bgroup Lewis\egroup\egroup{}, John~C.
+  \bgroup\fonteauteurs\bgroup Matese\egroup\egroup{}, Joel~E.
+  \bgroup\fonteauteurs\bgroup Richardson\egroup\egroup{}, Martin
+  \bgroup\fonteauteurs\bgroup Ringwald\egroup\egroup{}, Gerald~M.
+  \bgroup\fonteauteurs\bgroup Rubin\egroup\egroup{} et Gavin
+  \bgroup\fonteauteurs\bgroup Sherlock\egroup\egroup{} :
+\newblock Gene {Ontology}: tool for the unification of biology.
+\newblock {\em Nature Genetics}, 25(1)\string:\penalty500\relax 25--29, mai
+  2000.
 
 \bibitem[AHDFG11]{arias-hernandez_visual_2011}
 Richard \bgroup\fonteauteurs\bgroup Arias-Hernández\egroup\egroup{}, John
@@ -10,6 +36,17 @@ Richard \bgroup\fonteauteurs\bgroup Arias-Hernández\egroup\egroup{}, John
 \newblock Visual {Analytics} and {Human}-computer {Interaction}.
 \newblock {\em interactions}, 18(1)\string:\penalty500\relax 51--55, janvier
   2011.
+
+\bibitem[BGB{\etalchar{+}}99]{baker_ontology_1999}
+P.~G. \bgroup\fonteauteurs\bgroup Baker\egroup\egroup{}, C.~A.
+  \bgroup\fonteauteurs\bgroup Goble\egroup\egroup{},
+  S.~\bgroup\fonteauteurs\bgroup Bechhofer\egroup\egroup{}, N.~W.
+  \bgroup\fonteauteurs\bgroup Paton\egroup\egroup{},
+  R.~\bgroup\fonteauteurs\bgroup Stevens\egroup\egroup{} et
+  A.~\bgroup\fonteauteurs\bgroup Brass\egroup\egroup{} :
+\newblock An ontology for bioinformatics applications.
+\newblock {\em Bioinformatics}, 15(6)\string:\penalty500\relax 510--520, juin
+  1999.
 
 \bibitem[CKB08]{cockburn2008review}
 Andy \bgroup\fonteauteurs\bgroup Cockburn\egroup\egroup{}, Amy
@@ -42,5 +79,64 @@ Daniel~A \bgroup\fonteauteurs\bgroup Keim\egroup\egroup{}, J{\"o}rn
 \newblock {\em Mastering the information age-solving problems with visual
   analytics}.
 \newblock Florian Mansmann, 2010.
+
+\bibitem[SAR{\etalchar{+}}07]{smith_obo_2007}
+Barry \bgroup\fonteauteurs\bgroup Smith\egroup\egroup{}, Michael
+  \bgroup\fonteauteurs\bgroup Ashburner\egroup\egroup{}, Cornelius
+  \bgroup\fonteauteurs\bgroup Rosse\egroup\egroup{}, Jonathan
+  \bgroup\fonteauteurs\bgroup Bard\egroup\egroup{}, William
+  \bgroup\fonteauteurs\bgroup Bug\egroup\egroup{}, Werner
+  \bgroup\fonteauteurs\bgroup Ceusters\egroup\egroup{}, Louis~J.
+  \bgroup\fonteauteurs\bgroup Goldberg\egroup\egroup{}, Karen
+  \bgroup\fonteauteurs\bgroup Eilbeck\egroup\egroup{}, Amelia
+  \bgroup\fonteauteurs\bgroup Ireland\egroup\egroup{}, Christopher~J.
+  \bgroup\fonteauteurs\bgroup Mungall\egroup\egroup{}, Neocles
+  \bgroup\fonteauteurs\bgroup Leontis\egroup\egroup{}, Philippe
+  \bgroup\fonteauteurs\bgroup Rocca-Serra\egroup\egroup{}, Alan
+  \bgroup\fonteauteurs\bgroup Ruttenberg\egroup\egroup{}, Susanna-Assunta
+  \bgroup\fonteauteurs\bgroup Sansone\egroup\egroup{}, Richard~H.
+  \bgroup\fonteauteurs\bgroup Scheuermann\egroup\egroup{}, Nigam
+  \bgroup\fonteauteurs\bgroup Shah\egroup\egroup{}, Patricia~L.
+  \bgroup\fonteauteurs\bgroup Whetzel\egroup\egroup{} et Suzanna
+  \bgroup\fonteauteurs\bgroup Lewis\egroup\egroup{} :
+\newblock The {OBO} {Foundry}: coordinated evolution of ontologies to support
+  biomedical data integration.
+\newblock {\em Nature Biotechnology}, 25(11)\string:\penalty500\relax
+  1251--1255, novembre 2007.
+
+\bibitem[SK02]{schulze-kremer_ontologies_2002}
+Steffen \bgroup\fonteauteurs\bgroup Schulze-Kremer\egroup\egroup{} :
+\newblock Ontologies for molecular biology and bioinformatics.
+\newblock {\em In silico biology}, 2(3)\string:\penalty500\relax 179--193,
+  2002.
+
+\bibitem[SL08]{schuurman_ontologies_2008}
+Nadine \bgroup\fonteauteurs\bgroup Schuurman\egroup\egroup{} et Agnieszka
+  \bgroup\fonteauteurs\bgroup Leszczynski\egroup\egroup{} :
+\newblock Ontologies for {Bioinformatics}.
+\newblock {\em Bioinformatics and Biology Insights}, 2\string:\penalty500\relax
+  187--200, mars 2008.
+
+\bibitem[SSBs{\etalchar{+}}08]{stenzhorn_biotop_2008}
+Holger \bgroup\fonteauteurs\bgroup Stenzhorn\egroup\egroup{}, Stefan
+  \bgroup\fonteauteurs\bgroup Schulz\egroup\egroup{}, Elena
+  \bgroup\fonteauteurs\bgroup Bei{\textbackslash}s~swanger\egroup\egroup{}, Udo
+  \bgroup\fonteauteurs\bgroup Hahn\egroup\egroup{}, László
+  \bgroup\fonteauteurs\bgroup Van Den~Hoek\egroup\egroup{}, Erik~M van
+  \bgroup\fonteauteurs\bgroup Mulligen\egroup\egroup{} et
+  \bgroup\fonteauteurs\bgroup {others}\egroup\egroup{} :
+\newblock {BioTop} and {ChemTop}-{Top}-{Domain} {Ontologies} for {Biology} and
+  {Chemistry}.
+\newblock \emph{In} {\em International {Semantic} {Web} {Conference} ({Posters}
+  \& {Demos})}. Citeseer, 2008.
+
+\bibitem[YSK04]{yoshikawa_drug_2004}
+Sumi \bgroup\fonteauteurs\bgroup Yoshikawa\egroup\egroup{}, Kenji
+  \bgroup\fonteauteurs\bgroup Satou\egroup\egroup{} et Akihiko
+  \bgroup\fonteauteurs\bgroup Konagaya\egroup\egroup{} :
+\newblock Drug interaction ontology ({DIO}) for inferences of possible
+  drug-drug interactions.
+\newblock {\em Studies in Health Technology and Informatics}, 107(Pt
+  1)\string:\penalty500\relax 454--458, 2004.
 
 \end{thebibliography}

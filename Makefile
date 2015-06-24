@@ -27,7 +27,7 @@ clean:
 	rm -f *.aux
 	rm -f *.log
 	rm -f $(NAME).dvi
-	rm -f $(NAME).pdf
+#	rm -f $(NAME).pdf
 	rm -f $(NAME).ps
 	rm -f $(NAME).txt
 	rm -f $(NAME).toc
