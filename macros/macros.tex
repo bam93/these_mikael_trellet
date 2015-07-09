@@ -1,6 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% EN-TETES ET PIEDS DE PAGE
 \usepackage{fancyhdr}
+\usepackage{color}
 \pagestyle{fancy}% pour activer le style de pages personnalis�
 \fancyhf{}%remise � z�ro des en-t�te et pied de page
 \setlength{\headheight}{28.1pt} % pour fixer la hauteur de l'espace r�serv� � l'en-t�te du haut
@@ -123,6 +124,8 @@
   \hfill\begin{minipage}{60mm}\begin{flushright}\footnotesize\it}{%
   \end{flushright}\end{minipage}\hspace*{7mm}\vfill}
 
+\newcommand{\commentaire}[1]{\textcolor{red}{#1}}
+\newcommand{\style}{\textcolor{red}{style à revoir}}
 
-
+\newcommand{\correction}[1]{\textcolor{blue}{#1}}
 
