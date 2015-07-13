@@ -211,7 +211,7 @@ Afin de faire l'interface entre les différents modules et la base de données R
 
 \subsection{Synchronisation}
 
-A cause de la nature hétérogène de notre application, il n'était pas possible d'adopter une communication entre les différentes instances Python créées par les différents modules. Flask et PyMol ont tous les deux besoin de fonctionner dans un processus principal où d'éventuels sous-processus peuvent se greffer. Ils ne peuvent donc pas être utilisé au sein de la même boucle de calcul et nécessitent d'être initialisés de façon indépendante. La synchronisation entre l'espace visuel et l'espace d'analyses, représenté respectivement par PyMol et le serveur web Flask, se fait au travers de communication entre leurs modules de gestion respectifs. Cette communication s'appuie sur des messages OSC envoyées par les modules à chaque événement déclenché dans un des espaces de travail. Chacun des modules est ainsi associé à un serveur OSC opérant en arrière-plan dans un sous-processus et surveillant tout message arrivant sur le port qui lui est dédié. Nous utilisons la librairie Python pyliblo \url{http://das.nasophon.de/pyliblo/} qui est une interface Python pour liblo \url{http://liblo.sourceforge.net/}, une implémentation du protocole \textit{Open Sound Control} (OSC). OSC est un format de transmission de données conçu pour être utilisé en temps réel. Il utilise des protocoles UDP ou TCP à travers le réseau et permet d'envoyer des messages de différents typages suivant les besoins. Pyliblo, en plus de permettre la création d'un serveur OSC, fournit également les fonctions nécessaires pour envoyer un message. Ces messages sont envoyés localement sur un port référencé par la machine, ouvert et qu'un serveur OSC "surveille" afin de détecter tout message. La destination des messages n'est pas renseignée uniquement par le port UDP d'arrivée, il est également possible de renseigner un chemin particulier. Cette adresse définie au préalable agit comme un premier filtre de distinction entre les messages de différentes natures. Le typage des messages suivant les adresses est strict et prédéfini dans le module du serveur OSC. Un message contenant une chaîne de caractères à une adresse précise ne sera donc pas traitée dans la même méthode qu'un message adressé à la même adresse mais dont le contenu est un tableau d'entiers.
+A cause de la nature hétérogène de notre application, il n'était pas possible d'adopter une communication entre les différentes instances Python créées par les différents modules. Flask et PyMol ont tous les deux besoin de fonctionner dans un processus principal où d'éventuels sous-processus peuvent se greffer. Ils ne peuvent donc pas être utilisé au sein de la même boucle de calcul et nécessitent d'être initialisés de façon indépendante. La synchronisation entre l'espace visuel et l'espace d'analyses, représenté respectivement par PyMol et le serveur web Flask, se fait au travers de communication entre leurs modules de gestion respectifs. Cette communication s'appuie sur des messages OSC envoyées par les modules à chaque événement déclenché dans un des espaces de travail. Chacun des modules est ainsi associé à un serveur OSC opérant en arrière-plan dans un sous-processus et surveillant tout message arrivant sur le port qui lui est dédié. Nous utilisons la librairie Python pyliblo \url{http://das.nasophon.de/pyliblo/} qui est une interface Python pour liblo \url{http://liblo.sourceforge.net/}, une implémentation du protocole \textit{Open Sound Control} (OSC). OSC est un format de transmission de données conçu pour être utilisé en temps réel. Il utilise des protocoles UDP ou TCP à travers le réseau et permet d'envoyer des messages de différents typages suivant les besoins. Pyliblo, en plus de permettre la création d'un serveur OSC, fournit également les fonctions nécessaires pour envoyer un message. Ces messages sont envoyés localement sur un port ouvert référencé par la machine qu'un serveur OSC "surveille" afin de détecter tout message entrant. La destination des messages n'est pas renseignée uniquement par le port UDP d'arrivée, il est également possible de fournir un chemin particulier. Cette adresse définie au préalable agit comme un premier filtre de distinction entre les messages de différentes natures. Le typage des messages suivant les adresses est strict et prédéfini dans le module du serveur OSC. Un message contenant une chaîne de caractères à une adresse précise ne sera donc pas traitée dans la même méthode qu'un message adressé à la même adresse mais dont le contenu est un tableau d'entiers.
 Les communications constantes entre les modules à travers les ports UDP de nos serveurs OSC permettent donc d'assurer une synchronisation des actions utilisateurs dans chacun des espaces de travail. Les actions identifiées comme synchronisables sont donc effectuées en coordination entre les espaces.
 
 \subsection{Exemple}
@@ -228,23 +228,16 @@ Lorsque les graphes sont générés, l'utilisateur a la possibilité d'interagir
 	\item Il est également possible de synchroniser la sélection d'un groupe de points afin de mettre en évidence les individus concernés dans l'ensemble des graphes de la page.
 \end{itemize}
 
-Toute sélection au sein d'un ou plusieurs graphes de la page déclenche un événement transmis depuis le client web jusqu'au module de gestion 3d entraînant une adaptation de la visualisation pour mettre en avant le ou les individu(s) ayant été sélectionnés.
-% \section{Détachement des interactions standards clavier/souris via sémantique}
-% \label{Sec:ModCtrSyl}
+Toute sélection au sein d'un ou plusieurs graphes de la page déclenche un événement transmis depuis le client web jusqu'au module de gestion 3d entraînant une adaptation de la visualisation pour mettre en avant le ou les individu(s) ayant été sélectionnés. Il est aussi possible d'obtenir, sous forme de fenêtre indépendante, un résumé des informations disponibles sur le ou les individus. Dans le cas d'un individu unique, une liste de ses propriétés et de leurs valeurs sera affichée alors que pour plusieurs individus, une moyenne effectuée sur les valeurs de leurs propriétés remplacera les valeurs brutes.
+Chaque sélection réduit donc le focus de l'utilisateur à un sous-ensemble d'individus, à la fois dans l'espace d'analyses mais également de façon synchrone dans l'espace de visualisation. Il est possible d'adapter ce focus suivant les besoins de l'utilisateur en modifiant le niveau de contexte dans lequel il désire que sa sélection apparaisse. Trois niveaux de contextualisation sont possibles:
+\begin{itemize}
+	\item Aucun contexte - La sélection d'individu(s) entraîne la visualisation unique de ces individus dans l'espace de visualisation et d'analyse et donc cache tout individu n'étant pas sélectionné
+	\item Contexte faible - La sélection d'individu(s) met en avant ces individus dans les espaces de travail et réduit la perception des autres individus du jeu de données (couleur grise, transparence, rendu visuel simplifié, etc...)
+	\item Contexte fort - La sélection d'individu(s) n'est perçu qu'à travers une mise en avant simple de ces individus dans les espaces de travail. Tout autre individu apparaîtra également avec des paramètres visuels proches des individus sélectionnés.
+\end{itemize}
 
-% \subsection{Subsection1}
-% \label{sec:dynPhaseArti}
+Ces différents niveaux permettent soit de mettre en évidence les différences entre la sélection et le reste du jeu de données, soit de mettre en place un environnement de travail épuré sur une sélection d’intérêt pour l'utilisateur. Ces niveaux s'appliquent à la fois pour la partie visuelle et analytique via des systèmes de rendus visuels propres à chaque espace.
 
-% \subsection{Subsection2}
-% \label{sec:hypoarticulation}
-% \lipsum[1-2]
-
-% \subsection{Subsection3}
-% \label{Sec:hypoarticulation}
-% \lipsum[1-2]
-
-% \section[Modèle de contrôle alternatif utilisant des gestes de sélection]{Modèle de contrôle alternatif utilisant des gestes de sélection pour le déclenchement des phases VC et CV}
-% \lipsum[1-2]
 
 \section{Résumé et conclusion}
 \label{sec:ConclusionVisuAna}
