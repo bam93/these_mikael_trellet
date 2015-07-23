@@ -71,6 +71,11 @@ Kristin~A. \bgroup\fonteauteurs\bgroup Cook\egroup\egroup{} et James~J.
 \newblock Rapport technique PNNL-SA-45230, Pacific Northwest National
   Laboratory (PNNL), Richland, WA (US), mai 2005.
 
+\bibitem[DeL02]{delano_pymol_2002}
+Warren~L \bgroup\fonteauteurs\bgroup DeLano\egroup\egroup{} :
+\newblock The {PyMOL} molecular graphics system.
+\newblock 2002.
+
 \bibitem[KKEM10]{keim2010mastering}
 Daniel~A \bgroup\fonteauteurs\bgroup Keim\egroup\egroup{}, J{\"o}rn
   \bgroup\fonteauteurs\bgroup Kohlhammer\egroup\egroup{}, Geoffrey
@@ -79,6 +84,15 @@ Daniel~A \bgroup\fonteauteurs\bgroup Keim\egroup\egroup{}, J{\"o}rn
 \newblock {\em Mastering the information age-solving problems with visual
   analytics}.
 \newblock Florian Mansmann, 2010.
+
+\bibitem[RBD14]{rysavy_dive:_2014}
+S.J. \bgroup\fonteauteurs\bgroup Rysavy\egroup\egroup{},
+  D.~\bgroup\fonteauteurs\bgroup Bromley\egroup\egroup{} et
+  V.~\bgroup\fonteauteurs\bgroup Daggett\egroup\egroup{} :
+\newblock {DIVE}: {A} {Graph}-{Based} {Visual}-{Analytics} {Framework} for
+  {Big} {Data}.
+\newblock {\em IEEE Computer Graphics and Applications},
+  34\string:\penalty500\relax 26--37, mars 2014.
 
 \bibitem[SAR{\etalchar{+}}07]{smith_obo_2007}
 Barry \bgroup\fonteauteurs\bgroup Smith\egroup\egroup{}, Michael
