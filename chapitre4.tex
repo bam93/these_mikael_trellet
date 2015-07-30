@@ -28,8 +28,8 @@
 	\item 5 requêtes SPARQL pour classification des mots-clés du moteur de traduction
 	\item Schéma de l'application
 	\item Structure 3d GLIC+bromoforme
-	\item Requêtes SPARQL analyses simples/complexes
-	\item Temps d'execution des différentes actions au sein de l'application
+	\item Requêtes SPARQL analyses simples/complexes - TO DO
+	\item Temps d'exécution des différentes actions au sein de l'application - TO DO
 \end{enumerate}
 
 \section{Introduction}
@@ -48,6 +48,22 @@ Notre but est donc de placer l'utilisateur au centre d'une boucle de décision d
 \subsection{Visualisation analytique}
 
 L'association étroite entre la visualisation d'informations scientifiques et les analyses associées, dans un même espace et simultanément, met en avant des techniques de visualisation connues et souvent définies en visualisation analytique. Cette discipline récente a en effet pour but de faciliter l'analyse visuelle de données complexes et/ou scientifiques et se définie par le "raisonnement analytique au travers d'interfaces visuelles interactives" \cite{cook_illuminating_2005}. Elle se place à la frontière de nombreux domaines de visualisation, d'interaction ou de perception afin de mettre en avant des informations qui n'auraient pu apparaître lors de l'utilisation cloisonnée des différents domaines mis en jeu. La visualisation analytique s'appuie sur des méthodes de visualisation simples et compréhensibles par l'être humain auxquelles elle ajoute une dimension interactive afin de les relier entre elles. Elle s'inspire donc par plusieurs niveaux aux études d'interactions homme-machine dont la réalité virtuelle s'inspire également \cite{arias-hernandez_visual_2011}. Son principal but est de mettre l'être humain au centre d'une boucle de décision qui sera facilitée par la mise en relation de données de différentes natures et de différentes sources. Ce contexte de travail généré par la visualisation analytique doit être cohérent pour le chercheur. C'est à ce niveau que le domaine de la perception et des études cognitives interviennent afin d'assurer une pleine compréhension et utilisation de l'espace de travail.
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=.75\linewidth]{./figures/ch4_structural_biology_process}}
+    \caption{{\it Processus séquentiel standard de l'étude d'un système moléculaire en biologie structurale.}}
+  \label{Fig:schema_seq_bio_struct}
+  \hspace{0.3cm}
+\end{figure}
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=.75\linewidth]{./figures/ch4_structural_biology_optim.pdf}}
+    \caption{{\it Processus séquentiel optimisé pour l'étude d'un système moléculaire en biologie structurale.}}
+  \label{Fig:schema_seq_bio_optim}
+  \hspace{0.3cm}
+\end{figure}
 
 La visualisation analytique vise donc à combiner la visualisation de données passées en entrée et leurs analyses afin de créer de nouvelles connaissances qui pourront elles-mêmes être utilisées par la suite en entrée de la boucle. Ce processus, expliqué par Keim et al. \cite{keim2010mastering}, forme ainsi une boucle d'analyse fermée qui vient raccourcir considérablement la boucle habituelle présentée dans la figure X. Une nouvelle représentation de cette boucle intégrant la visualisation analytique peut être observée dans la figure Y.
 
@@ -74,7 +90,7 @@ Les graphes conceptuels sont un premier moyen de formaliser les connaissances \c
 Plusieurs outils ou techniques découlent de ce couplage étroit entre visualisation de données brutes et analyses associées caractéristique de la visualisation analytique \cite{cockburn2008review}:
 
 \begin{enumerate}
-    \item "Overview+Detail": Cette technique fournit plusieurs vues, dont une présente une vue globale, dans des espaces distincts. Les vues peuvent être synchrones ou asynchrones et cette asynchronisme peut être propre à la vue globale ou à la vue en détails. Une interaction dans l'une ou les autres des vues n'a donc pas forcément une conséquence dans les autres vues, cependant, dans la plupart des cas, il existe une synchronisation assurant une cohérence et un lien entre les données affichées. Un exemple connu est Google Maps illustré dans la figure X qui présente deux échelles spatiales différentes dans deux fenêtres distinctes. Seule l'interaction dans la fenêtre de contexte globale (la plus grande / principale) a un effet dans la seconde fenêtre.
+    \item "Overview+Detail": Cette technique met en relation plusieurs vues, synchrones ou asynchrones et dont l'une présente une vue globale du sujet,le tout dans des espaces visuels distincts. L'absence de synchronisation peut se retrouver dans la vue globale ou dans la vue détaillées. Une interaction dans l'une ou les autres des vues n'entraîne pas obligatoirement un changement dans les autres vues. Cependant, dans la plupart des cas, les vues sont synchrones et une cohérence est assurée entre les données affichées afin de pouvoir lier leur contenu. Une application connue de cette technique est retrouvée dans les programmes de visualisation de cartes comme illustré dans la figure X. Ces visualiseur de cartes géographiques présentent deux échelles spatiales différentes dans deux fenêtres distinctes. Seule l'interaction dans la fenêtre de contexte globale (la plus grande / principale) a un effet dans la seconde fenêtre.
     \item "Zooming": Cette technique se base cette fois sur une séparation temporelle des vues. Un zoom avant amènera une vue plus détaillée d'une scène alors qu'un zoom arrière apportera une vue plus globale. La transition entre les différentes échelles de vue peut être continue ou discrète et présenter une animation ou non. L'un des problèmes majeur de cette technique est la difficulté pour l'utilisateur d'inverser une action de zoom. En effet, la notion de défaire ou d'annuler une action en informatique fait souvent référence à des actions ayant eu pour effet de modifer l'état des données et non la vue de l'utilisateur.
     \item "Focus+Context": Cette technique permet à l'utilisateur de se concentrer sur une partie intéressante des données visualiser sans perdre le contexte global dans lequel s'inscrivent ces données. Les informations présentées dans le contexte global ne sont pas nécessairement identiques à celles présentées en détail mais les deux échelles d'information peuvent être associées à travers un affichage dynamique simple. Par exemple, si différents sets de données ont leurs entrées liées par au minimum une propriété équivalente, la sélection d'un point dans un set particulier sélectionne également toutes les points correspondants à ce point dans les autres sets. La figure X nous montre par exemple la sélection d'un modèle Y dans un set de données de simulation moléculaire. Toutes les représentations du modèle Y dans l'espace de visualisation ou d'analyse sont également mises en avant. Cet exemple spécifique est appelé \textit{brush-and-link}.
     \item "Cue-based techniques": Cette technique vise à mettre en avant un sous-ensemble de données intéressantes à l'utilisateur en intervenant sur la façon dont ces données sont affichées. A la différence des autres schémas décrits précédemment, elle n'intervient pas sur la taille des données mais peut être utilisé en conjonction de chacune des techniques précédentes. Elle regroupe des méthodes de brouillage visuel des données, d'ajout de labels ou de mise en place d'élément décoratifs divers pour attirer l'attention de l'utilisateur.
@@ -107,6 +123,14 @@ Les concepts mis en jeu au sein de la plateforme doivent être correctement déf
 
 Le langage de base du web sémantique est le \textit{Resource Description Framework} (RDF) qui est un modèle de graphe destiné à décrire de façon formelle des ressources et leurs métadonnées associées. C'est un équivalent des graphes conceptuels (GC) qui possèdent le même but mais disposent d'opérations différentes. Le langage RDF est souvent associé au web sémantique qui l'utilise afin de mettre en place un réseau de données partagées et libres. L'avantage du langage RDF est sa possibilité d'être étendu et structuré grâce à une couche ontologique appelée \textit{Web Ontology Laguage} (OWL) qui reprend les critères standards des ontologies existantes et qui est le support de nombreuses ontologies recensées dans le portails officiels de bio-ontologies largement utilisées dans la communauté scientifique \cite{smith_obo_2007}.
 
+\begin{figure}
+  \centering
+  {\includegraphics[width=.75\linewidth]{./figures/ch4_ontology.pdf}}
+    \caption{{\it Extrait de l'ontologie OWL créée pour la mise en place de notre représentation sémantique de la plateforme logicielle. Visualisation obtenue avec OWLGrEd \cite{barzdins2010owlgred}}
+  \label{Fig:extract_OWL_ontology}
+  \hspace{0.3cm}
+\end{figure}
+
 \subsection{Ontologie OWL}
 
 Le langage OWL est une recommandation du W3C venu compléter le langage RDF depuis 2012. Il met en oeuvre certaines logiques de description cherchant à préserver la cohérence des données mises en jeu, d'en déduire des nouvelles connaissance ou d'extraire certaines information d'une base de données RDF que l'ontologie définit. Il est donc possible à travers l'utilisation de OWL de mettre en place des règles de définition et de liaisons des concepts afin que tout nouvel individu de la base de données qui sera créé par la suite respecte un modèle de définition commun. 
@@ -121,6 +145,33 @@ Une fois l'ontologie mise en place, il est possible d'alimenter la base de conna
 La description d'un environnement d'intérêt passe par l'analyse de toutes les informations biologiques pouvant être labellisées par une chaîne de caractère ou une valeur et qui correspond à un concept ou une propriété identifiée dans l'ontologie OWL. Chaque information alimentera une base de données RDF organisant toutes les informations, de la même manière que pour les descriptions ontologiques, sous forme de triplets de type Sujet/Propriété/Objet.
 Dans le cas qui nous intéresse pour ce travail de thèse, les simulations numériques moléculaires peuvent être découpées en une succession de modèles statiques 3D successifs. Chaque modèle correspond à l'échelle \textit{Model} décrite dans notre ontologie. C'est le groupe structurel le plus large que nous ayons défini dans les composants structurels biologiques. Plusieurs triplets présents dans notre base de données finale sont illustrés dans la figure X. Chaque atome possède une position 3d ainsi qu'un résidu auquel il appartient et indirectement, de la même manière, une chaîne et un modèle de référence grâce aux règles d'inférence. Cette information n'a donc pas besoin d'être spécifiée puisque les règles d'inférence instaure, entre autres, le fait qu'un résidu est l'un des composants d'une chaîne qui est elle-même composante d'un modèle. Cette information n'est donc pas présente dans la base de données sous forme d'un triplet explicite de type \textit{ATOM\_1234 my\_ontology:belongs\_to CHAIN\_12} mais ce triplet pourra être obtenu lors d'une requête cherchant à identifier par exemple l'identifiant de la chaîne dont l'atome est l'un des composants. Toutes les propriétés géométriques (position, angles, distance, etc...), physico-chimiques (accessibilité, charge partielle, liaisons, etc...) ou analytiques (énergie, RMSD, température, etc...) pouvant être exportées des jeux de données étudiés sont donc intégrés dans a base de données et surtout associés aux individus créés à partir de la simulation. Ces individus sont des instances des concepts définis dans l'ontologie. Ils forment la population de la base de données et la majorité des propriétés définies se rapportent à eux.
 Au-delà du stockage et de la mise à disposition des données suivant les règles pré-définies, la base de donnée RDF et plus particulièrement l'ontologie OWL la décrivant permettent de mettre en place des moteurs d'interprétation de commandes ou requêtes qui vont avoir pour objectif de récupérer une liste d'individus respectant un certain nombre de propriétés énoncées.
+
+\begin{lstlisting}[language=XML, caption=Exemple de triplets RDF présents dans notre base de données]
+
+<owl:ObjectProperty rdf:about="&my;hasSize">
+    <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    <rdfs:domain rdf:resource="&my;AminoAcid"/>
+    <rdfs:range rdf:resource="&my;Size"/>
+    <rdfs:subPropertyOf rdf:resource="&my;has_property"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="&my;chain_id">
+    <rdfs:range rdf:resource="&xsd;int"/>
+</owl:DatatypeProperty>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/trellet/ontologies/2015/0/VisualAnalytics#ATOM_36795">
+	<my:atom_id rdf:datatype="http://www.w3.org/2001/XMLSchema#int">125</my:atom_id>
+	<my:time_frame rdf:datatype="http://www.w3.org/2001/XMLSchema#int">190</my:time_frame>
+	<rdf:type rdf:resource="http://www.semanticweb.org/trellet/ontologies/2015/0/VisualAnalytics#Atom"/>
+	<my:pos_z rdf:datatype="http://www.w3.org/2001/XMLSchema#double">22.33</my:pos_z>
+	<my:atom_type>CB</my:atom_type>
+	<my:pos_x rdf:datatype="http://www.w3.org/2001/XMLSchema#double">21.86</my:pos_x>
+	<my:uniq_id rdf:datatype="http://www.w3.org/2001/XMLSchema#int">36795</my:uniq_id>
+	<my:pos_y rdf:datatype="http://www.w3.org/2001/XMLSchema#double">31.6</my:pos_y>
+	<my:belongs_to rdf:resource="http://www.semanticweb.org/trellet/ontologies/2015/0/VisualAnalytics#RES_3622"/>
+</rdf:Description>
+
+\end{lstlisting}
 
 \subsection{Requêtes SPARQL comme base logicielle}
 
@@ -151,6 +202,14 @@ Une fois la réception des mots-clés effectuée, notre moteur va catégoriser c
 
 Cette classification se fait via des requêtes SPARQL spécifiques pour chaque catégorie. Alors que les catégories action, composant, propriété et représentation peuvent être identifiée seule, la catégorie identifiant est directement liée à un composant. Étant donné la possible redondance des identifiants dans une base de donnée de simulation moléculaire puisque l'intégralité d'un système y est retrouvé autant de fois qu'il y a d'unité de temps découpant la trajectoire, il est nécessaire d'avoir une association forte entre un identifiant et le composant, quel que soit son niveau structurel. Un identifiant ne pourra donc être classé comme tel que si un composant existe, et seulement si ce composant possède effectivement l'identifiant demandé. Les commandes SPARQL permettant de dire si un mot-clé appartient ou non à une catégorie utilise l'opérateur \textit{ASK} qui prend en argument un ou plusieurs triplets et retourne un booléen \textit{true} si l'ensemble des triplets se vérifie (existe) dans la base de données et \textit{false} si au moins un triplet n'est pas présent. Les cinq requêtes SPARQL formulées pour la classification sont donc construites sur la même forme illustrée dans la figure/équation X. Il est important de préciser, que de la même manière que d'autres requêtes SPARQL standards, les règles de raisonnement et d'inférence sont utilisées lors des requêtes. La requête \textit{Alanine rdfs:subClassOf my\_ontology:Biological\_component} renverra donc \textit{true} malgré l'absence de lien direct, le concept \textit{Residue} se situant entre ces deux concepts.
 SHOULD WE DESCRIBE EACH CATEGORY ???
+
+\begin{listings}[language=XML, caption=Requêtes SPARQL effectuées pour tester la nature des mots-clés entrés par l'utilisateur]
+ASK {my:Hide rdfs:subClassOf my:Action}
+ASK {my:Alanine rdfs:subClassOf my:Biological_component}
+ASK {my:Cartoon rdfs:subClassOf my:Representation}
+ASK {my:Red rdfs:subClassOf my:Colors}
+ASK {my:Aliphatic rdfs:subClassOf my:Property}
+\end{listings}
 
 \paragraph{Action}
 
