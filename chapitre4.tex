@@ -51,7 +51,7 @@ L'association étroite entre la visualisation d'informations scientifiques et le
 
 \begin{figure}
   \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch4_structural_biology_process}}
+  {\includegraphics[width=.75\linewidth]{./figures/ch4/ch4_structural_biology_process}}
     \caption{{\it Processus séquentiel standard de l'étude d'un système moléculaire en biologie structurale.}}
   \label{Fig:schema_seq_bio_struct}
   \hspace{0.3cm}
@@ -59,7 +59,7 @@ L'association étroite entre la visualisation d'informations scientifiques et le
 
 \begin{figure}
   \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch4_structural_biology_optim.pdf}}
+  {\includegraphics[width=.75\linewidth]{./figures/ch4/ch4_structural_biology_optim.pdf}}
     \caption{{\it Processus séquentiel optimisé pour l'étude d'un système moléculaire en biologie structurale.}}
   \label{Fig:schema_seq_bio_optim}
   \hspace{0.3cm}
@@ -98,6 +98,14 @@ Plusieurs outils ou techniques découlent de ce couplage étroit entre visualisa
 
 La visualisation analytique possède donc les outils nécessaires au couplage visualisation et analyses propres à l'étude d'une simulation moléculaire. En reprenant le schéma de la visualisation analytique proposé par Keim \textit{et al.} il est facile de considérer, dans notre cas, les données en entrée comme les coordonnées 3D des modèles générés à chaque pas de temps de la simulation ainsi que les propriétés physico-chimiques associées. Il est également possible d'y ajouter des résultats d'analyses. En utilisant des rendus visuels définis pour chaque information à observer (rendu 3D navigable pour les coordonnées 3D des complexes moléculaires, plots et graphes pour les données d'analyses, etc...) et en liant ces rendus entre-eux, il est possible de mettre en place des techniques de Focus+Context ou de Overview+Detail détaillés précédemment. Chaque point d'un graphique devra avoir son équivalent représenté dans le rendu visuel 3D afin de pouvoir créer un lien entre les deux et ainsi ressortir un comportement commun lors de la sélection de ce point particulier par l'utilisateur.
 
+\begin{figure}
+  \centering
+  {\includegraphics[width=.75\linewidth]{./figures/ch4/ch4_visu2d_visu3d_link.pdf}}
+    \caption{{\it Illustration du lien entre des diagrammes de dispersion présentant deux résultats d'analyses et un visualiseur 3d. Une sélection d'individus dans les diagrammes entraîne une coloration et une mise en avant de la représentation 3d de ces mêmes individus.}
+  \label{Fig:extract_OWL_ontology}
+  \hspace{0.3cm}
+\end{figure}
+
 \subsection{Application en RV}
 
 Parmi les différentes techniques de visualisation analytique citées précédemment, celle du Focus+Context, et plus spécifiquement de la technique du \textit{brush-and-link}, est un candidat pertinent pour mettre en avant des informations supplémentaires obtenues à partir des analyses indépendantes effectuées sur une simulation. En biologie structurale, les résultats d'analyse peuvent souvent être représentés au travers de nuages de points, d'histogrammes ou de diagrammes à bandes. Ces représentations s'adaptent particulièrement bien à la technique du \textit{brush-and-link} puisque la sélection de sous-ensembles y est aisée. De plus, la perspective d'une fenêtre dynamique regroupant le contexte global et les détails dans un même ensemble est particulièrement adapté à un environnement immersif. En effet, l'immersion peut être considérablement impactée, et ce de façon négative, lors du partage spatial du dispositif immersif en plusieurs contextes de travail.
@@ -125,7 +133,7 @@ Le langage de base du web sémantique est le \textit{Resource Description Framew
 
 \begin{figure}
   \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch4_ontology.pdf}}
+  {\includegraphics[width=.75\linewidth]{./figures/ch4/ch4_ontology.pdf}}
     \caption{{\it Extrait de l'ontologie OWL créée pour la mise en place de notre représentation sémantique de la plateforme logicielle. Visualisation obtenue avec OWLGrEd \cite{barzdins2010owlgred}}
   \label{Fig:extract_OWL_ontology}
   \hspace{0.3cm}
@@ -236,7 +244,7 @@ Une fois que chaque mot-clé est identifié, il est nécessaire d'identifier les
 
 \begin{figure}
   \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch4_visu_ana_semantic_schema.pdf}}
+  {\includegraphics[width=.75\linewidth]{./figures/ch4/ch4_visu_ana_semantic_schema.pdf}}
     \caption{{\it Représentation schématique des modules et leur connectivité au sein de notre programme de visualisation analytique.}}
   \label{Fig:schema_prog_visu_ana}
   \hspace{0.3cm}
