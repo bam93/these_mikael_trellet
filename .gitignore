@@ -1,2 +1,3 @@
 # Exclude any keynote directories
 *.key/
+*.pse

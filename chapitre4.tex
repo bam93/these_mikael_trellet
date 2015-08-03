@@ -101,8 +101,8 @@ La visualisation analytique possède donc les outils nécessaires au couplage vi
 \begin{figure}
   \centering
   {\includegraphics[width=.75\linewidth]{./figures/ch4/ch4_visu2d_visu3d_link.pdf}}
-    \caption{{\it Illustration du lien entre des diagrammes de dispersion présentant deux résultats d'analyses et un visualiseur 3d. Une sélection d'individus dans les diagrammes entraîne une coloration et une mise en avant de la représentation 3d de ces mêmes individus.}
-  \label{Fig:extract_OWL_ontology}
+    \caption{\it Illustration du lien entre des diagrammes de dispersion présentant deux résultats d'analyses et un visualiseur 3d. Une sélection d'individus dans les diagrammes entraîne une coloration et une mise en avant de la représentation 3d de ces mêmes individus.}
+  \label{Fig:bilateral_selection}
   \hspace{0.3cm}
 \end{figure}
 
@@ -134,7 +134,7 @@ Le langage de base du web sémantique est le \textit{Resource Description Framew
 \begin{figure}
   \centering
   {\includegraphics[width=.75\linewidth]{./figures/ch4/ch4_ontology.pdf}}
-    \caption{{\it Extrait de l'ontologie OWL créée pour la mise en place de notre représentation sémantique de la plateforme logicielle. Visualisation obtenue avec OWLGrEd \cite{barzdins2010owlgred}}
+    \caption{\it Extrait de l'ontologie OWL créée pour la mise en place de notre représentation sémantique de la plateforme logicielle. Visualisation obtenue avec OWLGrEd \cite{barzdins2010owlgred}}
   \label{Fig:extract_OWL_ontology}
   \hspace{0.3cm}
 \end{figure}
@@ -145,7 +145,11 @@ Le langage OWL est une recommandation du W3C venu compléter le langage RDF depu
 Comme le montre la figure X, nous avons essayé de définir de façon complète l'ensemble des concepts que l'utilisateur aurait à manipuler lors de ses activités de visualisation et d'analyses synchronisées. 
 Nous l'avons vu auparavant, plusieurs bio-ontologies ont été mises en place ces dernières années. Afin d'avoir une description la plus précise qui soit des concepts biologiques mis en jeu, nous nous sommes appuyés sur une ontologie déjà existante et disponible en ligne décrivant de façon complète les acides aminés et leurs propriétés \url{http://bioportal.bioontology.org/ontologies/AMINO-ACID}. Cette ontologie nous a permis de poser les bases biologiques d'un des principaux concepts de biologie structurale. En rassemblant des informations telles que la taille, l'hydrophobicité ou bien la charge de chaque acide-aminé il est ainsi possible d'extraire rapidement des groupes d'acides aminés possédant les mêmes propriétés et ainsi utiliser ces propriétés pour des raisonnements complexes lors de l'interrogation de la base de données. Parmi les nombreuses autres bio-ontologies disponibles, aucune d'entre-elles parvenait à définir aussi simplement que nous le désirions les autres concepts dont nous avions besoin. Leur complexité souvent beaucoup trop importante aurait rapidement surchargé notre ontologie. Nous avons donc créer notre propre définition de ces concepts et ainsi éviter un surplus considérable de concepts/propriétés inutilisés provenant d'ontologies trop précises. Il est cependant important de noter qu'une extension de notre ontologie est possible et même encouragée. Cette extension pourrait par exemple compléter et étoffer certaines propriétés biologiques intéressantes pour des études précises.
 En plus des concepts biologiques cités précédemment, nous avons également cherché à définir tous les concepts d'analyses et d'action qui seront en jeu lors de la session d'utilisation de notre plateforme. Les actions rassemblent toutes les actions que l'utilisateur pourrait vouloir effectuer avec les données qu'il manipule, de façon directe ou indirecte. Elles reprennent essentiellement les commandes permises par les logiciels de visualisation moléculaire et les outils d'analyse que nous utilisons. Dans les concepts analytiques sont rassemblés les éléments graphiques ou abstraits qui rentrent en jeu dans la création et la visualisation d'un résultat d'analyse. Nous ne définissons pas, volontairement, les processus d'analyse eux-mêmes car ceux-ci peuvent être de natures très différentes et possèdent un champ de définition bien trop large et complexe pour le sujet de cette thèse. De plus, nous séparons volontairement la visualisation des résultats d'analyses des processus/modules d'analyses. Cela ne signifie pas que certains processus d'analyses ne seront pas utiliser au sein de la plateforme logicielle, il n'est simplement pas pertinent de les ajouter à l'ontologie dans le but d'uniformiser les rendus 3D et d'analyses.
-De nombreuses informations peuvent être extraites de la simple description d'un concept via les jeux d'inférence et de règles propres au langage OWL. Ce dernier décrit plusieurs relations entre les concepts et/ou les propriétés permettant d'obtenir plusieurs descriptions à partir d'une seule. Si la transitivité permettant de dire que {{Pour tout a.... FORMULE MATH}} est l'une des plus utilisée et des plus implémentée dans les langages ontologiques, il est cependant plus rare de trouver les notions de symétrie, de disjonction ou d'inversion. SHOULD WE EXPLAIN ALL OF THEM ?
+De nombreuses informations peuvent être extraites de la simple description d'un concept via les jeux d'inférence et de règles propres au langage OWL. Ce dernier décrit plusieurs relations entre les concepts et/ou les propriétés permettant d'obtenir plusieurs descriptions à partir d'une seule. Si la transitivité, permettant de dire que si \textit{a} appartient à \textit{b} et \textit{b} appartient à \textit{c} alors \textit{a} appartient à \textit{c},
+est l'une des propriétés plus utilisée et des plus implémentée dans les langages ontologiques, il est cependant plus rare de trouver les notions de symétrie, de disjonction ou d'inversion. 
+
+SHOULD WE EXPLAIN ALL OF THEM ?
+
 Une fois l'ontologie mise en place, il est possible d'alimenter la base de connaissance en ajoutant les informations biologiques regroupées par l'expert scientifique. Ces informations vont devoir respecter le vocabulaire et la classification définie par les règles présentes dans l'ontologie OWL.
 
 \subsection{Base de données RDF/(S)}
@@ -167,16 +171,16 @@ Au-delà du stockage et de la mise à disposition des données suivant les règl
     <rdfs:range rdf:resource="&xsd;int"/>
 </owl:DatatypeProperty>
 
-<rdf:Description rdf:about="http://www.semanticweb.org/trellet/ontologies/2015/0/VisualAnalytics#ATOM_36795">
-	<my:atom_id rdf:datatype="http://www.w3.org/2001/XMLSchema#int">125</my:atom_id>
-	<my:time_frame rdf:datatype="http://www.w3.org/2001/XMLSchema#int">190</my:time_frame>
-	<rdf:type rdf:resource="http://www.semanticweb.org/trellet/ontologies/2015/0/VisualAnalytics#Atom"/>
-	<my:pos_z rdf:datatype="http://www.w3.org/2001/XMLSchema#double">22.33</my:pos_z>
+<rdf:Description rdf:about="my:ATOM_36795">
+	<my:atom_id rdf:datatype="http://www.w3.org/...#int">125</my:atom_id>
+	<my:time_frame rdf:datatype="http://www.w3.org/...#int">190</my:time_frame>
+	<rdf:type rdf:resource="my:Atom"/>
+	<my:pos_z rdf:datatype="http://www.w3.org/...#double">22.33</my:pos_z>
 	<my:atom_type>CB</my:atom_type>
-	<my:pos_x rdf:datatype="http://www.w3.org/2001/XMLSchema#double">21.86</my:pos_x>
-	<my:uniq_id rdf:datatype="http://www.w3.org/2001/XMLSchema#int">36795</my:uniq_id>
-	<my:pos_y rdf:datatype="http://www.w3.org/2001/XMLSchema#double">31.6</my:pos_y>
-	<my:belongs_to rdf:resource="http://www.semanticweb.org/trellet/ontologies/2015/0/VisualAnalytics#RES_3622"/>
+	<my:pos_x rdf:datatype="http://www.w3.org/...#double">21.86</my:pos_x>
+	<my:uniq_id rdf:datatype="http://www.w3.org/...#int">36795</my:uniq_id>
+	<my:pos_y rdf:datatype="http://www.w3.org/...#double">31.6</my:pos_y>
+	<my:belongs_to rdf:resource="my:RES_3622"/>
 </rdf:Description>
 
 \end{lstlisting}
@@ -211,13 +215,13 @@ Une fois la réception des mots-clés effectuée, notre moteur va catégoriser c
 Cette classification se fait via des requêtes SPARQL spécifiques pour chaque catégorie. Alors que les catégories action, composant, propriété et représentation peuvent être identifiée seule, la catégorie identifiant est directement liée à un composant. Étant donné la possible redondance des identifiants dans une base de donnée de simulation moléculaire puisque l'intégralité d'un système y est retrouvé autant de fois qu'il y a d'unité de temps découpant la trajectoire, il est nécessaire d'avoir une association forte entre un identifiant et le composant, quel que soit son niveau structurel. Un identifiant ne pourra donc être classé comme tel que si un composant existe, et seulement si ce composant possède effectivement l'identifiant demandé. Les commandes SPARQL permettant de dire si un mot-clé appartient ou non à une catégorie utilise l'opérateur \textit{ASK} qui prend en argument un ou plusieurs triplets et retourne un booléen \textit{true} si l'ensemble des triplets se vérifie (existe) dans la base de données et \textit{false} si au moins un triplet n'est pas présent. Les cinq requêtes SPARQL formulées pour la classification sont donc construites sur la même forme illustrée dans la figure/équation X. Il est important de préciser, que de la même manière que d'autres requêtes SPARQL standards, les règles de raisonnement et d'inférence sont utilisées lors des requêtes. La requête \textit{Alanine rdfs:subClassOf my\_ontology:Biological\_component} renverra donc \textit{true} malgré l'absence de lien direct, le concept \textit{Residue} se situant entre ces deux concepts.
 SHOULD WE DESCRIBE EACH CATEGORY ???
 
-\begin{listings}[language=XML, caption=Requêtes SPARQL effectuées pour tester la nature des mots-clés entrés par l'utilisateur]
+\begin{lstlisting}[language=XML, caption=Requêtes SPARQL effectuées pour tester la nature des mots-clés entrés par l'utilisateur]
 ASK {my:Hide rdfs:subClassOf my:Action}
 ASK {my:Alanine rdfs:subClassOf my:Biological_component}
 ASK {my:Cartoon rdfs:subClassOf my:Representation}
 ASK {my:Red rdfs:subClassOf my:Colors}
 ASK {my:Aliphatic rdfs:subClassOf my:Property}
-\end{listings}
+\end{lstlisting}
 
 \paragraph{Action}
 
