@@ -288,7 +288,7 @@ Les logiques de 1er ordre, 2e ordre et propositionnelles sont 3 propositions de 
 	\item Les \textit{lois de Morgan} qui sont des identités entre propositions logiques énonçant que "non(A et B) est (non A) ou (non B)" et "non(A ou B) est (non A) et (non B)".
 \end{itemize}
 
-Parmi les logiques classiques, la logique du 1er ordre (ou calcul des prédicats) introduit les symboles mathématiques permettant de formuler des modèles de relations au sein d'ensembles mathématiques. On retrouve dans ces symboles: Les variables, les prédicats (ou relations), les connecteurs logiques (et, ou, etc.) et deux quantificateurs universel \forall ("Quel que soit", "Pour tout") et existentiel \exists ("il existe au moins un ... tel que"). Les formules logiques déduites des énoncés de calculs de prédicats ont pour but de s'appliquer à n'importe quel modèle où l'on retrouve des variables, des fonctions et des prédicats représentant respectivement les éléments de l'ensemble, les fonctions de l'ensemble et les parties (ou sous-ensembles) de l'ensemble.
+Parmi les logiques classiques, la logique du 1er ordre (ou calcul des prédicats) introduit les symboles mathématiques permettant de formuler des modèles de relations au sein d'ensembles mathématiques. On retrouve dans ces symboles: Les variables, les prédicats (ou relations), les connecteurs logiques (et, ou, etc.) et deux quantificateurs universel $\forall$ ("Quel que soit", "Pour tout") et existentiel $\exists$ ("il existe au moins un ... tel que"). Les formules logiques déduites des énoncés de calculs de prédicats ont pour but de s'appliquer à n'importe quel modèle où l'on retrouve des variables, des fonctions et des prédicats représentant respectivement les éléments de l'ensemble, les fonctions de l'ensemble et les parties (ou sous-ensembles) de l'ensemble.
 
 
 \paragraph{Logique de description}
@@ -372,6 +372,33 @@ OWL est composé de 3 sous-langages classés du moins expressif au plus expressi
 
 Nous venons d'évoquer la possibilité d'utiliser un moteur d'inférence afin d'extraire des données d'une base de données RDF. Cette extraction peut se faire via l'utilisation d'un protocole et langage de requête appelé SPARQL. Ce langage permet à la fois de récupérer des données stockées sous format RDF dans une base de données mais également de les éditer, d'en ajouter ou bien d'en supprimer. L'accès aux bases de données se fait grâce à une interface d'accès (en anglais \textit{endpoint}) géré par un service capable de recevoir des requêtes SPARQL et de renvoyer des résultats sous différents formats.
 A la différence du SQL, SPARQL se base essentiellement sur le format en triplets des bases de données RDF et la majorité de ses requêtes repose sur la mise en place d'un schéma de correspondance entre triplets sujet/prédicat/objet. Il n'y a pas de contraintes de typage pour la colonne objet qui est habituellement implicite ou définie par l'ontologie. Dans le même esprit, l'ontologie est directement intégrée dans les résultats de requêtes et le schéma de données n'a donc pas besoin d'être appliqué de façon séparée. SPARQL fournit également plusieurs opérations sur les résultats comme SORT, JOIN, DISTINCT, qui permettent un traitement direct des résultats afin de les classer ou filtrer suivant les besoins...\footnote{\url{http://www.cambridgesemantics.com/semantic-university/sparql-vs-sql-intro}} Certains mots-clés de SQL ont été conservé tels que SELECT, FROM, WHERE, etc.
+Une requête SPARQL se retrouve sous la forme suivante:
+
+SELECT ?x ?id
+FROM <http://my\_database.com> 
+WHERE {
+	?y my:est-composé-de ?x .
+	?y rdf:type my:Chain .
+	?y my:chain\_id "B" .
+	?x my:res\_id ?id
+}
+
+Dans son fonctionnement, SPARQL va effectuer deux opérations successives sur la base de données. Une première étape est la recherche des triplets correspondant au modèle de triplet énoncé dans la requête. C'est l'étape de restriction qui va retourner l'ensemble des lignes de la base de données construits sur ce motif et comportant les valeurs spécifiées quand elles le sont (ici \textit{my:a-une-charge}, \textit{my:positive} et \textit{my:res\_id}). Cette étape se rapporte donc à ce qui se trouve dans le "WHERE". Lorsque les triplets sont identifiés, SPARQL va sélectionner uniquement les variables demandées au niveau du mot-clé "SELECT", ici ?x et ?id. C'est l'étape de projection qui va venir sélectionner les colonnes que l'utilisateur a demandé parmi les lignes sélectionnées dans l'étape précédente. Le résultat de la requête pourrait donc être:
+
+\begin{center}
+ \begin{tabular}{|c | c|} 
+ \hline
+ ?x & ?id \\ [0.5ex] 
+ \hline
+ RES\_11 & 1 \\ 
+ RES\_12 & 2 \\
+ RES\_13 & 3 \\
+ RES\_14 & 4 \\
+ RES\_15 & 5 \\
+ \hline
+\end{tabular}
+\end{center}
+
 
 De nombreuses librairies permettent d'utiliser des points d'accès SPARQL afin d'y présenter des requêtes et d'en récupérer leurs résultats. Cette implémentation présente dans de nombreux langages de programmation assure une certaine généricité du travail d'interfaçage nécessaire dans une suite logicielle multi-composants.
 
