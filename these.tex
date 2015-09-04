@@ -35,6 +35,7 @@
 
 % Choix de la langue
 \usepackage[english,francais]{babel}
+\NoAutoSpaceBeforeFDP
 %% Pour une thèse en français et en anglais
 % puis dans le corps du document utiliser...
 %\selectlanguage{francais} % pour écrire en français
@@ -174,7 +175,11 @@
   basicstyle=\ttfamily,
   columns=fullflexible,
   showstringspaces=false,
-  commentstyle=\color{gray}\upshape
+  commentstyle=\color{gray}\upshape,
+  inputencoding=ansinew,
+  literate=%
+  	{é}{{\'e}}1
+  	{â}{{\^{a}}}1
 }
 
 \lstdefinelanguage{XML}

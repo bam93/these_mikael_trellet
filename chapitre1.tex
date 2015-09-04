@@ -307,7 +307,8 @@ Enfin, plusieurs programmes de visualisation analytique se sont appuyés sur la 
 
 \subsection{Web sémantique et formalismes à base de graphes}
 
-Le Web sémantique est un mouvement collaboratif mené par le \textit{World Wide Web Consortium} visant à développer des méthodes communes pour l'échange de données sur le Web. Le but du Web sémantique est de structurer et lier les connaissances présentes sur internet afin d'en faciliter le traitement et la recherche à travers le monde. Selon la définition même du W3C, \textit{le Web sémantique fournit un modèle qui permet aux données d'être partagées et réutilisées entre plusieurs applications, entreprises et groupes d'utilisateurs.} Le concept de Web sémantique n'est pas un modèle universellement adopté et, pour le moment, il se retrouve seulement dans plusieurs initiatives indépendantes attachées aux domaines de l'industrie, de la biologie et des sciences humaines. Plusieurs chercheurs ont travaillé à son utilisation et les conséquences d'un passage de l'ensemble des acteurs du web à un tel concept \cite{feigenbaum_semantic_2007}. Nous pouvons citer comme initiatives notables DBpedia, un effort pour publier les données extraites de wikipedia sous format RDF et interrogeables via SPARQL que nous décrivons ci-après \cite{auer2007dbpedia} ou le projet Data.bnf.fr\footnote{\url{http://data.bnf.fr}} qui intègre des données provenant de formats divers (Itermarc\footnote{\url{http://www.bnf.fr/fr/professionnels/f_intermarc/s.format_intermarc_biblio.html}}, XML-EAD et Dublin Core \cite{weibel1998dublin} pour la bibliothèque numérique), les regroupant et les formalisant par des traitements automatiques et les publiant dans divers standards du Web sémantique basés sur le RDF \textit{Resource Description Framework} (RDF-XML, RDF-N3 et RDF-NT, voir section \ref{rdf_model}.
+
+Le Web sémantique est un mouvement collaboratif mené par le \textit{World Wide Web Consortium} visant à développer des méthodes communes pour l'échange de données sur le Web. Le but du Web sémantique est de structurer et lier les connaissances présentes sur internet afin d'en faciliter le traitement et la recherche à travers le monde. Selon la définition même du W3C, \textit{le Web sémantique fournit un modèle qui permet aux données d'être partagées et réutilisées entre plusieurs applications, entreprises et groupes d'utilisateurs.} Le concept de Web sémantique n'est pas un modèle universellement adopté et, pour le moment, il se retrouve seulement dans plusieurs initiatives indépendantes attachées aux domaines de l'industrie, de la biologie et des sciences humaines. Historiquement, le Web sémantique doit ses premiers pas à Tim Berners-Lee, le directeur actuel du W3C, qui pose les premières bases d'un environnement où les données seraient classées afin de pouvoir être rapidement mises en relation et partagées \cite{berners2001semantic}. Plusieurs chercheurs ont travaillé à son utilisation et les conséquences d'un passage de l'ensemble des acteurs du web à un tel concept \cite{feigenbaum_semantic_2007}. Nous pouvons citer comme initiatives notables DBpedia, un effort pour publier les données extraites de wikipedia sous format RDF et interrogeables via SPARQL que nous décrivons ci-après \cite{auer2007dbpedia} ou le projet Data.bnf.fr\footnote{\url{http://data.bnf.fr}} qui intègre des données provenant de formats divers (Itermarc\footnote{\url{http://www.bnf.fr/fr/professionnels/f_intermarc/s.format_intermarc_biblio.html}}, XML-EAD et Dublin Core \cite{weibel1998dublin} pour la bibliothèque numérique), les regroupant et les formalisant par des traitements automatiques et les publiant dans divers standards du Web sémantique basés sur le RDF \textit{Resource Description Framework} (RDF-XML, RDF-N3 et RDF-NT, voir section \ref{rdf_model}.
 Le Web sémantique se base sur un formalisme grandement inspiré des logiques de description. Le modèle de graphe associé au web sémantique est le RDF \cite{klyne2006resource}. Il est structuré par le RDFS (RDF Schema) \cite{brickley2004rdf} qui décrit les vocabulaires (ontologies) sur lesquelles des ressources RDF se basent à la manière d'une DTD (Document Type Definition) pour le XML (eXtensible Markup Language) qui permet de mettre en place une hiérarchie au niveau des balises utilisée dans un document XML. 
 L'ensemble des caractéristiques principales du RDFS sont repris dans un langage ontologique plus expressif appelé OWL \cite{mcguinness2004owl}. OWL fonctionne de la même manière que RDFS en étendant certaines logiques sémantiques pour le RDF. La structuration des ressources RDF avec RDFS et OWL permet l'interrogation de ces ressources par le langage de requête SPARQL (SPARQL Protocol and RDF Query Language) \cite{prud2008sparql}. RDF, RDFS, OWL et SPARQL sont tous les 4 des recommandations du W3C pour le Web sémantique et ils disposent d'une intégration de plus en plus élargie au sein des technologies et contenus web destinés au partage de connaissances et à leur traitement.
 
@@ -315,21 +316,88 @@ L'ensemble des caractéristiques principales du RDFS sont repris dans un langage
 
 Le langage RDF est le langage de base du Web Sémantique qui l'utilise afin de mettre en place un réseau de données partagées et libres. C'est un modèle de graphe destiné à décrire de façon formelle des ressources et leurs métadonnées associées, de façon à permettre leur traitement automatique.
 
-Le modèle RDF se base sur une représentation des connaissances à partir de triplets. Le triplet est la plus petite division de connaissances en RDF et toute description de données est un ensemble de triplets comprenant:
+Le modèle RDF se base sur une représentation des connaissances à partir de triplets \. Le triplet est la plus petite division de connaissances en RDF et toute description de données est un ensemble de triplets comprenant:
 
-\textit{(sujet, prédicat, objet)}
+\begin{lstlisting}
+(sujet, prédicat, objet)
+\end{lstlisting}
 
 Le \textit{sujet} représente la ressource que nous cherchons à décrire. Le \textit{prédicat} représente une propriété pouvant être associée à la ressource. L'\textit{objet} peut représenter soit une ressource, soit une donnée, cela correspond à la valeur de la propriété.
 Chaque ressource est identifiée par une URI (Uniform Ressource Identifier) alors qu'une donnée est anonyme puisque pouvant être dupliquée (valeur numérique, chaîne de caractère, etc.). Un exemple de triplet pourrait être:
 
-\textit{(http://mon-ontologie.fr/\#Pierre, http://mon-ontologie.fr/\#âge, xsd:int\#26)}
+\begin{lstlisting}
+http://mon-ontologie.fr/#Pierre 	http://mon-ontologie.fr/#âge	xsd:int^^26
+\end{lstlisting}
 
-Les ressources de ce triplet (\textit{sujet} et \textit{prédicat}) sont décris par leur URI qui est constitué d'une partie fixe (\textit{http://mon-ontologie.fr/\#}) identifiant le moyen de localiser la ressource et une partie variable (\textit{Pierre} et \textit{âge}) correspondant au nom de la ressource identifiée. Les URI les plus connues et utilisées sont les URL permettant d'accéder à des ressources internet mais les numéros ISBN référençant les livres sont également des URI.
+Les ressources de ce triplet (\textit{sujet} et \textit{prédicat}) sont décris par leur URI qui est constitué d'une partie fixe (\textit{http://mon-ontologie.fr/\#}) identifiant le moyen de localiser la ressource et une partie variable (\textit{Pierre} et \textit{âge}) correspondant au nom de la ressource identifiée. Les URI les plus connues et utilisées sont les URL permettant d'accéder à des ressources internet mais les numéros ISBN référençant les livres sont également des URI. La notion d'URI est importante dans le modèle RDF car ce sont ces URI qui permettent de désigner de façon non-ambiguë une ressource que l'on souhaite décrire. Lors de la mise en place d'une nouvelle base de donnée, il est courant de créer son propre domaine de définition ou préfixe afin d'identifier toute ressource, classe ou propriété nouvelle décrite. Dans la suite de ce chapitre, nous considérerons \textit{http://mon-ontologie.fr/\#} comme notre ensemble de définition et nous le préfixerons grâce au mot-clé \textit{my}. En langage RDF, cela se caractériserait par la ligne suivante:
+
+\begin{lstlisting}
+@prefix my:    <http://mon-ontologie.fr/#>
+\end{lstlisting}
+
+La présence de cette ligne en en-tête d'un document RDF permet de réécrire l'exemple précédent:
+
+\begin{lstlisting}
+my:Pierre 	my:âge	xsd:int^^26
+\end{lstlisting}
+
 Dans des termes propres aux bases de données relationnelles SQL, RDF peut être considéré comme une table composée de 3 colonnes, sujet, prédicat, objet. A la différence de SQL cependant, la colonne objet est hétérogène et le type de donnée par cellule est sous-entendue (ou spécifié dans l'ontologie, voir \ref{rdfs}) par la valeur du prédicat.
 
-De la même manière que les graphes conceptuels, le document RDF décrivant un ensemble de données peut être représenté par un multigraphe orienté étiqueté. Chaque triplet est représenté par un arc orienté dont les extrémités sont le sujet et l'objet et le label de l'arc correspond au prédicat.
+De la même manière que les graphes conceptuels, le document RDF décrivant un ensemble de données peut être représenté par un multigraphe orienté étiqueté. Chaque triplet est représenté par un arc orienté dont les extrémités sont le sujet et l'objet et le label de l'arc correspond au prédicat. L'exemple précédent est illustré sous forme de graphe orienté ci-après:
 
-Le modèle de représentation RDF s'appuie sur un formalisme précis et standardisé qui permet l'uniformisation des données représentées et la mise en place de lien entre ces données. Ce formalisme n'est qu'une méthode de représentation et ne constitue pas une logique de raisonnement qui permettrait d'extraire des connaissances de ces données. C'est dans ce but qu'a été créé RDFS et OWL, des langages formels servant à décrire des ontologies. A la différence des données RDF qui sont de l'ordre du \textit{factuel}, une ontologie permet de décrire les concepts et les relations entre ces concepts et constitue la partie \textit{structurelle} du Web sémantique.
+\begin{lstlisting}
+GRAPHE Pierre --âge--> 25
+\end{lstlisting}
+
+\paragraph{Formats et langages autour du RDF}
+
+Les données RDF peuvent être représentées sous différents formats, du plus lisible pour l'être humain au plus optimisé pour les ordinateurs. De la même façon, ils peuvent répondre à différentes applications logicielles et donc ont été décliné également pour leur intégration dans d'autres formats courants.
+
+La syntaxe usuelle du RDF est le XML appelé \textbf{RDF/XML}. Le format par balises du XML et les attributs associés ainsi que sa possibilité de définir des hiérarchies sont des caractéristiques du RDF/XML particulièrement appréciés pour représenter des ressources et leurs propriétés. Cette syntaxe est définie par le W3C et fut le premier standard de format pour le modèle RDF \cite{beckett2004rdf}.
+
+Le \textbf{RDFa} (RDF dans des Attributs) est un ensemble d'éléments et d'attributs permettant d'ajouter des données RDF à des documents HTML ou XML \cite{adida2008rdfa}. Il se base sur une partie de la syntaxe HTML qu'il reprend dans l'attribut \textit{classe}, qui va préciser le type de l'objet, l'attribut \textit{id}, qu va permettre de définir l'URI de l'objet et les attributs \textit{rel}, \textit{rev} et \textit{href} qui vont spécifier des relations avec d'autres ressources. Le RDFa possède également ses propres attributs dont les plus importants sont \textit{about}, permettant d'ajouter une URI décrivant la ressource décrite par les métadonnées, \textit{property} qui va permettre d'ajouter des propriétés à la ressource décrite.
+
+Le \textbf{GRDDL} (pour Gleaning Resource Descriptions from Dialects of Languages) est un langage, recommandé par le W3C \cite{connolly2007gleaning}, permettant d'extraire des données RDF depuis un document XML ou XHTML grâce à des algorithmes de transformation et peut fonctionner comme implémentation du XSLT (Extensible Stylesheet Language Transformations, langage de transformation du XML en formats plus lisibles comme l'HTML, le PDF ou le PNG par exemple).
+
+La \textbf{Notation3} ou \textbf{N3} est une norme de sérialisation non-XML pour le modèle RDF. Elle a été mise en place afin de fournir une syntaxe plus compacte et plus facile à lire. Elle a été développé, entre autres, par Tim Berners-Lee au sein de la communauté du Web sémantique \cite{berners2008n3logic}. La norme N3 est davantage qu'une norme de sérialisation pour RDF puisqu'elle supporte également les règles basées sur RDF. Elle permet l'utilisation de symboles spécifiques pour éviter la répétition de motifs communs entre les triplets. Par exemple:
+
+\begin{lstlisting}
+my:Alanine	rdf:type 	my:Acide-aminé ; 
+	my:a-une-charge		my:Positive ; 
+	my:est-composé-de 	my:Carbon_alpha, my:Carbon_beta	
+\end{lstlisting} 
+
+
+Ici le ";" est utilisé afin de conservé le sujet (<Alanine>) alors que la "," est elle utilisée pour conservé le sujet et le prédicat (<Alanine> et my:est-composé-de).
+
+Le \textbf{Turtle} est un sous-ensemble de la syntaxe N3 n'existant pour le moment que sous forme de recommandation du W3C \cite{prud2013turtle}. Sa majeur différence avec le N3 est syntaxique. Il se rapproche beaucoup du format utilisé dans le langage de requête SPARQL (voir \ref{sparql}).
+
+\textbf{N-Triplet} est un autre sous-ensemble de N3 beaucoup plus explicite puisque ne comportant pas de symboles particuliers simplifiant les descriptions de ressources. Son utilisation se limite souvent aux jeu de données RDF relativement restreints car son traitement a un coût computationnel assez élevé et la taille des fichiers générés est conséquente.
+
+\textbf{JSON-LD} (ou JavaScriptObjectNotation for Linked Data) est une méthode de transmission des données liées RDF basée sur JSON. Pour rappel, JSON est un format standard ouvert largement utilisée dans les protocoles de communication asynchrones entre serveurs et clients web. Il se base sur la déclaration de structures clé/valeur, particulièrement adaptées à la description de concepts. 
+Dans le cadre de JSON-LD, les clés sont les propriétés du concept, associées à leur valeur. Les valeurs peuvent être des références à d’autres concepts, des nombres ou encore du texte simple\footnote{\url{http://www.woptimo.com/2015/02/json-ld-la-revolution-semantique-des-microdonnees/}}. Deux propriétés sont obligatoires, \textit{context} et \textit{type}, et définissent respectivement l'ontologie utilisée et le meta-concept du concept courant (la ressource décrite). Un exemple de document JSON-LD est présenté ci-dessous:
+
+\begin{lstlisting}[language=XML]
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org/",
+	"@type": "Movie",
+	"name": "Brannigan",
+	"genre": "Thriller",
+	"trailer": "https://www.youtube.com/watch?v=gAhzli9jbKU",
+	"actors":
+		{
+		"@type": "Person",
+		"name": "John Wayne",
+		"birthDate": "1907-05-26"
+		}
+}
+</script>
+\end{lstlisting}
+
+JSON-LD tend à devenir la nouvelle norme, majoritairement grâce à son interaction avec les bases de données, en particulier NoSQL. Le domaine du \textit{Big Data} connaît un essor exponentiel et beaucoup de grands acteurs du web (Google, Amazon, Twitter, etc.) migrent vers des paradigmes NoSQL, plus rapides. Les API qu'ils mettent à disposition sont accessibles à travers le protocole HTTP et utilisent le format JSON pour communiquer. Trois raisons principales pour l'utilisation de ce format: Sa compréhension aisée, sa structuration et son faible poids. L'ajout d'une couche sémantique avec JSON-LD en est donc grandement facilitée. 
+
+Nous avons vu que le modèle de représentation RDF s'appuie sur un formalisme précis et standardisé qui permet l'uniformisation des données représentées et la mise en place de lien entre ces données. Ce formalisme n'est qu'une méthode de représentation et ne constitue pas une logique de raisonnement qui permettrait d'extraire des connaissances de ces données. C'est dans ce but qu'a été créé RDFS et OWL, des langages formels servant à décrire des ontologies. A la différence des données RDF qui sont de l'ordre du \textit{factuel}, une ontologie permet de décrire les concepts et les relations entre ces concepts et constitue la partie \textit{structurelle} du Web sémantique.
 OWL et RDFS reprennent les critères standards des ontologies existantes et qui est le support de nombreuses ontologies recensées dans le portails officiels de bio-ontologies largement utilisées dans la communauté scientifique \cite{smith_obo_2007}.
 
 \subsubsection{RDF Schema} \label{rdfs}
@@ -340,16 +408,19 @@ Par exemple, RDF permet de décrire qu'une <Lysine> \textit{a une charge} <posit
 RDFS introduit également la notion de domaine de définition (\textit{rdfs:domain}) et d'ensemble d'arrivée (\textit{rdfs:range}) pour les propriétés. Le domaine de définition correspond à la classe des sujets liés à une propriété alors que l'ensemble d'arrivée correspond à la classe ou au type de données des valeurs de la propriété. Il est par exemple possible de préciser que la propriété <identifiant> doit avoir comme domaine de définition seulement des individus de classe <Objets> et comme ensemble de définition des valeurs de type <xsd:integer>.
 Le système d'implication de RDFS fonctionne également avec les notions de domaine d'application et d'ensemble de définition. De ce fait, ces 3 affirmations:
 
-<Alanine> \textit{est-un} <Acide-aminé>,
-<Protéine> \textit{contient} <Lysine>,
-<contient> \textit{rdfs:range} <Acide-aminé> 
+\begin{lstlisting}
+<my:Alanine>	<my:est-un>		<my:Acide-aminé> .
+<myProtéine>	<my:contient>	<my:Lysine> .
+<my:contient>	<rdfs:range>	<my:Acide-aminé> 
+\end{lstlisting}
 
 permettent d'induire l'affirmation suivante:
 
-<Lysine> \textit{est-un} <Acide-aminé>
+\begin{lstlisting}
+<my:Lysine>		<my:est-un>		<my:Acide-aminé>
+\end{lstlisting}
 
-
-\subsubsection{OWL}
+\subsubsection{OWL} \label{owl}
 
 OWL est donc un standard informatique visant également à jouer le rôle de grammaire pour le langage RDF en complément du RDFS à qui il reprend ses bases. Le langage OWL se base sur des éléments des logiques de description et constitue un standard informatique permettant de vérifier que les données soient cohérentes, de déduire de nouvelles connaissances de ces données ou d'en extraire certaines informations.
 Plus expressif que RDFS, OWL permet d'adjoindre à la définition des relations entre objets par des assertions fournie par RDFS, des propriétés reliant les classes à travers des relations de symétrie, d'équivalences, de cardinalité, etc. entre les classes. 
@@ -357,23 +428,28 @@ Il est donc possible de mettre en place des associations de classes et de propri
 
 Si l'on étend l'exemple précédent avec les notions apportées par OWL au sein des triplets suivants:
 
+\begin{lstlisting}
 <est-composé-de> \textit{est} <owl:TransitiveProperty>,
 <Protéine> <est-composé-de> <Acide-aminé>,
 <Acide-aminé> <est-composé-de> <Atome>
+\end{lstlisting}
 
 nous pouvons donc en déduire, grâce au caractère transitif de la propriété <est-composé-de>, que:
 
+\begin{lstlisting}
 <Protéine> <est-composé-de> <Atome>
+\end{lstlisting}
 
 De la même manière, il est possible de définir des propriétés comme symétriques, asymétriques, inverses, réflexives, etc.\footnote{\url{http://www.w3.org/2007/OWL/wiki/Quick_Reference_Guide}}
 OWL est composé de 3 sous-langages classés du moins expressif au plus expressif: OWL-Lite, OWL-DL et OWL-Full. Parmi ces sous-langages, seul OWL-Lite est implémenté sous forme d'algorithmes décidables dans la majorité des moteurs d'inférence utilisé lors de l'interrogation de bases de données RDF possédant une ontologie OWL associée. La simplicité d'OWL-Lite lui permet une complexité réduite et donc un temps de calcul également réduit lors de son utilisation. Il regroupe les principales relations et descriptions de classe amenée par OWL et permet ainsi une mise en place de logiques descriptives suffisamment évoluées pour permettre l'extraction de nouvelles connaissances à partir de données simples.
 
-\subsection{SPARQL}
+\subsubsection{SPARQL} \label{sparql}
 
 Nous venons d'évoquer la possibilité d'utiliser un moteur d'inférence afin d'extraire des données d'une base de données RDF. Cette extraction peut se faire via l'utilisation d'un protocole et langage de requête appelé SPARQL. Ce langage permet à la fois de récupérer des données stockées sous format RDF dans une base de données mais également de les éditer, d'en ajouter ou bien d'en supprimer. L'accès aux bases de données se fait grâce à une interface d'accès (en anglais \textit{endpoint}) géré par un service capable de recevoir des requêtes SPARQL et de renvoyer des résultats sous différents formats.
 A la différence du SQL, SPARQL se base essentiellement sur le format en triplets des bases de données RDF et la majorité de ses requêtes repose sur la mise en place d'un schéma de correspondance entre triplets sujet/prédicat/objet. Il n'y a pas de contraintes de typage pour la colonne objet qui est habituellement implicite ou définie par l'ontologie. Dans le même esprit, l'ontologie est directement intégrée dans les résultats de requêtes et le schéma de données n'a donc pas besoin d'être appliqué de façon séparée. SPARQL fournit également plusieurs opérations sur les résultats comme SORT, JOIN, DISTINCT, qui permettent un traitement direct des résultats afin de les classer ou filtrer suivant les besoins...\footnote{\url{http://www.cambridgesemantics.com/semantic-university/sparql-vs-sql-intro}} Certains mots-clés de SQL ont été conservé tels que SELECT, FROM, WHERE, etc.
 Une requête SPARQL se retrouve sous la forme suivante:
 
+\begin{lstlisting}[language=SPARQL]
 SELECT ?x ?id
 FROM <http://my\_database.com> 
 WHERE {
@@ -382,8 +458,9 @@ WHERE {
 	?y my:chain\_id "B" .
 	?x my:res\_id ?id
 }
+\end{lstlisting}
 
-Dans son fonctionnement, SPARQL va effectuer deux opérations successives sur la base de données. Une première étape est la recherche des triplets correspondant au modèle de triplet énoncé dans la requête. C'est l'étape de restriction qui va retourner l'ensemble des lignes de la base de données construits sur ce motif et comportant les valeurs spécifiées quand elles le sont (ici \textit{my:a-une-charge}, \textit{my:positive} et \textit{my:res\_id}). Cette étape se rapporte donc à ce qui se trouve dans le "WHERE". Lorsque les triplets sont identifiés, SPARQL va sélectionner uniquement les variables demandées au niveau du mot-clé "SELECT", ici ?x et ?id. C'est l'étape de projection qui va venir sélectionner les colonnes que l'utilisateur a demandé parmi les lignes sélectionnées dans l'étape précédente. Le résultat de la requête pourrait donc être:
+Dans son fonctionnement, SPARQL va effectuer deux opérations successives sur la base de données. Une première étape est la recherche des triplets correspondant au modèle de triplet énoncé dans la requête. C'est l'étape de restriction qui va retourner l'ensemble des lignes de la base de données construits sur ce motif et comportant les valeurs spécifiées quand elles le sont (ici \textit{my:a-une-charge}, \textit{my:positive} et \textit{my:res\_id}). Cette étape se rapporte donc à ce qui se trouve dans le "WHERE". Lorsque les triplets sont identifiés, SPARQL va sélectionner uniquement les variables demandées au niveau du mot-clé "SELECT", ici ?x et ?id. C'est l'étape de projection qui va venir sélectionner les colonnes que l'utilisateur a demandé parmi les lignes sélectionnées dans l'étape précédente. Le résultat de la requête SPARQL précédente sur le jeu de données fourni en Annexe A pourrait donc être:
 
 \begin{center}
  \begin{tabular}{|c | c|} 
@@ -399,7 +476,7 @@ Dans son fonctionnement, SPARQL va effectuer deux opérations successives sur la
 \end{tabular}
 \end{center}
 
-
+Les résultats sont présentés par défaut sous forme de tableaux par soucis de clarté mais de nombreux services SPARQL permettent leur conversion automatique en un nombre important de formats comme le XML, le JSON, Javascript, Turtle
 De nombreuses librairies permettent d'utiliser des points d'accès SPARQL afin d'y présenter des requêtes et d'en récupérer leurs résultats. Cette implémentation présente dans de nombreux langages de programmation assure une certaine généricité du travail d'interfaçage nécessaire dans une suite logicielle multi-composants.
 
 \subsection{Visualisation analytique interactive pour les données scientifiques}
