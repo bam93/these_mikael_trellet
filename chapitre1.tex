@@ -263,8 +263,12 @@ La méthode de simulation basée sur Monte Carlo est l'une des plus usitées \ci
 
 Le principe de la dynamique moléculaire (MD) repose sur la résolution d'équations thermodynamiques respectant les lois du mouvement de Newton d'un champ de force choisi afin de guider les particules décrivant la protéine vers des configurations spatiales différentes. Son but est donc de simuler les mouvements de particules dans le temps pour des conditions thermodynamiques (température, pression, etc.) précises tout en prenant en compte la mécanique newtonienne régissant les contributions énergétiques de ces particules.
 
-La préparation de la simulation numérique de MD, la structure de départ est introduite dans un environnement atomique, modélisé informatiquement, cherchant à refléter le plus fidèlement possible l'environnement cellulaire dans lequel la protéine évolue \textit{in vivo}. Cet environnement peut être représenté simplement au moyen d'une boîte contenant des molécules d'eau où la protéine sera plongée, ceci constitue un des environnements les plus basiques et les plus utilisés. Dans des environnements plus complexes il est possible de retrouver les ions présents habituellement autour de la protéine ou des structures complexes représentant une partie de composant cellulaire au sein duquel évolue habituellement le complexe moléculaire étudié telle que la membrane cellulaire. 
-La complexité de l'environnement n'est pas seulement dépendant de sa composition et de la richesse de sa représentation mais également du degré de précision choisi pour le modéliser à travers le choix du champ de force.
+La conception d'une dynamique moléculaire doit prendre en compte la puissance de calcul disponible, la taille de la simulation (en nombre de particules), le pas de temps voulu et la durée de simulation pour que la dynamique puisse finir dans un laps de temps acceptable pour l'expérimentateur. La longueur de la simulation doit cependant correspondre à l'échelle de temps du processus biologique étudié. En règle général et dans les publications scientifiques des ces dernières années, les échelles de temps simulées vont de quelques nanosecondes ($10^{-9}$s) à quelques microsecondes ($10^{-6}$s). En parallèle, à des échelles de calcul computationnel, cela correspond de plusieurs jours à plusieurs années de calcul CPU. Cependant, la parallélisation au sein de CPU et maintenant de GPU permet de diviser ces temps par un facteur allant de 10 à quelques milliers afin d'obtenir des temps de calcul s'étalant sur quelques semaines au maximum, dans des centres de calculs spécialisés.
+
+Le modèle 3d de la protéine au départ de la simulation est souvent intégré dans un environnement atomique, modélisé informatiquement, cherchant à refléter le plus fidèlement possible l'environnement cellulaire dans lequel la protéine évolue \textit{in vivo}. Cet environnement peut être représenté simplement au moyen d'une boîte virtuelle contenant des molécules d'eau où la protéine sera plongée, ceci constitue un des environnements les plus basiques et les plus utilisés. Dans des environnements plus complexes il est possible de retrouver les ions présents habituellement autour de la protéine ou des structures complexes représentant une partie de composant cellulaire au sein duquel évolue habituellement le complexe moléculaire étudié telle que la membrane cellulaire. Il est possible d'utiliser un solvant explicite ou implicite pour représenter l'environnement. Les solvants explicites regroupent des particules dont la trajectoire et le comportement devront être calculés explicitement par le champ de force. Ces particules se conformeront aux mêmes types de paramètres physico-chimiques définissant les atomes de la protéine. 
+La boîte de simulation contenant l'ensemble des particules de la protéine et de l'environnement est de taille limitée afin de réduire le volume de simulation et restreindre le nombre calcul. Cependant, les différents bords de la boîte agissent de manière périodique de façon à ce qu'aucune contrainte physique ne s'applique en cas de choc avec les atomes du système. La périodicité assure aussi une homogénéité du nombre de particules puisque les atomes franchissant une limite de la boîte sont transportés sur la face opposée tout en gardant leurs propriétés de vitesse et d'accélération.
+
+Dans le cas de solvant implicite, un potentiel de force moyen est introduit dans le champ de force afin de rendre compte des interactions protéine/solvant. Ainsi une énergie de solvation est calculée et intégrée dans le calcul d'énergie potentiel. Deux types de méthodes permettent de rendre compte de la contribution de cette énergie de solvation: La résolution de l'équation de \textit{Poisson-Boltzmann} et le modèle de \textit{Born} généralisé.
 
 Lorsque la structure de départ et l'environnement ont été défini la simulation moléculaire peut débuter. Une simulation moléculaire se caractérise par l'obtention des accélérations, des vitesses et finalement des positions depuis les forces et les potentiels d'interaction des particules. Les trajectoires des particules peuvent être calculées par différents algorithmes, les plus utilisés et connus étant:
 
@@ -273,24 +277,65 @@ Lorsque la structure de départ et l'environnement ont été défini la simulati
 	$$\overrightarrow{a} = \frac{\overrightarrow{F}}{m}$$
 	Elle se base sur le calcul de la vitesse et de la position à chaque pas de temps suivant ces deux équations:
 
-	$$\overrightarrow{x}(t+1) = \overrightarrow{x}(t) + \overrightarrow{v}(t)\Delta t$$
-	$$\overrightarrow{v}(t+1) = \overrightarrow{v}(t) + \overrightarrow{a}(t)\Delta t$$
+	$$\overrightarrow{x}(n+1) = \overrightarrow{x}(n) + \overrightarrow{v}(n)\Delta t$$
+	$$\overrightarrow{v}(n+1) = \overrightarrow{v}(n) + \overrightarrow{a}(n)\Delta t$$
 
 	où $\overrightarrow{x}$ désigne la position, $\overrightarrow{v}$ désigne la vitesse et $\overrightarrow{a}$ l'accélération d'une particule.
-	Les valeurs pour un pas de temps précis dépendent donc uniquement du pas de temps précédent. Les hypothèses permettant d'utiliser la méthode d'Euler sont que l'on connaît les valeurs pour le pas de temps initial et que ce pas de temps est fixe tout au long de la simulation. La simplicité de la méthode est contrebalancée par son manque de précision et de stabilité.
-	\item L'intégration de \textit{Verlet} pour les positions. Cet algorithme cherche à calculer les positions du prochain pas de temps grâce aux positions du pas de temps courant et du pas de temps omettant donc le facteur vitesse. L'équation appliquée pour obtenir une position est la suivante: $$\overrightarrow{x}(t +\Delta t) = 2\overrightarrow{x}(t) - \overrightarrow{x}(t - \Delta t) + \overrightarrow{a}(t)\Delta t^2 + O(\Delta t^4)$$ où $\overrightarrow{x}$ désigne une position et $\overrightarrow{a}$ l'accélération.
-	On remarque qu'un éventuel problème pourrait survenir pour la première position calculée puisqu'aucune information sur un pas de temps précédent existe. Cependant l'accélération à t$_0$ est connue et permet, grâce au théorème de Taylor, d'approximer la position initiale avec une erreur d'ordre de grandeur négligeable ($O(\Delta t^3)$) en comparaison de l'erreur totale cumulée au cours de la simulation d'ordre de grandeur $O(e^{Lt_n}\Delta t^2)$.
-	\item L'intégration de \textit{Verlet} pour les vitesses. 
-\end{itemize}
- ou/et les vitesses
+	Les valeurs pour un pas de temps précis dépendent donc uniquement du pas de temps précédent. Les hypothèses permettant d'utiliser la méthode d'Euler sont: (1) on connaît les valeurs pour le pas de temps initial, (2) ce pas de temps est fixe tout au long de la simulation. La simplicité de la méthode est contrebalancée par son manque de précision et de stabilité.
+	\item L'intégration \textit{Leap-Frog} est une version modifiée de l'algorithme d'Euler sur laquelle elle repose. Elle se base sur un calcul de la vitesse et des positions décorrélée puisque la vitesse va être calculée pour des pas de temps "demi-entiers". Ce qui se traduit par les deux équations suivantes pour les calculs:
 
-, l'intégration "leapfrog" et la méthode "prédictor-corrector". Le facteur de temps dans les simulation de MD évolue dans un espace discret et tout au long de la simulation, les coordonnées 3d de la structure sont sauvegardées à des pas de temps réguliers afin de pouvoir rejouer la trajectoire de la simulation à tout moment au moyens de programmes de visualisation 3d. Chaque pas de la simulation correspond à un set de coordonnées 3d qui est associé à une valeur d'énergie potentielle.
+	$$\overrightarrow{x}(t+1) = \overrightarrow{x}(t) + \overrightarrow{v}(t+\frac{1}{2})\Delta t$$
+	$$\overrightarrow{v}(t+\frac{1}{2}) = \overrightarrow{v}(t-\frac{1}{2}) + \overrightarrow{a}(t)\Delta t$$
+
+	Les équations ressemblent beaucoup à celles d'Euler mais la différence vient de l'initialisation. Le couple ($\overrightarrow{x}(0),\overrightarrow{v}(0)$) est bien donné mais, pour la vitesse, est donné également:
+
+	$$\overrightarrow{v}(\frac{1}{2}) = \overrightarrow{v}(0) + \overrightarrow{a}(0)\frac{\Delta t}{2}$$
+
+	De cette façon, la position et la vitesse vont jouer à saute-mouton à tour de rôle l'un par dessus l'autre. Cette version "saute-mouton" de la méthode d'Euler a une meilleure conservation de l'énergie est est invariante par renversement.
+	\item L'intégration de \textit{Verlet} pour les positions. Cet algorithme cherche à calculer les positions du prochain pas de temps grâce aux positions du pas de temps courant et du pas de temps omettant donc le facteur vitesse. L'équation appliquée pour obtenir une position est la suivante: 
+
+	$$\overrightarrow{x}(t +\Delta t) = 2\overrightarrow{x}(t) - \overrightarrow{x}(t - \Delta t) + \overrightarrow{a}(t)\Delta t^2 + O(\Delta t^4)$$ 
+
+	où $\overrightarrow{x}$ désigne une position et $\overrightarrow{a}$ l'accélération.
+	On remarque qu'un éventuel problème pourrait survenir pour la première position calculée puisqu'aucune information sur un pas de temps précédent existe. Cependant l'accélération à t$_0$ est connue et permet, grâce au théorème de Taylor, d'approximer la position initiale avec une erreur d'ordre de grandeur négligeable ($O(\Delta t^3)$) en comparaison de l'erreur totale cumulée au cours de la simulation d'ordre de grandeur $O(e^{Lt_n}\Delta t^2)$.
+	\item L'intégration de \textit{Verlet} pour les vitesses se rapproche de la méthode "leapfrog" à l'exception du fait qu'elle calcule la position et la vitesse aux même valeurs de pas de temps. L'approche est identique mais incorpore explicitement la vitesse, résolvant ainsi le problème du premier pas de temps de l'intégration de Verlet pour les positions. L'algorithme peut être simplifié et résumé dans ces 3 étapes:
+	\begin{enumerate}
+		\item On calcule: $\overrightarrow{x}(t+\Delta t) = \overrightarrow{x}(t) + \overrightarrow{v}(t)\Delta t + \frac{1}{2}\overrightarrow{a}(t)\Delta t^2$
+		\item On dérive $\overrightarrow{a}(t+\Delta t)$ à partir du potentiel d'interaction en utilisant $\overrightarrow{x}(t+\Delta t)$
+		\item On calcule: $\overrightarrow{v}(t+\Delta t) = \overrightarrow{v}(t) + \frac{1}{2} (\overrightarrow{a}(t) + \overrightarrow{a}(t+\Delta t))\Delta t$
+	\end{enumerate}
+	Cet algorithme suppose que l'accélération $\overrightarrow{a}(t+\Delta t)$ dépend seulement de la position $\overrightarrow{x}(t+\Delta t)$ et ne dépend pas de la vitesse $\overrightarrow{v}(t+\Delta t)$.
+	\item La méthode \textit{Runge-Kutta} (ou prédicteur-correcteur) possède plusieurs ordres d'application. La méthode RK1 (d'ordre 1) est une simple application de la méthode d'Euler. La méthode RK2 du point milieu est unec composition de la méthode d'Euler qui consiste à estimer la dérivée au pas de temps $t$ pour obtenir la position au demi pas de temps suivant $t+\frac{\Delta t}{2}$ puis de recalculer la dérivée de ce nouveau point pour estimer le point au pas de temps $t+\Delta t$. La méthode RK4 se base sur le même principe, calculant ainsi la position $\overrightarrow{x}(t+\Delta t)$ grâce à la position $\overrightarrow{x}(t)$ mais également en fonction du comportement approché en 3 points intermédiaires. Le comportement de ces points intermédiaires est approché en utilisant à chaque fois la dernière pente connue. Ainsi. chaque nouvelle position tous les pas de temps nécessite 4 évaluations à la différence des 2 évaluations de la méthode d'Euler par exemple.
+\end{itemize}
+
+
+Le choix de l'algorithme à appliqué est difficile du fait de la précision relativement importante qu'elles fournissent toutes. La méthode d'Euler, d'ordre 1, possède deux avantages notable sur les méthodes d'ordre supérieur que sont les intégrations "leapfrog" ou \textit{Runge-Kutta}: (1) Dans le cadre des simulations moléculaires, les forces mises en jeu sont telles qu'il est nécessaire de prendre un pas de temps réduit pour rendre compte d'une précision acceptable de la trajectoire. Or, à des pas de temps très proches, les méthodes d'ordre 1 possèdent une précision presque aussi importante que les méthodes d'odre supérieur. (2) Les ressources calculatoires nécessaires pour l'application des méthodes d'ordre supérieur à 1 sont significativement plus importante que celles nécessaires aux méthodes d'ordre 1. Pour des trajectoires se déroulant sur une période de temps un peu longue, le gain en précision ne justifie pas le temps de calcul dédié à la simulation.  
+
+Comme nous venons de le voir au travers de la description des différentes méthodes d'intégration pouvant être utilisées, le facteur de temps dans les simulation de MD évolue dans un espace discret et tout au long de la simulation, les coordonnées 3d de la structure sont sauvegardées à des pas de temps réguliers afin de pouvoir rejouer la trajectoire de la simulation à tout moment au moyens de programmes de visualisation 3d. Chaque pas de la simulation correspond à un set de coordonnées 3d qui est associé à une valeur d'énergie potentielle.
 
 Parmi les approches de dynamique moléculaire existantes, certaines d'entre-elles se distinguent du schéma classique expliqué précédemment.
 Les premières différences que l'on retrouve se situent tout d'abord dans la préparation et la mise en place des structures de départ. Nous l'avons précisé auparavant, il est possible de retrouver des structures de départ plus ou moins proche de la structure théorique réelle de la protéine étudiée. La présence ou non d'informations structurales provenant d'expériences ou d'études annexes décident de la précision de la structure donnée en entrée.
 Ces informations expérimentales complémentaires peuvent également servir de guides pendant la simulation en elle-même où elles vont venir orienter les changements structurels d'un complexe vers un phénomène structural connu, réduisant ainsi le chemin énergétique qu'il aurait fallu pour atteindre cet état particulier.
+
+\paragraph {Dynamique moléculaire interactive}
+
 De la même manière, certaines dynamiques moléculaires, couplées à des rendus graphiques très performants et des dispositifs d'interactions adaptés, permettent à l'utilisateur de contraindre certaines parties d'une structure moléculaire pendant sa simulation en injectant dans les calculs physiques des forces s'appliquant sur les particules manipulées \cite{bolopion_comparing_2010}.
 
+\subsubsection{Docking moléculaire}
+
+Le docking moléculaire (ou \textit{amarrage} moléculaire en français) consiste à prédire l'orientation d'une molécule par rapport à une seconde losqu'elles se lient pour former un complexe moléculaire stable. Ce domaine de la modélisation moléculaire est de grande importance car la quasi-exclusivité des réactions métaboliques se déroulant au sein d'un organisme se traduisent par la liaison de deux ou plusieurs molécules entre-elles. C'est notamment le cas des protéines dont les fonctions sont dirigées par leur capacité à se lier à des partenaires moléculaires afin d'induire différents effets. Parmi les applications les plus importantes du docking moléculaire, la conception de médicaments dont les molécules vont se lier à une cible moléculaire pour un effet agoniste ou antagoniste est un domaine où les méthodes de docking jouent un rôle primordial. Il est commun de considérer dans un docking une protéine et un ligand. Alors que le ligand va être manipulé afin de se lier à la protéine, cette dernière est relativement rigide et fixe.
+
+Une image souvent utilisée pour représenter le concept de docking moléculaire est le problème du verrou et de la clé. L'idée de ce problème est de trouvé l'orientation correcte de la clé pour ouvrir le verrou. La protéine serait le verrou dont le trou se trouverait à sa surface et le ligand constituerait donc la clé.
+
+Deux approches peuvent être identifiées pour le docking moléculaire.
+
+\paragraph{La complémentarité de forme}
+
+Dans cette approche la protéine et le ligand sont tous deux considérés d'un point de vue géométrique, principalement du point de vue de la géométrie de leur surface. Parmi les descripteurs utilisés pour décrire la protéine et son ligand, la surface accessible au solvant pour la protéine et des descriptifs de complémentarité de surface pour le ligand peuvent être utilisés \cite{shoichet1992molecular}. Des critères d'association et de complémentarité géométriques seront alors utilisés pour évlauer les modèles générés. 
+
+Une autre approche basée sur la complémentarité des surfaces décrit les paramètres hydrophobiques de la protéine en se basant sur les torsions des atomes de la chaîne principale.
+
+De nombreuses méthodes de docking moléculaires sont empruntées à la dynamique moléculaire. Un raccourci rapide et peu précis pourrait décrire une simulation de docking moléculaire comme l'application des méthodes de dynamiques moléculaires à un système composé de deux protéines au lieu d'une seule.
 
 \section{Problématique}
 
