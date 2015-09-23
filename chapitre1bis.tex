@@ -124,7 +124,7 @@ Certaines CAVEs utilisent plus d'un projecteur par écran leur permettant d'affi
 
 \begin{figure}
   \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch2/eve_cave_system}}
+  {\includegraphics[width=.35\linewidth]{./figures/ch2/eve_cave_system}}
     \caption{{\it Photo de EVE, système CAVE présent au LIMSI/CNRS.}}
   \label{Fig:eve_cave_system}
   \hspace{0.3cm}
@@ -137,7 +137,7 @@ Les visiocasques (appelés également casques immersifs ou casques de RV ou enco
 \begin{figure}
   \centering
   {\includegraphics[width=.75\linewidth]{./figures/ch2/pymol_stereo}}
-    \caption{{\it Capture d'écran de PyMol exécuté en mode stéréoscopique "cross_eyes". L'image de la protéine de droite correspond à l’œil gauche et inversement}}
+    \caption{{\it Capture d'écran de PyMol exécuté en mode stéréoscopique "cross-eyes": l'image de la protéine de droite correspond à l'oeil gauche et inversement.}}
   \label{Fig:pymol_stereo}
   \hspace{0.3cm}
 \end{figure}
@@ -145,9 +145,17 @@ Les visiocasques (appelés également casques immersifs ou casques de RV ou enco
 \subsubsection{Interfaces motrices} \label{interface_motor}
 
 Afin de se mouvoir et d'évoluer dans le monde virtuel, l'utilisateur doit pouvoir être positionné par la plateforme de rendu. La navigation dans un environnement virtuel est une problématique cruciale en RV, d'autant plus lorsqu'elle s'effectue au sein d'un environnement virtuel abstrait et en l'absence des repères spatiaux habituellement rencontrés dans le monde réel.
-Parmi les dispositifs permettant de récupérer les positions de la tête ou du corps de l'utilisateur, le \textit{tracking} optique est l'un des plus usité. Il fonctionne au moyen de caméras infra-rouge et de marqueurs réfléchissants (voir figure X). Des motifs de marqueurs vont servir de cibles pour les caméras infra-rouge qui vont opérer une triangulation afin d'en extraire leur position. Chaque motif différent peut être associé à un objet particulier, une partie du corps ou un dispositif d'interaction. Le suivi de la tête est particulièrement utile dans les environnements immersifs puisqu'il permet de connaître la position et l’orientation de la tête et donc du regard au sein du monde virtuel. Grâce à cela, les ordinateurs responsables du rendu graphiques peuvent adapter les images affichées sur les écrans pour qu'elle corresponde au point de vue de l'utilisateur dans le monde virtuel.
+Parmi les dispositifs permettant de récupérer les positions de la tête ou du corps de l'utilisateur, le \textit{tracking} optique est l'un des plus usité. Il fonctionne au moyen de caméras infra-rouge et de marqueurs réfléchissants (voir Figure \ref{Fig:ir-tracking}). Des motifs de marqueurs vont servir de cibles pour les caméras infra-rouge qui vont opérer une triangulation afin d'en extraire leur position. Chaque motif différent peut être associé à un objet particulier, une partie du corps ou un dispositif d'interaction. Le suivi de la tête est particulièrement utile dans les environnements immersifs puisqu'il permet de connaître la position et l’orientation de la tête et donc du regard au sein du monde virtuel. Grâce à cela, les ordinateurs responsables du rendu graphiques peuvent adapter les images affichées sur les écrans pour qu'elle corresponde au point de vue de l'utilisateur dans le monde virtuel.
 Il est également commun d'utiliser le système de \textit{tracking} afin de capturer les gestes de la main afin de mettre en place des interactions précises avec l'environnement. L'interaction par capture peut également se faire au travers de dispositifs d'interaction de nature variée suivant l'activité exécutée en RV. Parmi ces outils spécifiques, la souris 3d également appelée \textit{flystick} ou la manette de jeu sont couramment utilisés dans les environnements immersifs.
 Enfin, il est possible de capturer l'ensemble du corps d'une personne afin de mettre en mouvement sa représentation virtuelle, appelée avatar. L'ensemble des marqueurs vont être répartis sur une combinaison afin d'obtenir la position de l'ensemble des parties mobiles du corps. Cette technique est beaucoup utilisée dans le monde du cinéma par exemple afin d'animer les avatars présents dans les films d'animation. Elle est également utilisée dans la recherche lorsque la perception de soi ou d'un collaborateur est important pour la tâche à effectuée, par exemple au cours d'études ergonomiques.
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=.65\linewidth]{./figures/ch2/IR-tracking}}
+    \caption{{\it Schéma simplifié d'un système de tracking optique basé sur des signaux infrarouges lancés par des caméras et se reflétant sur des marqueurs spécifiques. La configuration spatiale des marqueurs est reconnue par le PC et la position associée est calculée à partir des intersections de rayons infrarouges reflétés.}}
+  \label{Fig:ir-tracking}
+  \hspace{0.3cm}
+\end{figure}
 
 \subsubsection{Interfaces sensori-motrices} \label{interface_sensor-motor}
 
@@ -181,7 +189,15 @@ La biologie structurale n'a su que tardivement se placer par rapport à la RV. C
 D'autres initiatives ponctuelles ont aussi vu le portage d'autres logiciels dans des environnements immersifs mais ces développements spécifiques ont rarement dépassé l'extension du rendu graphique depuis le 2d jusqu'en 3d\footnote{\url{http://www.rug.nl/science-and-society/centre-for-information-technology/research/hpcv/vr\_visualisation/mol\_visualisation?lang=en}} ou la mise en place de librairies comme base de développement d'applications RV pour la visualisation moléculaire \cite{salvadori_moka:_2014}.  Afin d'améliorer l'apprentissage de certains concepts biologiques, il est parfois utile d'en améliorer la perception, en particulier quand ces concepts sont par aspects abstraits. Un projet éducatif a cherché à évaluer l'impact pour les étudiants de visualiser des objets moléculaires en RV dans le cadre de cours de biologie structurale \cite{tan_use_2013}. Selon leurs conclusions, les dispositifs immersifs ont permis un meilleur apprentissage des notions abordées ainsi qu'une compréhension globale de la biologie structurale plus complète.
 La liste des applications mêlant explicitement la biologie structurale et la RV est relativement courte. Le travail d'ingénierie est par aspects déjà fait mais il semble manquer une réflexion ergonomique autour de l'intégration des outils de biologie structurale au sein de dispositifs immersifs. Une première pierre pour cette réflexion pourrait venir, selon nous, du domaine de la visualisation analytique et de ses problématiques, parfois proches de celles que nous retrouvons en RV.
 
-Lorsque l'on s'intéresse à la place de la visualisation analytique dans les disciplines de biologie et de médecine (voir figure X), on s'aperçoit que la visualisation analytique connaît une progression identique à celle de la RV. Il est possible d'expliquer cette croissance par la nécessité de trouver des algorithmes de visualisation adaptés aux données manipulées aujourd'hui.
+Lorsque l'on s'intéresse à la place de la visualisation analytique dans les disciplines de biologie et de médecine (voir Figure \ref{Fig:VA_pubmed_trend}), on s'aperçoit que la visualisation analytique connaît une progression identique à celle de la RV. Il est possible d'expliquer cette croissance par la nécessité de trouver des algorithmes de visualisation adaptés aux données manipulées aujourd'hui.
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=.75\linewidth]{./figures/ch2/VA_pubmed_trend}}
+    \caption{{\it Evolution du pourcentage d'articles de PubMed où le terme "Visual Analytics" est retrouvé soit dans le titre soit dans le résumé au cours des 20 dernières années.}}
+  \label{Fig:VA_pubmed_trend}
+  \hspace{0.3cm}
+\end{figure}
 
 
 \section{Visualisation analytique}
@@ -199,7 +215,7 @@ Elle a par beaucoup de facettes des points communs importants avec la \textbf{vi
 	\item \textbf{La visualisation analytique} est davantage concernée par le couplage de représentations visuelles interactives avec des processus analytiques afin d'extraire de nouvelles informations.
 \end{itemize}
 
-La visualisation analytique vise donc à combiner la visualisation de données passées en entrée et leurs analyses afin de créer de nouvelles connaissances qui pourront elles-mêmes être utilisées par la suite en entrée de la boucle. Ce processus, expliqué par Keim et al. \cite{keim2010mastering}, forme ainsi une boucle d'analyse fermée qui vient raccourcir considérablement la boucle habituelle présentée dans la figure X. Une nouvelle représentation de cette boucle intégrant la visualisation analytique peut être observée dans la figure Y.
+La visualisation analytique vise donc à combiner la visualisation de données passées en entrée et leurs analyses afin de créer de nouvelles connaissances qui pourront elles-mêmes être utilisées par la suite en entrée de la boucle. Ce processus, expliqué par Keim et al. \cite{keim2010mastering}, forme ainsi une boucle d'analyse fermée qui vient raccourcir considérablement la boucle habituelle présentée dans la figure \ref{Fig:schema_seq_bio_struct}. Une nouvelle représentation de cette boucle intégrant la visualisation analytique peut être observée dans la figure \ref{Fig:schema_seq_bio_optim}.
 Cette création de nouvelles connaissances se fait grâce à l'augmentation des capacités cognitives de l'humain induite par les techniques de visualisation d'information à travers 6 moyens basiques \cite{card1999readings,cook_illuminating_2005}:
 
 \begin{enumerate}
@@ -227,22 +243,39 @@ Ces bases ergonomiques de développement doivent diriger au mieux le développem
 Plusieurs outils ou techniques découlent de ce couplage étroit entre visualisation de données brutes et analyses associées caractéristique de la visualisation analytique \cite{cockburn2008review}:
 
 \begin{enumerate}
-    \item "Overview+Detail": Cette technique met en relation plusieurs vues, synchrones ou asynchrones et dont l'une présente une vue globale du sujet,le tout dans des espaces visuels distincts. L'absence de synchronisation peut se retrouver dans la vue globale ou dans la vue détaillées. Une interaction dans l'une ou les autres des vues n'entraîne pas obligatoirement un changement dans les autres vues. Cependant, dans la plupart des cas, les vues sont synchrones et une cohérence est assurée entre les données affichées afin de pouvoir lier leur contenu. Une application connue de cette technique est retrouvée dans les programmes de visualisation de cartes comme illustré dans la figure X. Ces visualiseur de cartes géographiques présentent deux échelles spatiales différentes dans deux fenêtres distinctes. Seule l'interaction dans la fenêtre de contexte globale (la plus grande / principale) a un effet dans la seconde fenêtre.
-    \item "Zooming": Cette technique se base cette fois sur une séparation temporelle des vues. Un zoom avant amènera une vue plus détaillée d'une scène alors qu'un zoom arrière apportera une vue plus globale. La transition entre les différentes échelles de vue peut être continue ou discrète et présenter une animation ou non. L'un des problèmes majeur de cette technique est la difficulté pour l'utilisateur d'inverser une action de zoom. En effet, la notion de défaire ou d'annuler une action en informatique fait souvent référence à des actions ayant eu pour effet de modifer l'état des données et non la vue de l'utilisateur.
-    \item "Focus+Context": Cette technique permet à l'utilisateur de se concentrer sur une partie intéressante des données visualiser sans perdre le contexte global dans lequel s'inscrivent ces données. Les informations présentées dans le contexte global ne sont pas nécessairement identiques à celles présentées en détail mais les deux échelles d'information peuvent être associées à travers un affichage dynamique simple. Par exemple, si différents sets de données ont leurs entrées liées par au minimum une propriété équivalente, la sélection d'un point dans un set particulier sélectionne également toutes les points correspondants à ce point dans les autres sets. La figure X nous montre par exemple la sélection d'un modèle Y dans un set de données de simulation moléculaire. Toutes les représentations du modèle Y dans l'espace de visualisation ou d'analyse sont également mises en avant. Cet exemple spécifique est appelé \textit{brush-and-link}.
+    \item "Overview+Detail": Cette technique met en relation plusieurs vues, synchrones ou asynchrones et dont l'une présente une vue globale du sujet,le tout dans des espaces visuels distincts. L'absence de synchronisation peut se retrouver dans la vue globale ou dans la vue détaillées. Une interaction dans l'une ou les autres des vues n'entraîne pas obligatoirement un changement dans les autres vues. Cependant, dans la plupart des cas, les vues sont synchrones et une cohérence est assurée entre les données affichées afin de pouvoir lier leur contenu. Une application connue de cette technique est retrouvée dans les programmes de visualisation de cartes comme illustré dans la Figure \ref{Fig:overview+detail}. Ces visualiseur de cartes géographiques présentent deux échelles spatiales différentes dans deux fenêtres distinctes. Seule l'interaction dans la fenêtre de contexte globale (la plus grande / principale) a un effet dans la seconde fenêtre.
+    \item "Zooming": Cette technique se base cette fois sur une séparation temporelle des vues. Un zoom avant amènera une vue plus détaillée d'une scène alors qu'un zoom arrière apportera une vue plus globale. La transition entre les différentes échelles de vue peut être continue ou discrète et présenter une animation ou non. L'un des problèmes majeur de cette technique est la difficulté pour l'utilisateur d'inverser une action de zoom. En effet, la notion de défaire ou d'annuler une action en informatique fait souvent référence à des actions ayant eu pour effet de modifier l'état des données et non la vue de l'utilisateur.
+    \item "Focus+Context": Cette technique permet à l'utilisateur de se concentrer sur une partie intéressante des données visualisées sans perdre le contexte global dans lequel s'inscrivent ces données. Les informations présentées dans le contexte global ne sont pas nécessairement identiques à celles présentées en détail mais les deux échelles d'information peuvent être associées à travers un affichage dynamique simple. Par exemple, si différents sets de données ont leurs entrées liées par au minimum une propriété équivalente, la sélection d'un point dans un set particulier sélectionne également toutes les points correspondants à ce point dans les autres sets. La Figure \ref{Fig:focus+context} nous montre par exemple la sélection d'un ensemble de modèles dans un set de données de simulation moléculaire. Au moment de la sélection, toutes les représentations des modèle Y dans les espaces de visualisation ou d'analyse sont également sélectionnées et visuellement mises en avant. Cet exemple spécifique d'utilisation du focus+context est appelé \textit{brush-and-link} et se retrouve dans de nombreux logiciels de visualisation des données sous forme de graphiques simples.
     \item "Cue-based techniques": Cette technique vise à mettre en avant un sous-ensemble de données intéressantes à l'utilisateur en intervenant sur la façon dont ces données sont affichées. A la différence des autres schémas décrits précédemment, elle n'intervient pas sur la taille des données mais peut être utilisé en conjonction de chacune des techniques précédentes. Elle regroupe des méthodes de brouillage visuel des données, d'ajout de labels ou de mise en place d'élément décoratifs divers pour attirer l'attention de l'utilisateur.
 \end{enumerate}
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=.65\linewidth]{./figures/ch2/ch2_overview+detail}}
+    \caption{{\it Exemple d'application utilisant la technique d'"Overview+Detail" où un fond de carte principal possédant une certaine concentration d'informations et ciblant une région particulière (en couleur) est mis dans un contexte plus large et moins détaillé sur un deuxième fond de carte annexe (en noir et blanc).}}
+  \label{Fig:overview+detail}
+  \hspace{0.3cm}
+\end{figure}
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=.75\linewidth]{./figures/ch2/ch2_focus+context}}
+    \caption{{\it Illustration de la sélection simultanée et synchronisée d'un ensemble d'individus dans les deux graphiques exposés. La sélection est effectuée dans le graphique de droite mais se répercute dans le graphique de gauche.}}
+  \label{Fig:focus+context}
+  \hspace{0.3cm}
+\end{figure}
+
 
 \subsection{Applications en biologie structurale}
 \label{Sec:visuAnalyticsStructBio}
 
 Bien qu'étroitement associée à de nombreuses disciplines manipulant des jeux de données de grandes tailles, la visualisation analytique n'est que partiellement utilisée en biologie structurale. La dissociation actuelle entre analyses et visualisation peut expliquer ce retard dans son implémentation au sein des outils de visualisation et modélisation moléculaire.
-Elle possède les outils nécessaires au couplage visualisation et analyses propres à l'étude d'une simulation moléculaire. En reprenant le schéma de la visualisation analytique proposé par Keim \textit{et al.} il est facile de considérer les coordonnées 3D des modèles générés à chaque pas de temps de la simulation ainsi que les propriétés physico-chimiques associées comme données en entrée. En utilisant des rendus visuels définis pour chaque information à observer (rendu 3D navigable pour les coordonnées 3D des complexes moléculaires, plots et graphes pour les données d'analyses, etc.) et en liant ces rendus entre-eux, il est possible de mettre en place des techniques de Focus+Context ou de Overview+Detail qui entraîneront l'adaptation synchronisée des espaces de visualisation et d'analyses \cite{schulz2011visual,kerren_toward_2012}.
+Elle possède les outils nécessaires au couplage visualisation et analyses propres à l'étude d'une simulation moléculaire. En reprenant le schéma de la visualisation analytique proposé par Keim \textit{et al.} il est facile de considérer les coordonnées 3D des modèles générés à chaque pas de temps de la simulation ainsi que les propriétés physico-chimiques associées comme données en entrée. En utilisant des rendus visuels définis pour chaque information à observer (rendu 3D navigable pour les coordonnées 3D des complexes moléculaires, plots et graphes pour les données d'analyses, etc.) et en liant ces rendus entre-eux, il est possible de mettre en place des techniques de Focus+Context ou de Overview+Detail qui entraîneront l'adaptation synchronisée des espaces de visualisation et d'analyses \cite{schulz2011visual,kerren_toward_2012} comme illustrée dans la Figure \ref{Fig:bilateral_selection}.
 On retrouve quelques caractéristiques de ce qu'apporte la visualisation analytique dans des applications comme KING \cite{chen_king_2009} ou DIVE \cite{rysavy_dive:_2014} cherchant à accroître la quantité d'informations disponibles pour l'utilisateur tout en maintenant un lien fort entre les données affichées. Une bonne présentation des informations dans leur contexte et la mise en place de connexions entre-elles apportent un environnement de décision complet pour l'utilisateur. Cytoscape \cite{shannon_cytoscape:_2003,doncheva_topological_2012} est une plateforme logicielle permettant la visualisation de réseaux complexes, notamment biologiques, associées à de nombreux types de données tels des structures 3d protéiques, graphiques d'analyses, etc.
 
 \begin{figure}
   \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch4/ch4_visu2d_visu3d_link.pdf}}
+  {\includegraphics[width=.75\linewidth]{./figures/ch2/ch2_visu2d_visu3d_link}}
     \caption{\it Illustration du lien entre des diagrammes de dispersion présentant deux résultats d'analyses et un visualiseur 3d. Une sélection d'individus dans les diagrammes entraîne une coloration et une mise en avant de la représentation 3d de ces mêmes individus.}
   \label{Fig:bilateral_selection}
   \hspace{0.3cm}
@@ -274,6 +307,14 @@ Les réseaux sémantiques sont destinés à la modélisation hiérarchique de co
 
 Les graphes conceptuels, introduits par Sowa en 1984 \cite{sowa1983conceptual}, tiennent leur origine des réseaux sémantiques \cite{lehmann1992semantic} et sont un moyen de formaliser les connaissances \cite{chein2008graph}. Ce modèle est mathématiquement fondé sur la logique et la théorie des graphes. Cependant, pour raisonner à l'aide de GC, deux approches peuvent être distinguées : (1) considérer les GC comme une interface graphique pour la logique et donc raisonner à l’aide de la logique et (2) considérer les GC comme un modèle de représentation à part entière disposant de ses propres mécanismes de raisonnement fondés sur la théorie des graphes. Dans ce modèle, les concepts et les relations sont des noeuds reliés par des arcs orientés comme illustré dans la figure X. Les connaissances sont donc représentées par des graphes étiquetés dont les mécanismes de raisonnement se basent sur des opérations de graphes et en particulier sur l'\textit{homomorphisme} de graphes (anciennement \textit{projection}).
 Un des inconvénients des GC réside dans leur faible utilisation au sein de la communauté scientifique. Peu de librairies ou applications supportant la notion de GC et la théorie des graphes qu'elle utilise existent. Leur implémentation au sein de suites logicielles en est donc partiellement difficile quand d'autres formalismes proches comportent une intégration plus importante au sein des langages de programmation les plus utilisés. De plus, ils sont exclusivement descriptifs et n'ont que peu d'extensions visées à leur adjoindre une sémantique basée sur la logique afin de pouvoir en extraire des connaissances supplémentaires.
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=.6\linewidth]{./figures/ch2/conceptual_graph}}
+    \caption{\it Exemple de représentation sous forme de graphe conceptuel de deux concepts et une propriété. Ce sous-graphe est orienté (Ici un acide aminé appartient à une chaîne, l'inverse n'est pas vrai.) et étiqueté (les concepts sont $Amino-acid$ et $Chain$ et la propriété $belongs_to$).}
+  \label{Fig:conceptual_graph}
+  \hspace{0.5cm}
+\end{figure}
 
 \paragraph{Logique classique}
 
@@ -309,8 +350,16 @@ Enfin, plusieurs programmes de visualisation analytique se sont appuyés sur la 
 
 Le Web sémantique est un mouvement collaboratif mené par le \textit{World Wide Web Consortium} visant à développer des méthodes communes pour l'échange de données sur le Web. Le but du Web sémantique est de structurer et lier les connaissances présentes sur internet afin d'en faciliter le traitement et la recherche à travers le monde. Selon la définition même du W3C, \textit{le Web sémantique fournit un modèle qui permet aux données d'être partagées et réutilisées entre plusieurs applications, entreprises et groupes d'utilisateurs.} Le concept de Web sémantique n'est pas un modèle universellement adopté et, pour le moment, il se retrouve seulement dans plusieurs initiatives indépendantes attachées aux domaines de l'industrie, de la biologie et des sciences humaines. Historiquement, le Web sémantique doit ses premiers pas à Tim Berners-Lee, le directeur actuel du W3C, qui pose les premières bases d'un environnement où les données seraient classées afin de pouvoir être rapidement mises en relation et partagées \cite{berners2001semantic}. Plusieurs chercheurs ont travaillé à son utilisation et les conséquences d'un passage de l'ensemble des acteurs du web à un tel concept \cite{feigenbaum_semantic_2007}. Nous pouvons citer comme initiatives notables DBpedia, un effort pour publier les données extraites de wikipedia sous format RDF et interrogeables via SPARQL que nous décrivons ci-après \cite{auer2007dbpedia} ou le projet Data.bnf.fr\footnote{\url{http://data.bnf.fr}} qui intègre des données provenant de formats divers (Itermarc\footnote{\url{http://www.bnf.fr/fr/professionnels/f_intermarc/s.format_intermarc_biblio.html}}, XML-EAD et Dublin Core \cite{weibel1998dublin} pour la bibliothèque numérique), les regroupant et les formalisant par des traitements automatiques et les publiant dans divers standards du Web sémantique basés sur le RDF \textit{Resource Description Framework} (RDF-XML, RDF-N3 et RDF-NT, voir section \ref{rdf_model}).
 
-Le Web sémantique se base sur un formalisme grandement inspiré des logiques de description. A l'image de plusieurs modèles du web et de l'Internet, le web sémantique est caractérisé par plusieurs couches de définition selon le schéma présenté dans la figure X. Le modèle de graphe associé au web sémantique est le RDF \cite{klyne2006resource}. Il est structuré par le RDFS (RDF Schema) \cite{brickley2004rdf} qui décrit les vocabulaires (ontologies) sur lesquelles des ressources RDF se basent à la manière d'une DTD (Document Type Definition) pour le XML (eXtensible Markup Language) qui permet de mettre en place une hiérarchie au niveau des balises utilisée dans un document XML. 
+Le Web sémantique se base sur un formalisme grandement inspiré des logiques de description. A l'image de plusieurs modèles du web et de l'Internet, le web sémantique est caractérisé par plusieurs couches de définition selon le schéma présenté dans la Figure \ref{web_semantic_tools}. Le modèle de graphe associé au web sémantique est le RDF \cite{klyne2006resource}. Il est structuré par le RDFS (RDF Schema) \cite{brickley2004rdf} qui décrit les vocabulaires (ontologies) sur lesquelles des ressources RDF se basent à la manière d'une DTD (Document Type Definition) pour le XML (eXtensible Markup Language) qui permet de mettre en place une hiérarchie au niveau des balises utilisée dans un document XML. 
 L'ensemble des caractéristiques principales du RDFS sont repris dans un langage ontologique plus expressif appelé OWL \cite{mcguinness2004owl}. OWL fonctionne de la même manière que RDFS en étendant certaines logiques sémantiques pour le RDF. La structuration des ressources RDF avec RDFS et OWL permet l'interrogation de ces ressources par le langage de requête SPARQL (SPARQL Protocol and RDF Query Language) \cite{prud2008sparql}. RDF, RDFS, OWL et SPARQL sont tous les 4 des recommandations du W3C pour le Web sémantique et ils disposent d'une intégration de plus en plus élargie au sein des technologies et contenus web destinés au partage de connaissances et à leur traitement.
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=.5\linewidth]{./figures/ch2/web_semantic_hierarchy}}
+    \caption{\it Architecture du web sémantique et représentation de ses différentes couches. Cette illustration reprend notamment les standards adoptés en web sémantique et utilisés pour chaque couche d'implémentation: RDF, RDFS, OWL, SPARQL, etc..}
+  \label{Fig:web_semantic_hierarchy}
+  \hspace{0.3cm}
+\end{figure}
 
 \subsubsection{Modèle RDF} \label{rdf_model}
 
