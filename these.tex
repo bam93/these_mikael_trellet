@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt]{book}
+\documentclass[a4paper,11pt,draft]{book}
 
 % ============== Style sections ============ VOIR MACROS pour régler la mise en page
 \setcounter{secnumdepth}{3}% enlève la numérotation après les sections
@@ -193,6 +193,11 @@
   morekeywords={xmlns,version,rdf,rdfs,my,owl}% list your attributes here
 }
 
+% Afin de compiler une version light sans figures
+% \usepackage{comment}
+% \excludecomment{figure}
+% \let\figure\relax
+
 % =========================== Info du document =================================
 
 \title{Exploration et analyse interactive de données moléculaires en condition immersive}
@@ -275,7 +280,7 @@
 
 % Chapitres de la thèse
 \include{chapitre1}
-\include{chapitre1bis}
+%\include{chapitre1bis}
 % \include{./pa1/partie1}
 \include{chapitre2}
 \include{chapitre3}
