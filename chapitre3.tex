@@ -3,13 +3,31 @@
 \minitoc
 \cleardoublepage
 
-L'utilisation de la RV pour l'étude de données scientifiques abstraites rencontre un frein important lorsque les activités 
+Etape explicite de la boucle de biologie structurale (voir Figure \ref{Fig:schema_seq_bio_struct}), la visualisation de modèles 3d de protéines ou de complexes moléculaires permet à l'expert d'extraire de nombreuses informations de façon intuitive et rapide.
+Nous avons cité plusieurs techniques de visualisation moléculaire dans la section \ref{visu_molecular} permettant de mettre en avant des informations structurelles ou physico-chimiques d'un simple coup d'oeil. Bien que ces informations soient déjà relativement complètes dans des environnements standards, elles peuvent être significativement améliorées par l'ajout de la profondeur dans la perception visuelle des données moléculaires. Il est possible de rajouter cette 3e dimension en RV grâce aux environnements immersifs et ainsi permettre une exploration plus naturelle des données.
+Cependant, nous avons mis en exergue le frein que constitue la conscience spatiale altérée de l'utilisateur lors de l'exploration de complexes moléculaire dans des conditions immersives. Au-delà de la limitation spatiale que cela impose à l'utilisateur, cette conscience spatiale dégradée entraîne un malaise réduisant significativement la qualité de l'expérience de l'utilisateur. 
 
-\section{Introduction}
+Pour répondre à ces problèmes issus directement de la RV, de nombreuses études ont été effectuées. Ces études sont cependant exclusivement réservées pour l'exploration de mondes virtuels écologiques, les études de navigation dans les données abstraites et scientifiques sont quant à elles beaucoup plus rares. 
+
+Nous faisons dans ce chapitre un rapide retour sur l'exploration de données moléculaires pour ensuite comparer les méthodes de navigation dans des scènes écologiques avec les méthodes de navigation dans les scènes de données abstraites. Finalement nous présenterons nos développements et apport pour répondre au besoin de paradigmes de navigation adaptés aux données moléculaires.
+
+\section{Navigation dans des données écologiques VS navigation dans données scientifiques abstraites}
+
+La conception de mondes virtuels réalistes et à la taille toujours plus importante a rapidement levé la problématique de la navigation. La dissociation entre les distances pouvant être parcourues dans un monde virtuel et les contraintes dimensionnelles des dispositifs immersifs a rapidement obligé les experts en RV de mettre au point des méthodes de navigation adaptées. Ces nouvelles méthodes ne répondent pas seulement au besoin de changement d'échelle entre l'espace réel d'interaction et l'espace virtuel de navigation, elles doivent également prendre en compte la contre-productivité d'une navigation libre menant souvent à une perte de repères spatiaux. C'est par exemple le cas d'exploration immersive de structures bornées et courbées par des couloirs ou des parois que, sans retour haptique performant, l'utilisateur ne pourra que difficilement éviter. Cette perte de repères spatiaux n'est pas le seul fait de paradigmes de navigation offrant trop de liberté, elle sera également accentuée par l'abstraction des données observées. Alors que la navigation au sein d'une ville ou d'une pièce peut permettre, par l'hétérogénéité des objets/bâtiments/personnages s'y trouvant, de garder une conscience de sa position et de son orientation suffisante, la navigation dans une scène possédant une majorité d'informations abstraites et/ou non orientées diminuera cette capacité à savoir à chaque instant sa position par rapport au contenu et au monde virtuel. Les degrés de liberté de l'utilisateur pour naviguer dans sa scène virtuelle sont également un facteur pouvant compromettre sa bonne conscience spatiale. Alors que les scènes réalistes vont souvent induire une navigation avec 2 degrés de liberté parallèlement au sol virtuel, les scènes possédant des données abstraites peuvent aisément permettre une navigation en 3 dimensions dans l'ensemble du volume composant la scène virtuelle. Cela influe également l'orientation de l'utilisateur qui gardera souvent un point de vue parallèle à l'horizontale de la scène dans le cas de scènes réalistes, point de vue qui n'aura pas les mêmes contraintes lors de la navigation avec 3 degrés de liberté.
+
+La réduction ou l'absence de repères spatiaux n'a pas seulement une conséquence sur le fait qu'un utilisateur puisse se sentir perdu au milieu d'une scène virtuelle. Elles peut également déclencher ou favoriser l'apparition d'un malaise, communément appelé \textit{cybersickness}. 
+
+\subsection{Malaise virtuel ou "cybersickness"}
+
+Le \textit{cybersickness} peut s'apparenter au mal des transports, transposé aux mondes virtuels et pouvant adopter plusieurs niveaux de conséquences pour l'utilisateur. Des simples sensations de chaleur excessive, on retrouve comme symptômes des vertiges ou des maux de ventre, potentiellement très négatifs pour l'expérience de l'utilisateur.
+
+\subsection{Méthodes de navigation dans des scènes virtuelles réalistes}
+
+L'utilisation des moyens de navigation standard en conditions non-immersives (ordinateur de bureau, consoles de jeu, smartphones, etc.), par l'utilisation d'interacteurs fixes comme des manettes, des souris ou d'autres types de dispositifs adaptés à une utilisation à une ou deux mains dans l'espace de travail alloué au dispositif immersif ont motivé plusieurs développements, principalement lors de l'utilisation de casques virtuels, ces derniers s'utilisant bien souvent de façon fixe avec un utilisateur assis. Cependant, la majorité des développements les plus conséquents en RV sont passés par la technologie du \textit{tracking} optique afin de permettre une certaine liberté de mouvement à l'utilisateur. En plus de profiter des espaces d'évolution larges qu'offrent les systèmes CAVE ou de murs d'écrans, les solution de \textit{tracking} permettent une implication plus importante du système vestibulaire de l'utilisateur et ainsi réduisent la décorrélation entre le déplacement virtuel et le déplacement ou mouvement réel. Cette réduction entraîne en parallèle une réduction aussi importante du \textit{cybersickness} ou malaise virtuel que nous abordons plus en détail dans la section \ref{cybersickness}.
 
 \section{Observation de complexes moléculaires de grande taille}
 
-\section{Navigation dans des données écologiques VS navigation dans données scientifiques abstraites}
+
 
 \section{Nouveaux paradigmes pour la RV}
 
