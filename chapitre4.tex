@@ -205,24 +205,24 @@ ASK {my:Red rdfs:subClassOf my:Colors}
 ASK {my:Aliphatic rdfs:subClassOf my:Property}
 \end{lstlisting}
 
-\paragraph{Action}
+\myparagraph{Action}
 
 C'est le concept le plus simple à identifier parmi les mots-clés car il ne nécessite aucune association avec d'autres mots-clés dans notre représentation ontologique. Une liste précise d'action a été identifiée et une correspondance simple nous permet de savoir si le mot employé est une action ou non.
 
-\paragraph{Composant}
+\myparagraph{Composant}
 
 Un composant est un ensemble d'atomes ou un unique atome identifié dans notre ontologie, soit par son niveau hiérarchique (modèle, chaîne, résidu, atome), soit par sa désignation directe (carbone, alanine, eau). Lorsqu'un composant est identifié, on cherchera toujours l'éventuelle présence d'un ou de plusieurs identifiants associés au sein de la liste de mots-clés extraite de la commande vocale.
 
-\paragraph{Identifiant}
+\myparagraph{Identifiant}
 
 Un identifiant ne peut être trouvé seul, il est toujours associé à un concept de type \textit{Composant} qu'il désigne. Les identifiants ont aussi la particularité de ne pas être recherché à un niveau ontologique mais au niveau de la base de données elle-même puisqu'il n'existe pas de listes d'identifiants fixes dans notre ontologie, ces derniers variant significativement entre les modèles PDB que nous pourrions traiter. Lorsqu'un couple composant/identifiant existe au sein de la base de données, ces deux éléments sont regroupés afin de constituer un filtre précis de sous-ensemble structurel.
 
-\paragraph{Propriété}
+\myparagraph{Propriété}
 
 Une propriété met en avant la particularité chimique, physique, biologique ou géométrique d'un composant. Les propriétés, à la différence des identifiants, constituent une liste finie dans notre ontologie et n'ont donc pas besoin d'être associé à un composant afin d'être identifiées. Cependant, certaines propriétés sont directement associées à un niveau hiérarchique précis au sein d'une protéine. On parlera par exemple d'un résidu hydrophobe mais jamais d'une chaîne hydrophile. La cohérence d'une propriété avec les concepts \textit{Composant} identifiés dans la commande doit donc être vérifiée. 
 Les propriétés vont agir comme un filtre direct sur le sous-ensemble structurel sur lequel l'utilisateur veut agir. Ce filtre agira soit en unique sélecteur, rassemblant tous les individus appartenant à un groupe hiérarchique possédant la propriété identifiée, soit en filtre supplémentaire d'un sous-ensemble structurel ayant été identifié en parallèle grâce à d'autres concepts \textit{Composant}.
 
-\paragraph{Représentation}
+\myparagraph{Représentation}
 
 Une représentation est une propriété visuelle associée directement et presque exclusivement à l'espace de visualisation. Les mots-clés désignant des concepts \textit{Représentation} sont associés aux actions centrées sur les changements de visualisation. Ils décrivent les états visuels sur lesquels l'utilisateur voudrait intervenir. Ils rassemblent par exemple les méthodes de représentation utilisés dans le visualiseur moléculaire ainsi que les couleurs utilisées.
 
