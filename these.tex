@@ -250,8 +250,13 @@
 
 %% Remerciements
 \cleardoublepage
-\pdfbookmark[0]{Remerciements}{remerciements}
+% \pdfbookmark[0]{Remerciements}{remerciements}
 \include{remerciements}
+
+%% Abstract
+\cleardoublepage
+% \pdfbookmark[0]{Résumé / Abstract}{resume}
+\include{resume}
 
 
 % Table des mati�res
@@ -262,7 +267,7 @@
 \tableofcontents  % pour afficher la table des mati�res
 
 
-%\adjustmtc[-1] % pour recaler compteur de \minitoc si besoin
+\adjustmtc[2] % pour recaler compteur de \minitoc si besoin
 
 %\mainmatter
 % On bascule la num�rotation des pages en chiffres arabes jusqu'� la fin du
@@ -347,9 +352,9 @@
 %%\clearpage
 %%\skiptoevenpage
 
-\include{resume}
-\addcontentsline{toc}{part}{Résumé / Abstract}  % la d�claration en "part" permet de le mettre en valeur dans la table des mati�res
-\skiptoevenpage % Puis manuellement, mettre l'abstract une page apr�s, puis supprimer les pages blanches de fin (j'ai pas trouv� d'autres mani�res de faire pour avoir une page blanche avant l'abstract et que les liens de la tables des mati�res soient respect�s)
+% \include{resume}
+% \addcontentsline{toc}{part}{Résumé / Abstract}  % la d�claration en "part" permet de le mettre en valeur dans la table des mati�res
+% \skiptoevenpage % Puis manuellement, mettre l'abstract une page apr�s, puis supprimer les pages blanches de fin (j'ai pas trouv� d'autres mani�res de faire pour avoir une page blanche avant l'abstract et que les liens de la tables des mati�res soient respect�s)
 
 %%~ % pour que la page soit la bonne dans la table des mati�re 
 
