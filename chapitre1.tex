@@ -168,10 +168,13 @@ Afin de leur assurer une certaine stabilité, de les guider vers leur lieu d'act
 
 \section{Méthodes et outils de la biologie structurale}
 
-Nous avons vu que la biologie structurale cherchait à décrypter le fonctionnement des biomolécules, et plus particulièrement en étudiant leur structure tridimensionnelle. Les protéines sont des unités biologiques de taille microscopique, leur taille oscillant entre quelques dizaines et quelques centaines d'Angströms (\r{A} = \SI{e-10}{\metre}) et donc invisibles pour des systèmes de photographies standards. En effet, les techniques de microscopie optique standards ne peuvent permettre aujourd'hui une observation à l'échelle atomique, quel que soit l'objet d'étude. Cette taille en Angströms est indicative et utilise une unité peu utilisée pour désigner la taille ou le poids des protéines. On préfère utiliser le kilodalton (kDa) qui est une mesure de masse, 1 Da correspondant à la masse d'un atome d'hydrogène. Un acide aminé représente environ 110 Da et une protéine entre 15 et plusieurs millions de kDa pour les complexes multimériques les plus importants. Leur taille et l'environnement dans lequel elles sont structurées nativement impliquent donc l'utilisation de techniques expérimentales devant à la fois préserver leur nature et ne pas les dégrader, mais également assurer une précision suffisante pour extraire des informations structurales utiles pour la caractérisation de leur fonction.
+Nous avons vu que la biologie structurale cherchait à décrypter le fonctionnement des biomolécules à travers leur structure tridimensionnelle. Les protéines sont des unités biologiques de taille microscopique, leur taille oscillant entre quelques dizaines et quelques centaines d'Angströms (\r{A} = \SI{e-10}{\metre}) et donc invisibles pour des systèmes de photographies standards. En effet, les techniques de microscopie optique standards ne peuvent permettre aujourd'hui une observation à l'échelle atomique, quel que soit l'objet d'étude. Cette taille en Angströms est indicative et utilise une unité peu utilisée pour désigner la taille ou le poids des protéines. On préfère utiliser le kilodalton (kDa) qui est une mesure de masse, 1 Da correspondant à la masse d'un atome d'hydrogène. Un acide aminé représente environ 110 Da et une protéine entre 15 et plusieurs millions de kDa pour les complexes multimériques les plus importants. Cette unité de mesure standard permet de comparer aisément le champ d'application des techniques et méthodes présentées tout au long de cette section.
 
-\subsection{Approches expérimentales}
+L'ensemble des approches expérimentales et théoriques permettant d'étudier la structure des protéines peut être divisé en 3 grandes approches: Les \textbf{techniques expérimentales}, regroupant les techniques utilisant des extraits naturels des protéines étudiées et cherchant à obtenir leur structuration par des outils de mesure \textit{in vitro}. Les approches de \textbf{modélisation/simulation} mettent en place des modèles informatiques de structures 3d à partir d'informations physico-chimiques et/ou statistiques encodées comme paramètres de logiciels de calcul. Enfin, les programmes de visualisation moléculaire vont permettre d'observer et d'analyser les structures obtenues à partir des deux approches précédentes grâce à des codes graphiques précis dans le but d'extraire, d'illustrer ou de communiquer de nouvelles connaissances scientifiques.
 
+\subsection{Expérimentations}
+
+La taille et l'environnement dans lequel les protéines sont nativement structurées impliquent l'utilisation de techniques expérimentales devant à la fois préserver leur nature et ne pas les dégrader, mais également assurer une précision suffisante pour extraire des informations structurales utiles pour la caractérisation de leur fonction.
 Les techniques expérimentales utilisées en biologie structurale pour obtenir la structure tertiaire de biomolécules sont relativement coûteuses en raison de leur complexité. Ce sont donc des méthodes physiques indirectes qui sont principalement utilisées afin d'obtenir des informations sur la structure 3d d'une biomolécule à l'échelle atomique. La plupart de ces techniques mettent en jeu des instruments de mesure de hautes technologies et parfois une préparation complexe, longue et ardue, de l'échantillon.
 
 \subsubsection{Cristallographie à rayons X ou radiocristallographie}
@@ -205,7 +208,7 @@ La technique SAXS est basée sur les interactions élastiques entre les photons 
 L'un des avantages de la technique SAXS par rapport à la cristallographie est l'absence de cristal pour effectuer l'expérience, l'échantillon étant mis en solution. Mais cet avantage est terni par la résolution de la technique qui ne permet pas d'avoir une description atomique d'une biomolécule. Elle est souvent utilisée pour obtenir une structure 3d approximative de complexes moléculaires ou de composants cellulaires de grandes tailles. Une de ces forces repose aussi sur la rapidité de l'expérience qui, en combinant l'ensemble des étapes de préparation, expérimentation et analyses des résultats, peut générer une carte de densité en quelques jours.
 
 
-\subsection{Approches théoriques}
+\subsection{Modélisation et simulation}
 
 En complément des techniques expérimentales, il est possible, et commun, d'utiliser des approches computationnelles afin de compléter les informations structurelles recherchées ou de générer des modèles pour des protéines dont la nature empêche leur étude expérimentale (mauvaise solubilité, instabilité en solution, etc.). Ces approches dites \textit{in silico} sont moins coûteuses que les approches expérimentales, mais souffrent d'une précision moindre et surtout d'un facteur de confiance significativement moins important que les approches énoncées précédemment. Les approches computationnelles ont cependant beaucoup évolué ces deux dernières décennies, portées par l'essor de l'informatique. La puissance de calcul des outils informatiques permet désormais d'intégrer des paramètres physico-chimiques fins à toute simulation numérique cherchant à créer des modèles 3d cohérents de biomolécules à partir de leur simple séquence primaire. Le fossé préalablement existant entre la précision des techniques expérimentales et computationnelles diminue donc rapidement même si pour le moment les résultats obtenus par ces méthodes sont dans la majorité des cas vérifiés ultérieurement de manière expérimentale.
 
@@ -215,13 +218,15 @@ La modélisation moléculaire regroupe entre autres les méthodes capables de g�
 
 La représentation du niveau énergétique d'une protéine peut être faite de différentes manières suivant la précision recherchée et les ressources de calcul à disposition. L'un des enjeux de la modélisation moléculaire est la recherche d'un équilibre entre une précision suffisante pour que le modèle d'une protéine soit considéré comme pertinent et la puissance de calcul nécessaire à sa génération qui doit raisonnable, tant d'un point de vue temporel qu'économique.
 
-\subsubsection{Modèle quantique}
+\subsubsection{Modèles et niveaux d'échelle}
 
-Nous ne ferons qu'une brève étape sur les modèles \textit{quantiques} biologiques du fait de leur complexité et l'impossibilité de leur application sur des systèmes moléculaires de plus de quelques dizaines d'atomes. Il est cependant important de noter que les modèles quantiques sont les modèles les plus précis pour décrire un système moléculaire. Ils prennent en compte les effets quantiques du système étudiés en se plaçant à une échelle subatomique puisqu'ils intègrent les contributions énergétiques des électrons et des nucléons, constituants tout deux des atomes. Ils se basent sur l'équation de Schrödinger \cite{schrodinger1926undulatory} qui décrit le mouvement d'une particule grâce à sa masse, son énergie, la constante de Planck et son énergie potentielle. Le nombre de particules impliquées dans les molécules et plus particulièrement les protéines est tel que la résolution de cette équation pour l'ensemble d'entre elles demanderait des ressources de calcul immenses. L'approximation de Born-Oppenheimer \cite{} est une première tentative de réduire la complexité de ces résolutions en utilisant le fait que les masses des électrons sont très petites par rapport aux masses des nucléons. Elle permet la décomposition de l'équation de Schrödinger en deux étapes, mais ne suffit pas à réduire la complexité de façon assez importante pour que son application soit envisageable sur des systèmes composés de plus de quelques atomes.
+\myparagraph{Modèle quantique} \label{quantic}
+
+Nous ne ferons qu'une brève étape sur les modèles \textit{quantiques} biologiques du fait de leur complexité et l'impossibilité de leur application sur des systèmes moléculaires de plus de quelques dizaines d'atomes. Il est cependant important de noter que les modèles quantiques sont les modèles les plus précis pour décrire un système moléculaire. Ils prennent en compte les effets quantiques du système étudiés en se plaçant à une échelle subatomique puisqu'ils intègrent les contributions énergétiques des électrons et des nucléons, constituants tout deux des atomes. Ils se basent sur l'équation de Schrödinger \cite{schrodinger1926undulatory} qui décrit le mouvement d'une particule grâce à sa masse, son énergie, la constante de Planck et son énergie potentielle. Le nombre de particules impliquées dans les molécules et plus particulièrement les protéines est tel que la résolution de cette équation pour l'ensemble d'entre elles demanderait des ressources de calcul immenses. L'approximation de Born-Oppenheimer \cite{born1927quantentheorie} est une première tentative de réduire la complexité de ces résolutions en utilisant le fait que les masses des électrons sont très petites par rapport aux masses des nucléons. Elle permet la décomposition de l'équation de Schrödinger en deux étapes, mais ne suffit pas à réduire la complexité de façon assez importante pour que son application soit envisageable sur des systèmes composés de plus de quelques atomes.
 
 Nous nous concentrerons donc sur les méthodes de modélisation utilisant des modèles dits \textit{classiques} décrivent les particules non plus à l'échelle quantique, mais à l'échelle atomique.
 
-\subsubsection{Modèle classique} \label{forcefield}
+\myparagraph{Modèle classique} \label{forcefield}
 
 Les modèles classiques décrivent une protéine à travers les propriétés physico-chimiques des atomes la composant. L'ensemble des équations régissant l'énergie d'un système moléculaire et de ses paramètres associés est regroupé dans un champ de force. Cette notion de champ de force est primordiale dans le modèle classique utilisé par la majorité des approches de modélisation puisque c’est l'ensemble des contributions énergétiques décrites dans ceux-ci qui va permettre d'évaluer les modèles moléculaires que génèrent les algorithmes mis en jeu.
 
@@ -285,7 +290,7 @@ La prédiction est souvent plus efficace lorsque l'analyse est effectuée sur de
 
 La prédiction de structure 3d est un domaine plus vaste et plus complexe puisqu'elle cherche à obtenir la configuration spatiale d'une protéine à l'état stable et donc fonctionnel. Il est possible de détacher trois types d'approches pour la prédiction de structure tertiaire:
 
-\paragraph{Approches \textit{ab initio}} \label{ab_initio}
+\myparagraph{Approches \textit{ab initio}} \label{ab_initio}
 
 Elles ont pour but de prédire la structure tridimensionnelle à partir de la seule séquence primaire, sans autres informations structurelles provenant de structures de protéines proches déjà résolues. Le processus de prédiction se base très souvent sur des structures secondaires prédites (voir \ref{prediction_struct_second}) et non pas sur une structure 3d complètement aléatoire construite à partir de la seule séquence en acide aminé. 
 Les méthodes qui sont mises en jeu en prédiction \textit{ab initio} se basent sur les seuls principes physiques régissant le repliement des protéines. Ce repliement intervient après l'étape de traduction et avant l'éventuel déplacement de la protéine vers son lieu d'action. Nous avons vu qu'il mettait en jeu certaines molécules "chaperonnes" afin d'aider la molécule à atteindre sa forme stable. Il est cependant très difficile d'intégrer les mécanismes impliquant ces molécules et la grande majorité des modélisations \textit{ab initio} ne s'appuie que sur les énergies mises en jeu dans la protéine même pour induire le repliement. En moyenne, l'étape de repliement se déroule en quelques millisecondes même si certaines molécules se replient en quelques microsecondes. Ces temps de repliement, bien que très court à l'échelle humaine, sont des temps extrêmement longs à simuler informatiquement.
@@ -296,11 +301,11 @@ L'étape centrale de la prédiction \textit{ab initio} est l'application des mé
 
 En plus de la simplification des modèles de particules utilisés au sein des champs de force, il est aussi possible de cibler le coeur du problème en prédiction \textit{ab initio} qui est la puissance de calcul brute. Des méthodes de distribution des capacités de calcul (ou crowdcomputing) ont été mises en place à travers des projets comme \textit{Folding@home}\footnote{\url{https://folding.stanford.edu/}} ou \textit{Rosetta@home}\footnote{\url{https://boinc.bakerlab.org/}} qui s'appuient sur les capacités de calculs d'ordinateurs particuliers ou de clusters d'instituts scientifiques ou non pour faire fonctionner des algorithmes parallélisés de repliement protéique. L'idée est donc de répartir les ressources nécessaires pour les calculs de simulation sur un maximum de machines dans le monde.
 
-\paragraph{Approches \textit{de novo}}
+\myparagraph{Approches \textit{de novo}}
 
 Ces approches sont très proches des approches \textit{ab initio} dans leur principe. La principale différence se situe au niveau des données utilisées en entrée. À la différence des méthodes précédentes, les méthodes \textit{de novo} incluent des données expérimentales afin de guider la prédiction. Parmi les données expérimentales utilisées, les bibliothèques de fragments ou d'alphabets structuraux fournissent des sous-ensembles d'acides aminés (séquence de 4 à 15 acides aminés environ) dont les angles dièdres sont définis et dont la configuration spatiale est retrouvée dans certaines protéines de la PDB pour (\textit{Protein Data Bank}, base de données spécialisée de structures moléculaires décrite dans la section \ref{protein_DB}). L'algorithme le plus connu et utilisé est certainement Rosetta, développé par David Baker et son équipe \cite{rohl2004protein}. Il se base sur l'hypothèse que les structurations locales de la protéine ont un impact, mais ne définissent pas totalement la configuration spatiale globale de la protéine. L'algorithme se base sur l'assemblage de fragments structuraux de plusieurs acides aminés (9 acides aminés en phase 1, 3 acides aminés en phase 2) respectant la séquence primaire de la protéine prédite. Ces fragments ont une structure connue et sont récupérés depuis des bibliothèques de fragments basés sur la PDB. Les fragments sont positionnés de façon aléatoire et sont évalués par une simulation Monte-Carlo afin de leur attribuer un score. Chaque nouvel assemblage de fragments positionnés aléatoirement va donc générer un modèle avec un score associé. Les modèles avec les meilleurs scores seront considérés comme les plus stables énergétiquement et donc les plus proches de la structure tertiaire recherchée.
 
-\paragraph{Approches par homologie} 
+\myparagraph{Approches par homologie} 
 Elles utilisent la connaissance des structures de protéines proches de la protéine étudiée. Un alignement de séquence est effectué afin d'identifier, parmi les protéines dont la structure tridimensionnelle a été résolue, les séquences primaires homologues à la séquence de la protéine étudiée. On considère deux séquences comme homologues lorsque leur similarité est supérieure à 30\%. Les différentes étapes de la modélisation par homologie sont:
 \begin{enumerate}
 	\item La sélection du modèle se fait grâce à un alignement multiple de la séquence cible grâce à des algorithmes spécialisés comme BLAST\footnote{\url{http://blast.ncbi.nlm.nih.gov/Blast.cgi}} ou PSI-BLAST appliqué sur l'ensemble des séquences de la PDB. Les séquences avec des similarités de séquences supérieures à 30\% sont des candidates pour être des modèles structuraux. Cependant, la similarité de séquence pure n'est pas le meilleur indicateur de l'homologie entre deux séquences protéiques. Au lieu de prendre en compte une similarité faible sur la séquence entière, on favorise la présence de plusieurs régions très similaires le long de la séquence. Ces régions de forte similarité dénotent souvent d'un caractère évolutif proche et de séquences conservées et donc potentiellement importantes pour la fonction de la protéine. On considère qu'il est possible d'obtenir des modèles par homologie de bonne qualité lorsque le degré de similarité entre la séquence cible et la séquence modèle est supérieur à 50\%.
@@ -312,7 +317,7 @@ Elles utilisent la connaissance des structures de protéines proches de la prot�
 
 Parmi les outils de modélisation par homologie, WhatIf\footnote{\url{http://swift.cmbi.ru.nl/whatif/}} et Modeller\footnote{\url{https://salilab.org/modeller/}} sont tous les deux très utilisés au sein de la communauté scientifique.
 
-\paragraph{Approches par \textit{threading}}
+\myparagraph{Approches par \textit{threading}}
 
 Les méthodes de \textit{threading} peuvent être décrites comme l'inverse des méthodes d'homologie. Le principe repose sur l'enfilage de séquences d'acides aminés sur des structures 3d déjà identifiées et présentes dans la PDB. Les acides aminés de la protéine prédite sont donc contraints structurellement afin de s'aligner sur la structure modèle et l'énergie du système est alors calculée. Cette fonction de score doit témoigner de la similarité séquence-structure et permettre le classement des structures utilisées afin d'identifier les modèles de moindre énergie.
 Cette approche se base sur deux observations: le nombre de conformations spatiales différentes dans la nature est relativement réduit (environ 1300) et 90\% des nouvelles structures ajoutées dans la PDB ces trois dernières années ont des conformations spatiales similaires à celles déjà présentes au sein de la base de données.
@@ -324,7 +329,7 @@ La simulation moléculaire cherche à modéliser l'état ou l'évolution d'un sy
 Les méthodes de mécaniques moléculaires simples ne prennent pas en compte l'énergie cinétique de l'environnement et sont donc plus rapides, mais négligent l'aspect cinétique du système moléculaire. Au contraire, la dynamique moléculaire ou les méthodes basées sur Monte-Carlo voient la simulation des conditions de température, pression, etc. influençant le comportement des particules pour calculer l'énergie du système, mais là où la notion de temps est présente en dynamique moléculaire, elle est absente de l'approche basée sur Monte-Carlo.
 Avant de décrire chacune de ces méthodes, il est important d'évoquer la manière dont sont calculés les scores énergétiques permettant d'évaluer la pertinence biologique, souvent caractérisée par la stabilité énergétique, des modèles générés au cours des algorithmes mis en jeu.
 
-\paragraph{Mécanique moléculaire}
+\myparagraph{Mécanique moléculaire}
 
 La mécanique moléculaire fait abstraction des paramètres thermodynamiques régissant les évolutions conformationnelles d'une structure protéique pour décrire de façon plus simple un système de particules en condition statique par la seule mécanique newtonienne. Elle repose sur l'utilisation de champs de force afin de calculer l'énergie potentielle d'une protéine. Ces différentes propriétés sont appliquées pour les modèles tout-atome:
 
@@ -341,7 +346,7 @@ Les modèles de mécanique moléculaires ne sont pas souvent tout-atomes et cert
 L'application la plus directe et courante de la mécanique moléculaire est la minimisation énergétique où l'on va chercher à obtenir des modèles avec une énergie de plus en plus faible afin de trouver la structure 3d la plus stable pour une protéine donnée. Les algorithmes de minimisation moléculaires sont divers, mais ils se basent très souvent sur les champs de force de mécanique moléculaire.
 
 
-\paragraph{Algorithme de Monte-Carlo}
+\myparagraph{Algorithme de Monte-Carlo}
 
 La méthode de simulation basée sur Monte-Carlo est l'une des plus usitées \cite{metropolis1949monte} pour la prédiction de structure tertiaire. Elle consiste en un échantillonnage aléatoire des différentes configurations spatiales d'un système moléculaire. Les changements entre les configurations sont des changements induits de façon extérieure et se caractérisent par la perturbation de la longueur d'une liaison, d'un angle, d'un angle dièdre ou le léger déplacement d'un atome ou d'un groupe d'atomes. Il est possible de décrire le principe général d'une simulation utilisant la méthode de Monte-Carlo de la manière suivante:
 
@@ -355,7 +360,7 @@ La méthode de simulation basée sur Monte-Carlo est l'une des plus usitées \ci
 	\item Le processus reprend à l'étape 1 avec l'état $n$ ou $n$+1 suivant le résultat de l'étape précédente.
 \end{enumerate}
 
-\paragraph{Dynamique moléculaire}
+\myparagraph{Dynamique moléculaire}
 
 Le principe de la dynamique moléculaire (MD) repose sur la résolution d'équations thermodynamiques respectant les lois du mouvement de Newton d'un champ de force choisi afin de guider les particules décrivant la protéine vers des configurations spatiales différentes. Son but est donc de simuler les mouvements de particules dans le temps pour des conditions thermodynamiques (température, pression, etc.) précises tout en prenant en compte la mécanique newtonienne régissant les contributions énergétiques de ces particules.
 
@@ -415,7 +420,7 @@ Parmi les approches de dynamique moléculaire existantes, certaines d'entre elle
 Les premières différences que l'on retrouve se situent tout d'abord dans la préparation et la mise en place des structures de départ. Nous l'avons précisé auparavant, il est possible de retrouver des structures de départ plus ou moins proche de la structure théorique réelle de la protéine étudiée. La présence ou non d'informations structurales provenant d'expériences ou d'études annexes décident de la précision de la structure donnée en entrée.
 Ces informations expérimentales complémentaires peuvent également servir de guides pendant la simulation en elle-même où elles vont venir orienter les changements structurels d'un complexe vers un phénomène structural connu, réduisant ainsi le chemin énergétique qu'il aurait fallu pour atteindre cet état particulier.
 
-\paragraph {Simulation moléculaire interactive}
+\myparagraph {Simulation moléculaire interactive}
 
 De la même manière, certaines simulations moléculaires, couplées à de rendus graphiques très performants et des dispositifs d'interactions adaptés, permettent à l'utilisateur de contraindre certaines parties d'une structure moléculaire pendant sa simulation en injectant dans les calculs physiques des forces s'appliquant sur les particules manipulées \cite{bolopion_comparing_2010}. Le jeu sérieux Foldit\footnote{\url{https://fold.it/portal/}} s'appuie sur les stratégies et l'esprit d'analyse des utilisateurs, experts ou non du domaine, pour guider les changements conformationnels de protéines par des commandes simples. Un score est calculé en temps réel permettant de rendre compte de la stabilité énergétique de la structure obtenue. Alors que le chemin énergétique suivi par un algorithme standard va favoriser les changements conformationnels peu coûteux, l'esprit humain est capable d'anticiper un changement qui va contraindre la protéine de façon importante, mais permettant d'obtenir une structure plus stable par la suite \cite{khatib2011crystal}.
 Ces techniques permettent à la fois d'utiliser des connaissances scientifiques qu'il est difficile d'intégrer au sein des algorithmes de dynamique moléculaire, mais également d'économiser du temps en permettant à l'utilisateur de guider sa dynamique vers des états conformationnels qu'il sait stables
@@ -427,7 +432,7 @@ La représentation simplifiée de la protéine permet une certaine rapidité de 
 
 Dans le cas de dynamiques moléculaires sur des systèmes de taille plus importante, calculées dans des clusters de calcul déportés, les défis sont autres. Ils passent par la mise en place de communications privilégiées entre le centre de calcul et le lieu de visualisation et d'interaction (il est rare de retrouver des espaces de visualisation dédiés au sein même des centres de calcul). En plus des communications, la précision demandée peut être supérieure et les forces appliquées au système doivent pouvoir être interprétées de façon instantanée par le programme de simulation. Des suites logicielles performantes permettent aujourd'hui de traiter une simulation de façon interactive alors même que cette dernière est déportée \cite{dreher2014exaviz}. Basée sur les principes de parallélisation d'instructions et d'utilisation des infrastructures de communications récentes offrant des vitesses de transmission de données au-delà de 10Gbit/s.
 
-\paragraph{Évaluation} \label{simu_eval}
+\myparagraph{Évaluation} \label{simu_eval}
 
 Chacune des méthodes de simulation moléculaire permet de générer un nombre plus ou moins important de modèles censés représenter, finalement, un état stable et fonctionnel d'une protéine. Cependant, lorsqu'aucune vérification expérimentale de ces modèles n'est possible, il est important de pouvoir donner un score à chacun des modèles afin d'évaluer les plus pertinents. Le choix de la méthode de \textit{scoring} est important, car elle décidera des modèles qui seront considérés comme les plus proches de la structure native des protéines. On peut distinguer deux méthodes de \textit{scoring} distinctes:
 
@@ -459,7 +464,7 @@ Cette métaphore nous montre bien les deux étapes indispensables au docking mol
 
 Lorsqu'on s'intéresse au docking \textit{ab initio}, où aucune information n'est utilisée sur le potentiel site de liaison, deux approches peuvent être identifiées afin de générer un modèle 3d de complexe fonctionnel entre la protéine et son ligand.
 
-\paragraph{Complémentarité de forme}
+\myparagraph{Complémentarité de forme}
 
 Dans cette approche, la protéine et le ligand sont tous deux considérés du point de vue des propriétés géométriques et physiques de leur surface. Parmi les descripteurs utilisés pour représenter la protéine et son ligand, la surface accessible au solvant (SAS) pour la protéine et des descriptifs de complémentarité de surface pour le ligand peuvent être utilisés \cite{shoichet1992molecular}. Plusieurs techniques existent pour évaluer et représenter la surface accessible au solvant. Une d'elles est le parcours de la surface induite par les rayons de Van der Waals des atomes de la protéine au moyen d'une sphère représentant le solvant \cite{connolly1983analytical}. Cette sphère est "roulée" sur la surface de la protéine et son centre est considéré tout au long de son parcours comme la limite d'une seconde surface, dont le degré de lissage dépendra directement de la taille de la sphère représentant le solvant. La division du système en une grille régulière permet également l'utilisation de nombreux algorithmes permettant d'avoir une approximation précise de la SAS. L'algorithme de \textit{marching cubes} permet par exemple de parcourir l'ensemble d'une grille 3d et de générer un polygone pour chaque partie de l'isosurface 
 
@@ -470,13 +475,13 @@ Les méthodes de complémentarité de forme mettent souvent en jeu des docking d
 Il est possible d'introduire de la dynamique moléculaire lors du processus de docking par complémentarité de forme afin de contraindre les chaînes latérales des protéines à prendre une forme énergétiquement plus stable et donc ouvrir de nouvelles possibilités de liaison au ligand.
 Les processus de simulation sont cependant beaucoup plus importants dans le cas de docking flexibles où la flexibilité n'est pas retrouvée uniquement au niveau des chaînes latérales, mais également au niveau de la chaîne principale. Elle permet de prédire de façon beaucoup plus précise les complexes moléculaires où le ligand induit des changements conformationnels significatifs de la protéine réceptrice et inversement.
 
-\paragraph{Simulation}
+\myparagraph{Simulation}
 
 La simulation d'un processus de docking est relativement compliquée du fait du nombre de degrés de libertés qu'il est nécessaire de donner au ligand afin de traduire exactement son comportement naturel. Des transformations rigides composées de translations et d'orientations successives sont couplées à des transformations plus flexibles de changements conformationnels des angles de torsion en rotation du ligand afin de lui permettre de se lier de façon optimale sur le site actif de la protéine. De l'autre côté, une certaine flexibilité sera également introduite du côté de la protéine afin de rapporter d'éventuelles contraintes imposées par la liaison du ligand. C'est le cas de certains mécanismes d'ouverture et fermeture de protéines dont la liaison à leurs ligands induits un changement conformationnel assez important pour que la protéine passe d'une configuration dite "ouverte" à une configuration "fermée" ou réciproquement.
 
 Les méthodes basées sur la simulation, de la même manière qu'en dynamique moléculaire, vont utiliser les paramètres physico-chimiques prenant place au niveau de l'interface entre les partenaires pour guider leur rapprochement et les changements conformationnels leur permettant d'adopter leur forme liée. Ces paramètres vont aussi permettre d'évaluer la pertinence des modèles générés grâce aux calculs d'énergie potentielle et d'affinité de liaison. 
 
-\paragraph{Évaluation} \label{docking_eval}
+\myparagraph{Évaluation} \label{docking_eval}
 
 Les fonctions de score sont d'importance capitale dans le choix des modèles 3d de complexes moléculaires, car ils doivent à la fois rapporter la stabilité des partenaires, mais également la stabilité de leur interaction. Lorsque la majorité de la protéine est rigide, il est courant de s'intéresser davantage à l'énergie de l'interface afin de ne pas biaiser le résultat. Cette énergie dépendra donc de l'apport énergétique dû à chaque configuration spatiale des atomes présents à l'interface. De la même manière que pour des simulations cherchant à retrouver des structures de protéines uniques, plusieurs classes de fonctions de \textit{scoring} existent. Ces classes sont au nombre de 3 dont 2 existent également pour les simulations et ont été abordées dans la section \ref{simu_eval}. La troisième classe de méthodes de \textit{scoring} est propre au domaine du docking et regroupe les méthodes de \textit{scoring} empiriques.
 Ces méthodes se basent sur le comptage des différents types d'interactions pouvant prendre place entre les deux protéines. Ce comptage peut être basé sur le nombre d'atomes en contact entre les deux protéines, les changements d'aire de la SAS entre les formes non liées des protéines et la forme liée du complexe. Les coefficients des fonctions de score sont usuellement ajustés par des méthodes de régression linéaire multiple. Parmi les termes inclus dans ces fonctions, on peut retrouver:
@@ -512,6 +517,216 @@ On peut également noter d'autres banques de données de structures protéiques:
 Parmi les informations stockées dans des bases de données et utilisées en biologie structurale en dehors de données purement structurales on retrouve: les profils biologiques des protéines avec leur structure primaire/secondaire/tertiaire, leur environnement cellulaire, leur rôle, etc. (SWISSPROT+TrEMBL \cite{boeckmann2003swiss}, PDB, etc.); les réseaux d'interactions moléculaires (interactome) mettant en avant les partenaires moléculaires déjà identifiés (STRING \cite{Snel15092000}, CCSB Interactome Database \footnote{\url{http://interactome.dfci.harvard.edu/}}, etc.); les évolutions génomiques des séquences d'ADN codantes identifiant les régions évoluant rapidement au sein des protéines (séquence primaire changeante) et les régions plus stables et donc potentiellement importantes pour la fonction métabolique de la protéine (USCS \cite{kent2002human}, Ensembl \cite{hubbard2002ensembl}, etc.). 
 
 Certaines de ces bases de données sont mises en relation au travers de portails biologiques permettant de regrouper toutes les informations sur une protéine au sein d'un même espace.
+
+\subsection{Visualisation moléculaire 3d} \label{visu_molecular}
+
+La visualisation moléculaire est indissociable des progrès effectués par la biologie au cours de son histoire. Tout d'abord utilisée comme moyen de communication et parfois de vulgarisation, elle est aujourd'hui un des vecteurs majeurs d'acquisition de nouvelles informations.
+
+\subsubsection{Evolution du graphisme moléculaire}
+
+Les premières tentatives de représentation de structures moléculaires ont correspondu aux principales découvertes expérimentales ayant permises d'obtenir des indications claires sur la structure des protéines étudiées. On peut distinguer deux courants de représentation de ces structures, courants complémentaires et donc la séparation est principalement due à l'évolution des technologies et des moyens de communication.
+
+\begin{figure}
+  \begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=0.9\linewidth]{./figures/ch1/kendrew_myoglobin_plasticine}}
+    \label{Fig:kendrew_plasticine}
+  \caption{}
+  % \hspace{0.3cm}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=0.9\linewidth]{./figures/ch1/kendrew_myoglobin_forest_of_rods}}    
+    \label{Fig:kendrew_myoglobin_forest_of_rods}
+  \caption{}
+  \hspace{0.3cm}
+  \end{subfigure}%
+  \\[\baselineskip]
+  \begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=0.9\linewidth]{./figures/ch1/fred_richards_ribonuclease}}
+  \caption{}
+    \label{Fig:fred_richards_ribonuclease}
+  \hspace{0.3cm}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=0.9\linewidth]{./figures/ch1/kendrew_myoglobin_ball_and_spokes}}
+  \caption{}
+    \label{Fig:kendrew_ball_and_spokes}
+  \hspace{0.3cm}
+  \end{subfigure}%
+  \caption{\it (a) Premier modèle physique de la myoglobine, faite par Sir John Kendrew et Max Perutz. Ce modèle fut récompensé par le prix Nobel de chimie en 1962. Il est exposé au Science Museum de Londres.
+  (b) Modèle basé sur des tiges et des attaches de couleurs représentant également la myoglobine. Couramment appelé la "forêt de tiges" en français, ce modèle est également exposé au Science Museum de Londres.
+  (c) Modèle balle et bâtons représentant une nouvelle fois la myoglobuline. Afin de mettre en évidence la chaîne principale, un fil blanc épais a été ajouté à l'ensemble et est la seule caractéristique vraiment discernable au milieu de tous les atomes (boules de couleur) et de leurs liaisons (bâtons).
+  (d) Dispositif de visualisation appelé "Richards box" (ou "Fred's Folly") et permettant aux cristallographes de construire un modèle physique à partir d'empilements de feuillets représentant des cartes de densité électronique projetés à travers un miroir semi-argenté.}
+\end{figure}
+
+\myparagraph{Représentations physiques}
+
+Les représentations physiques représentent, à quelques années près, les premières tentative de représentation de structures de molécules ayant été fabriquées. On parle ici de représentation à des échelles allant de quelques centimètres à plusieurs mètres de hauteur.
+
+La première représentation physique notoire est le fait de J.C. Kendrew qui, pour illustrer la résolution de la structure de la myoglobine par cristallographie \cite{kendrew1958three} à rayon X, a créé plusieurs modèles de cette structure. Il créa en collaboration avec Max Perutz le premier modèle, em 1957, composé exclusivement de plasticine (voir Figure \ref{Fig:kendrew_plasticine}). La qualité du modèle était en corrélation directe avec la résolution expérimentale de la structure cristallographique qui avait une basse résolution d'environ 6\r{A}, rapportant ainsi grossièrement la structure tertiaire mais pas davantage de la protéine. Ce modèle leur permis tout de même d'obtenir en 1962 le prix Nobel de chimie. Il fut le prédécesseur d'un autre modèle construit par les deux mêmes scientifiques et appelé \textit{forest of rods} (littéralement forêt de tiges), qui, avec une échelle de 5cm pour 1\r{A}, était composé de 2500 tiges verticales remplissant un cube de 2m de côté (voir Figure \ref{Fig:kendrew_myoglobin_forest_of_rods}). Des attaches de couleur étaient attachées aux tiges afin de représenter la densité d'électrons et guider la construction du modèle. Il fit suite à une amélioration de la résolution des cartes de densité de cristallographie atteignant 2\r{A} de précision. Les chaînes latérales n'étaient cependant pas encore bien discernables et il fallut attendre 1965 pour que les résultats expérimentaux permettent de construire un modèle plus précis. Pour ce faire, Kendrew approcha A.A Baker et ils mirent au point un modèle composé de balles et de bâtons afin de représenter les atomes et leurs liaisons (voir Figure \ref{Fig:kendrew_myoglobin_ball_and_spokes}). L'échelle de ces modèles était plus petite (entre 2.5 et 1cm / \r{A}) et rendait ces modèles plus facilement transportables mais cependant de taille encore conséquente. La construction de ces modèles se faisaient grâce à la projection des cartes de densités électroniques dessinées sur des plaques de verre dans un dispositif innovant appelé \textit{Richard's box} et illustrés dans la Figure \ref{Fig:fred_richards_ribonuclease}.
+
+Dans le début des années 1970, le cristallographe Byron Rubin mis au point une machine permettant de plier un câble selon la forme de la chaîne principale d'une protéine. Les modèles générés par cette machine, appelée \textit{Byron's Bender}, sont de plus petites tailles que les autres modèles physiques existants à cette époque là et permettait donc leur utilisation lors de réunions scientifiques. C'est d'ailleurs à l'occasion de l'une d'entre-elles, en 1976, alors que moins de deux douzaines de structures avaient été résolues, que deux modèles physiques de Bender représentant le fragment Fab de l'immunoglobuline et la dismutase superoxyde furent ramené par deux groupes distincts de chercheurs. Après comparaison des modèles, ils émirent l'hypothèse que ces deux protéines adoptaient probablement les mêmes méthodes de structuration malgré seulement 9\% d'identité de leurs séquences primaires \cite{richardson1976similarity}. Cet événement, pouvant être qualifier de hasard de l'histoire, fut la première reconnaissance de l'existence de la superfamille des domaines immunoglobulines non liés par leur séquence.
+
+\begin{figure}
+  \begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=0.9\linewidth]{./figures/ch1/bender_tool_models}}
+    \label{Fig:bender_tool_models}
+  \caption{}
+  % \hspace{0.3cm}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=0.9\linewidth]{./figures/ch1/byron_sculpture_colagenase}}    
+    \label{Fig:byron_rubin_art}
+  \caption{}
+  \hspace{0.3cm}
+  \end{subfigure}%
+ \caption{\it (a) En haut, l'outil mis au point par Byron Rubin permettant de plier une tige de métal suivant la structuration d'une chaîne principale de protéine. En dessous sont exposés les modèles de la phospholipase pancréatique A2 (à gauche) et de l'inhibiteur de la trypsine pancréatique bovine (à droite).
+  (b) Sculpture moléculaire de Byron Rubin représentant une collagénase neutrophile humaine créée à partir d'une version plus grande de son Bender inspirée des outils de modelage automobiles locaux.}
+\end{figure}
+
+Au-delà de l'importance de l'aspect tactile et visuel des modèles de Bender, une autre facette importante de ces modèles est leur possibilité de vibrer au toucher, simulant ainsi le mouvement thermique. Cet aspect est d'importance quand comparée aux modèles virtuels qui font parfois oublier à leurs utilisateurs la flexibilité que possède une protéine dans son environnement cellulaire. 
+
+Byron Rubin s'associa également, de façon plus étonnante, avec un garage de voitures local afin d'utiliser leur machine de pliage de pot d'échappement, fonctionnant sur le même principe que sa machine, afin d'atteindre une plus grande échelle. Il créa de nombreuses sculpture de molécules considérées comme importante à partir de ce temps là et jusqu'aux années 90.
+
+Concurrencés par les modèles sur ordinateurs, les modèles physique surent néanmoins évoluer avec les technologies, après le métal, le bois ou le plastique furent le support de plusieurs modèles. A la fin des années 90, grâce aux efforts de Michael Bauler et Tim Herman d'utiliser les nouvelles technologies d’ingénierie, les lasers et imprimantes 3D permirent la création de modèles à moindre coût et moindre temps ainsi qu'à une échelle toujours plus fine, plusieurs d'entre-eux sont représentés dans les Figure \ref{Fig:julian_wood_matingpheromone} et \ref{Fig:bathsheba_laser_dna}. L'ensemble de ces modèles prit une part importante dans l'éducation et voit maintenant plusieurs projets se servir de ces modèles comme interfaces tangibles pour des expérience de simulations moléculaires interactives permettant ainsi à l'utilisateur de conduire à travers une représentation physique de la molécule qu'il étudie \cite{gillet2005tangible}.
+
+
+\begin{figure}
+  \begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=0.9\linewidth]{./figures/ch1/julian_wood_matingpheromone}}
+    \label{Fig:julian_wood_matingpheromone}
+  \caption{}
+  % \hspace{0.3cm}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=0.9\linewidth]{./figures/ch1/bathsheba_laser_dna}}    
+    \label{Fig:bathsheba_laser_dna}
+  \caption{}
+  \hspace{0.3cm}
+  \end{subfigure}%
+ \caption{\it (a) Modèle en bois de Julian Voss-Andreae illustrant la chaîne principale d'une phéromone.
+  (b) Modèle en verre de l'ADN creusé grâce à des rayons lasers fins.}
+\end{figure}
+
+
+\myparagraph{Représentations virtuelles par ordinateur}
+
+Les premiers modèles de structures moléculaires réalisés sur ordinateurs ne sont pas vraiment postérieurs aux premiers modèles physiques que nous avons cité. En effet, c'est en 1964 que Cyrus Levinthal et ses collègues du MIT ont développé un système qui permettait d'afficher, sur un oscilloscope, une représentation filaire d'une structure macromoléculaire (voir Figure \ref{Fig:levinthal_oscilloscope_wireframe}).
+En 1965, Carroll K. Jonhson publia une programme créé en Fortran et appelé \textbf{ORTEP} (\textit{Oak Ridge Thermal Ellipsoid Plot Program}) permettant de générer des illustrations de structures. Les cristallographes l'adoptèrent rapidement et s'en servir pour publier leurs structures lors de conférences ou au sein d'articles de journaux. Sa capacité à générer des images stéréoscopiques des structures fut l'une des grandes forces d'ORTEP qui a vu sa seconde version être sortie en 1976 et sa troisième en 1996, cette dernière étant toujours disponible à l'utilisation\footnote{\url{http://web.ornl.gov/sci/ortep/}}. ORTEP fut notamment utilisé pour illustrer la structure de la myoglobine et ces illustrations firent écho auprès de John C. Kendrew qui félicita personnellement Carroll K. Johnson pour son travail (voir Figure \ref{Fig:ortep_myoglobin}).
+
+\begin{figure}
+  \begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=0.9\linewidth]{./figures/ch1/levinthal_oscilloscope_wireframe}}
+    \label{Fig:julian_wood_matingpheromone}
+  \caption{}
+  % \hspace{0.3cm}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=0.9\linewidth]{./figures/ch1/ortep_myoglobin}}    
+    \label{Fig:bathsheba_laser_dna}
+  \caption{}
+  \hspace{0.3cm}
+  \end{subfigure}%
+ \caption{\it (a) Le premier système d'ordinateur pour visualiser des molécules développé par Cyrus Levinthal au sein du Massachussetts Institute of Technology (MIT) en 1962. Un simple modèle de squelette moléculaire esst visible sur l'écran de l'oscilloscope. En bougeant le globe plastique au premier plan, il était possible de faire tourner le modèle à l'écran.
+  (b) Vue stéréoscopique d'un dessin du squelette de la myoglobine générée par ORTEP.}
+\end{figure}
+
+A ce moment là, les ordinateurs n'étaient pas encore capables d'interpréter seuls les coordonnées obtenues par cristallographie et il était nécessaire de construire un modèle de Kendrew, d'en mesurer les liaisons, avant de les rentrer dans l'ordinateur pour générer une représentation virtuelle.
+
+Cela changea au milieu des années 70, pour la première fois, une structure obtenue par cristallographie, fut résolue et visualisée uniquement par des ordinateurs sans qu'un modèle physique existe. Pour ce faire, David et Jane Richardson utilisèrent un ordinateur permettant d'ajuster directement la densité électronique afin de générer un modèle virtuel de la structure d'une superoxyde dismutase \cite{tainer1982determination}. Ce système informatique, appelé \textbf{GRIP} fut le prédécesseur de plusieurs programmes permettant ce passage d'une carte de densité électronique à une structure 3d moléculaire sur ordinateur (voir Figure \ref{Fig:richardson_grip_computer}). Parmi ces programmes, en 1974 le laboratoire de biographie à l'université A\&M du Texas développèrent un programme appelé \textbf{FIT} permettant de résoudre la structure de la nucléase \textit{Staphylococcus} \cite{collins1975protein}. A la fin des années 70, le programme \textbf{FRODO} fut publié par T. Alwyn Jones et devint l'outil standard pour construire des modèles virtuels à partir de cartes de densité électronique \cite{jones1978graphics}. Il est même estimé que 95\% des structures cristallographiques résolues depuis le début des années 80 ont été construites en utilisant FRODO ou son successeur "O". Il permet une interaction de l'utilisateur avec le modèle en proposant de le tourner selon les trois axes de rotation X, Y et Z.
+
+\begin{figure}
+  \begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=0.9\linewidth]{./figures/ch1/richardson_grip_computer}}
+    \label{Fig:richardson_grip_computer}
+  \caption{}
+  % \hspace{0.3cm}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=0.9\linewidth]{./figures/ch1/TAMS_viewer_slide}}    
+    \label{Fig:TAMS_viewer_slide}
+  \caption{}
+  \hspace{0.3cm}
+  \end{subfigure}%
+ \caption{\it (a) Le premier système d'ordinateur pour visualiser des molécules développé par Cyrus Levinthal au sein du Massachussetts Institute of Technology (MIT) en 1962. Un simple modèle de squelette moléculaire esst visible sur l'écran de l'oscilloscope. En bougeant le globe plastique au premier plan, il était possible de faire tourner le modèle à l'écran.
+  (b) En haut, exemple d'une des 116 vignettes présentes dans le set TAMS et permettant la vue stéréoscopique d'une immunoglobuline humaine grâce à un visualiseur de poche pliable (en bas).}
+\end{figure}
+
+A la fin des années 70, de plus en plus de cristallographes franchirent le pas de la construction de modèles de nouvelles protéines résolues non plus par modèles physiques mais grâce à des modèles par ordinateur. L'un des principaux avantages de ces derniers est la possibilité de garder en mémoire les coordonnées atomiques alors que lors de l'utilisation de modèles de Kendrew, elles devaient être mesurées à la main, atome par atome. En 1977, un atlas des structures macromoléculaires sous forme filaire fut publié. A la fin des années 70, Thomas K. Porter mis au point des algorithmes de représentations volumiques avec ombres. Cela révolutionna la représentation des molécules mais n'était accessible qu'à un nombre limité de spécialistes possédant les plus puissants ordinateurs de l'époque.
+Le NIH, qui employait Thomas K. Porter à l'époque, trouva cependant trop onéreux la publication d'un atlas de représentations volumiques de structures moléculaires en couleur. Leur idée de publication fut cependant de nouveau d'actualité quand ils prirent connaissance de l'existance d'un lecteur de carte pour vignettes stéréoscopiques à moindre coût. Ce visualiseur en carton pouvait se plier et possédait donc un avantage certain pour la distribution de 116 vignettes, éditées par Richard Feldman grâce aux algorithmes de rendu volumique. Ce set de vignettes fut appelée TAMS pour \textit{Teaching Aids for Macromolecular Structure}. Parmi les vignettes, plusieurs représentations étaient utilisées et plusieurs informations structurelles pouvaient être représentées, incluant un paragraphe d'explication associé. Un exemple de vignette est présenté dans la Figure \ref{TAMS_viewer_slide}.
+
+
+Jusqu'au début des années 90, l'utilisation de programmes de visualisation était exclusivement associée à des ordinateurs particuliers coûtant relativement cher et accessibles à une partie seulement des chercheurs. Cela changea en 1992 quand David et Jane Richardson décrirent le format \textit{kinemage} et leurs deux programmes associés \textbf{MAGE} et \textbf{PREKIN} \cite{richardson1992kinemage}. Grâce à leur implémentation sur Macintosh, il fut le premier programme à pouvoir être utilisé par une large communauté de scientifiques, d'enseignants et d'étudiants. Le format \textit{kinemage} permettait aux utilisateurs de générer une image animée de la structure ou sous-partie de structure qu'ils voulaient mettre en avant. Se rapprochant d'un GIF animé et bien qu'ayant disposé d'une grande popularité, en particulier en fournissant plus d'un millier d'illustrations pour les articles de \textit{Protein Science}, il manquait à ce format la possibilité de diriger l'exploration d'une structure de façon neutre et interactive.
+
+Ce manque fut comblé par RasMol en 1993. Ce programme fut la continuité d'un premier programme développé par Roger Sayle en 1989 et permettant le \textit{shadowing} (ombrage en français) rapide d'objets virtuels permettant leur rotation en temps réel. 
+Avec le mentorat d'un cristallographe, Andrew Coulson appliqua son algorithme sur des structures moléculaires et publia en 1992 une suite logicielle complète de visualisation moléculaire appelée \textbf{RasMol} possédant, entre autres, un nombre important de paramètres de rendus graphiques (rendu volumique, réflectivité des surfaces, etc) et une interface graphique soignée \cite{sayle1992rasmol}. Les sources en C de ce programme furent rapidement mis à disposition de la communauté par Roger Sayle à l'obtention de son doctorat et put ainsi être adapté pour de multiples plateformes. Dés 1993 de nombreuses illustrations scientifiques s'appuyaient sur RasMol et les enseignants en ont rapidement fait également un outil de choix. Preuve de sa popularité, on estimait en 2005 le nombre d'utilisateurs à plus d'un million à travers le monde \cite{martz2004history}.
+
+L'avènement du web fit apparaître quelques années plus tard un programme basé sur le portage du code C de RasMol vers C++. Développé par Bryan van Vliet et Tim Maffett, \textbf{Chime} (pour CHemical mIME) fut publié sous forme de plug-in pour le navigateur web Netscape. La possibilité d'associé cet espace de visualisation à des contenus web et de télécharger des modèles depuis des bases de données en ligne furent deux des principales raisons de son succès, en particulier dans le milieu académique et éducatif. Plusieurs centaines de tutoriels furent publiés sur le web en utilisant Chime et servirent de support à des étudiants mais également à des cristallographes experts. Ses applications furent donc à la fois la communication de structures à travers le web mais également la diffusion des connaissances et le support d'apprentissage.
+
+
+\subsubsection{Caractéristiques}
+
+Les programmes de visualisation moléculaire 3d permettent d'observer, dans un espace graphique 3d virtuel, des représentations abstraites de molécules à partir de fichiers de leurs coordonnées 3d. Ces coordonnées 3d sont communément inscrites dans des fichiers PDB (format provenant de la base de données \textit{Protein Data Bank} fournissant un standard pour la représentation des données de structures macromolécules dérivées de RMN ou cristallographie\footnote{\url{http://www.rcsb.org/pdb/static.do?p=file_formats/pdb/index.html}}).
+
+Les logiciels de visualisation permettent principalement de mettre en avant certaines des particularités structurelles des molécules au moyen de jeux de couleurs ou de formes largement adoptés dans la communauté et considérés comme des standards. Ces programmes s'appuient sur différents formats de fichier pour ces coordonnées même si la plupart sont capables de lire au moins le format PDB. Au-delà de la visualisation statique de structures 3d, il est souvent possible d'utiliser ces programmes afin de lire la trajectoire d'une simulation numérique. Ainsi, il est possible d'observer l'évolution structurelle d'un complexe moléculaire au cours du temps ou d'observer des phénomènes biologiques (passage de molécules au travers d'une membrane, repliement d'une région protéique suite à son interaction avec un partenaire biologique, etc.). Parmi les programmes de visualisation 3d largement utilisés aujourd'hui nous pouvons citer: 
+\begin{itemize}
+  \item \textbf{PyMol} \cite{delano_pymol_2002}, basé sur le langage Python et offrant une API pour ce langage, il dispose de nombreux rendus visuels et est, selon l'auteur original, utilisé dans plus d'un quart des images de structures moléculaires présentes dans les articles scientifiques. Il s'appuie sur la génération d'images de haute qualité grâce à des techniques de lancer de rayons.
+  \item \textbf{VMD} \cite{humphrey_vmd:_1996}, spécialisé dans la visualisation et l'analyse de résultats de simulations de dynamiques moléculaires, cet outil est très usité du fait de ses nombreuses extensions et la possibilité de le relier à NAMD, un programme de dynamique moléculaire, permettant ainsi d'effectuer des simulations moléculaires interactives. Il est de plus bien adapté au rendu temps réel de larges modèles moléculaires grâce à des méthodes de pixellisation triangulaire directement effectuée sur le GPU.
+  \item \textbf{Jmol} \cite{herraez2006biomolecules}, basé sur Java et disponible sous forme d'application indépendante ou intégrée dans des pages web, ce visualiseur est populaire du fait de sa facile intégration au sein de contenus web. Il offre de plus plusieurs rendus graphiques très performants.
+  \item \textbf{YASARA} \cite{krieger2014yasara}, suite logicielle permettant à la fois la visualisation, mais aussi l’exécution de simulations moléculaires interactives, YASARA est depuis sa création dédiée pour le rendu stéréoscopique 3d et l'implication de l'utilisateur dans le suivi de sa simulation offrant même des solutions pour diriger la simulation en y ajoutant des forces.
+\end{itemize}
+
+Cette liste est non-exhaustive, mais recense quatre des logiciels de visualisation moléculaire les plus utilisés dans le monde scientifique et plus particulièrement en biologie structurale.
+
+Ces programmes sont donc tous capables de représenter des modèles 3d de protéines grâce aux standards de représentation mis au point à travers les années. Parmi ceux-ci, il est possible d'extraire 5 modes de représentations souvent utilisés par la communauté de biologie structurale, à la fois dans leur travail quotidien, mais également au travers de leurs communications (conférences, articles, etc.).
+
+\begin{itemize}
+  \item Représentation par \textbf{ligne}: seules les liaisons covalentes entre atomes sont représentées par une ligne de longueur équivalente à la distance entre les deux centres des atomes situés de part et d'autre de la liaison. Cette représentation est souvent associée à une coloration précise, chacune de ses moitiés étant colorée de la couleur associée au type d'atome qu'elle relie.
+  \item Représentation par \textbf{licorice}: seule la chaîne principale de la protéine est représentée dans ce mode, par des bâtons droits dont les extrémités correspondent au centre d'un atome qu'elles relient
+  \item Représentation par \textbf{balles et bâtons}: alors que les atomes sont représentés par des sphères, les liaisons covalentes sont des bâtons. C'est l'une des représentations les plus courantes, car simple et permettant de rapidement cerner l'agencement d'atomes d'une même molécule. Elle est cependant plus adaptée aux molécules de tailles limitées, car elle engrange rapidement une surcharge visuelle pour les molécules de plus grande taille.
+  \item Représentation par \textbf{rubans}: de la même manière que la représentation par licorice, cette représentation suit les carbones alpha composant la chaîne principale de la protéine et affiche un ruban large le long de la chaîne principale.
+  \item Représentation par \textit{\textbf{cartoon}}: ici, les différentes structurations composant la structure secondaire d'une protéine: hélices, feuillets et coudes, sont mises en avant respectivement par un ruban enroulé le long du squelette de la protéine, une flèche large pointant dans la direction du feuillet identifié et enfin un tube pour les coudes et boucles de la protéine rassemblant les parties non structurées.
+  \item Représentation par \textbf{sphères}: chaque atome est représenté par une sphère dont le rayon est égal au rayon de Van der Waals de l'atome.
+  \item Représentation par \textbf{surface}: dans ce mode, la SAS est représentée par une couche uniforme autour de la protéine.
+\end{itemize}
+
+Chaque type de représentation répond à des besoins de visualisation différents. Alors que l'agencement de la structure secondaire et tertiaire pourra être rapidement visualisé avec une représentation par \textit{cartoon}, il sera nécessaire d'ajouter une représentation par lignes afin d'observer la proximité des atomes entre eux. De la même façon, la détection visuelle des trous et potentiels sites de liaisons de la protéine sera facilitée par la représentation surfacique, mais le cœur de la protéine ne pourra être visualisé correctement qu'avec des représentations par ligne ou rubans. Ces différentes représentations ne sont pas cloisonnées et il n'est pas rare de les combiner afin de visualiser les caractéristiques propres à chaque représentation en même temps. Les calculs permettant chacune de ces représentations ne demandent pas les mêmes ressources computationnelles et même si la majorité d'entre elles peuvent aujourd'hui être appliquées de façon presque instantanée sur des ordinateurs de bureau, certaines comme la représentation par surface demandent des calculs relativement coûteux sur des protéines de grande taille.
+
+La représentation de surface fait justement partie des techniques de visualisation ayant pu profiter des avancées rapides provenant de certains domaines non scientifiques comme le jeu vidéo ou le cinéma. Certains rendus appelés \textit{photo-réalistes} et inspirés de techniques d'animation récentes sont maintenant retrouvés au sein de logiciels de visualisation de données scientifiques, améliorant de façon significative la perception des utilisateurs vis-à-vis de leurs données comme l'exemple de la Figure \ref{} le montre. La visualisation moléculaire n'a pas échappé à ces nouvelles techniques de rendus et a su implémenté certaines approches basées sur la \textbf{transparence}, les rendus \textbf{lumineux}, les effets de \textbf{profondeur}, etc. au sein des logiciels les plus utilisés dans la communauté. Ces nouvelles façons de représenter des structures protéiques permettent de jouer sur les capacités cognitives et perceptuelles des utilisateurs. Parallèlement, ces développements demandant des ressources computationnelles bien plus importantes que les anciennes implémentations graphiques, il a fallu également franchir le pas du calcul graphique sur GPU \cite{chavent_gpu-powered_2011}. La parallélisation des programmes et leur utilisation des ressources graphiques présentes au sein des ordinateurs ont permis de conserver des performances d'affichages suffisantes pour afficher des molécules de taille raisonnable. Dans cette même dynamique, certains projets s'appuient sur l'utilisation de moteurs de jeux vidéos pour développer des environnements de visualisation profitant des derniers progrès du domaine, dont la spécialisation et l'investissement associé dépassent de loin les moyens attribués à la seule visualisation moléculaire dans le monde de la science \cite{andrei2012intuitive,lv_game_2013}. Ces moteurs de jeu ouvrent de nouvelles perspectives pour la visualisation, mais également l'exploration des structures de protéines.
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=.75\linewidth]{./figures/ch2/molecule_blender_glass}}
+    \caption{{\it Représentation}}
+  \label{Fig:VR_pubmed_trend}
+  \hspace{0.3cm}
+\end{figure}
+
+
+\subsubsection{Limites et perspectives}
+
+La présence de GPUs performants sur une grande partie du parc informatique scientifique permet d'envisager sérieusement leur utilisation intensive pour le développement d'outils de visualisation performants. La prochaine grande étape est la mise à l'échelle de ces outils pour répondre aux enjeux de taille, au sens propre comme au figuré, inhérents aux structures étudiées. Nous avons vu que ces dernières peuvent maintenant être composées de plusieurs millions d'atomes et donc occupé un espace d'affichage conséquent. Alors que la visualisation de quelques centaines d'atomes sur un écran d'ordinateur de bureau permet d'aborder la structure d'un point de vue détaillé tout en gardant une idée précise de sa structure générale et plus spécifiquement de la position de la caméra par rapport à la protéine affichée, les structures de plus grandes tailles nécessitent une résolution beaucoup plus importante et des moyens d'explorer ces structures de façon contrôlée et sans pertes de repères pour l'utilisateur. Or, parmi les différentes techniques de visualisation évoquées précédemment, si nous pouvons facilement constater les efforts effectués dans le rendu graphique des protéines, aucune contribution significative n'a été publiée pour les paradigmes de navigation et d'exploration depuis plusieurs années. Ces aspects sont, à l'opposé, centraux dans les sujets d'étude propres à la RV, qui accorde une attention particulière à la place de l'utilisateur au sein des mondes virtuels avec lesquels il interagit \cite{ortega2015shocam, khan_hovercam:_2005, he1996virtual}.
+
+Ce dernier point, couplé au rapprochement entre les méthodes provenant de disciplines spécialisées dans les rendus visuels de haute performance et l'application scientifique, peut expliquer la progressive arrivée de la visualisation moléculaire dans le monde de la RV. Il est d'ailleurs intéressant de constater dans la Figure \ref{Fig:VR_pubmed_trend} le nombre d'articles présents dans la base de données PubMed\footnote{\url{http://www.ncbi.nlm.nih.gov/pubmed}} et comportant le terme "Virtual Reality" dans le titre ou le résumé. Même si ces résultats bruts sont à prendre avec recul, l'évolution croissante de ce terme au sein d'articles biologiques et de médecine semble clairement indiquer un intérêt croissant de ces deux disciplines scientifiques pour la RV.
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=.75\linewidth]{./figures/ch2/VR_pubmed_trend}}
+    \caption{{\it Evolution du pourcentage d'articles de PubMed où le terme "Virtual Reality" est retrouvé soit dans le titre soit dans le résumé au cours des 20 dernières années.}}
+  \label{Fig:VR_pubmed_trend}
+  \hspace{0.3cm}
+\end{figure}
 
 \section{Limites et perspectives de la biologie structurale} \label{limits_persp_bio_struct}
 
