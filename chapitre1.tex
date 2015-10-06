@@ -51,28 +51,32 @@ Le fonctionnement d'une cellule vivante ne passe pas uniquement pas ces deux pro
 L'Acide Désoxyribo-Nucléique (ADN) est une biomolécule commune à tous les organismes vivants. C'est une longue séquence de nucléotides, de quatre types : l' Adénine, la Thymine, la Guanine et la Cytosine. Ces nucléotides partagent partage une structure moléculaire commune constituée d'un sucre, le désoxyribose, et d'un groupe phosphate, cette structure est illustrée dans la Figure \ref{Fig:dna_structure}. 
 
 \begin{figure}
+  \begin{subfigure}{.5\textwidth}
   \centering
-  {\includegraphics[width=0.3\linewidth]{./figures/ch1/dna_structure}}
-    \caption{\it Structure chimique de l'ADN mettant en jeu la liaison de nucléotides Adénine (en vert) avec Thymine (en rose) et Cytosine (en rouge) avec Guanine (en violet). Le squelette de l'ADN est composé par la liaison de Phosphates (en jaune) avec un groupement désoxyribose (en orange).}
+  {\includegraphics[width=0.75\linewidth]{./figures/ch1/dna_structure}}
+    \caption{}
     \label{Fig:dna_structure}
-  \hspace{0.3cm}
+  % \hspace{0.3cm}
+  \end{subfigure}
+  \begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=0.75\linewidth]{./figures/ch1/chromosome_adn_2}}
+    \caption{}
+    \label{Fig:chromosome_adn}
+  % \hspace{0.3cm}
+  \end{subfigure}
+  \caption{\it (a) Structure chimique de l'ADN mettant en jeu la liaison de nucléotides Adénine (en vert) avec Thymine (en rose) et Cytosine (en rouge) avec Guanine (en violet). Le squelette de l'ADN est composé par la liaison de Phosphates (en jaune) avec un groupement désoxyribose (en orange).
+  (b) Les différentes échelles de structuration d'un chromosome, forme condensée de l'ADN. Ce chromosome est lui-même constitué de nucléosomes, composés de brins d'ADN enroulés autour de protéines structurants, les histones.}
 \end{figure}
+
+
 
 
 À cette partie commune se lie une base azotée spécifique à chacun des 4 types de nucléotides. Les nucléotides s'organisent en séquence de deux brins complémentarité. L'Adénine se liant à la Thymine et la Guanine se liant à la Cytosine. 
 
-Ces deux brins prennent une structure hélicoïdale. Cette complémentarité des brins permet tout d'abord d'assurer une certaine résistance de la structure à la dégradation et, en cas d'endommagement d'un des deux brins, la redondance de la complémentarité permet la réparation du brin intact. 
-
+Ces deux brins prennent une structure hélicoïdale. Cette complémentarité des brins permet tout d'abord d'assurer une certaine résistance de la structure à la dégradation et, en cas d'endommagement d'un des deux brins, la redondance de la complémentarité permet la réparation du brin intact.
 L'ADN est lui-même organisé en structures plus complexes allant du nucléosomes aux chromosomes. Ces chromosomes permettent à l'ADN d'être plus compacte et sont aussi un élément de la 
 régulation lors de l'étape de transcription. 
-
-\begin{figure}
-  \centering
-  {\includegraphics[width=0.3\linewidth]{./figures/ch1/chromosome_adn}}
-    \caption{\it Les différentes échelles de structuration d'un chromosome, forme condensée de l'ADN. Ce chromosome est lui-même constitué de nucléosomes, composés de brins d'ADN enroulés autour de protéines structurants, les histones.}
-    \label{Fig:chromosome_adn}
-  \hspace{0.3cm}
-\end{figure}
 
 L'ADN est découpé en séquences codantes et non codantes, les séquences codantes étant transformées en protéines alors que les séquences non codantes, longtemps appelées ADN "poubelle", ne sont transcrites en ARN, et donc pas traduites en protéines. On sait aujourd'hui que certaines parties non codantes de l'ADN jouent le rôle primordiale de régulation, modulant la quantité de protéines produites lors de la phase de transcription.
 
@@ -80,7 +84,7 @@ Chez les eucaryote, organismes pluricellulaires possédant un noyau dans la cell
 
 \begin{figure}
   \centering
-  {\includegraphics[width=0.3\linewidth]{./figures/ch1/cellule}}
+  {\includegraphics[width=0.75\linewidth]{./figures/ch1/cellule}}
     \caption{\it Cellule eucaryote en coupe horizontale. Les différentes organites de la cellule sont labellisées. L'ADN est contenu sous forme chromosomique dans le nucléole et doit traverser les pores nucléaires pour accéder au cytoplasme.}
     \label{Fig:cellule}
   \hspace{0.3cm}
@@ -92,7 +96,7 @@ L'Acide RiboNucléique (ARN) est une biomolécule structurellement proche de l'A
 
 \begin{figure}
   \centering
-  {\includegraphics[width=0.3\linewidth]{./figures/ch1/deoxyribose_vs_ribose}}
+  {\includegraphics[width=0.6\linewidth]{./figures/ch1/deoxyribose_vs_ribose}}
     \caption{\it Composition chimique d'un désoxyribose, présent dans l'ADN, mis en parallèle avec un ribose, présent dans l'ARN. La seule différence provient du groupement hydrogène présent sur le carbone 2 du désoxyribose qui est remplacé par une groupement hydroxyle dans le ribose.}
     \label{Fig:deoxyribose_vs_ribose}
   \hspace{0.3cm}
@@ -115,32 +119,52 @@ Certaine sont impliqués dans la \textbf{mobilité} des cellule et des organisme
 
 \begin{figure}
   \centering
-  {\includegraphics[width=0.3\linewidth]{./figures/ch1/actine_myosine}}
+  {\includegraphics[width=0.75\linewidth]{./figures/ch1/actine_myosine}}
     \caption{\it Illustration de l'interaction entre un filament de myosine et un brin d'actine, troponine et tropomyosine. Cette interaction est impliquée dans la mobilité cellulaire utilisée notamment pour la contraction musculaire.}
     \label{Fig:actine_myosine}
   \hspace{0.3cm}
-\end{figure}}
+\end{figure}
 
-Certaine jouent un rôle dans le \textbf{conditionnement de l'ADN}, l'ADN étant enroulé autour de protéines appelées les histones (voir Figure \ref{Fig:chromosome_adn}), 
+Certaine jouent un rôle dans le \textbf{conditionnement de l'ADN}, l'ADN étant enroulé autour de protéines appelées les histones (voir Figure \ref{Fig:chromosome_adn}), d'autres sont impliqués dans la \textbf{régulation de l'expression génétique}, comme les facteurs de transcription accompagnant l'ARN polymérase lors de la transcription (voir Figure \ref{Fig:RNA_pol_II}).
 
-\commentaire{image}
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.5\linewidth]{./figures/ch1/RNA_pol_II}}
+    \caption{\it ARN polymérase liée à un fragment d'ADN. La protéine est représentée sous forme de surface transparente de couleur alors que l'ADN est représentée sous forme de bâtons opaques.}
+    \label{Fig:RNA_pol_II}
+  \hspace{0.3cm}
+\end{figure}
 
-D'autres sont impliqués dans la \textbf{régulation de l'expression génétique}, comme les facteurs de transcription accompagnant l'ARN polymérase lors de la transcription.
+Une protéine est constituée d'une succession d'acides aminés. Au sein des protéines présentes chez les êtres vivants, il existe 22 acides aminés différents. Parmi ces 22 acides aminés, 19 d'entre eux ne sont constitués que de quatre atomes distincts: le carbone, l'hydrogène, l'oxygène et l'azote (voir Figure \ref{Fig:amino_acid_structure}). Deux autres possèdent également un atome de soufre et enfin le dernier, plus rare, possède un atome de sélénium. 
 
-\commentaire{image}
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.4\linewidth]{./figures/ch1/amino_acid_structure}}
+    \caption{\it Structure chimique d'un acide aminé. En jaune est représenté le Carbone alpha où est lié la chaîne latérale dont la composition atomique est différente suivant le type d'acide aminé.}
+    \label{Fig:amino_acid_structure}
+  \hspace{0.3cm}
+\end{figure}
 
-Une protéine est constituée d'une succession d'acides aminés. Au sein des protéines présentes chez les êtres vivants, il existent 22 acides aminés différents. Parmi ces 22 acides aminés, 19 d'entre eux ne sont constitués que de quatre atomes distincts: le carbone, l'hydrogène, l'oxygène et l'azote. Deux autres possèdent également un atome de soufre et enfin le dernier, plus rare, possède un atome de sélénium. 
+Ces acides aminés possèdent une partie commune qui constitue, lorsqu'ils sont liés dans une chaîne protéique, la \textit{chaîne principale} (squelette ou backbone) de la protéine. C'est au niveau de la chaîne latérale que les acides aminés sont liés entre eux en formant une \textit{liaison peptidique}. Les différents acides aminés se différencient par une partie variante possédant 21 combinaisons et appelée la \textit{chaîne latérale}. 
 
-\commentaire{image}
-
-Ces acides aminés possèdent une partie commune qui constitue, lorsqu'ils sont liés dans une chaîne protéique, la \textit{chaîne principale} (squelette ou backbone) de la protéine. C'est au niveau de la chaîne latérale que les acides aminés sont liés entre eux en formant une \textit{liaison peptidique}. Les différents acides aminés se différencient par une partie variante possédant 22 combinaisons et appelée la \textit{chaîne latérale}. 
-
-\commentaire{image}
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.75\linewidth]{./figures/ch1/amino_acids_type}}
+    \caption{\it Représentation des différents acides aminés classés selon leurs propriétés physico-chimiques. Cette classification n'est pas universelle et d'autres regroupements basés sur d'autres propriétés peuvent être proposés.}
+    \label{Fig:amino_acids_type}
+  \hspace{0.3cm}
+\end{figure}
 
 La chaîne latérale des acides aminés donne lieu a des propriétés physico-chimiques différentes. Chaque acide aminé peut donc être représenté par la structure générique H$_{2}$N-HC$R$-COOH, dans laquelle $R$ désigne la chaîne latérale. 
 Il est possible de classer les acides aminés selon plusieurs critères, depuis leur taille jusque leur propriété hydrophobe (affinité avec l'eau) ou leur polarité. Il existe cependant un classement commun qui les regroupe en six groupes fonctionnels: Les acides aminés \textbf{aliphatiques} (Glycine, Alanine, Valine, Leucine et Isoleucine), les acides aminés avec groupement \textbf{hydroxyle, sulfurique ou sélénique} (Sérine, Thréonine, Méthionine, Cystéine et Sélénocystéine), les acides aminés \textbf{cycliques} (Proline), les acides aminés \textbf{aromatiques} (Phénylalanine, Tyrosine et Tryptophane), les acides aminés \textbf{basiques} (Histidine, Lysine et Arginine) et enfin les acides aminés \textbf{acides} et leurs \textbf{amides} (Aspartate, Glutamate, Asparagine et Glutamine).
 
-\commentaire{diagramme de Venn}
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.75\linewidth]{./figures/ch1/diagramme_venn}}
+    \caption{\it Diagramme de Venn illustrant les différentes classifications pouvant définir les acides-aminés. Ces propriétés peuvent être structurelles (minuscules, petit) ou physico-chimiques (polaire, hydrophobe, etc.).}
+    \label{Fig:diagramme_venn}
+  \hspace{0.3cm}
+\end{figure}
 
 
 \begin{figure}
@@ -173,21 +197,27 @@ L'information génétique supportée par l'ADN doit être transformée en unité
 
 Lors de la transcription, un ensemble d'enzymes composé de l'ARN polymérase et de facteurs de transcription viennent reconnaître une séquence particulière de l'ADN appelée site promoteur. La liaison sur ce site engendre un clivage des deux brins complémentaires constituants l'ADN. L'ARN polymérase peut alors commencer à parcourir l'un des deux brins et initie la génération d'un pré-ARN messager (pré-ARNm). Ce pré-ARNm va être constitué d'une séquence de nucléotides complémentaires à la séquence du brin d'ADN que l'ARN polymérase parcourt. La terminaison de l'élongation de l'ARNm intervient lorsqu’une séquence spécifique de nucléotides est atteinte (AAUAAA). L'ARN polymérase se détache et libère le pré-ARNm ainsi formé qui va subir une étape de maturation. Cette étape de maturation est une étape importante de régulation de l'expression des gènes puisqu'elle peut influer sur la stabilité de l'ARN, sa capacité à être traduit ou bien avoir un impact sur la séquence traduite. L'une des modifications post-transcriptionnelles courantes implique des enzymes venant cliver les séquences non codantes et non nécessaires à la formation de protéines dans l'ARN. Cette étape d'épissage va donc couper l'ARN a différents endroits et donc potentiellement générer plusieurs chaînes d'ARN. Autre modification importante, l'ajout d'une coiffe à l'extrémité 5' de l'ARN et une polyadénylation (ajout d'environ 200 résidus adénosine) en 3'. Ces deux dernières modifications jouent un rôle important pour la reconnaissance de l'ARN par le ribosome pendant la traduction, mais également pour sa stabilité. Ces modifications constituent d'ailleurs la dernière étape de la transcription et précèdent la sortie de l'ARNm mature du noyau pour rejoindre le cytoplasme de la cellule, lieu de la traduction.
 
-\commentaire{image}
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.75\linewidth]{./figures/ch1/transc_trad_HD.pdf}}
+    \caption{\it Schéma simplifié des étapes de transcription et de traduction. On peut voir que l'information gnétique portée par l'ADN double-brin sous forme de séquences de triplets d'acides nucléiques est copié en l'ARNm pour pouvoir travers la paroi nucléaire et rejoindre un ribosome qui fera l'interface entre les codons de nucléotides et les acides aminés correspondant portés par les ARNt.}
+    \label{Fig:transc_trad_HD}
+  \hspace{0.3cm}
+\end{figure}
 
 
 \subsubsection{La traduction, de l'ARN à la protéine}
 
 Lorsque l'ARNm a rejoint le cytoplasme, l'étape de traduction peut commencer. La première phase de la traduction est la reconnaissance de la sous-partie du ribosome (30S chez les bactéries, 40S chez les eucaryotes) de la région en amont de l'ARNm pour ensuite atteindre le codon d'initiation qui le premier triplet de nucléotide qui sera traduit. Chaque triplet de nucléotide code pour un acide aminé particulier. Puisqu'il existe 4 nucléotides différents, 64 combinaisons de triplets sont possibles et en moyenne, un acide aminé est codé par 3 combinaisons de triplets de nucléotides différents, c'est le caractère redondant du code génétique, comme illustré dans la Figure \ref{Fig:codon_table}. 
-Le premier triplet de la chaîne d'ARNm et la petite sous-unité du ribosome vont alors recruter le premier ARNt ayant formé un complexe avec une méthionine et la grande sous-partie du ribosome (50S chez les bactéries, 60S chez les eucaryotes). À la suite de cette étape de reconnaissance, la construction du reste de la protéine est initiée et se caractérise par la lecture séquentielle des triplets de nucléotides de l'ARNm par le ribosome. LLe ribosome fait l'interface entre l'ARNm et les complexes ARNt complémentaires/acide aminé. Les acides aminés sont liés entre eux de façon séquentielle jusqu'à ce qu'un triplet codant pour un codon-STOP (ou d'arrêt) soit atteint par le ribosome. À ce moment-là, le ribosome libère la protéine et l'ARNm et l'étape de traduction se termine. À ce moment-là, la protéine n'est pas encore fonctionnelle et doit encore subir des modifications post-traductionnelles afin de pouvoir remplir sa fonction.
+Le premier triplet de la chaîne d'ARNm et la petite sous-unité du ribosome vont alors recruter le premier ARNt ayant formé un complexe avec une méthionine et la grande sous-partie du ribosome (50S chez les bactéries, 60S chez les eucaryotes). À la suite de cette étape de reconnaissance, la construction du reste de la protéine est initiée et se caractérise par la lecture séquentielle des triplets de nucléotides de l'ARNm par le ribosome. LLe ribosome fait l'interface entre l'ARNm et les complexes ARNt complémentaires/acide aminé. Les acides aminés sont liés entre eux de façon séquentielle jusqu'à ce qu'un triplet codant pour un codon-STOP (ou d'arrêt) soit atteint par le ribosome. À ce moment-là, le ribosome libère la protéine et l'ARNm et l'étape de traduction se termine. À ce moment-là, la protéine n'est pas encore fonctionnelle et doit encore subir des modifications post-traductionnelles afin de pouvoir remplir sa fonction. Un schéma simplifié de la transcription et de la traduction est illustré dans la Figure \ref{Fig:trans_trad_HD}
 
-\begin{figure}
-  \centering
-  {\includegraphics[width=0.75\linewidth]{./figures/ch1/codon_table.pdf}}
-    \caption{\it Tableau de correspondance des triplets d'acides nucléiques et les acides aminés pour lesquels ils codent. "Initiation" désigne les codons pouvant être retrouvés comme initiateur de la traduction, "Stop" désignent les codons responsables de l'arrêt du processus de traduction par le ribosome.}
-    \label{Fig:codon_table}
-  \hspace{0.3cm}
-\end{figure}
+% \begin{figure}
+%   \centering
+%   {\includegraphics[width=0.75\linewidth]{./figures/ch1/codon_table.pdf}}
+%     \caption{\it Tableau de correspondance des triplets d'acides nucléiques et les acides aminés pour lesquels ils codent. "Initiation" désigne les codons pouvant être retrouvés comme initiateur de la traduction, "Stop" désignent les codons responsables de l'arrêt du processus de traduction par le ribosome.}
+%     \label{Fig:codon_table}
+%   \hspace{0.3cm}
+% \end{figure}
 
 \subsubsection{Maturation et acquisition de la fonction protéique}
 
@@ -195,9 +225,9 @@ Afin de leur assurer une certaine stabilité, de les guider vers leur lieu d'act
 
 \section{Méthodes et outils de la biologie structurale}
 
-Nous avons vu que la biologie structurale cherchait à décrypter le fonctionnement des biomolécules à travers leur structure tridimensionnelle. Les protéines sont des unités biologiques de taille microscopique, leur taille oscillant entre quelques dizaines et quelques centaines d'Angströms (\r{A} = \SI{e-10}{\metre}) et donc invisibles pour des systèmes de photographies standards. En effet, les techniques de microscopie optique standards ne peuvent permettre aujourd'hui une observation à l'échelle atomique, quel que soit l'objet d'étude. Cette taille en Angströms est indicative et utilise une unité peu utilisée pour désigner la taille ou le poids des protéines. On préfère utiliser le kilodalton (kDa) qui est une mesure de masse, 1 Da correspondant à la masse d'un atome d'hydrogène. Un acide aminé représente environ 110 Da et une protéine entre 15 et plusieurs millions de kDa pour les complexes multimériques les plus importants. Cette unité de mesure standard permet de comparer aisément le champ d'application des techniques et méthodes présentées tout au long de cette section.
+Nous avons vu que la biologie structurale cherchait à décrypter le fonctionnement des biomolécules à travers leur structure tridimensionnelle. Les protéines sont des unités biologiques de taille microscopique, leur taille oscillant entre quelques dizaines et quelques centaines d'Angströms (\r{A} = \SI{e-10}{\metre}) et donc invisibles pour des systèmes de photographies standards. En effet, les techniques de microscopie optique ne peuvent permettre aujourd'hui une observation à l'échelle atomique, quel que soit l'objet d'étude. Par soucis de clarté pour la suite de cette section, notons que cette taille en Angströms est indicative et utilise une unité peu utilisée pour désigner la taille ou le poids des protéines. On préfère utiliser le kilodalton (kDa) qui est une mesure de masse, 1 Da correspondant à la masse d'un atome d'hydrogène. Un acide aminé représente environ 110 Da et une protéine entre 15 et plusieurs millions de kDa pour les complexes multimériques les plus importants. Cette unité de mesure standard permet de comparer aisément le champ d'application des techniques et méthodes présentées tout au long de cette section.
 
-L'ensemble des approches expérimentales et théoriques permettant d'étudier la structure des protéines peut être divisé en 3 grandes approches: Les \textbf{techniques expérimentales}, regroupant les techniques utilisant des extraits naturels des protéines étudiées et cherchant à obtenir leur structuration par des outils de mesure \textit{in vitro}. Les approches de \textbf{modélisation/simulation} mettent en place des modèles informatiques de structures 3d à partir d'informations physico-chimiques et/ou statistiques encodées comme paramètres de logiciels de calcul. Enfin, les programmes de visualisation moléculaire vont permettre d'observer et d'analyser les structures obtenues à partir des deux approches précédentes grâce à des codes graphiques précis dans le but d'extraire, d'illustrer ou de communiquer de nouvelles connaissances scientifiques.
+L'ensemble des approches expérimentales et théoriques permettant d'étudier la structure des protéines peut être divisé en 3 grandes approches: Les \textbf{techniques expérimentales}, regroupant les techniques utilisant des extraits naturels des protéines étudiées et cherchant à obtenir leur structuration par des outils de mesure \textit{in vitro}. Les approches de \textbf{modélisation/simulation} mettent en place des modèles informatiques de structures 3d à partir d'informations physico-chimiques et/ou statistiques encodées comme paramètres de logiciels de calcul. Enfin, les programmes de \textbf{visualisation moléculaire} vont permettre d'observer et d'analyser les structures obtenues à partir des deux approches précédentes grâce à des codes graphiques précis dans le but d'extraire, d'illustrer ou de communiquer de nouvelles connaissances scientifiques.
 
 \subsection{Expérimentations}
 
