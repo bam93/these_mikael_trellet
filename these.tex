@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt]{book}
+\documentclass[a4paper,11pt,draft]{book}
 
 % ============== Style sections ============ VOIR MACROS pour régler la mise en page
 \setcounter{secnumdepth}{3}% enlève la numérotation après les sections
@@ -8,8 +8,6 @@
    {\thesubsubsection}% apparence du numéro
    {1em}% espacement numéro/texte
    {}% apparence du titre
-
-\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
 
 \usepackage[a4paper]{geometry}
 %\geometry{vmargin=3.8cm,hmargin=3.3cm} % marges verticales et horizontales
@@ -37,7 +35,7 @@
 
 % Choix de la langue
 \usepackage[english,francais]{babel}
-\NoAutoSpaceBeforeFDP
+
 %% Pour une thèse en français et en anglais
 % puis dans le corps du document utiliser...
 %\selectlanguage{francais} % pour écrire en français
@@ -206,6 +204,9 @@
 % \excludecomment{figure}
 % \let\figure\relax
 
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+\NoAutoSpaceBeforeFDP
+
 % =========================== Info du document =================================
 
 \title{Exploration et analyse interactive de données moléculaires en condition immersive}
@@ -261,7 +262,7 @@
 %% Abstract
 \cleardoublepage
 % \pdfbookmark[0]{Résumé / Abstract}{resume}
-\include{resume}
+% \include{resume}
 
 
 % Table des mati�res
