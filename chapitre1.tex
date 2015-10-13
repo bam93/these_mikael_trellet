@@ -19,24 +19,40 @@
 %\end{itemize}
 
 
-L'objectif des grands sous-domaines de la biologie est de caractériser les organismes vivants afin de comprendre leur fonctionnement, du niveau d'échelle le plus macroscopique jusqu'à l'échelle moléculaire et atomique. Ainsi, l'\emph{anatomie} a pour objectif de décrire les différents systèmes et appareils participant aux grandes fonctions des organismes. L'\emph{histologie} concerne l'étude des organes et des tissus. La \emph{biologie  cellulaire}, s'attellent à faire progresser la connaissance et la compréhension des mécanismes régissant le fonctionnement de la cellule, unité de base de l’ensemble des organismes vivants. La \emph{biologie moléculaire} s'intéressent de manière plus spécifique à la nature et à la structure des biomolécules, aux interactions avec leur environnement, ainsi qu'à leur synthèse dans le milieu cellulaire. Le but essentiel de la biologie moléculaire est d'expliquer des phénomènes biologiques de grande échelle à partir d'observations théoriques ou expérimentales effectuées à l'échelle moléculaire, ou à partir de l'étude des réactions chimiques et métaboliques induites par les interactions entre ces biomolécules et leur environnement. Enfin, la \emph{biologie structurale} s'intéresse plus exclusivement aux structures tridimensionnelles des biomolécules, aux  étapes permettant à une biomolécule d'acquérir cette structure. En effet, c'est la structure tridimensionnelles qui conditionne à la fois les interactions entre les biomolécules avec leur environnement et leur comportement dynamique, desquels découlent leur rôle et leur fonction dans la cellule. La biologie structurale mobilisent des approches expérimentales, théoriques et computationnelles, basées sur des méthodes expérimentales et des lois physiques choisies en fonction de l'échelle ou de la nature des phénomènes étudiés.
+La biologie et les grands sous-domaines qui la composent ont pour objectif de caractériser les organismes vivants afin de comprendre leur fonctionnement, du niveau d'échelle le plus macroscopique jusqu'à l'échelle moléculaire et atomique. Ainsi, l'\emph{anatomie} a pour but de décrire les différents systèmes et appareils participant aux grandes fonctions des organismes. L'\emph{histologie} concerne l'étude des organes et des tissus. La \emph{biologie  cellulaire}, s'attelle à faire progresser la connaissance et la compréhension des mécanismes régissant le fonctionnement de la cellule. La \emph{biologie moléculaire} s'intéresse de manière plus spécifique à la nature et à la structure des biomolécules, aux interactions avec leur environnement, ainsi qu'à leur synthèse dans le milieu cellulaire. Le but essentiel de la biologie moléculaire est d'expliquer des phénomènes biologiques de grande échelle à partir d'observations théoriques ou expérimentales effectuées à l'échelle moléculaire, ou à partir de l'étude des réactions chimiques et métaboliques induites par les interactions entre ces biomolécules et leur environnement. Enfin, la \emph{biologie structurale} s'intéresse plus exclusivement aux structures tridimensionnelles des biomolécules, aux  étapes permettant à une biomolécule d'acquérir cette structure. En effet, c'est la structure tridimensionnelles qui conditionne à la fois les interactions entre les biomolécules avec leur environnement et leur comportement dynamique, desquels découlent leur rôle et leur fonction dans la cellule. La biologie structurale mobilisent des approches expérimentales, théoriques et computationnelles, basées sur des méthodes expérimentales et des lois physiques choisies en fonction de l'échelle ou de la nature des phénomènes étudiés.
+
+Nous décrirons en premier lieu dans ce chapitre les différents acteurs et processus de la biologie moléculaire, les méthodes expérimentales et théoriques contemporaines dans le domaine de la biologie structurale. Dans la dernière partie nous présenterons les limites et perspectives de ce domaine afin d'introduire les contributions de ce travail de recherche en terme de Réalité Virtuelle et de Visual Analytics appliqués à la biologie structurale. 
 
 \section{Acteurs et processus de la biologie moléculaire}
 
-Les biomolécules sont des molécules qui sont impliquées dans le fonctionnement des organismes vivants et de leurs cellules. Les molécules d'eau constituent souvent la part majoritaire dans la composition des organisme, les lipides sont les composants de base des membranes cellulaires, les acides nucléiques sont les constituants de l'ADN, 
-support de l'information génétique, et les acides aminées formes les protéines.
+Les biomolécules sont des molécules qui sont impliquées dans le fonctionnement des organismes vivants et de leurs cellules, unité de base de l’ensemble des organismes vivants. Les molécules d'eau constituent souvent la part majoritaire dans la composition des organismes, les lipides sont les composants de base des membranes cellulaires, les acides nucléiques sont les constituants de l'ADN, 
+support de l'information génétique, et les acides aminées forment les protéines, principaux acteurs du fonctionnement cellulaire (voir Figure \ref{Fig:kinesincargoart}).
 
-Nos travaux de recherche portent majoritairement sur les biomolécules de plus grande taille, appelées également macromolécules, comme l'ADN et les protéines. L'ADN constitue le support de l'information génétique transmise et conservée de générations en générations grâce à la reproduction. Les protéines, sont à la fois les ouvriers, les briques, les messagers impliqués dans le fonctionnement cellulaire. Nous porterons une attention particulière aux  édifice macromoléculaires composés de plusieurs protéines appelés complexes protéiques, même si les résultats de nos travaux de recherches s'appliquent à une large gamme de biomolécules, des plus simples aux plus complexes.
+Nos travaux de recherche portent majoritairement sur les biomolécules de plus grande taille, appelées également macromolécules, comme l'ADN et les protéines. L'ADN constitue le support de l'information génétique transmise et conservée de génération en génération grâce à la reproduction. Les protéines, sont à la fois les ouvriers, les briques et les messagers impliqués dans le fonctionnement cellulaire. Nous porterons une attention particulière aux édifice macromoléculaires composés de plusieurs protéines appelés complexes protéiques, même si les résultats de nos travaux de recherches s'appliquent à une large gamme de biomolécules, des plus simples aux plus complexes.
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.85\linewidth]{./figures/ch1/kinesincargoart}}
+    \caption{\it Vue d’artiste du transport de vésicules contenant du matériel cellulaire (boules blanches et bleues) le long de microtubules (tube de couleur verte) par une protéine appelée kinésine. La kinésine est composée de plusieurs domaines : en rose les deux domaines constituant les <<jambes>> de la protéine, en bleu un filament dont le domaine terminale se lie aux vésicules proches. A la frontière entre les domaines jaunes et roses, se déroule la transformation de l'énergie chimique en énergie mécanique permettant à la protéine de <<marcher>> sur le microtubules. Les microtubules sont constituées de petites protéines (en vert) en forme de briques qui s'auto-organisent de façon à former un tube sur lequel évolue ces kinésines.}
+    \label{Fig:kinesincargoart}
+  \hspace{0.3cm}
+\end{figure}
 
 \subsection{Les biomolécules au coeur de la machinerie cellulaire}
 
-L'information génétique (génotype), est un plan dont l'exécution conditionne l'apparence d'un être vivant, son fonctionnement, et son comportement dans son environnement (phénotype). Cette information génétique est stockée de manière pérenne et reproductible sur un support de nature moléculaire, comme l'\textbf{ADN} pour Acide Desoxyribo-Nucléique ou l'\textbf{ARN} pour Acide Ribo-Nucléique.
+L'information génétique (génotype), est un plan dont l'exécution conditionne l'apparence d'un être vivant, son fonctionnement, et son comportement dans son environnement (phénotype). Cette information génétique est stockée de manière pérenne et reproductible sur un support de nature moléculaire : l'\textbf{ADN} pour Acide Desoxyribo-Nucléique ou l'\textbf{ARN} pour Acide Ribo-Nucléique. L'ADN est porté par les chromosomes, situés dans le noyau de la cellule (voir Figure \ref{Fig:cellule}).
 
-L'exécution de ce plan s'effectue à l'échelle moléculaire commençant par la lecture de l'information génétique et se terminant par la production des acteurs moléculaire impliqués dans le fonctionnement de la cellule. Ce processus de transformation de l'information génétique en composants fonctionnels est commun à tous les êtres vivants. Dans cette première partie de chapitre, nous décrirons brièvement à échelle moléculaire comment l'information génétique portée par l'ADN, est traduite en unités biologiques fonctionnelles, appelées \textbf{protéines}.
+L'exécution de ce plan s'effectue à l'échelle moléculaire et commence par la lecture de l'information génétique et se termine par la production de toutes les protéines dans le cytoplasme (voir Figure \ref{Fig:cellule}) impliquées dans le fonctionnement de la cellule. Ce processus de transformation de l'information génétique en des composants fonctionnels est commun à tous les êtres vivants.
 
-Ce processus est composé de plusieurs étapes, les principales étant la transcription et la traduction. L'étape de transcription consiste à lire puis à recopier les informations portées par l'ADN. Cette transcription est assurée par un complexe biomoléculaire appelé ARN polymérase, qui produit l'ARN messager, copie d'une portion d'ADN appelé gène. L'étape suivante, la traduction, débute lorsque l'ARN messager rencontre les acteurs moléculaires responsables de la traduction, les ribosomes. L'ARN  messager se lie alors aux ribosomes et l'information portée par l'ARN, copie partielle de l'information génétique initialement portée par l'ADN, est lue pour construire de nouveaux édifices moléculaires fonctionnels de la cellules, les protéines. Les protéines sont à la fois les briques, les ouvriers, les messagers, participant au fonctionnement cellulaire. Les règles qui régissent la production de protéines à partir de la lecture de l'information génétique sont décrites dans le code génétique universel, commun à tous les organismes vivants.
-Le fonctionnement d'une cellule vivante ne passe pas uniquement pas ces deux processus et d'autres biomolécules sont impliquées dans ce fonctionnement. Parmi ces molécules, les polysaccharides et les lipides ne sont pas générées par le code génétique mais jouent un rôle prépondérant dans la structuration, les sources d'énergie ou messagers inter- et intra-cellulaires par exemple.
+Le fonctionnement d'une cellule vivante implique aussi d'autres acteurs. Parmi ces molécules, les \textbf{polysaccharides} et les \textbf{lipides} ne sont pas générées par le code génétique mais jouent un rôle prépondérant dans la structuration, notamment de la membrane cellulaire (voir Figure \ref{Fig:cellule}), d'autres stockent l'énergie nécessaire à la cellule et enfin certaines fonctionnent comme messagers inter- et intra-cellulaires.
 
+\begin{figure}[H]
+  \centering
+  {\includegraphics[width=0.95\linewidth]{./figures/ch1/cellule}}
+    \caption{\it Cellule eucaryote en coupe horizontale.}
+    \label{Fig:cellule}
+  \hspace{0.3cm}
+\end{figure}
 
 %\begin{figure}
 %  \centering
@@ -48,53 +64,46 @@ Le fonctionnement d'une cellule vivante ne passe pas uniquement pas ces deux pro
 
 \subsubsection{L'ADN}
 
-L'Acide Désoxyribo-Nucléique (ADN) est une biomolécule commune à tous les organismes vivants. C'est une longue séquence de nucléotides, de quatre types : l' Adénine, la Thymine, la Guanine et la Cytosine. Ces nucléotides partagent une structure moléculaire commune constituée d'un sucre, le désoxyribose, et d'un groupe phosphate, cette structure est illustrée dans la Figure \ref{Fig:dna_structure}. 
+L'Acide Désoxyribo-Nucléique (ADN) est une biomolécule pouvant être considérée comme le plan de construction de tous les êtres vivants. C'est le support moléculaire contenant l'information génétique, commun à tous les organismes vivants. C'est une longue séquence de nucléotides, de quatre types : l'Adénine, la Thymine, la Guanine et la Cytosine. Ces nucléotides partagent une structure moléculaire commune constituée d'un sucre, le désoxyribose, et d'un groupe phosphate (voir Figure \ref{Fig:dna_structure}). À cette partie commune se lie une base azotée spécifique à chacun des 4 types de nucléotides. Les nucléotides s'organisent en séquence de deux brins en complémentarité. L'Adénine et la Guanine se liant respectivement à la Thymine et la Cytosine.
 
-\begin{figure}
-  \begin{subfigure}{.5\textwidth}
+\begin{figure}[H]
+  \begin{subfigure}{.6\textwidth}
   \centering
   {\includegraphics[width=0.75\linewidth]{./figures/ch1/dna_structure}}
     \caption{}
     \label{Fig:dna_structure}
   % \hspace{0.3cm}
   \end{subfigure}
-  \begin{subfigure}{.5\textwidth}
+  \begin{subfigure}{.4\textwidth}
   \centering
-  {\includegraphics[width=0.75\linewidth]{./figures/ch1/chromosome_adn_2}}
+  {\includegraphics[width=0.75\linewidth]{./figures/ch1/dna_structure_3d}}
     \caption{}
-    \label{Fig:chromosome_adn}
+    \label{Fig:dna_structure_3d}
   % \hspace{0.3cm}
   \end{subfigure}
   \caption{\it (a) Structure chimique de l'ADN mettant en jeu la liaison de nucléotides Adénine (en vert) avec Thymine (en rose) et Cytosine (en rouge) avec Guanine (en violet). Le squelette de l'ADN est composé par la liaison de Phosphates (en jaune) avec un groupement désoxyribose (en orange).
-  (b) Les différentes échelles de structuration d'un chromosome, forme condensée de l'ADN. Ce chromosome est lui-même constitué de nucléosomes, composés de brins d'ADN enroulés autour de protéines structurantes, les histones.}
+  (b) Représentation de l'ADN en 3d, chaque type de nucléotides étant représenté par une couleur différente.}
 \end{figure}
 
 
+Les deux brins de l'ADN prennent une structure hélicoïdale. Leur complémentarité permet tout d'abord d'assurer une certaine résistance de la structure à la dégradation et, en cas d'endommagement d'un des deux brins, la redondance de la complémentarité permet la réparation du brin intact.
+L'ADN est lui-même structuré de façon plus complexe, d'abord compacté par les histones, puis finalement organisés en superstructures, les chromosomes.
 
-
-À cette partie commune se lie une base azotée spécifique à chacun des 4 types de nucléotides. Les nucléotides s'organisent en séquence de deux brins en complémentarité. L'Adénine se liant à la Thymine et la Guanine se liant à la Cytosine. 
-
-Ces deux brins prennent une structure hélicoïdale. Cette complémentarité des brins permet tout d'abord d'assurer une certaine résistance de la structure à la dégradation et, en cas d'endommagement d'un des deux brins, la redondance de la complémentarité permet la réparation du brin intact.
-L'ADN est lui-même organisé en structures plus complexes allant du nucléosomes aux chromosomes. Ces chromosomes permettent à l'ADN d'être plus compact et sont aussi un élément de la 
-régulation lors de l'étape de transcription. 
-
-L'ADN est découpé en séquences codantes et non codantes, les séquences codantes étant transformées en protéines alors que les séquences non codantes, longtemps appelées ADN "poubelle", ne sont transcrites en ARN, et donc pas traduites en protéines. On sait aujourd'hui que certaines parties non codantes de l'ADN jouent le rôle primordial de régulation, modulant la quantité de protéines produites lors de la phase de transcription.
-
-Chez les eucaryotes, organismes pluricellulaires possédant un noyau dans la cellule, l'ADN est stocké dans le noyau et ne peut en sortir à cause de sa taille trop importante qui l'empêche de traverser la membrane nucléique. Une cellule eucaryote est représentée dans la Figure \ref{cellule} \cite{johnson2011biologie}. 
-
-\begin{figure}
-  \centering
-  {\includegraphics[width=0.95\linewidth]{./figures/ch1/cellule}}
-    \caption{\it Cellule eucaryote en coupe horizontale. Les différentes organites de la cellule sont labellisées. L'ADN est contenu sous forme chromosomique dans le nucléole et doit traverser les pores nucléaires pour accéder au cytoplasme.}
-    \label{Fig:cellule}
-  \hspace{0.3cm}
+\begin{figure}[H]
+ \centering
+ {\includegraphics[width=0.6\linewidth]{./figures/ch1/chromosome_adn_2}}
+   \caption{Les différentes échelles de structuration d'un chromosome, forme condensée de l'ADN. Ce chromosome est lui-même composé d'ADN enroulé autour de protéines structurantes, les histones.}
+   \label{Fig:chromosome_adn}
+ % \hspace{0.3cm}
 \end{figure}
+
+Chez les eucaryotes, organismes pluricellulaires possédant un noyau dans la cellule, l'ADN est stocké dans le noyau et ne peut en sortir à cause de sa taille trop importante qui l'empêche de traverser la membrane nucléaire (voir Figure \ref{cellule}) \cite{johnson2011biologie}. 
 
 \subsubsection{L'ARN}
 
 L'Acide RiboNucléique (ARN) est une biomolécule structurellement proche de l'ADN comportant néanmoins quelques différences. La première se retrouve au niveau du sucre constituant chacun des nucléotides puisque le désoxyribose de l'ADN est remplacé par un ribose pour l'ARN. La différence entre les deux groupements est illustrée dans la Figure \ref{Fig:deoxyribose_vs_ribose}. De plus, la Thymine présente dans l'ADN n'existe pas dans l'ARN et est remplacée par l'Uracile, complémentaire, comme la Thymine, à l'Adénine. La seconde différence concerne la structuration des brins puisqu'on ne retrouve pas de structure systématique en double brin qui caractérise l'ADN. 
 
-\begin{figure}
+\begin{figure}[H]
   \centering
   {\includegraphics[width=0.9\linewidth]{./figures/ch1/deoxyribose_vs_ribose}}
     \caption{\it Composition chimique d'un désoxyribose, présent dans l'ADN, mis en parallèle avec un ribose, présent dans l'ARN. La seule différence provient du groupement hydrogène présent sur le carbone 2 du désoxyribose qui est remplacé par une groupement hydroxyle dans le ribose.}
@@ -112,6 +121,8 @@ Contrairement à l'ADN, composé d'un double brin sous forme d'hélice, l' ARN e
 %Les \textbf{ARN régulateurs} ont pour cible les ARNm sur lesquels ils se lient par complémentarité. Cette liaison peut empêcher la traduction de l'ARNm cible par les ribosomes ou bien agir sur la stabilité de l'ARNm régulant ainsi son expression (positivement ou négativement).
 
 \subsubsection{Les protéines}
+
+Elles sont à la fois les briques, les ouvriers, les messagers, participant au fonctionnement cellulaire. Les règles qui régissent la production de protéines à partir de la lecture de l'information génétique sont décrites dans le code génétique universel, commun à tous les organismes vivants.
 
 Les protéines sont les biomolécules considérées comme les acteurs moléculaires fonctionnels de la cellule. Les protéines sont à la fois les briques, les ouvriers, les messagers, participant au fonctionnement cellulaire. Certaines assurent un rôle \textbf{structurel}, en étant notamment impliquées dans la construction et la structure du squelette de la cellule, comme l'actine et le collagène qui assurent le maintien physique et structurel de la cellule ainsi que la résistance de la matrice extracellulaire. 
 
@@ -195,6 +206,11 @@ L'information génétique supportée par l'ADN doit être transformée en unité
 
 \subsubsection{La transcription, de l'ADN à l'ARN}
 
+% Ce processus est composé de plusieurs étapes, les principales étant la transcription et la traduction. L'étape de transcription consiste à lire puis à recopier les informations portées par l'ADN. Cette transcription est assurée par un complexe biomoléculaire appelé ARN polymérase, qui produit l'ARN messager, copie d'une portion d'ADN appelé gène.
+
+% L'ADN est découpé en séquences codantes et non codantes, les séquences codantes étant transformées en protéines alors que les séquences non codantes, longtemps appelées ADN "poubelle", ne sont transcrites en ARN, et donc pas traduites en protéines. On sait aujourd'hui que certaines parties non codantes de l'ADN jouent le rôle primordial de régulation, modulant la quantité de protéines produites lors de la phase de transcription.
+
+
 Lors de la transcription, un ensemble d'enzymes composé de l'ARN polymérase et de facteurs de transcription viennent reconnaître une séquence particulière de l'ADN appelée site promoteur. La liaison sur ce site engendre un clivage des deux brins complémentaires constituants l'ADN. L'ARN polymérase peut alors commencer à parcourir l'un des deux brins et initie la génération d'un pré-ARN messager (pré-ARNm). Ce pré-ARNm va être constitué d'une séquence de nucléotides complémentaires à la séquence du brin d'ADN que l'ARN polymérase parcourt. La terminaison de l'élongation de l'ARNm intervient lorsqu’une séquence spécifique de nucléotides est atteinte (AAUAAA). L'ARN polymérase se détache et libère le pré-ARNm ainsi formé qui va subir une étape de maturation. Cette étape de maturation est une étape importante de régulation de l'expression des gènes puisqu'elle peut influer sur la stabilité de l'ARN, sa capacité à être traduit ou bien avoir un impact sur la séquence traduite. L'une des modifications post-transcriptionnelles courantes implique des enzymes venant cliver les séquences non codantes et non nécessaires à la formation de protéines dans l'ARN. Cette étape d'épissage va donc couper l'ARN a différents endroits et donc potentiellement générer plusieurs chaînes d'ARN. Autre modification importante, l'ajout d'une coiffe à l'extrémité 5' de l'ARN et une polyadénylation (ajout d'environ 200 résidus adénosine) en 3'. Ces deux dernières modifications jouent un rôle important pour la reconnaissance de l'ARN par le ribosome pendant la traduction, mais également pour sa stabilité. Ces modifications constituent d'ailleurs la dernière étape de la transcription et précèdent la sortie de l'ARNm mature du noyau pour rejoindre le cytoplasme de la cellule, lieu de la traduction.
 
 \begin{figure}
@@ -207,6 +223,10 @@ Lors de la transcription, un ensemble d'enzymes composé de l'ARN polymérase et
 
 
 \subsubsection{La traduction, de l'ARN à la protéine}
+
+% L'étape suivante, la traduction, débute lorsque l'ARN messager rencontre les acteurs moléculaires responsables de la traduction, les ribosomes. L'ARN  messager se lie alors aux ribosomes et l'information portée par l'ARN, copie partielle de l'information génétique initialement portée par l'ADN, est lue pour construire de nouveaux édifices moléculaires fonctionnels de la cellules, les protéines.
+
+% Les règles qui régissent la production de protéines à partir de la lecture de l'information génétique sont décrites dans le code génétique universel, commun à tous les organismes vivants.
 
 Lorsque l'ARNm a rejoint le cytoplasme, l'étape de traduction peut commencer. La première phase de la traduction est la reconnaissance de la sous-partie du ribosome (30S chez les bactéries, 40S chez les eucaryotes) de la région en amont de l'ARNm pour ensuite atteindre le codon d'initiation qui le premier triplet de nucléotide qui sera traduit. Chaque triplet de nucléotide code pour un acide aminé particulier. Puisqu'il existe 4 nucléotides différents, 64 combinaisons de triplets sont possibles et en moyenne, un acide aminé est codé par 3 combinaisons de triplets de nucléotides différents, c'est le caractère redondant du code génétique, comme illustré dans la Figure \ref{Fig:codon_table}. 
 Le premier triplet de la chaîne d'ARNm et la petite sous-unité du ribosome vont alors recruter le premier ARNt ayant formé un complexe avec une méthionine et la grande sous-partie du ribosome (50S chez les bactéries, 60S chez les eucaryotes). À la suite de cette étape de reconnaissance, la construction du reste de la protéine est initiée et se caractérise par la lecture séquentielle des triplets de nucléotides de l'ARNm par le ribosome. LLe ribosome fait l'interface entre l'ARNm et les complexes ARNt complémentaires/acide aminé. Les acides aminés sont liés entre eux de façon séquentielle jusqu'à ce qu'un triplet codant pour un codon-STOP (ou d'arrêt) soit atteint par le ribosome. À ce moment-là, le ribosome libère la protéine et l'ARNm et l'étape de traduction se termine. À ce moment-là, la protéine n'est pas encore fonctionnelle et doit encore subir des modifications post-traductionnelles afin de pouvoir remplir sa fonction. Un schéma simplifié de la transcription et de la traduction est illustré dans la Figure \ref{Fig:trans_trad_HD}
@@ -613,7 +633,7 @@ Certaines de ces bases de données sont mises en relation au travers de portails
 
 La visualisation moléculaire est indissociable des progrès effectués par la biologie au cours de son histoire. Tout d'abord utilisée comme moyen de communication et parfois de vulgarisation, elle est aujourd'hui un des vecteurs majeurs d'acquisition de nouvelles informations.
 
-\subsubsection{Evolution du graphisme moléculaire}
+\subsubsection{Evolution des représentations moléculaires}
 
 Les premières tentatives de représentation de structures moléculaires ont correspondu aux principales découvertes expérimentales ayant permises d'obtenir des indications claires sur la structure des protéines étudiées. On peut distinguer deux courants de représentation de ces structures, courants complémentaires et donc la séparation est principalement due à l'évolution des technologies et des moyens de communication.
 
@@ -707,7 +727,7 @@ Concurrencés par les modèles sur ordinateurs, les modèles physique surent né
 \end{figure}
 
 
-\myparagraph{Représentations virtuelles par ordinateur}
+\myparagraph{Représentations virtuelles \textit{in silico}}
 
 Les premiers modèles de structures moléculaires réalisés sur ordinateurs ne sont pas vraiment postérieurs aux premiers modèles physiques que nous avons cité. En effet, c'est en 1964 que Cyrus Levinthal et ses collègues du MIT ont développé un système qui permettait d'afficher, sur un oscilloscope, une représentation filaire d'une structure macromoléculaire (voir Figure \ref{Fig:levinthal_oscilloscope_wireframe}).
 En 1965, Carroll K. Jonhson publia une programme créé en Fortran et appelé \textbf{ORTEP} (\textit{Oak Ridge Thermal Ellipsoid Plot Program}) permettant de générer des illustrations de structures. Les cristallographes l'adoptèrent rapidement et s'en servir pour publier leurs structures lors de conférences ou au sein d'articles de journaux. Sa capacité à générer des images stéréoscopiques des structures fut l'une des grandes forces d'ORTEP qui a vu sa seconde version être sortie en 1976 et sa troisième en 1996, cette dernière étant toujours disponible à l'utilisation\footnote{\url{http://web.ornl.gov/sci/ortep/}}. ORTEP fut notamment utilisé pour illustrer la structure de la myoglobine et ces illustrations firent écho auprès de John C. Kendrew qui félicita personnellement Carroll K. Johnson pour son travail (voir Figure \ref{Fig:ortep_myoglobin}).
@@ -766,7 +786,7 @@ Avec le mentorat d'un cristallographe, Andrew Coulson appliqua son algorithme su
 L'avènement du web fit apparaître quelques années plus tard un programme basé sur le portage du code C de RasMol vers C++. Développé par Bryan van Vliet et Tim Maffett, \textbf{Chime} (pour CHemical mIME) fut publié sous forme de plug-in pour le navigateur web Netscape. La possibilité d'associé cet espace de visualisation à des contenus web et de télécharger des modèles depuis des bases de données en ligne furent deux des principales raisons de son succès, en particulier dans le milieu académique et éducatif. Plusieurs centaines de tutoriels furent publiés sur le web en utilisant Chime et servirent de support à des étudiants mais également à des cristallographes experts. Ses applications furent donc à la fois la communication de structures à travers le web mais également la diffusion des connaissances et le support d'apprentissage.
 
 
-\subsubsection{La visualisation moléculaire aujourd'hui}
+\subsubsection{La visualisation moléculaire contemporaine}
 
 Les programmes de visualisation moléculaire 3d permettent d'observer, dans un espace graphique 3d virtuel, des représentations abstraites de molécules à partir de fichiers de leurs coordonnées 3d. Ces coordonnées 3d sont communément inscrites dans des fichiers PDB (format provenant de la base de données \textit{Protein Data Bank} fournissant un standard pour la représentation des données de structures macromolécules dérivées de RMN ou cristallographie\footnote{\url{http://www.rcsb.org/pdb/static.do?p=file_formats/pdb/index.html}}).
 
@@ -800,12 +820,12 @@ La représentation de surface fait justement partie des techniques de visualisat
   \centering
   {\includegraphics[width=.75\linewidth]{./figures/ch2/molecule_blender_glass}}
     \caption{{\it Représentation}}
-  \label{Fig:VR_pubmed_trend}
+  \label{Fig:molecule_blender_glass}
   \hspace{0.3cm}
 \end{figure}
 
 
-\subsubsection{La visualisation moléculaire de demain ?}
+\subsubsection{Perspectives de la visualisation moléculaire}
 
 La présence de GPUs performants sur une grande partie du parc informatique scientifique permet d'envisager sérieusement leur utilisation intensive pour le développement d'outils de visualisation performants. La prochaine grande étape est la mise à l'échelle de ces outils pour répondre aux enjeux de taille, au sens propre comme au figuré, inhérents aux structures étudiées. Nous avons vu que ces dernières peuvent maintenant être composées de plusieurs millions d'atomes et donc occupé un espace d'affichage conséquent. Alors que la visualisation de quelques centaines d'atomes sur un écran d'ordinateur de bureau permet d'aborder la structure d'un point de vue détaillé tout en gardant une idée précise de sa structure générale et plus spécifiquement de la position de la caméra par rapport à la protéine affichée, les structures de plus grandes tailles nécessitent une résolution beaucoup plus importante et des moyens d'explorer ces structures de façon contrôlée et sans pertes de repères pour l'utilisateur. Or, parmi les différentes techniques de visualisation évoquées précédemment, si nous pouvons facilement constater les efforts effectués dans le rendu graphique des protéines, aucune contribution significative n'a été publiée pour les paradigmes de navigation et d'exploration depuis plusieurs années. Ces aspects sont, à l'opposé, centraux dans les sujets d'étude propres à la Réalité Virtuelle (RV), qui accorde une attention particulière à la place de l'utilisateur au sein des mondes virtuels avec lesquels il interagit \cite{ortega_shocam_2015, khan_hovercam:_2005, he_virtual_1996}.
 
