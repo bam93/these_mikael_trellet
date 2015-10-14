@@ -1,6 +1,6 @@
 %!TEX root = these.tex
 
-\chapter[Répondre aux nouveaux enjeux de la biologie structurale par l'immersion]{Répondre aux nouveaux enjeux de la biologie structurale par l'immersion}
+\chapter[La Réalité Virtuelle et la Biologie Structurale : usages, enjeux et persectives]{La Réalité Virtuelle et la Biologie Structurale : usages, enjeux et persectives}
 \label{Sec:visuAna}
 \minitoc
 \cleardoublepage
@@ -131,22 +131,30 @@ D'autres initiatives ponctuelles ont aussi vu le portage d'autres logiciels dans
 La liste des applications mêlant explicitement la biologie structurale et la RV est relativement courte. Le travail d'ingénierie est par aspects déjà fait, mais il semble manquer une réflexion ergonomique autour de l'intégration des outils de biologie structurale au sein de dispositifs immersifs.
 
 
-\section{Perspectives en RV pour la biologie structurale} % (fold)
+\section{Limites et perspectives en RV pour la biologie structurale} % (fold)
 \label{sec:perspectives}
 
 Nous avons souligné dans la section \ref{RV_science} les caractéristiques de la RV et ce qu'elle pouvait apporter à l'expérience de travail. A savoir qu'au-delà d'un simple rendu stéréoscopique, les enjeux d'une implémentation réussie en RV passent par la mise en place d'interactions adaptées et pertinentes pour la tâche de l'expert et au contenu qu'il manipule.
 
 Parmi les problématiques soulevées par la RV pour les données abstraites et scientifiques, nous avons déjà évoqué le cantonnement de la discipline à des tâches d'exploration et de visualisation de structures 3d. La réalisation de tâches nécessitant une interaction avec les données mises en jeu, dans un premier temps exclusivement 3d, nécessite la mise en place de méthodes de navigation adaptées. Or la navigation au sein des mondes virtuels est l'un des obstacles cruciaux à franchir pour assurer une expérience optimale aux utilisateurs. En effet, la notion de monde virtuel implique la possibilité pour l'utilisateur d'évoluer au sein d'un environnement étendu de la même manière qu'il évoluerait dans la vie réelle. Or, si cette navigation virtuelle peut être inspiré de paradigme utilisé dans un cadre de navigation réelle dans le cas d'environnements virtuels écologiques, là où le contenu virtuel proposé est une copie artificielle d'éléments réels, la question est tout autre lorsque la scène observée n'est plus écologique et implique des éléments abstraits. 
 
-Le degré d'abstraction, important en biologie structurale, décidera directement de la qualité de repères spatiaux que l'utilisateur pourra  pour naviguer. La visualisation moléculaire met en scène des représentations artificielles d'atomes, non observables à l’œil humain en temps normal, et dont les couleurs et formes respectent des standards décidés par la société, mais non dictés par des observations réalistes. Les repères spatiaux sont donc peu nombreux et souvent trop sommaires pour assurer une orientation acceptable de l'utilisateur. Afin de combler ce manque préjudiciable pour l'expérience utilisatrice lors de ses futures tâches en biologie structurale, nous avons développé une série de paradigmes de navigation, basées sur le contenu observé et les tâches usuelles en visualisation/exploration moléculaire.
+Le caractère abstrait des objets de la biologie structurale, décidera directement de la qualité de repères spatiaux que l'utilisateur possédera pour naviguer. La visualisation moléculaire met en scène des représentations artificielles d'atomes, non observables à l’œil humain en temps normal, et dont les couleurs et formes respectent des standards décidés par le domaine, non dictés par des observations réelles. Les repères spatiaux sont donc peu nombreux et souvent trop sommaires pour assurer une orientation acceptable de l'utilisateur. Afin de combler ce manque préjudiciable pour l'expérience utilisatrice lors de ses futures tâches en biologie structurale, nous avons développé une série de paradigmes de navigation, basées sur le contenu observé et les tâches usuelles en visualisation/exploration moléculaire.
 
-Dans la même optique de mettre en place un environnement virtuel respectant les contraintes de la RV, il nous a paru important d'adapter les interactions habituelles qu'un expert peut avoir dans des sessions de visualisation et d'analyses. Ces interactions, trop complexes et trop cloisonnées dans des environnements de bureau, doivent être simplifiées et harmonisées afin de pouvoir faire cohabiter et communiquer les étapes complémentaires que sont la visualisation et l'analyse. On remarque que dans la boucle de la VA (voir Figure \ref{Fig:visual_analytics_process_keim}), ces deux étapes sont très proches, aussi bien en terme de données utilisées que d'implication de l'utilisateur. Leur rapprochement et fusion au sein d'un unique module est donc relativement pertinent et pourrait donc se faire à travers la mise en place d'une représentation des notions utilisées dans chacune des étapes. L'utilisation d'ontologie comme illustrée précédemment permet cela et va même plus loin, car elle pourrait simplifier l'étape de \textit{transformation} des données en imposant un carcan et un vocabulaire précis aux données d'entrée. Ce deuxième pan de notre étude nous a menés à la mise en place d'une plateforme multi-composants s'appuyant sur l'utilisation d'une base de données RDF dont la structure dépend directement d'une ontologie OWL créée pour décrire notre domaine d'application.
+Dans la même optique de mettre en place un environnement virtuel respectant les contraintes de la RV, il nous a paru important d'adapter les interactions habituelles qu'un expert peut avoir dans des sessions de visualisation et d'analyses. Ces interactions, trop complexes et trop cloisonnées dans des environnements de bureau, doivent être simplifiées et harmonisées afin de pouvoir faire cohabiter et communiquer les étapes complémentaires que sont la visualisation et l'analyse. On remarque que dans la boucle de la VA (voir Figure \ref{Fig:visual_analytics_process_keim}), ces deux étapes sont couplées de manière très étroites proches, aussi bien en terme de données utilisées que d'implication de l'utilisateur. Leur rapprochement et fusion au sein d'un unique module est pertinent et pourrait donc se faire à travers la mise en place d'une représentation des notions utilisées dans chacune des étapes. L'utilisation d'ontologie comme illustrée précédemment permet cela et va même plus loin, car elle pourrait simplifier l'étape de \textit{transformation} des données en imposant un carcan et un vocabulaire précis aux données d'entrée. Ce deuxième pan de notre étude nous a menés à la mise en place d'une plateforme multi-composants s'appuyant sur l'utilisation d'une base de données RDF dont la structure dépend directement d'une ontologie OWL créée pour décrire notre domaine d'application.
 
-Comme nous l'avons souligné auparavant, la génération de données de plus en plus complexes et de plus en plus massives produite de manière expérimentales ou théorique, pose de nombreux problèmes dans les étapes suivantes, notamment en terme de visualisation et d'analyse, et d'interprétation systématique des résultats produits. 
 
-Lors de l'étape de modélisation, les systèmes que l'expert doit construire en amont de l'étape de simulation sont de plus en plus complexe, nécessite la manipulation dans l'espace de nombreux acteurs.
 
-Il convient de mettre en place de nouvelles approches pour outiller ces usages, en couplant notamment plus étroitement les processus de production de données au processus d'interprétation d'analyse des données. 
+
+
+
+
+
+
+%Comme nous l'avons souligné auparavant, la génération de données de plus en plus complexes et de plus en plus massives produite de manière expérimentales ou théorique, pose de nombreux problèmes dans les étapes suivantes, notamment en terme de visualisation et d'analyse, et d'interprétation systématique des résultats produits. 
+
+%Lors de l'étape de modélisation, les systèmes que l'expert doit construire en amont de l'étape de simulation sont de plus en plus complexe, nécessite la manipulation dans l'espace de nombreux acteurs.
+
+%Il convient de mettre en place de nouvelles approches pour outiller ces usages, en couplant notamment plus étroitement les processus de production de données au processus d'interprétation d'analyse des données. 
 
 
 
