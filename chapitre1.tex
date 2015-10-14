@@ -23,6 +23,14 @@ La biologie et les grands sous-domaines qui la composent ont pour objectif de ca
 
 Nous décrirons en premier lieu dans ce chapitre les différents acteurs et processus de la biologie moléculaire, les méthodes expérimentales et théoriques contemporaines dans le domaine de la biologie structurale. Dans la dernière partie nous présenterons les limites et perspectives de ce domaine afin d'introduire les contributions de ce travail de recherche en terme de Réalité Virtuelle et de Visual Analytics appliqués à la biologie structurale. 
 
+\begin{figure}[h]
+  \centering
+  {\includegraphics[width=0.85\linewidth]{./figures/ch1/cellule}}
+    \caption{\it Cellule eucaryote en coupe horizontale.}
+    \label{Fig:cellule}
+  \hspace{0.2cm}
+\end{figure}
+
 \section{Acteurs et processus de la biologie moléculaire}
 
 Les biomolécules sont des molécules qui sont impliquées dans le fonctionnement des organismes vivants et de leurs cellules, unité de base de l’ensemble des organismes vivants. Les molécules d'eau constituent souvent la part majoritaire dans la composition des organismes, les lipides sont les composants de base des membranes cellulaires, les acides nucléiques sont les constituants de l'ADN, 
@@ -37,20 +45,12 @@ L'exécution de ce plan s'effectue à l'échelle moléculaire et commence par la
 
 Le fonctionnement d'une cellule vivante implique aussi d'autres acteurs. Parmi ces molécules, les \textbf{polysaccharides} et les \textbf{lipides} ne sont pas générées par le code génétique mais jouent un rôle prépondérant dans la structuration, notamment de la membrane cellulaire (voir Figure \ref{Fig:cellule}), d'autres stockent l'énergie nécessaire à la cellule et enfin certaines fonctionnent comme messagers inter- et intra-cellulaires.
 
-\begin{figure}
-  \centering
-  {\includegraphics[width=0.95\linewidth]{./figures/ch1/cellule}}
-    \caption{\it Cellule eucaryote en coupe horizontale.}
-    \label{Fig:cellule}
-  \hspace{0.3cm}
-\end{figure}
-
 %\begin{figure}
 %  \centering
 %  {\includegraphics[width=.75\linewidth]{./figures/ch1/transc_trad.pdf}}
 %    \caption{\it Schéma des processus de transcription et de traduction. L'ADN est transcrit en ARN dit "messager" afin de traverser la membrane du noyau et pénétrer dans le cytosplame où elle sera traduite par le ribosome afin de créer une séquence d'acides aminés, la protéine.}
 %  \label{Fig:transc_trad}
-%  \hspace{0.3cm}
+%  \hspace{0.2cm}
 %\end{figure}
 
 \subsubsection{L'ADN}
@@ -58,36 +58,45 @@ Le fonctionnement d'une cellule vivante implique aussi d'autres acteurs. Parmi c
 L'Acide Désoxyribo-Nucléique (ADN) est une biomolécule pouvant être considérée comme le plan de construction de tous les êtres vivants. C'est le support moléculaire contenant l'information génétique, commun à tous les organismes vivants. C'est une longue séquence de nucléotides, de quatre types : l'Adénine, la Thymine, la Guanine et la Cytosine. Ces nucléotides partagent une structure moléculaire commune constituée d'un sucre, le désoxyribose, et d'un groupe phosphate (voir Figure \ref{Fig:dna_structure}). À cette partie commune se lie une base azotée spécifique à chacun des 4 types de nucléotides. Les nucléotides s'organisent en séquence de deux brins en complémentarité. L'Adénine et la Guanine se liant respectivement à la Thymine et la Cytosine.
 
 \begin{figure}
-  \begin{subfigure}{.6\textwidth}
+  \begin{subfigure}{.55\textwidth}
   \centering
-  {\includegraphics[width=0.75\linewidth]{./figures/ch1/dna_structure}}
+  {\includegraphics[width=0.7\linewidth]{./figures/ch1/dna_structure}}
     \caption{}
     \label{Fig:dna_structure}
-  % \hspace{0.3cm}
+  % \hspace{0.2cm}
   \end{subfigure}
-  \begin{subfigure}{.4\textwidth}
+  \begin{subfigure}{.35\textwidth}
   \centering
-  {\includegraphics[width=0.75\linewidth]{./figures/ch1/dna_structure_3d}}
+  {\includegraphics[width=0.8\linewidth]{./figures/ch1/dna_structure_3d}}
     \caption{}
     \label{Fig:dna_structure_3d}
-  % \hspace{0.3cm}
+  \hspace{0.2cm}
+  \end{subfigure}
+  \begin{subfigure}{\textwidth}
+  \centering
+  {\includegraphics[width=0.7\linewidth]{./figures/ch1/chromosome_adn_horizontal.pdf}}
+    \caption{}
+    \label{Fig:chromosome_adn_2}
+  % \hspace{0.2cm}
   \end{subfigure}
   \caption{\it (a) Structure chimique de l'ADN mettant en jeu la liaison de nucléotides Adénine (en vert) avec Thymine (en rose) et Cytosine (en rouge) avec Guanine (en violet). Le squelette de l'ADN est composé par la liaison de Phosphates (en jaune) avec un groupement désoxyribose (en orange).
-  (b) Représentation de l'ADN en 3d, chaque type de nucléotides étant représenté par une couleur différente.}
-  % \hspace{0.3cm}
+  (b) Représentation de l'ADN en 3d, chaque type de nucléotides étant représenté par une couleur différente.
+  (c) Les différentes échelles de structuration d'un chromosome, forme condensée de l'ADN. Ce chromosome est lui-même composé d'ADN enroulé autour de protéines structurantes, les histones.}
+  % \hspace{0.2cm}
 \end{figure}
 
 Les deux brins de l'ADN prennent une structure hélicoïdale. Leur complémentarité permet tout d'abord d'assurer une certaine résistance de la structure à la dégradation et, en cas d'endommagement d'un des deux brins, la redondance de la complémentarité permet la réparation du brin intact.
 L'ADN est lui-même structuré de façon plus complexe, d'abord compacté par les histones, puis finalement organisés en superstructures, les chromosomes. 
-Chez les eucaryotes, organismes pluricellulaires possédant un noyau dans la cellule, l'ADN est stocké dans le noyau (voir Figure \ref{cellule}) \cite{johnson2011biologie}. 
+Chez les eucaryotes, organismes pluricellulaires possédant un noyau dans la cellule, l'ADN est stocké dans le noyau (voir Figure \ref{Fig:cellule}) \cite{johnson2011biologie}. 
 
-\begin{figure}
- \centering
- {\includegraphics[width=0.6\linewidth]{./figures/ch1/chromosome_adn_2}}
-   \caption{Les différentes échelles de structuration d'un chromosome, forme condensée de l'ADN. Ce chromosome est lui-même composé d'ADN enroulé autour de protéines structurantes, les histones.}
-   \label{Fig:chromosome_adn}
-  \hspace{0.3cm}
-\end{figure}
+
+% \begin{figure}
+%  \centering
+%  {\includegraphics[width=0.65\linewidth]{./figures/ch1/chromosome_adn_horizontal.pdf}}
+%    \caption{Les différentes échelles de structuration d'un chromosome, forme condensée de l'ADN. Ce chromosome est lui-même composé d'ADN enroulé autour de protéines structurantes, les histones.}
+%    \label{Fig:chromosome_adn_2}
+%   \hspace{0.2cm}
+% \end{figure}
 
 
 \subsubsection{L'ARN}
@@ -96,10 +105,10 @@ L'Acide RiboNucléique (ARN) est donc une biomolécule structurellement proche d
 
 \begin{figure}
   \centering
-  {\includegraphics[width=0.8\linewidth]{./figures/ch1/deoxyribose_vs_ribose}}
+  {\includegraphics[width=0.8\linewidth]{./figures/ch1/desoxyribose_vs_ribose}}
     \caption{\it Composition chimique d'un désoxyribose, présent dans l'ADN, mis en parallèle avec un ribose, présent dans l'ARN. La seule différence provient du groupement hydrogène présent sur le carbone 2 du désoxyribose qui est remplacé par une groupement hydroxyle dans le ribose.}
-    \label{Fig:deoxyribose_vs_ribose}
-  \hspace{0.3cm}
+    \label{Fig:desoxyribose_vs_ribose}
+  \hspace{0.2cm}
 \end{figure}
 
 %En dehors de l'ARN messager, responsable de la transmission de l'information génétique portée de l'ADN depuis le noyau jusqu'au cytoplasme après la transcription, il existe d'autres type  d'ARNs présentés succinctement ci-dessous de manière non exhaustive, dont le rôle sera explicité dans la description des étapes de transcription et de traduction dans la section \ref{trans_trad}.
@@ -112,14 +121,14 @@ L'Acide RiboNucléique (ARN) est donc une biomolécule structurellement proche d
 \subsubsection{Les protéines}
 
 
-Les protéines sont les biomolécules considérées comme les acteurs moléculaires fonctionnels de la cellule. Les protéines sont à la fois les briques, les ouvriers et les messagers participant au fonctionnement cellulaire. Les règles qui régissent la production de protéines à partir de la lecture de l'information génétique sont décrites dans le code génétique universel, commun à tous les organismes vivants. Certaines assurent un rôle \textbf{structurel}, en étant notamment impliquées dans la construction et la structure du squelette de la cellule, comme l'actine et le collagène qui assurent le maintien physique et structurel de la cellule ainsi que la résistance de la matrice extracellulaire. Certaine sont impliqués dans la \textbf{mobilité} des cellule et des organismes, comme les myosines qui permettent la contraction musculaire, transformant l'énergie chimique en énergie mécanique. Certaine jouent un rôle dans le \textbf{conditionnement de l'ADN}, l'ADN étant enroulé autour de protéines appelées les histones (voir Figure \ref{Fig:chromosome_adn_2}), d'autres sont impliqués dans la \textbf{régulation de l'expression génétique}, comme les facteurs de transcription accompagnant l'ARN polymérase lors de la transcription (voir Figure \ref{Fig:RNA_pol_II}). Certaines font office de \textit{transporteurs} du matériel cellulaire d'un point à un autre, comme la kinésine évoluant sur des structures de microtubules (cf. Figure \ref{Fig:kinesincargoart}).
+Les protéines sont les biomolécules considérées comme les acteurs moléculaires fonctionnels de la cellule. Les protéines sont à la fois les briques, les ouvriers et les messagers participant au fonctionnement cellulaire. Les règles qui régissent la production de protéines à partir de la lecture de l'information génétique sont décrites dans le code génétique universel, commun à tous les organismes vivants. Certaines assurent un rôle \textbf{structurel}, en étant notamment impliquées dans la construction et la structure du squelette de la cellule, comme l'actine et le collagène qui assurent le maintien physique et structurel de la cellule ainsi que la résistance de la matrice extracellulaire. Certaine sont impliqués dans la \textbf{mobilité} des cellule et des organismes, comme les myosines qui permettent la contraction musculaire, transformant l'énergie chimique en énergie mécanique. Certaine jouent un rôle dans le \textbf{conditionnement de l'ADN}, l'ADN étant enroulé autour de protéines appelées les histones (voir Figure \ref{Fig:chromosome_adn_2}), d'autres sont impliqués dans la \textbf{régulation de l'expression génétique}, comme les facteurs de transcription accompagnant l'ARN polymérase lors de la transcription. Certaines font office de \textit{transporteurs} du matériel cellulaire d'un point à un autre, comme la kinésine évoluant sur des structures de microtubules (cf. Figure \ref{Fig:kinesincargoart}).
 
-\begin{figure}
+\begin{figure}[h]
   \centering
   {\includegraphics[width=0.85\linewidth]{./figures/ch1/kinesincargoart}}
     \caption{\it Vue d’artiste du transport de vésicules contenant du matériel cellulaire (boules blanches et bleues) le long de microtubules (tube de couleur verte) par une protéine appelée kinésine. La kinésine est composée de plusieurs domaines : en rose les deux domaines constituant les <<jambes>> de la protéine, en bleu un filament dont le domaine terminale se lie aux vésicules proches. A la frontière entre les domaines jaunes et roses, se déroule la transformation de l'énergie chimique en énergie mécanique permettant à la protéine de <<marcher>> sur le microtubules. Les microtubules sont constituées de petites protéines (en vert) en forme de briques qui s'auto-organisent de façon à former un tube sur lequel évolue ces kinésines.}
     \label{Fig:kinesincargoart}
-  \hspace{0.3cm}
+  \hspace{0.2cm}
 \end{figure}
 
 % \begin{figure}
@@ -127,7 +136,7 @@ Les protéines sont les biomolécules considérées comme les acteurs moléculai
 %   {\includegraphics[width=0.5\linewidth]{./figures/ch1/RNA_pol_II}}
 %     \caption{\it ARN polymérase liée à un fragment d'ADN. La protéine est représentée sous forme de surface transparente de couleur alors que l'ADN est représentée sous forme de bâtons opaques.}
 %     \label{Fig:RNA_pol_II}
-%   \hspace{0.3cm}
+%   \hspace{0.2cm}
 % \end{figure}
 
 Une protéine est constituée d'une succession d'acides aminés liés entre-eux dont il existe 22 sortes différentes. Ils sont composés d'atomes de carbone, d'hydrogène, d'oxygène et d'azote, certains intégrant plus rarement un atome de soufre ou de sélénium.
@@ -138,18 +147,29 @@ Ces acides aminés possèdent une partie commune et une partie spécifique appel
 La chaîne latérale spécifique à chaque type d'acide aminé donne lieu a des propriétés physico-chimiques différentes. Chaque acide aminé peut être représenté par la structure générique H$_{2}$N-HC$R$-COOH, dans laquelle $R$ désigne la chaîne latérale.
 
 \begin{figure}
+  \begin{subfigure}{.4\textwidth}
   \centering
-  {\includegraphics[width=0.4\linewidth]{./figures/ch1/amino_acid_structure}}
-    \caption{\it Structure chimique d'un acide aminé. En jaune est représenté le Carbone alpha où est lié la chaîne latérale dont la composition atomique est différente suivant le type d'acide aminé.}
+  {\includegraphics[width=0.8\linewidth]{./figures/ch1/amino_acid_structure}}
+    \caption{}
     \label{Fig:amino_acid_structure}
-  \hspace{0.3cm}
+  % \hspace{0.2cm}
+  \end{subfigure}
+  \begin{subfigure}{.6\textwidth}
+  \centering
+  {\includegraphics[width=0.8\linewidth]{./figures/ch1/peptidic_bond.png}}
+    \caption{}
+    \label{Fig:peptide_bond}
+  \hspace{0.2cm}
+  \end{subfigure}
+  \caption{\it (a) Structure chimique d'un acide aminé. En jaune est représenté le Carbone alpha où est lié la chaîne latérale dont la composition atomique est différente suivant le type d'acide aminé.
+  (b) Illustration d'une liaison peptidique entre deux acides aminés (à gauche et à droite de la ligne pointillée). Cette liaison est une liaison covalente entre l'azote (N) du groupe amide de l'acide aminé de droite et le carbone (C) du groupe carboxyle de l'acide aminé de gauche. En vert sont représentés les chaînes latérales simplifiées.}
 \end{figure}
 % \begin{figure}
 %   \centering
 %   {\includegraphics[width=0.75\linewidth]{./figures/ch1/amino_acids_type}}
 %     \caption{\it Représentation des différents acides aminés classés selon leurs propriétés physico-chimiques. Cette classification n'est pas universelle et d'autres regroupements basés sur d'autres propriétés peuvent être proposés.}
 %     \label{Fig:amino_acids_type}
-%   \hspace{0.3cm}
+%   \hspace{0.2cm}
 % \end{figure}
 
 
@@ -160,7 +180,7 @@ Il est possible de classer les acides aminés selon plusieurs critères, depuis 
   {\includegraphics[width=0.75\linewidth]{./figures/ch1/diagramme_venn}}
     \caption{\it Diagramme de Venn illustrant les différentes classifications pouvant définir les acides-aminés. Ces propriétés peuvent être structurelles (minuscules, petit) ou physico-chimiques (polaire, hydrophobe, etc.).}
     \label{Fig:diagramme_venn}
-  \hspace{0.3cm}
+  \hspace{0.2cm}
 \end{figure}
 
 
@@ -169,7 +189,7 @@ Il est possible de classer les acides aminés selon plusieurs critères, depuis 
 %   {\includegraphics[width=0.3\linewidth]{./figures/ch1/phi_psi.pdf}}
 %     \caption{\it Illustration\protect\footnotemark d'une liaison peptidique entre deux acides aminés. Les angles phi ($\phi$) et psi ($\psi$) sont des angles dièdres correspondant aux angles des plans définis respectivement par les atomes $ C_{(-1)}, N, C_\protect\alpha et C$ et $N, C_\protect\alpha, C et N_{(+1)}$.}
 %     \label{Fig:phi_psi}
-%   \hspace{0.3cm}
+%   \hspace{0.2cm}
 % \end{figure}
 
 
@@ -201,10 +221,10 @@ Parmi les principaux rôles qu'elles possèdent, elles sont aussi utilisées com
 
 \begin{figure}
   \centering
-  {\includegraphics[width=0.75\linewidth]{./figures/ch1/cell_membrane}}
+  {\includegraphics[width=0.75\linewidth]{./figures/ch1/cell_membrane.pdf}}
     \caption{\it Schéma simplifié des étapes de transcription et de traduction. On peut voir que l'information gnétique portée par l'ADN double-brin sous forme de séquences de triplets d'acides nucléiques est copié en l'ARNm pour pouvoir travers la membrane nucléaire et rejoindre un ribosome qui fera l'interface entre les codons de nucléotides et les acides aminés correspondant portés par les ARNt.}
     \label{Fig:transc_trad_HD}
-  \hspace{0.3cm}
+  \hspace{0.2cm}
 \end{figure}
 
 
@@ -225,10 +245,10 @@ Lors de la transcription, un ensemble d'enzymes composé de l'ARN polymérase et
 
 \begin{figure}
   \centering
-  {\includegraphics[width=0.75\linewidth]{./figures/ch1/transc_trad_HD.pdf}}
+  {\includegraphics[width=0.85\linewidth]{./figures/ch1/transc_trad_HD.pdf}}
     \caption{\it Schéma simplifié des étapes de transcription et de traduction. On peut voir que l'information gnétique portée par l'ADN double-brin sous forme de séquences de triplets d'acides nucléiques est copié en l'ARNm pour pouvoir travers la membrane nucléaire et rejoindre un ribosome qui fera l'interface entre les codons de nucléotides et les acides aminés correspondant portés par les ARNt.}
     \label{Fig:transc_trad_HD}
-  \hspace{0.3cm}
+  \hspace{0.2cm}
 \end{figure}
 
 
@@ -239,15 +259,15 @@ Lors de la transcription, un ensemble d'enzymes composé de l'ARN polymérase et
 % Les règles qui régissent la production de protéines à partir de la lecture de l'information génétique sont décrites dans le code génétique universel, commun à tous les organismes vivants.
 
 Lorsque l'ARNm a rejoint le cytoplasme, l'étape de traduction peut commencer. La première phase de la traduction est la reconnaissance de la sous-partie du ribosome (30S chez les bactéries, 40S chez les eucaryotes) de la région en amont de l'ARNm pour ensuite atteindre le codon d'initiation qui le premier triplet de nucléotide qui sera traduit. Chaque triplet de nucléotide code pour un acide aminé particulier. Puisqu'il existe 4 nucléotides différents, 64 combinaisons de triplets sont possibles et en moyenne, un acide aminé est codé par 3 combinaisons de triplets de nucléotides différents, c'est le caractère redondant du code génétique, comme illustré dans la Figure \ref{Fig:codon_table}. 
-Le premier triplet de la chaîne d'ARNm et la petite sous-unité du ribosome vont alors recruter le premier ARNt ayant formé un complexe avec une méthionine et la grande sous-partie du ribosome (50S chez les bactéries, 60S chez les eucaryotes). À la suite de cette étape de reconnaissance, la construction du reste de la protéine est initiée et se caractérise par la lecture séquentielle des triplets de nucléotides de l'ARNm par le ribosome. LLe ribosome fait l'interface entre l'ARNm et les complexes ARNt complémentaires/acide aminé. Les acides aminés sont liés entre eux de façon séquentielle jusqu'à ce qu'un triplet codant pour un codon-STOP (ou d'arrêt) soit atteint par le ribosome. À ce moment-là, le ribosome libère la protéine et l'ARNm et l'étape de traduction se termine. À ce moment-là, la protéine n'est pas encore fonctionnelle et doit encore subir des modifications post-traductionnelles afin de pouvoir remplir sa fonction. Un schéma simplifié de la transcription et de la traduction est illustré dans la Figure \ref{Fig:trans_trad_HD}
+Le premier triplet de la chaîne d'ARNm et la petite sous-unité du ribosome vont alors recruter le premier ARNt ayant formé un complexe avec une méthionine et la grande sous-partie du ribosome (50S chez les bactéries, 60S chez les eucaryotes). À la suite de cette étape de reconnaissance, la construction du reste de la protéine est initiée et se caractérise par la lecture séquentielle des triplets de nucléotides de l'ARNm par le ribosome. LLe ribosome fait l'interface entre l'ARNm et les complexes ARNt complémentaires/acide aminé. Les acides aminés sont liés entre eux de façon séquentielle jusqu'à ce qu'un triplet codant pour un codon-STOP (ou d'arrêt) soit atteint par le ribosome. À ce moment-là, le ribosome libère la protéine et l'ARNm et l'étape de traduction se termine. À ce moment-là, la protéine n'est pas encore fonctionnelle et doit encore subir des modifications post-traductionnelles afin de pouvoir remplir sa fonction. Un schéma simplifié de la transcription et de la traduction est illustré dans la Figure \ref{Fig:transc_trad_HD}
 
-% \begin{figure}
-%   \centering
-%   {\includegraphics[width=0.75\linewidth]{./figures/ch1/codon_table.pdf}}
-%     \caption{\it Tableau de correspondance des triplets d'acides nucléiques et les acides aminés pour lesquels ils codent. "Initiation" désigne les codons pouvant être retrouvés comme initiateur de la traduction, "Stop" désignent les codons responsables de l'arrêt du processus de traduction par le ribosome.}
-%     \label{Fig:codon_table}
-%   \hspace{0.3cm}
-% \end{figure}
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.75\linewidth]{./figures/ch1/codon_table_circle}}
+    \caption{\it Tableau de correspondance des triplets d'acides nucléiques et les acides aminés pour lesquels ils codent. "Initiation" désigne les codons pouvant être retrouvés comme initiateur de la traduction, "Stop" désignent les codons responsables de l'arrêt du processus de traduction par le ribosome.}
+    \label{Fig:codon_table}
+  \hspace{0.2cm}
+\end{figure}
 
 \subsubsection{Maturation et acquisition de la fonction protéique}
 
@@ -255,24 +275,31 @@ Afin de leur assurer une certaine stabilité, de les guider vers leur lieu d'act
 
 \section{Méthodes et outils de la biologie structurale}
 
-La majorité des protéines ne peut pas être fonctionnelle sans structure 3d stable, car leur action provient de liaisons avec des molécules partenaires. C'est la raison pour laquelle la biologie structurale accorde une importance primordiale à la structure, brique de base de la fonction des protéines.
-
-Il est possible de diviser le processus d'étude de la biologie structurale en plusieurs étapes distinctes mais néanmoins étroitement liées. La Figure \ref{Fig:schema_seq_bio_struct} donne un aperçu de ce découpage et identifie 4 grandes tâches : la collecte d'informations structurelles via des techniques expérimentales et théoriques, la modélisation/visualisation de structures à partir des informations récoltées, la simulation moléculaire permet d'ajouter une dimension dynamique indispensable pour l'étude de phénomènes et enfin l'analyse et l'interprétation de résultats permettent de postuler des hypothèses quant aux phénomènes étudiés et d'affiner les étapes de modélisation.
-Ces étapes ne mettent pas en jeu les mêmes outils et méthodes. Nous nous concentrerons dans cette section sur la collecte de données via l'obtention de structures 3d.
-
-\begin{figure}
+\begin{figure}[h]
   \centering
   {\includegraphics[width=.75\linewidth]{./figures/ch2/ch2_structural_biology_process}}
     \caption{{\it ATTENTION, INVERSER VISU ET SIMU.
     Processus séquentiel standard de l'étude d'un système moléculaire en biologie structurale.}}
   \label{Fig:schema_seq_bio_struct}
-  \hspace{0.3cm}
+  \hspace{0.2cm}
 \end{figure}
 
+La majorité des protéines ne peut pas être fonctionnelle sans structure 3d stable, car leur action provient de liaisons avec des molécules partenaires. C'est la raison pour laquelle la biologie structurale accorde une importance primordiale à la structure, brique de base de la fonction des protéines.
 
-Les protéines sont des unités biologiques de taille microscopique, leur taille oscillant entre quelques dizaines et quelques centaines d'Angströms (\r{A} = \SI{e-10}{\metre}) et donc invisibles pour des systèmes de photographies standards. En effet, les techniques de microscopie optique ne peuvent permettre aujourd'hui une observation à l'échelle atomique, quel que soit l'objet d'étude. Par soucis de clarté pour la suite de cette section, notons que cette taille en Angströms est indicative et utilise une unité peu utilisée pour désigner la taille ou le poids des protéines. On préfère utiliser le kilodalton (kDa) qui est une mesure de masse, 1 Da correspondant à la masse d'un atome d'hydrogène. Un acide aminé représente environ 110 Da et une protéine entre 15 et plusieurs millions de kDa pour les complexes multimériques les plus importants. Cette unité de mesure standard permet de comparer aisément le champ d'application des techniques et méthodes présentées tout au long de cette section.
+Il est possible de diviser le processus d'étude de la biologie structurale en plusieurs étapes distinctes mais néanmoins étroitement liées. La Figure \ref{Fig:schema_seq_bio_struct} donne un aperçu de ce découpage et identifie 4 grandes tâches : la collecte d'informations structurelles via des techniques expérimentales et théoriques, la modélisation/visualisation de structures à partir des informations récoltées, la simulation moléculaire permet d'ajouter une dimension dynamique indispensable pour l'étude de phénomènes et enfin l'analyse et l'interprétation de résultats permettent de postuler des hypothèses quant aux phénomènes étudiés et d'affiner les étapes de modélisation.
+Ces étapes ne mettent pas en jeu les mêmes outils et méthodes. Nous nous concentrerons dans cette section sur la collecte de données via l'obtention de structures 3d.
+
+Les protéines sont des unités biologiques de taille microscopique, leur taille oscillant entre quelques dizaines et quelques centaines d'Angströms (\r{A} = \SI{e-10}{\metre}) et donc invisibles pour des systèmes de photographies standards. En effet, les techniques de microscopie optique ne peuvent permettre aujourd'hui une observation à l'échelle atomique, quel que soit l'objet d'étude. Par soucis de clarté pour la suite de cette section, notons que cette taille en Angströms est indicative et utilise une unité peu utilisée pour désigner la taille ou le poids des protéines. On préfère utiliser le kilodalton (kDa) qui est une mesure de masse, 1 Da correspondant à la masse d'un atome d'hydrogène. Un acide aminé représente environ 110 Da et une protéine entre 15 et plusieurs millions de kDa pour les complexes multimériques les plus importants.
 
 L'ensemble des approches expérimentales et théoriques permettant d'étudier la structure des protéines peut être divisé en 3 grandes approches: Les \textbf{techniques expérimentales}, regroupant les techniques utilisant des extraits naturels des protéines étudiées et cherchant à obtenir leur structuration par des outils de mesure \textit{in vitro}. Les approches de \textbf{modélisation/simulation} mettent en place des modèles informatiques de structures 3d à partir d'informations physico-chimiques et/ou statistiques encodées comme paramètres de logiciels de calcul. Enfin, les programmes de \textbf{visualisation moléculaire} vont permettre d'observer et d'analyser les structures obtenues à partir des deux approches précédentes grâce à des codes graphiques précis dans le but d'extraire, d'illustrer ou de communiquer de nouvelles connaissances scientifiques.
+
+\begin{figure}[h]
+  \centering
+  {\includegraphics[width=0.9\linewidth]{./figures/ch1/cristallographie_x_ray.pdf}}
+    \caption{\it Schéma simplifié de la cristallographe à rayons X où les rayons X traversent un échantillon cristallisé avant d'être dispersés et capturés par un détecteur avant d'être interprétés informatiquement.}
+    \label{Fig:cristallographie_x_ray}
+  \hspace{0.2cm}
+\end{figure}
 
 \subsection{Expérimentations}
 
@@ -281,24 +308,18 @@ Les techniques expérimentales utilisées en biologie structurale pour obtenir l
 
 \subsubsection{Cristallographie à rayons X ou radiocristallographie}
 
-\begin{figure}
-  \centering
-  {\includegraphics[width=0.85\linewidth]{./figures/ch1/cristallographie_x_ray.pdf}}
-    \caption{\it Schéma simplifié des étapes de transcription et de traduction. On peut voir que l'information génétique portée par l'ADN double-brin sous forme de séquences de triplets d'acides nucléiques est copié en l'ARNm pour pouvoir passer à travers la membrane nucléaire et rejoindre un ribosome qui fera l'interface entre les codons de nucléotides et les acides aminés correspondant portés par les ARNt.}
-    \label{Fig:cristallographie_x_ray}
-  \hspace{0.3cm}
-\end{figure}
-
 Parmi ces techniques expérimentales, la plus ancienne et la plus utilisée, principalement pour sa précision, est la cristallographie aux rayons X ou radiocristallographie. Cette technique consiste à envoyer un faisceau de rayons X sur un cristal composé exclusivement de la biomolécule étudiée. La mesure des angles et de l'intensité des rayons réfractés permet d'obtenir une image tridimensionnelle de la densité électronique dans le cristal. À partir de cette densité, il est possible d'obtenir la position moyenne des atomes présents dans le cristal ainsi que les liens existants entre eux en superposant la séquence d'atomes, connue, dans la carte de densité électronique ainsi obtenue. Le processus est schématisé dans la Figure \ref{Fig:cristallographie_x_ray}.
-L'avantage de la radiocristallographie est sa très grande précision et l'absence de limite de taille pour le cristal, permettant l'observation de structures moléculaires de très grande taille comme les ribosomes (environ un million d'atomes). Suivant les biomolécules observées, il est possible d'obtenir des structures tridimensionnelles à des résolutions comprises entre 2 et 3\r{A} pour une précision sur la position des atomes autour de 0.5\r{A}. 1\r{A} de résolution permet une précision atomique quasi parfaite. Les cartes de densité et les modèles atomiques créés à partir de ces cartes sont illustrés dans la Figure \ref{Fig:resolution_xray}. 
+
+L'avantage de la radiocristallographie est sa très grande précision et l'absence de limite de taille pour le cristal, permettant l'observation de structures moléculaires de très grande taille comme les ribosomes (environ un million d'atomes). Suivant les biomolécules observées, il est possible d'obtenir des structures tridimensionnelles à des résolutions comprises entre 2 et 3\r{A} pour une précision sur la position des atomes autour de 0.5\r{A}. 1\r{A} de résolution permet une précision atomique quasi parfaite. Les cartes de densité et les modèles atomiques créés à partir de ces cartes sont illustrés dans la Figure \ref{Fig:resolution_xray}.
+
 Certaines biomolécules sont néanmoins très difficiles à cristalliser et on évalue à environ un quart la proportion de macromolécules permettant de créer un cristal de taille et de qualité suffisante de diffracter suffisamment les rayons X. Cette cristallisation est une étape peu facilement automatisable et qui se révèle majoritairement empirique, demandant un travail spécifique en plus de l'application de la technique. Les hydrogènes présents dans les macromolécules sont très difficiles à percevoir du fait de leur très faible densité électronique. L'obtention d'une structure 3d par radiocristallographie est relativement fastidieuse et nécessite en moyenne plusieurs mois de travail.
 
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
-  {\includegraphics[width=0.7\linewidth]{./figures/ch1/resolution_xray.pdf}}
+  {\includegraphics[width=0.5\linewidth]{./figures/ch1/resolution_xray.pdf}}
     \caption{\it Rendu graphique d'un acide aminé représenté par des bâtonnets verts et rouges au sein de sa carte de densité obtenu par cristallographie et représentée par un mesh de triangles bleus. Les différentes parties de l'image correspondent à des cartes de densité électronique à différentes résolutions.}
     \label{Fig:resolution_xray}
-  \hspace{0.3cm}
+  \hspace{0.2cm}
 \end{figure}
 
 \subsubsection{Spectroscopie à Résonance Magnétique Nucléaire - RMN}
@@ -306,12 +327,12 @@ Certaines biomolécules sont néanmoins très difficiles à cristalliser et on �
 Également très utilisée, la RMN consiste à envoyer une séquence précise d'impulsions électromagnétiques sur une molécule en présence d'un champ magnétique \cite{wuthrich1986nmr}. La fréquence et la séquence des impulsions électromagnétiques sont propres à chaque type d'atome. Cette technique se base sur les mouvements de rotation naturels des atomes, créant un mini champ magnétique (ou spin). Seuls quelques atomes sont adaptés à la spectroscopie RMN, car ils possèdent un spin nucléaire particulier de 1/2. En biologie structurale, c'est principalement le proton H\textsuperscript{1} qui est ciblé. Les noyaux atomiques possédant des spins sont excités par les impulsions électromagnétiques et absorbent l'énergie ainsi reçue. Lors de l'étape de relaxation suivant l'impulsion, les noyaux atomiques relâchent de l'énergie sous forme de résonance à différentes longueurs d'onde, calculée et reportée par les instruments de mesure (cf. Figure \ref{Fig:rmn}). Cette résonance varie en fonction de la nature de l'atome excité et de son environnement. Il est donc possible, grâce à ces résonances, pour un atome donné, d'avoir des informations sur la nature et le nombre d'atomes voisins, la liaison chimique dans laquelle il est impliqué, sa distance à d'autres atomes, sa mobilité, etc. À la différence de la cristallographie, la RMN peut s'appliquer sur une solution composée de la molécule étudiée et il est de fait plus aisé de stabiliser une molécule en solution que de la cristalliser. Il est également possible d'avoir des informations sur la dynamique de la molécule puisqu'au contraire de quand elle se trouve dans un cristal, une molécule en solution n'est pas statique.
 L'état dynamique de la molécule est aussi un inconvénient pour obtenir une structure 3d fixe puisque la précision de la mesure sera perturbée par les changements structurels de la molécule. L'un des autres inconvénients de la spectroscopie RMN est la taille des molécules observée du fait de la complexité du traitement des signaux de résonance magnétique, ces derniers se superposant sur un spectre de largeur fixe. Ainsi, plus le nombre d'atomes est important, plus le nombre de signaux augmentera et s'accumulera sur un spectre de largeur constante. La taille optimale pour la RMN varie entre 10 et 50 kilodaltons (kDa) correspondant à des molécules de 1.500 à 10.000 atomes. De plus, pour les plus grosses molécules, il est nécessaire d'effectuer un marquage isotopique permettant d'obtenir un spectre non plus 2d, mais 3d où les atomes ciblés, en plus de H\textsuperscript{1}, sont le C\textsuperscript{13} et le N\textsuperscript{15} après enrichissement spécifique de la biomolécule observée.
 
-\begin{figure}
+\begin{figure}[h]
   \centering
   {\includegraphics[width=0.7\linewidth]{./figures/ch1/rmn.png}}
     \caption{\it Schéma de la technique de spectroscopie RMN. Un échantillon est placé dans un champ magnétique et excité par des impulsions radio successives. La relaxation des atomes de l'échantillon induisent un signal radio interprété par puissance de signal sur un spectre.}
     \label{Fig:rmn}
-  \hspace{0.3cm}
+  \hspace{0.2cm}
 \end{figure}
 
 \subsubsection{Cryo-microscopie électronique - Cryo-EM}
@@ -324,9 +345,9 @@ Bien qu'en constant développement, la cryo-EM possède une résolution relative
 \begin{figure}
   \centering
   {\includegraphics[width=0.4\linewidth]{./figures/ch1/cryoem.pdf}}
-    \caption{\it Rendu graphique d'un acide aminé représenté par des batonnets verts et rouges au sein de sa carte de densité obtenu par cristallographie et représentée par un mesh de triangles bleus. Les différentes parties de l'image correspondent à des cartes de densité électronique à différentes résolutions.}
+    \caption{\it Schéma simplifié illustrant la technique de cryo-microscopie électronique. Les électrons traversent l'échantillon prisonnier de la glace avant d'atteindre une lentille magnétique qui va les modifier et les projeter sur un scintillateur permettant d'obtenir une image similaire à celle présentée en bas.}
     \label{Fig:cryoem}
-  \hspace{0.3cm}
+  \hspace{0.2cm}
 \end{figure}
 
 \subsubsection{Diffusion des rayons X - SAXS}
@@ -339,9 +360,9 @@ L'ensemble de ces techniques possèdent une étape d'interprétation de signal b
 \begin{figure}
   \centering
   {\includegraphics[width=0.75\linewidth]{./figures/ch1/saxs.pdf}}
-    \caption{\it Rendu graphique d'un acide aminé représenté par des bâtonnets verts et rouges au sein de sa carte de densité obtenu par cristallographie et représentée par un mesh de triangles bleus. Les différentes parties de l'image correspondent à des cartes de densité électronique à différentes résolutions.}
+    \caption{\it Schéma simplifié illustrant la technique de diffusion des rayons X. Ces rayons sont projetés au travers d'un échantillon et sont légèrement déviés par celui-ci puis capturés par un détecteur 2d. L'angle de déviation mettra en avant les distances interatomiques de plusieurs nanomètres.}
     \label{Fig:saxs}
-  \hspace{0.3cm}
+  \hspace{0.2cm}
 \end{figure}
 
 
@@ -391,7 +412,7 @@ Les paramètres influençant ces interactions sont regroupent donc les énergie 
 %   {\includegraphics[width=0.75\linewidth]{./figures/ch1/harmonic_vs_morse_potential.pdf}}
 %     \caption{\it Contributions énergétiques des liaisons représenté par un potentiel harmonique (en vert) ou un potentiel de Morse (en bleu) en fonction de la distance entre deux atomes.}
 %     \label{Fig:harmonic_morse_potential}
-%   \hspace{0.3cm}
+%   \hspace{0.2cm}
 % \end{figure}
 
 % Les termes d'énergie non liée sont plus difficiles à calculer, car chaque atome interagit de façon non liée avec l'ensemble des atomes du système alors qu'il agit de façon liée avec un ensemble limité d'atomes avec qui il possède une liaison covalente (4 atomes maximum). 
@@ -403,7 +424,7 @@ Les paramètres influençant ces interactions sont regroupent donc les énergie 
 %   {\includegraphics[width=0.75\linewidth]{./figures/ch1/electro_lennardjones.pdf}}
 %     \caption{\it Contributions énergétiques des forces électrostatiques représentées par un potentiel de Coulomb (en rouge) et des forces de Van der Waals représentées par un potentiel de Lennard-Jones (en bleu) en fonction de la distance entre deux atomes.}
 %     \label{Fig:coulomb_lennardjones}
-%   \hspace{0.3cm}
+%   \hspace{0.2cm}
 % \end{figure}
 
 Les paramètres utilisés au sein des champs de force sont dérivés de données expérimentales, mais peuvent également être le résultat de calculs computationnels de mécanique quantique. Parmi les champs de force, certains décrivent la protéine de façon atomique en considérant chaque atome comme une particule et en appliquant donc des paramètres propres à chaque atome dans les équations. Ces champs de force, appelés \textbf{tout-atome}, sont très précis, mais souffrent d'un temps de calcul de leurs équations très important et un frein significatif pour l'évaluation énergétique de systèmes moléculaires de plus de quelques centaines/milliers d'atomes. Afin de permettre l'étude de protéines dépassant cette taille, il est possible de simplifier le champ de force. Dans ces champs de force simplifiés, appelés \textbf{gros grain}, le modèle de la protéine est différent puisque certains groupes d'atomes dont les propriétés physiques sont bien connues sont considérés comme des particules uniques, réduisant ainsi le nombre de particules du système. La différence entre deux modèles de champs de force tout-atome et gros grain est illustrée dans la Figure \ref{Fig:coarse_grain_ff}. Une particule étant régie par un ensemble précis d'équations, réduire le nombre de particules revient à réduire le nombre de calculs à effectuer. Les chaînes latérales des acides aminés ainsi que les groupements méthyles sont deux exemples de groupements d'atomes dont les propriétés sont bien connues et donc la contribution énergétique est suffisamment approximée pour pouvoir être simplifiés. Dans le même but de simplification des calculs, certains atomes dont la contribution est considérée comme négligeable sont enlevés des champs de force, c'est souvent le cas des atomes d'hydrogène par exemple.
@@ -415,11 +436,19 @@ Le choix d'un champ de force dépend à la fois de l'environnement dans lequel e
 %   {\includegraphics[width=0.75\linewidth]{./figures/ch1/coarse_grain_ff.pdf}}
 %     \caption{\it Contributions énergétiques des forces électrostatiques représentées par un potentiel de Coulomb (en rouge) et des forces de Van der Waals représentées par un potentiel de Lennard-Jones (en bleu) en fonction de la distance entre deux atomes.}
 %     \label{Fig:coarse_grain_ff}
-%   \hspace{0.3cm}
+%   \hspace{0.2cm}
 % \end{figure}
 
-Les différentes valeurs d'énergie potentielle d'une protéine données par la résolution de l'ensemble des équations des champs de force, directement dépendantes de la configuration spatiale de cette protéine, constituent le paysage énergétique de cette protéine. Suivant l’objectif de la simulation, on cherchera soit à identifier le minimum global de ce paysage, soit à trouver des minima locaux traduisant des états structurels singuliers mais stables d'une protéine. 
+Les différentes valeurs d'énergie potentielle d'une protéine données par la résolution de l'ensemble des équations des champs de force, directement dépendantes de la configuration spatiale de cette protéine, constituent le paysage énergétique de cette protéine. Suivant l’objectif de la simulation, on cherchera soit à identifier le minimum global de ce paysage, soit à trouver des minima locaux traduisant des états structurels singuliers mais stables d'une protéine (voir Figure \ref{Fig:energy_landscape_edit}).
 
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.75\linewidth]{./figures/ch1/energy_landscape_edit.png}}
+    \caption{\it Représentation d'un paysage énergétique d'une protéine suivant sa conformation spatiale. Plus l'énergie potentielle est haute, plus la protéine est considérée comme désordonnée et donc instable. Plusieurs puits d'énergie traduisant des minimas locaux peuvent être identifiés mais un seul minimum global existe correspondant à l'énergie de la conformation la plus stable de la protéine appelé également l'état natif de la protéine.}
+    \label{Fig:energy_landscape_edit}
+  \hspace{0.2cm}
+\end{figure}
  
 
 \subsubsection{Simulation moléculaire} \label{simu}
@@ -445,6 +474,10 @@ La mécanique moléculaire fait abstraction des paramètres thermodynamiques ré
 De façon plus précise, le rayon des particules est bien souvent le rayon de Van der Waals qui est une sphère géométrique théorique censée représenter l'espace occupé par un atome. La charge nette est dérivée de calculs expérimentaux ou quantiques afin d'être la plus proche possible de la réalité. Enfin, la distance à l'équilibre des ressorts représentant les liaisons est égale à la longueur expérimentale de la liaison.
 
 L'application la plus directe et courante de la mécanique moléculaire est la minimisation énergétique où l'on va chercher à obtenir des modèles avec une énergie de plus en plus faible afin de trouver la structure 3d la plus stable pour une protéine donnée. Les algorithmes de minimisation moléculaires sont divers, mais ils se basent très souvent sur les champs de force de mécanique moléculaire.
+
+\myparagraph{Minimisation moléculaire}
+
+Il s'agit de trouver le minimum de la fonction qui permet de retrouver l'énergie potentielle de la molécule en fonction de sa géométrie. Il s'agit plus précisément de trouver des puits d'énergies le long du paysage énergétique de la protéine reflétant les conformations structurelles les plus stables de la protéine. Cette minimisation peut emprunter plusieurs algorithmes pour parvenir à ses fins mais le principe central reste le même. Il s'agit de bouger les atomes d'un système afin de minimiser l'énergie à chaque déplacement d'atomes. Chaque pas de la minimisation va évaluer l'impact énergétique du déplacement et ainsi décider si celui-ci est stabilisant pour la structure ou perturbant. Cette évaluation est faite via la résolution des fonctions du champ de force et du calcul de l'énergie potentielle.
 
 
 \myparagraph{Algorithme de Monte-Carlo}
@@ -565,7 +598,7 @@ Lorsque la structure secondaire est connue, il est possible d'effectuer une simu
 
 Il est évidemment possible de s'appuyer sur des informations expérimentales existantes afin de prédire la structure 3d d'une protéine. Parmi les informations utilisées, les bibliothèques de fragments ou alphabets structuraux permettent d'obtenir la structuration la plus retrouvée pour différentes séquences d'une dizaine d'acides aminés. 
 Il est également possible de s'intéresser aux protéines dont la structure 3d est déjà connue. Grâce à un alignement global de la séquence de la protéine étudiée il est possible d'identifier des protéines possédant une similarité de séquence significative (> à 30\%) et ainsi structurer la protéine à prédire à partir des motifs structuraux connus.
-Une dernière méthode de prédiction est la méthode de \textit{threading} qui voit l'enfilage de courtes séquences d'acides aminés au sein de structures 3d répertoriées comme courantes au sein de la PDB. Chaque enfilage donne lieu à un calcul d'énergie des acides aminés ainsi contraints dans un carcan 3d et les structures 3d de plus basses énergies sont considérées comme les candidats les plus probables pour structurer la protéine.
+Une dernière méthode de prédiction est la méthode de \textit{threading} qui voit l'enfilage de courtes séquences d'acides aminés au sein de structures 3d répertoriées comme courantes au sein de banques de données de structures 3d de protéines. Chaque enfilage donne lieu à un calcul d'énergie des acides aminés ainsi contraints dans un carcan 3d et les structures 3d de plus basses énergies sont considérées comme les candidats les plus probables pour structurer la protéine.
 
 % La prédiction de structure 3d est un domaine plus vaste et plus complexe puisqu'elle cherche à obtenir la configuration spatiale d'une protéine à l'état stable et donc fonctionnel. Il est possible de détacher trois types d'approches pour la prédiction de structure tertiaire:
 
@@ -618,39 +651,47 @@ Une image souvent utilisée pour représenter le concept de docking moléculaire
 
 Lorsqu'on s'intéresse au docking \textit{ab initio}, où aucune information n'est utilisée sur le potentiel site de liaison, deux approches peuvent être identifiées afin de générer un modèle 3d de complexe fonctionnel entre la protéine et son ligand.
 
-\myparagraph{Complémentarité de forme}
+La \textbf{complémentarité de forme} considère la protéine et le ligand sont tous deux considérés du point de vue des propriétés géométriques et physiques de leur surface. Parmi les descripteurs utilisés pour représenter la protéine et son ligand, la surface accessible au solvant (SAS) pour la protéine et des descriptifs de complémentarité de surface pour le ligand peuvent être utilisés \cite{shoichet1992molecular}. Un autre descripteur décrit les paramètres hydrophobes de la protéine. Des patchs hydrophobes et leurs opposés hydrophiles peuvent ainsi aider à identifier les sites de liaison et mettre de côté les régions peu propices à être en contact avec une autre protéine \cite{jones1996principles}. Une fois que les paramètres géométriques sont analysés et utilisés pour rapprocher les deux partenaires, une minimisation moléculaire peut être effectuée afin de retrouver un état énergétique stable.
 
-Dans cette approche, la protéine et le ligand sont tous deux considérés du point de vue des propriétés géométriques et physiques de leur surface. Parmi les descripteurs utilisés pour représenter la protéine et son ligand, la surface accessible au solvant (SAS) pour la protéine et des descriptifs de complémentarité de surface pour le ligand peuvent être utilisés \cite{shoichet1992molecular}. Plusieurs techniques existent pour évaluer et représenter la surface accessible au solvant. Une d'elles est le parcours de la surface induite par les rayons de Van der Waals des atomes de la protéine au moyen d'une sphère représentant le solvant \cite{connolly1983analytical}. Cette sphère est "roulée" sur la surface de la protéine et son centre est considéré tout au long de son parcours comme la limite d'une seconde surface, dont le degré de lissage dépendra directement de la taille de la sphère représentant le solvant. La division du système en une grille régulière permet également l'utilisation de nombreux algorithmes permettant d'avoir une approximation précise de la SAS. L'algorithme de \textit{marching cubes} permet par exemple de parcourir l'ensemble d'une grille 3d et de générer un polygone pour chaque partie de l'isosurface 
+La \textbf{simulation} applique les propriétés physico-chimiques définies dans le champ de force pour diriger l'interaction entre la protéine et son ligand. Ces propriétés tendront à prendre davantage en compte les énergies mises en jeu au niveau de l'interface entre les deux partenaires. Le calcul de l'énergie potentielle du système permettra de connaître la pertinence de la structure du complexe et sa stabilité. Il est possible de paramétrer plusieurs niveaux de flexibilité du côté du ligand suivant l'amplitude des changements conformationnels anticipés.
 
-Une autre approche basée sur la complémentarité des surfaces décrit les paramètres hydrophobes de la protéine en se basant sur les torsions des atomes de la chaîne principale. Réparties tout autour de la surface protéique, des zones possédant des concentrations d'acides aminés hydrophobes plus importantes vont jouer un rôle statistiquement plus important dans les interfaces protéines-protéines. Ces patchs hydrophobes et leurs opposés hydrophiles peuvent ainsi aider à identifier les sites de liaison et mettre de côté les régions peu propices à être en contact avec une autre protéine \cite{jones1996principles}. Suivant la nature du ligand, ces propriétés vont influencer les scores traduisant la probabilité que telle ou telle orientation soit favorable à l'interaction entre les deux partenaires. Les interfaces protéines-protéines sont par exemple relativement planaires du fait de leur taille importante et sont beaucoup plus influencées par les effets hydrophobes.
+% \myparagraph{Complémentarité de forme}
 
-Les méthodes de complémentarité de forme mettent souvent en jeu des docking dits rigides où les partenaires moléculaires ne subissent pas de changement conformationnel significatif. Elles sont donc particulièrement adaptées aux interactions protéine-protéine puisque ces dernières ne connaissent pas de changement profond de leur structure entre leur forme non liée et leur forme liée. De plus, la taille de l'interface est grande et peut donc être échantillonnée de façon rapide et efficace en un nombre réduit de solutions permettant d'augmenter la rapidité de l'étape de recherche du site actif. 
+% Dans cette approche, la protéine et le ligand sont tous deux considérés du point de vue des propriétés géométriques et physiques de leur surface. Parmi les descripteurs utilisés pour représenter la protéine et son ligand, la surface accessible au solvant (SAS) pour la protéine et des descriptifs de complémentarité de surface pour le ligand peuvent être utilisés \cite{shoichet1992molecular}. Plusieurs techniques existent pour évaluer et représenter la surface accessible au solvant. Une d'elles est le parcours de la surface induite par les rayons de Van der Waals des atomes de la protéine au moyen d'une sphère représentant le solvant \cite{connolly1983analytical}. Cette sphère est "roulée" sur la surface de la protéine et son centre est considéré tout au long de son parcours comme la limite d'une seconde surface, dont le degré de lissage dépendra directement de la taille de la sphère représentant le solvant. La division du système en une grille régulière permet également l'utilisation de nombreux algorithmes permettant d'avoir une approximation précise de la SAS. L'algorithme de \textit{marching cubes} permet par exemple de parcourir l'ensemble d'une grille 3d et de générer un polygone pour chaque partie de l'isosurface 
 
-Il est possible d'introduire de la dynamique moléculaire lors du processus de docking par complémentarité de forme afin de contraindre les chaînes latérales des protéines à prendre une forme énergétiquement plus stable et donc ouvrir de nouvelles possibilités de liaison au ligand.
-Les processus de simulation sont cependant beaucoup plus importants dans le cas de docking flexibles où la flexibilité n'est pas retrouvée uniquement au niveau des chaînes latérales, mais également au niveau de la chaîne principale. Elle permet de prédire de façon beaucoup plus précise les complexes moléculaires où le ligand induit des changements conformationnels significatifs de la protéine réceptrice et inversement.
+% Une autre approche basée sur la complémentarité des surfaces décrit les paramètres hydrophobes de la protéine en se basant sur les torsions des atomes de la chaîne principale. Réparties tout autour de la surface protéique, des zones possédant des concentrations d'acides aminés hydrophobes plus importantes vont jouer un rôle statistiquement plus important dans les interfaces protéines-protéines. Ces patchs hydrophobes et leurs opposés hydrophiles peuvent ainsi aider à identifier les sites de liaison et mettre de côté les régions peu propices à être en contact avec une autre protéine \cite{jones1996principles}. Suivant la nature du ligand, ces propriétés vont influencer les scores traduisant la probabilité que telle ou telle orientation soit favorable à l'interaction entre les deux partenaires. Les interfaces protéines-protéines sont par exemple relativement planaires du fait de leur taille importante et sont beaucoup plus influencées par les effets hydrophobes.
 
-\myparagraph{Simulation}
+% Les méthodes de complémentarité de forme mettent souvent en jeu des docking dits rigides où les partenaires moléculaires ne subissent pas de changement conformationnel significatif. Elles sont donc particulièrement adaptées aux interactions protéine-protéine puisque ces dernières ne connaissent pas de changement profond de leur structure entre leur forme non liée et leur forme liée. De plus, la taille de l'interface est grande et peut donc être échantillonnée de façon rapide et efficace en un nombre réduit de solutions permettant d'augmenter la rapidité de l'étape de recherche du site actif. 
 
-La simulation d'un processus de docking est relativement compliquée du fait du nombre de degrés de libertés qu'il est nécessaire de donner au ligand afin de traduire exactement son comportement naturel. Des transformations rigides composées de translations et d'orientations successives sont couplées à des transformations plus flexibles de changements conformationnels des angles de torsion en rotation du ligand afin de lui permettre de se lier de façon optimale sur le site actif de la protéine. De l'autre côté, une certaine flexibilité sera également introduite du côté de la protéine afin de rapporter d'éventuelles contraintes imposées par la liaison du ligand. C'est le cas de certains mécanismes d'ouverture et fermeture de protéines dont la liaison à leurs ligands induits un changement conformationnel assez important pour que la protéine passe d'une configuration dite "ouverte" à une configuration "fermée" ou réciproquement.
+% Il est possible d'introduire de la dynamique moléculaire lors du processus de docking par complémentarité de forme afin de contraindre les chaînes latérales des protéines à prendre une forme énergétiquement plus stable et donc ouvrir de nouvelles possibilités de liaison au ligand.
+% Les processus de simulation sont cependant beaucoup plus importants dans le cas de docking flexibles où la flexibilité n'est pas retrouvée uniquement au niveau des chaînes latérales, mais également au niveau de la chaîne principale. Elle permet de prédire de façon beaucoup plus précise les complexes moléculaires où le ligand induit des changements conformationnels significatifs de la protéine réceptrice et inversement.
 
-Les méthodes basées sur la simulation, de la même manière qu'en dynamique moléculaire, vont utiliser les paramètres physico-chimiques prenant place au niveau de l'interface entre les partenaires pour guider leur rapprochement et les changements conformationnels leur permettant d'adopter leur forme liée. Ces paramètres vont aussi permettre d'évaluer la pertinence des modèles générés grâce aux calculs d'énergie potentielle et d'affinité de liaison. 
+% \myparagraph{Simulation}
+
+% La simulation d'un processus de docking est relativement compliquée du fait du nombre de degrés de libertés qu'il est nécessaire de donner au ligand afin de traduire exactement son comportement naturel. Des transformations rigides composées de translations et d'orientations successives sont couplées à des transformations plus flexibles de changements conformationnels des angles de torsion en rotation du ligand afin de lui permettre de se lier de façon optimale sur le site actif de la protéine. De l'autre côté, une certaine flexibilité sera également introduite du côté de la protéine afin de rapporter d'éventuelles contraintes imposées par la liaison du ligand. C'est le cas de certains mécanismes d'ouverture et fermeture de protéines dont la liaison à leurs ligands induits un changement conformationnel assez important pour que la protéine passe d'une configuration dite "ouverte" à une configuration "fermée" ou réciproquement.
+
+% Les méthodes basées sur la simulation, de la même manière qu'en dynamique moléculaire, vont utiliser les paramètres physico-chimiques prenant place au niveau de l'interface entre les partenaires pour guider leur rapprochement et les changements conformationnels leur permettant d'adopter leur forme liée. Ces paramètres vont aussi permettre d'évaluer la pertinence des modèles générés grâce aux calculs d'énergie potentielle et d'affinité de liaison. 
 
 \myparagraph{Évaluation} \label{docking_eval}
 
-Les fonctions de score sont d'importance capitale dans le choix des modèles 3d de complexes moléculaires, car ils doivent à la fois rapporter la stabilité des partenaires, mais également la stabilité de leur interaction. Lorsque la majorité de la protéine est rigide, il est courant de s'intéresser davantage à l'énergie de l'interface afin de ne pas biaiser le résultat. Cette énergie dépendra donc de l'apport énergétique dû à chaque configuration spatiale des atomes présents à l'interface. De la même manière que pour des simulations cherchant à retrouver des structures de protéines uniques, plusieurs classes de fonctions de \textit{scoring} existent. Ces classes sont au nombre de 3 dont 2 existent également pour les simulations et ont été abordées dans la section \ref{simu_eval}. La troisième classe de méthodes de \textit{scoring} est propre au domaine du docking et regroupe les méthodes de \textit{scoring} empiriques.
-Ces méthodes se basent sur le comptage des différents types d'interactions pouvant prendre place entre les deux protéines. Ce comptage peut être basé sur le nombre d'atomes en contact entre les deux protéines, les changements d'aire de la SAS entre les formes non liées des protéines et la forme liée du complexe. Les coefficients des fonctions de score sont usuellement ajustés par des méthodes de régression linéaire multiple. Parmi les termes inclus dans ces fonctions, on peut retrouver:
+De la même manière que pour les simulations moléculaires, les modèles de complexes moléculaires générés par les techniques de docking vont être évalué afin de décider de leur pertinence et stabilité biologique.
 
-\begin{itemize}
-	\item Les \textit{contacts hydrophobes} qui sont favorables (dans la majorité des situations où les protéines possèdent plus de 50 acides aminés).
-	\item Les \textbf{contacts hydrophiles} qui sont défavorables (dans les mêmes situations que les contacts hydrophobes).
-	\item Le \textbf{nombre de liaisons hydrogènes} qui sont favorables à l'affinité, en particulier quand isolées du solvant, contribution négligeable lorsqu'elles sont exposées au solvant.
-	\item Le \textbf{nombre de liaisons de rotation} immobilisées lors de la formation du complexe qui auront une contribution défavorable pour l'entropie conformationnelle (nombre de conformations possibles pour une molécule).
-	\item ...
-\end{itemize}
+En plus des énergies propres à chaque partenaire évalué individuellement, des paramètres comme les contacts hydrophobes ou le nombre de liaisons hydrogènes entre les deux partenaires, le nombre des molécules ou la surface accessible au solvant à l'interface vont influer le calcul de l'énergie d'un complexe. 
 
-Nous pourrions également citer les fonctions de \textit{scoring} hybrides qui combinent les paramètres de différentes méthodes citées précédemment (champ de force + empirique par exemple) afin d'avoir la précision la plus grande pour juger de la pertinence biologique d'un modèle de complexe prédit.
+% Les fonctions de score sont d'importance capitale dans le choix des modèles 3d de complexes moléculaires, car ils doivent à la fois rapporter la stabilité des partenaires, mais également la stabilité de leur interaction. Lorsque la majorité de la protéine est rigide, il est courant de s'intéresser davantage à l'énergie de l'interface afin de ne pas biaiser le résultat. Cette énergie dépendra donc de l'apport énergétique dû à chaque configuration spatiale des atomes présents à l'interface. De la même manière que pour des simulations cherchant à retrouver des structures de protéines uniques, plusieurs classes de fonctions de \textit{scoring} existent. Ces classes sont au nombre de 3 dont 2 existent également pour les simulations et ont été abordées dans la section \ref{simu_eval}. La troisième classe de méthodes de \textit{scoring} est propre au domaine du docking et regroupe les méthodes de \textit{scoring} empiriques.
+% Ces méthodes se basent sur le comptage des différents types d'interactions pouvant prendre place entre les deux protéines. Ce comptage peut être basé sur le nombre d'atomes en contact entre les deux protéines, les changements d'aire de la SAS entre les formes non liées des protéines et la forme liée du complexe. Les coefficients des fonctions de score sont usuellement ajustés par des méthodes de régression linéaire multiple. Parmi les termes inclus dans ces fonctions, on peut retrouver:
 
-En amont de la génération des modèles et leur évaluation, il est important de savoir évaluer la précision et l'efficacité d'un algorithme de docking. Dans le cas du docking de complexes protéine-protéine, il est courant de se référer aux standards donnés par CAPRI (Critical Assessment of PRediction of Interactions). CAPRI est une expérience de prédiction aveugle dont le but est de prédire la structure d'un complexe protéine-protéine à partir des coordonnées atomiques des deux partenaires impliqués sous leur forme non liée. En plus d'offrir la possibilité pour des équipes de chercheurs de vérifier la pertinence de leurs algorithmes de docking, la communauté autour de CAPRI a mis en place des standards pour l'évaluation de structure à travers des critères d'évaluation précis. Ces critères d'évaluation se basent sur la comparaison entre les modèles générés par docking et la structure cristallographique ou RMN du complexe protéique à l'état lié. Trois méthodes de calcul permettent de classer les modèles selon leur similarité vis-à-vis du complexe recherché: L'\textit{interface-RMSD} (i-RMSD), le \textit{ligand-RMSD} (l-RMSD) et le \textit{Fraction of NATive contacts} (FNAT). Les deux premiers critères se basent sur un calcul de distance moyenne entre les atomes identiques des deux complexes comparés (modèle + structure liée), présents au sein l'interface pour le i-RMSD, soient ceux du ligand pour le l-RMSD. Les atomes sont considérés comme à l'interface lorsque les résidus qu'ils composent contiennent au moins un atome situé à moins de 10 \r{A} de la protéine partenaire. Le calcul de RMSD se fait après une étape de superposition des deux complexes. Cette superposition se fait essentiellement au niveau de la protéine réceptrice puisque celle-ci est très souvent fixe. Le FNAT n'est pas un calcul de distance, mais de proportions. On calcule la proportion de couples de résidus en contact (deux résidus de deux protéines différentes sont considérés en contact lorsqu'ils possèdent chacun au moins un de leurs atomes à moins de 5 \r{A} d'un atome du résidu correspondant) entre le complexe sous forme liée et le modèle 3d du complexe généré par docking. Le résultat obtenu est un nombre compris entre 0 et 1 indiquant le pourcentage de résidus en contact préservés dans le modèle 3d.
+% \begin{itemize}
+% 	\item Les \textit{contacts hydrophobes} qui sont favorables (dans la majorité des situations où les protéines possèdent plus de 50 acides aminés).
+% 	\item Les \textbf{contacts hydrophiles} qui sont défavorables (dans les mêmes situations que les contacts hydrophobes).
+% 	\item Le \textbf{nombre de liaisons hydrogènes} qui sont favorables à l'affinité, en particulier quand isolées du solvant, contribution négligeable lorsqu'elles sont exposées au solvant.
+% 	\item Le \textbf{nombre de liaisons de rotation} immobilisées lors de la formation du complexe qui auront une contribution défavorable pour l'entropie conformationnelle (nombre de conformations possibles pour une molécule).
+% 	\item ...
+% \end{itemize}
+
+% Nous pourrions également citer les fonctions de \textit{scoring} hybrides qui combinent les paramètres de différentes méthodes citées précédemment (champ de force + empirique par exemple) afin d'avoir la précision la plus grande pour juger de la pertinence biologique d'un modèle de complexe prédit.
+
+% En amont de la génération des modèles et leur évaluation, il est important de savoir évaluer la précision et l'efficacité d'un algorithme de docking. Dans le cas du docking de complexes protéine-protéine, il est courant de se référer aux standards donnés par CAPRI (Critical Assessment of PRediction of Interactions). CAPRI est une expérience de prédiction aveugle dont le but est de prédire la structure d'un complexe protéine-protéine à partir des coordonnées atomiques des deux partenaires impliqués sous leur forme non liée. En plus d'offrir la possibilité pour des équipes de chercheurs de vérifier la pertinence de leurs algorithmes de docking, la communauté autour de CAPRI a mis en place des standards pour l'évaluation de structure à travers des critères d'évaluation précis. Ces critères d'évaluation se basent sur la comparaison entre les modèles générés par docking et la structure cristallographique ou RMN du complexe protéique à l'état lié. Trois méthodes de calcul permettent de classer les modèles selon leur similarité vis-à-vis du complexe recherché: L'\textit{interface-RMSD} (i-RMSD), le \textit{ligand-RMSD} (l-RMSD) et le \textit{Fraction of NATive contacts} (FNAT). Les deux premiers critères se basent sur un calcul de distance moyenne entre les atomes identiques des deux complexes comparés (modèle + structure liée), présents au sein l'interface pour le i-RMSD, soient ceux du ligand pour le l-RMSD. Les atomes sont considérés comme à l'interface lorsque les résidus qu'ils composent contiennent au moins un atome situé à moins de 10 \r{A} de la protéine partenaire. Le calcul de RMSD se fait après une étape de superposition des deux complexes. Cette superposition se fait essentiellement au niveau de la protéine réceptrice puisque celle-ci est très souvent fixe. Le FNAT n'est pas un calcul de distance, mais de proportions. On calcule la proportion de couples de résidus en contact (deux résidus de deux protéines différentes sont considérés en contact lorsqu'ils possèdent chacun au moins un de leurs atomes à moins de 5 \r{A} d'un atome du résidu correspondant) entre le complexe sous forme liée et le modèle 3d du complexe généré par docking. Le résultat obtenu est un nombre compris entre 0 et 1 indiquant le pourcentage de résidus en contact préservés dans le modèle 3d.
 
 
 \subsubsection{Banques de structures protéiques} \label{protein_DB}
@@ -658,7 +699,7 @@ En amont de la génération des modèles et leur évaluation, il est important d
 Les bases de données biologiques permettent de regrouper l'ensemble des informations scientifiques obtenues au cours de l'histoire et les mettre à disposition de la communauté scientifique. Les bases de données structurales regroupent plus particulièrement des structures obtenues par techniques expérimentales dont il est possible d'obtenir la représentation 3d sous forme de fichier informatique. 
 Elles voient de plus en plus leur intégration au sien de portails biologiques gérant la conformité des données aux standards du domaine, leur accès à l'ensemble des scientifiques et éventuellement leur association avec des données d'autres domaines scientifiques proches.
 
-L'une des bases de données les plus utilisées en biologie structurale est la PDB \cite{berman_protein_2000} qui regroupe l'ensemble des structures 3d de protéines publiées et vérifiées dans plusieurs formats standards et acceptés par la majorité des outils de bio-informatique structurale. Les structures 3d présentes dans la PDB proviennent majoritairement de cristallographie rayon X ou de spectroscopie RMN (POURCENTAGE PAR TECHNIQUE). Aujourd'hui, environ 104.000 structures de protéines, 5200 structures de complexes mixtes protéine/acide nucléique et 2500 structures d'acides nucléiques ont été déposé dans la PDB.
+L'une des bases de données les plus utilisées en biologie structurale est la \textbf{Protein Data Bank} (PDB) \cite{berman_protein_2000} qui regroupe l'ensemble des structures 3d de protéines publiées et vérifiées dans plusieurs formats standards et acceptés par la majorité des outils de bio-informatique structurale. Les structures 3d présentes dans la PDB proviennent majoritairement de cristallographie rayon X ou de spectroscopie RMN (89\% pour la cristallographie, 10\% pour la RMN). Aujourd'hui, environ 105.000 structures de protéines, 5200 structures de complexes mixtes protéine/acide nucléique et 2800 structures d'acides nucléiques ont été déposé dans la PDB.
 
 On peut également noter d'autres banques de données de structures protéiques:
 \begin{itemize}
@@ -670,11 +711,10 @@ On peut également noter d'autres banques de données de structures protéiques:
 
 Parmi les informations stockées dans des bases de données et utilisées en biologie structurale en dehors de données purement structurales on retrouve: les profils biologiques des protéines avec leur structure primaire/secondaire/tertiaire, leur environnement cellulaire, leur rôle, etc. (SWISSPROT+TrEMBL \cite{boeckmann2003swiss}, PDB, etc.); les réseaux d'interactions moléculaires (interactome) mettant en avant les partenaires moléculaires déjà identifiés (STRING \cite{Snel15092000}, CCSB Interactome Database \footnote{\url{http://interactome.dfci.harvard.edu/}}, etc.); les évolutions génomiques des séquences d'ADN codantes identifiant les régions évoluant rapidement au sein des protéines (séquence primaire changeante) et les régions plus stables et donc potentiellement importantes pour la fonction métabolique de la protéine (USCS \cite{kent2002human}, Ensembl \cite{hubbard2002ensembl}, etc.). 
 
-Certaines de ces bases de données sont mises en relation au travers de portails biologiques permettant de regrouper toutes les informations sur une protéine au sein d'un même espace.
 
 \subsection{Visualisation moléculaire 3d} \label{visu_molecular}
 
-La visualisation moléculaire est indissociable des progrès effectués par la biologie au cours de son histoire. Tout d'abord utilisée comme moyen de communication et parfois de vulgarisation, elle est aujourd'hui un des vecteurs majeurs d'acquisition de nouvelles informations.
+Il est important de stocker les structures 3d de protéines résolues de façon théorique ou expérimentale mais il est tout autant important de pouvoir les visualiser de façon efficace. La visualisation moléculaire est indissociable des progrès effectués par la biologie au cours de son histoire. Tout d'abord utilisée comme moyen de communication et parfois de vulgarisation, elle est aujourd'hui un des vecteurs majeurs d'acquisition de nouvelles informations.
 
 \subsubsection{Evolution des représentations moléculaires}
 
@@ -683,36 +723,36 @@ Les premières tentatives de représentation de structures moléculaires ont cor
 \begin{figure}
   \begin{subfigure}{.5\textwidth}
   \centering
+  {\includegraphics[width=0.9\linewidth]{./figures/ch1/kendrew_myoglobin_ball_and_spokes}}
+  \caption{}
+    \label{Fig:kendrew_ball_and_spokes}
+  % \hspace{0.2cm}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+  \centering
   {\includegraphics[width=0.9\linewidth]{./figures/ch1/kendrew_myoglobin_plasticine}}
     \label{Fig:kendrew_plasticine}
   \caption{}
-  % \hspace{0.3cm}
+  % \hspace{0.2cm}
   \end{subfigure}%
+  \\[\baselineskip]
   \begin{subfigure}{.5\textwidth}
   \centering
   {\includegraphics[width=0.9\linewidth]{./figures/ch1/kendrew_myoglobin_forest_of_rods}}    
     \label{Fig:kendrew_myoglobin_forest_of_rods}
   \caption{}
-  \hspace{0.3cm}
+  \hspace{0.2cm}
   \end{subfigure}%
-  \\[\baselineskip]
   \begin{subfigure}{.5\textwidth}
   \centering
   {\includegraphics[width=0.9\linewidth]{./figures/ch1/fred_richards_ribonuclease}}
   \caption{}
     \label{Fig:fred_richards_ribonuclease}
-  \hspace{0.3cm}
+  \hspace{0.2cm}
   \end{subfigure}%
-  \begin{subfigure}{.5\textwidth}
-  \centering
-  {\includegraphics[width=0.9\linewidth]{./figures/ch1/kendrew_myoglobin_ball_and_spokes}}
-  \caption{}
-    \label{Fig:kendrew_ball_and_spokes}
-  \hspace{0.3cm}
-  \end{subfigure}%
-  \caption{\it (a) Premier modèle physique de la myoglobine, faite par Sir John Kendrew et Max Perutz. Ce modèle fut récompensé par le prix Nobel de chimie en 1962. Il est exposé au Science Museum de Londres.
-  (b) Modèle basé sur des tiges et des attaches de couleurs représentant également la myoglobine. Couramment appelé la "forêt de tiges" en français, ce modèle est également exposé au Science Museum de Londres.
-  (c) Modèle balle et bâtons représentant une nouvelle fois la myoglobuline. Afin de mettre en évidence la chaîne principale, un fil blanc épais a été ajouté à l'ensemble et est la seule caractéristique vraiment discernable au milieu de tous les atomes (boules de couleur) et de leurs liaisons (bâtons).
+  \caption{\it (a) Modèle balle et bâtons représentant une nouvelle fois la myoglobine. Afin de mettre en évidence la chaîne principale, un fil blanc épais a été ajouté à l'ensemble et est la seule caractéristique vraiment discernable au milieu de tous les atomes (boules de couleur) et de leurs liaisons (bâtons).
+  (b) Premier modèle physique de la myoglobine, faite par Sir John Kendrew et Max Perutz. Ce modèle fut récompensé par le prix Nobel de chimie en 1962.
+  (c) Modèle basé sur des tiges et des attaches de couleurs représentant également la myoglobine. Couramment appelé la "forêt de tiges" en français.  
   (d) Dispositif de visualisation appelé "Richards box" (ou "Fred's Folly") et permettant aux cristallographes de construire un modèle physique à partir d'empilements de feuillets représentant des cartes de densité électronique projetés à travers un miroir semi-argenté.}
 \end{figure}
 
@@ -730,14 +770,14 @@ Dans le début des années 1970, le cristallographe Byron Rubin mis au point une
   {\includegraphics[width=0.9\linewidth]{./figures/ch1/bender_tool_models}}
     \label{Fig:bender_tool_models}
   \caption{}
-  % \hspace{0.3cm}
+  % \hspace{0.2cm}
   \end{subfigure}%
   \begin{subfigure}{.5\textwidth}
   \centering
   {\includegraphics[width=0.9\linewidth]{./figures/ch1/byron_sculpture_colagenase}}    
     \label{Fig:byron_rubin_art}
   \caption{}
-  \hspace{0.3cm}
+  \hspace{0.2cm}
   \end{subfigure}%
  \caption{\it (a) En haut, l'outil mis au point par Byron Rubin permettant de plier une tige de métal suivant la structuration d'une chaîne principale de protéine. En dessous sont exposés les modèles de la phospholipase pancréatique A2 (à gauche) et de l'inhibiteur de la trypsine pancréatique bovine (à droite).
   (b) Sculpture moléculaire de Byron Rubin représentant une collagénase neutrophile humaine créée à partir d'une version plus grande de son Bender inspirée des outils de modelage automobiles locaux.}
@@ -756,14 +796,14 @@ Concurrencés par les modèles sur ordinateurs, les modèles physique surent né
   {\includegraphics[width=0.9\linewidth]{./figures/ch1/julian_wood_matingpheromone}}
     \label{Fig:julian_wood_matingpheromone}
   \caption{}
-  % \hspace{0.3cm}
+  % \hspace{0.2cm}
   \end{subfigure}%
   \begin{subfigure}{.5\textwidth}
   \centering
   {\includegraphics[width=0.9\linewidth]{./figures/ch1/bathsheba_laser_dna}}    
     \label{Fig:bathsheba_laser_dna}
   \caption{}
-  \hspace{0.3cm}
+  \hspace{0.2cm}
   \end{subfigure}%
  \caption{\it (a) Modèle en bois de Julian Voss-Andreae illustrant la chaîne principale d'une phéromone.
   (b) Modèle en verre de l'ADN creusé grâce à des rayons lasers fins.}
@@ -781,14 +821,14 @@ En 1965, Carroll K. Jonhson publia une programme créé en Fortran et appelé \t
   {\includegraphics[width=0.9\linewidth]{./figures/ch1/levinthal_oscilloscope_wireframe}}
     \label{Fig:julian_wood_matingpheromone}
   \caption{}
-  % \hspace{0.3cm}
+  % \hspace{0.2cm}
   \end{subfigure}%
   \begin{subfigure}{.5\textwidth}
   \centering
   {\includegraphics[width=0.9\linewidth]{./figures/ch1/ortep_myoglobin}}    
     \label{Fig:bathsheba_laser_dna}
   \caption{}
-  \hspace{0.3cm}
+  \hspace{0.2cm}
   \end{subfigure}%
  \caption{\it (a) Le premier système d'ordinateur pour visualiser des molécules développé par Cyrus Levinthal au sein du Massachussetts Institute of Technology (MIT) en 1962. Un simple modèle de squelette moléculaire esst visible sur l'écran de l'oscilloscope. En bougeant le globe plastique au premier plan, il était possible de faire tourner le modèle à l'écran.
   (b) Vue stéréoscopique d'un dessin du squelette de la myoglobine générée par ORTEP.}
@@ -804,14 +844,14 @@ Cela changea au milieu des années 70 quand, pour la première fois, une structu
   {\includegraphics[width=0.9\linewidth]{./figures/ch1/richardson_grip_computer}}
     \label{Fig:richardson_grip_computer}
   \caption{}
-  % \hspace{0.3cm}
+  % \hspace{0.2cm}
   \end{subfigure}%
   \begin{subfigure}{.5\textwidth}
   \centering
   {\includegraphics[width=0.9\linewidth]{./figures/ch1/TAMS_viewer_slide}}    
     \label{Fig:TAMS_viewer_slide}
   \caption{}
-  \hspace{0.3cm}
+  % \hspace{0.2cm}
   \end{subfigure}%
  \caption{\it (a) Le premier système d'ordinateur pour visualiser des molécules développé par Cyrus Levinthal au sein du Massachussetts Institute of Technology (MIT) en 1962. Un simple modèle de squelette moléculaire esst visible sur l'écran de l'oscilloscope. En bougeant le globe plastique au premier plan, il était possible de faire tourner le modèle à l'écran.
   (b) En haut, exemple d'une des 116 vignettes présentes dans le set TAMS et permettant la vue stéréoscopique d'une immunoglobuline humaine grâce à un visualiseur de poche pliable (en bas).}
@@ -845,6 +885,40 @@ Cette liste est non-exhaustive, mais recense quatre des logiciels de visualisati
 
 Ces programmes sont donc tous capables de représenter des modèles 3d de protéines grâce aux standards de représentation mis au point à travers les années. Parmi ceux-ci, il est possible d'extraire 5 modes de représentations souvent utilisés par la communauté de biologie structurale, à la fois dans leur travail quotidien, mais également au travers de leurs communications (conférences, articles, etc.).
 
+\begin{figure}
+  \begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=0.9\linewidth]{./figures/ch1/ball_sticks_representation}}
+    \label{Fig:ball_sticks_representation}
+  \caption{}
+  % \hspace{0.2cm}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=0.9\linewidth]{./figures/ch1/cartoon_representation}}    
+    \label{Fig:cartoon_representation}
+  \caption{}
+  % \hspace{0.2cm}
+  \end{subfigure}%
+  \\[\baselineskip]
+  \begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=0.9\linewidth]{./figures/ch1/vdw_representation}}
+  \caption{}
+    \label{Fig:vdw_representation}
+  % \hspace{0.2cm}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=0.9\linewidth]{./figures/ch1/surface_representation}}
+  \caption{}
+    \label{Fig:surface_representation}
+  % \hspace{0.2cm}
+  \end{subfigure}%
+  \caption{\it Différentes représentations obtenues avec PyMol de la protéine OMPLA (pour \textit{Outer Membrane PhosphoLipase A}) enzyme présente à la surface de certaines bactéries. Elle est successivement représentée: (a) par balles et bâtons pour respectivement les atomes et leurs liaisons covalentes, (b) \textit{cartoon} permettant de mettre en avant une structuration en \textit{tonneaux bêta}, (c) sphères dont le rayon correspond aux rayons de van der Waals des atomes et (d) représentation surfacique dont le code couleur correspond à l'échelle d'hydrophobie des acides aminés présents à la surface.
+  }
+\end{figure}
+
 \begin{itemize}
   \item Représentation par \textbf{ligne}: seules les liaisons covalentes entre atomes sont représentées par une ligne de longueur équivalente à la distance entre les deux centres des atomes situés de part et d'autre de la liaison. Cette représentation est souvent associée à une coloration précise, chacune de ses moitiés étant colorée de la couleur associée au type d'atome qu'elle relie.
   \item Représentation par \textbf{licorice}: seule la chaîne principale de la protéine est représentée dans ce mode, par des bâtons droits dont les extrémités correspondent au centre d'un atome qu'elles relient
@@ -857,14 +931,14 @@ Ces programmes sont donc tous capables de représenter des modèles 3d de proté
 
 Chaque type de représentation répond à des besoins de visualisation différents. Alors que l'agencement de la structure secondaire et tertiaire pourra être rapidement visualisé avec une représentation par \textit{cartoon}, il sera nécessaire d'ajouter une représentation par lignes afin d'observer la proximité des atomes entre eux. De la même façon, la détection visuelle des trous et potentiels sites de liaisons de la protéine sera facilitée par la représentation surfacique, mais le cœur de la protéine ne pourra être visualisé correctement qu'avec des représentations par ligne ou rubans. Ces différentes représentations ne sont pas cloisonnées et il n'est pas rare de les combiner afin de visualiser les caractéristiques propres à chaque représentation en même temps. Les calculs permettant chacune de ces représentations ne demandent pas les mêmes ressources computationnelles et même si la majorité d'entre elles peuvent aujourd'hui être appliquées de façon presque instantanée sur des ordinateurs de bureau, certaines comme la représentation par surface demandent des calculs relativement coûteux sur des protéines de grande taille.
 
-La représentation de surface fait justement partie des techniques de visualisation ayant pu profiter des avancées rapides provenant de certains domaines non scientifiques comme le jeu vidéo ou le cinéma. Certains rendus appelés \textit{photo-réalistes} et inspirés de techniques d'animation récentes sont maintenant retrouvés au sein de logiciels de visualisation de données scientifiques, améliorant de façon significative la perception des utilisateurs vis-à-vis de leurs données comme l'exemple de la Figure \ref{molecule_blender_glass} le montre. La visualisation moléculaire n'a pas échappé à ces nouvelles techniques de rendus et a su implémenté certaines approches basées sur la \textbf{transparence}, les rendus \textbf{lumineux}, les effets de \textbf{profondeur}, etc. au sein des logiciels les plus utilisés dans la communauté. Ces nouvelles façons de représenter des structures protéiques permettent de jouer sur les capacités cognitives et perceptuelles des utilisateurs. Parallèlement, ces développements demandant des ressources computationnelles bien plus importantes que les anciennes implémentations graphiques, il a fallu également franchir le pas du calcul graphique sur GPU \cite{chavent_gpu-powered_2011}. La parallélisation des programmes et leur utilisation des ressources graphiques présentes au sein des ordinateurs ont permis de conserver des performances d'affichages suffisantes pour afficher des molécules de taille raisonnable. Dans cette même dynamique, certains projets s'appuient sur l'utilisation de moteurs de jeux vidéos pour développer des environnements de visualisation profitant des derniers progrès du domaine, dont la spécialisation et l'investissement associé dépassent de loin les moyens attribués à la seule visualisation moléculaire dans le monde de la science \cite{andrei2012intuitive,lv_game_2013}. Ces moteurs de jeu ouvrent de nouvelles perspectives pour la visualisation, mais également l'exploration des structures de protéines.
+La représentation de surface fait justement partie des techniques de visualisation ayant pu profiter des avancées rapides provenant de certains domaines non scientifiques comme le jeu vidéo ou le cinéma. Certains rendus appelés \textit{photo-réalistes} et inspirés de techniques d'animation récentes sont maintenant retrouvés au sein de logiciels de visualisation de données scientifiques, améliorant de façon significative la perception des utilisateurs vis-à-vis de leurs données comme l'exemple de la Figure \ref{Fig:molecule_blender_glass} le montre. La visualisation moléculaire n'a pas échappé à ces nouvelles techniques de rendus et a su implémenté certaines approches basées sur la \textbf{transparence}, les rendus \textbf{lumineux}, les effets de \textbf{profondeur}, etc. au sein des logiciels les plus utilisés dans la communauté. Ces nouvelles façons de représenter des structures protéiques permettent de jouer sur les capacités cognitives et perceptuelles des utilisateurs. Parallèlement, ces développements demandant des ressources computationnelles bien plus importantes que les anciennes implémentations graphiques, il a fallu également franchir le pas du calcul graphique sur GPU \cite{chavent_gpu-powered_2011}. La parallélisation des programmes et leur utilisation des ressources graphiques présentes au sein des ordinateurs ont permis de conserver des performances d'affichages suffisantes pour afficher des molécules de taille raisonnable. Dans cette même dynamique, certains projets s'appuient sur l'utilisation de moteurs de jeux vidéos pour développer des environnements de visualisation profitant des derniers progrès du domaine, dont la spécialisation et l'investissement associé dépassent de loin les moyens attribués à la seule visualisation moléculaire dans le monde de la science \cite{andrei2012intuitive,lv_game_2013}. Ces moteurs de jeu ouvrent de nouvelles perspectives pour la visualisation, mais également l'exploration des structures de protéines.
 
 \begin{figure}
   \centering
   {\includegraphics[width=.75\linewidth]{./figures/ch2/molecule_blender_glass}}
     \caption{{\it Représentation}}
   \label{Fig:molecule_blender_glass}
-  \hspace{0.3cm}
+  \hspace{0.2cm}
 \end{figure}
 
 
@@ -879,7 +953,7 @@ Ce dernier point, couplé au rapprochement entre les méthodes provenant de disc
   {\includegraphics[width=.75\linewidth]{./figures/ch1/VR_pubmed_trend.png}}
     \caption{{\it Evolution du pourcentage d'articles de PubMed où le terme "Virtual Reality" est retrouvé soit dans le titre soit dans le résumé au cours des 20 dernières années.}}
   \label{Fig:VR_pubmed_trend}
-  \hspace{0.3cm}
+  \hspace{0.2cm}
 \end{figure}
 
 \section{Limites et perspectives de la biologie structurale} \label{limits_persp_bio_struct}
@@ -939,7 +1013,7 @@ Cependant, ces récentes avancées ne sont pas suffisantes pour rapporter la com
 %   [{\it Sans dépendance}]
 %   {\includegraphics[width=.45\linewidth]{ch2/fig/Fi-F0-dpdce-sans_soprano_u_200-1500Hz_dig13b3.pdf}}
 %   \label{Fig:Fi-F0-dpdce_sans}
-%   \hspace{0.3cm}
+%   \hspace{0.2cm}
 %   \subfloat
 % 	[{\it Avec dépendances}]  
 %   {\includegraphics[width=.45\linewidth]{ch2/fig/Fi-F0-dpdce-avec_soprano_u_200-1500Hz_dig13b3.pdf}}
