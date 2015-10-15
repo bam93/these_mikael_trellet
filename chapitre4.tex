@@ -225,7 +225,7 @@ L'ensemble des caractéristiques principales du RDFS est repris dans un langage 
 
 Le langage RDF est le langage de base du web Sémantique qui l'utilise afin de mettre en place un réseau de données partagées et libres. C'est un modèle de graphe destiné à décrire de façon formelle des ressources et leurs métadonnées associées, de façon à permettre leur traitement automatique.
 
-Le modèle RDF se base sur une représentation des connaissances à partir de triplets comme illustré dans la Figure \ref{rdf_hofstader} par Douglas R. Hofstader \cite{douglas1979godel}. Le triplet est la plus petite division de connaissances en RDF et toute description de données est un ensemble de triplets comprenant:
+Le modèle RDF se base sur une représentation des connaissances à partir de triplets comme illustré dans la Figure \ref{Fig:rdf_hofstader} par Douglas R. Hofstader \cite{douglas1979godel}. Le triplet est la plus petite division de connaissances en RDF et toute description de données est un ensemble de triplets comprenant:
 
 \begin{lstlisting}
 (sujet, prédicat, objet)
@@ -267,7 +267,7 @@ GRAPHE Pierre --âge--> 25
 \end{lstlisting}
 
 Fabien Gandon met très bien en avant le fait que le modèle RDF possède d'ailleurs plusieurs similarités avec le modèle des graphes conceptuels \cite{gandon_graphes_2008}. Ils partagent en effet la distinction entre sémantique (support pour les GC et schémas RDFS/OWL pour RDF) et la connaissance factuelle ou assertionnelle. Dans les deux modèles, cette connaissance est positive, conjonctive et existentielle, pouvant être représentée par des graphes orientés étiquetés. Les schémas RDF et GC possèdent une hiérarchie similaire des classes/propriétés pour RDF et concept/relation pour GC. Les relations et propriétés sont d'ailleurs indépendantes et définies en dehors des classes/concepts et se définissent donc comme de 1ers ordres dans la hiérarchie de ces deux modèles. Enfin, les deux modèles implémentent un mécanisme de déduction équivalent basé sur la subsomption en RDFS et la projection en GC. Ils s'éloignent cependant sur plusieurs points. Alors que RDF permet la multi-instanciation, GC ne possède pas d'équivalent. Une déclaration de propriété en RDF peut indiquer plusieurs domaines de définition et d'ensembles d'arrivée ce qui n'est pas le cas en GC. Les GC permettent par des relations d'arité supérieures à deux alors que les graphes RDF sont binaires. Les GC proposent également des extensions supérieures à l'expressivité de RDF/S.
-Des travaux ont donc cherché à rapprocher ces deux formalismes afin de profiter de leurs avantages respectifs et gommer leurs défauts dans la mesure du possible. C'est le cas du projet CORESE \cite{corby2006searching} qui est un moteur de recherche s'appuyant sur le formalisme de RDF(S)/XML pour exprimer et partager ses données, mais utilise les mécanismes de requête et d'inférence fournis par les GC. 
+Des travaux ont donc cherché à rapprocher ces deux formalismes afin de profiter de leurs avantages respectifs et gommer leurs défauts dans la mesure du possible. C'est le cas du projet CORESE \cite{corby_searching_2006} qui est un moteur de recherche s'appuyant sur le formalisme de RDF(S)/XML pour exprimer et partager ses données, mais utilise les mécanismes de requête et d'inférence fournis par les GC. 
 
 \myparagraph{Formats et langages autour du RDF}
 
