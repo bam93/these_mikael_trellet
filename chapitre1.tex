@@ -366,6 +366,25 @@ L'ensemble de ces techniques possèdent une étape d'interprétation de signal b
 \end{figure}
 
 
+\subsubsection{Banques de structures protéiques} \label{protein_DB}
+
+Les bases de données biologiques permettent de regrouper l'ensemble des informations scientifiques obtenues au cours de l'histoire et les mettre à disposition de la communauté scientifique. Les bases de données structurales regroupent plus particulièrement des structures obtenues par techniques expérimentales dont il est possible d'obtenir la représentation 3d sous forme de fichier informatique. 
+Elles voient de plus en plus leur intégration au sien de portails biologiques gérant la conformité des données aux standards du domaine, leur accès à l'ensemble des scientifiques et éventuellement leur association avec des données d'autres domaines scientifiques proches.
+
+L'une des bases de données les plus utilisées en biologie structurale est la \textbf{Protein Data Bank} (PDB) \cite{berman_protein_2000} qui regroupe l'ensemble des structures 3d de protéines publiées et vérifiées dans plusieurs formats standards et acceptés par la majorité des outils de bio-informatique structurale. Les structures 3d présentes dans la PDB proviennent majoritairement de cristallographie rayon X ou de spectroscopie RMN (89\% pour la cristallographie, 10\% pour la RMN). Aujourd'hui, environ 105.000 structures de protéines, 5200 structures de complexes mixtes protéine/acide nucléique et 2800 structures d'acides nucléiques ont été déposé dans la PDB.
+
+On peut également noter d'autres banques de données de structures protéiques:
+\begin{itemize}
+  \item \textbf{SCOP} (Structural Classification of Proteins)\footnote{\url{http://scop.berkeley.edu/}} est une banque de données regroupant les protéines de la PDB présentant une relation de similarité structurale et d'évolution \cite{murzin1995scop}. Les structures sont ainsi regroupées en 3 niveaux hiérarchiques: Famille, superfamille et repliement.
+  \item \textbf{CATH} (Class Architexture Topology and Homology)\footnote{\url{http://www.cathdb.info/}} regroupe les protéines dont la structure a été déterminée par RMN ou par cristallographie avec une résolution de détermination supérieure à 3\r{A} \cite{sillitoe2015cath}. Elle est composée de 4 niveaux: Classe, architecture, topologie et superfamilles homologues.
+  \item \textbf{FSSP} (Fold Classification based on Structure-Structure alignement of Proteins)\footnote{\url{http://protein.hbu.cn/fssp/ekhidna.biocenter.helsinki.fi/dali/start.html}} regroupe les structures représentatives de la PDB \cite{holm1996mapping}. Elle filtre les protéines dont les structures sont considérées comme redondantes dans la PDB, avec plus de 25\% d'identité au niveau des séquences et de la structure. Elle se base sur le programme DALI d'alignement structural pour obtenir ces structures non redondantes \cite{holm1998touring}.
+  \item \textbf{MMDB} (Molecular Modeling Database)\footnote{\url{http://www.ncbi.nlm.nih.gov/structure/}} est un sous-ensemble de la PDB excluant les modèles théoriques \cite{madej2014mmdb}. Elle héberge des données structurelles conventionnelles de manière flexible afin de pouvoir y ajouter d'autres structures reconnues par des technologies comme la microscopie électronique.
+\end{itemize}
+
+Parmi les informations stockées dans des bases de données et utilisées en biologie structurale en dehors de données purement structurales on retrouve: les profils biologiques des protéines avec leur structure primaire/secondaire/tertiaire, leur environnement cellulaire, leur rôle, etc. (SWISSPROT+TrEMBL \cite{boeckmann2003swiss}, PDB, etc.); les réseaux d'interactions moléculaires (interactome) mettant en avant les partenaires moléculaires déjà identifiés (STRING \cite{Snel15092000}, CCSB Interactome Database \footnote{\url{http://interactome.dfci.harvard.edu/}}, etc.); les évolutions génomiques des séquences d'ADN codantes identifiant les régions évoluant rapidement au sein des protéines (séquence primaire changeante) et les régions plus stables et donc potentiellement importantes pour la fonction métabolique de la protéine (USCS \cite{kent2002human}, Ensembl \cite{hubbard2002ensembl}, etc.). 
+
+
+
 \subsection{Modélisation et simulation}
 
 Comme il n'est pas possible expérimentalement de filmer une protéine dans sont environnement, en complément des techniques expérimentales, il est nécessaire d'utiliser des approches computationnelles, notamment pour accéder aux propriétés dynamiques et mécaniques des protéines. Il s'agit aussi de compléter les informations structurelles recherchées ou de générer des modèles pour des protéines dont la nature empêche leur étude expérimentale (mauvaise solubilité, instabilité en solution, dégradation par les rayons X, etc.). Ces approches dites \textit{in silico} sont moins coûteuses que les approches expérimentales, mais souffrent d'une précision moindre et surtout d'un facteur de confiance significativement moins important que les approches énoncées précédemment. Les approches computationnelles ont cependant beaucoup évolué ces deux dernières décennies, portées par l'essor de l'informatique. La puissance de calcul des outils informatiques permet désormais d'intégrer des paramètres physico-chimiques fins à toute simulation numérique cherchant à créer des modèles 3d cohérents de biomolécules à partir de leur simple séquence primaire. Le fossé préalablement existant entre la précision des techniques expérimentales et computationnelles diminue donc rapidement même si pour le moment les résultats obtenus par ces méthodes sont dans la majorité des cas vérifiés ultérieurement de manière expérimentale.
@@ -431,13 +450,13 @@ Les paramètres utilisés au sein des champs de force sont dérivés de données
 
 Le choix d'un champ de force dépend à la fois de l'environnement dans lequel est modélisé le complexe moléculaire d'intérêt ainsi que du degré de précision utilisé pour décrire les particules du système (tout-atome, atomes unifiés, gros grains, etc.). Parmi les champs de force les plus utilisés, nous pouvons citer CHARMM \cite{brooks2009charmm}, AMBER \cite{pearlman1995amber}, GROMOS \cite{oostenbrink2004biomolecular} ou OPLS \cite{jorgensen1996development}.
 
-% \begin{figure}
-%   \centering
-%   {\includegraphics[width=0.75\linewidth]{./figures/ch1/coarse_grain_ff.pdf}}
-%     \caption{\it Contributions énergétiques des forces électrostatiques représentées par un potentiel de Coulomb (en rouge) et des forces de Van der Waals représentées par un potentiel de Lennard-Jones (en bleu) en fonction de la distance entre deux atomes.}
-%     \label{Fig:coarse_grain_ff}
-%   \hspace{0.2cm}
-% \end{figure}
+\begin{figure}
+  \centering
+  {\includegraphics[width=0.75\linewidth]{./figures/ch1/coarse_grain_ff.pdf}}
+    \caption{\it Contributions énergétiques des forces électrostatiques représentées par un potentiel de Coulomb (en rouge) et des forces de Van der Waals représentées par un potentiel de Lennard-Jones (en bleu) en fonction de la distance entre deux atomes.}
+    \label{Fig:coarse_grain_ff}
+  \hspace{0.2cm}
+\end{figure}
 
 Les différentes valeurs d'énergie potentielle d'une protéine données par la résolution de l'ensemble des équations des champs de force, directement dépendantes de la configuration spatiale de cette protéine, constituent le paysage énergétique de cette protéine. Suivant l’objectif de la simulation, on cherchera soit à identifier le minimum global de ce paysage, soit à trouver des minima locaux traduisant des états structurels singuliers mais stables d'une protéine (voir Figure \ref{Fig:energy_landscape_edit}).
 
@@ -694,24 +713,6 @@ En plus des énergies propres à chaque partenaire évalué individuellement, de
 % En amont de la génération des modèles et leur évaluation, il est important de savoir évaluer la précision et l'efficacité d'un algorithme de docking. Dans le cas du docking de complexes protéine-protéine, il est courant de se référer aux standards donnés par CAPRI (Critical Assessment of PRediction of Interactions). CAPRI est une expérience de prédiction aveugle dont le but est de prédire la structure d'un complexe protéine-protéine à partir des coordonnées atomiques des deux partenaires impliqués sous leur forme non liée. En plus d'offrir la possibilité pour des équipes de chercheurs de vérifier la pertinence de leurs algorithmes de docking, la communauté autour de CAPRI a mis en place des standards pour l'évaluation de structure à travers des critères d'évaluation précis. Ces critères d'évaluation se basent sur la comparaison entre les modèles générés par docking et la structure cristallographique ou RMN du complexe protéique à l'état lié. Trois méthodes de calcul permettent de classer les modèles selon leur similarité vis-à-vis du complexe recherché: L'\textit{interface-RMSD} (i-RMSD), le \textit{ligand-RMSD} (l-RMSD) et le \textit{Fraction of NATive contacts} (FNAT). Les deux premiers critères se basent sur un calcul de distance moyenne entre les atomes identiques des deux complexes comparés (modèle + structure liée), présents au sein l'interface pour le i-RMSD, soient ceux du ligand pour le l-RMSD. Les atomes sont considérés comme à l'interface lorsque les résidus qu'ils composent contiennent au moins un atome situé à moins de 10 \r{A} de la protéine partenaire. Le calcul de RMSD se fait après une étape de superposition des deux complexes. Cette superposition se fait essentiellement au niveau de la protéine réceptrice puisque celle-ci est très souvent fixe. Le FNAT n'est pas un calcul de distance, mais de proportions. On calcule la proportion de couples de résidus en contact (deux résidus de deux protéines différentes sont considérés en contact lorsqu'ils possèdent chacun au moins un de leurs atomes à moins de 5 \r{A} d'un atome du résidu correspondant) entre le complexe sous forme liée et le modèle 3d du complexe généré par docking. Le résultat obtenu est un nombre compris entre 0 et 1 indiquant le pourcentage de résidus en contact préservés dans le modèle 3d.
 
 
-\subsubsection{Banques de structures protéiques} \label{protein_DB}
-
-Les bases de données biologiques permettent de regrouper l'ensemble des informations scientifiques obtenues au cours de l'histoire et les mettre à disposition de la communauté scientifique. Les bases de données structurales regroupent plus particulièrement des structures obtenues par techniques expérimentales dont il est possible d'obtenir la représentation 3d sous forme de fichier informatique. 
-Elles voient de plus en plus leur intégration au sien de portails biologiques gérant la conformité des données aux standards du domaine, leur accès à l'ensemble des scientifiques et éventuellement leur association avec des données d'autres domaines scientifiques proches.
-
-L'une des bases de données les plus utilisées en biologie structurale est la \textbf{Protein Data Bank} (PDB) \cite{berman_protein_2000} qui regroupe l'ensemble des structures 3d de protéines publiées et vérifiées dans plusieurs formats standards et acceptés par la majorité des outils de bio-informatique structurale. Les structures 3d présentes dans la PDB proviennent majoritairement de cristallographie rayon X ou de spectroscopie RMN (89\% pour la cristallographie, 10\% pour la RMN). Aujourd'hui, environ 105.000 structures de protéines, 5200 structures de complexes mixtes protéine/acide nucléique et 2800 structures d'acides nucléiques ont été déposé dans la PDB.
-
-On peut également noter d'autres banques de données de structures protéiques:
-\begin{itemize}
-	\item \textbf{SCOP} (Structural Classification of Proteins)\footnote{\url{http://scop.berkeley.edu/}} est une banque de données regroupant les protéines de la PDB présentant une relation de similarité structurale et d'évolution \cite{murzin1995scop}. Les structures sont ainsi regroupées en 3 niveaux hiérarchiques: Famille, superfamille et repliement.
-	\item \textbf{CATH} (Class Architexture Topology and Homology)\footnote{\url{http://www.cathdb.info/}} regroupe les protéines dont la structure a été déterminée par RMN ou par cristallographie avec une résolution de détermination supérieure à 3\r{A} \cite{sillitoe2015cath}. Elle est composée de 4 niveaux: Classe, architecture, topologie et superfamilles homologues.
-	\item \textbf{FSSP} (Fold Classification based on Structure-Structure alignement of Proteins)\footnote{\url{http://protein.hbu.cn/fssp/ekhidna.biocenter.helsinki.fi/dali/start.html}} regroupe les structures représentatives de la PDB \cite{holm1996mapping}. Elle filtre les protéines dont les structures sont considérées comme redondantes dans la PDB, avec plus de 25\% d'identité au niveau des séquences et de la structure. Elle se base sur le programme DALI d'alignement structural pour obtenir ces structures non redondantes \cite{holm1998touring}.
-	\item \textbf{MMDB} (Molecular Modeling Database)\footnote{\url{http://www.ncbi.nlm.nih.gov/structure/}} est un sous-ensemble de la PDB excluant les modèles théoriques \cite{madej2014mmdb}. Elle héberge des données structurelles conventionnelles de manière flexible afin de pouvoir y ajouter d'autres structures reconnues par des technologies comme la microscopie électronique.
-\end{itemize}
-
-Parmi les informations stockées dans des bases de données et utilisées en biologie structurale en dehors de données purement structurales on retrouve: les profils biologiques des protéines avec leur structure primaire/secondaire/tertiaire, leur environnement cellulaire, leur rôle, etc. (SWISSPROT+TrEMBL \cite{boeckmann2003swiss}, PDB, etc.); les réseaux d'interactions moléculaires (interactome) mettant en avant les partenaires moléculaires déjà identifiés (STRING \cite{Snel15092000}, CCSB Interactome Database \footnote{\url{http://interactome.dfci.harvard.edu/}}, etc.); les évolutions génomiques des séquences d'ADN codantes identifiant les régions évoluant rapidement au sein des protéines (séquence primaire changeante) et les régions plus stables et donc potentiellement importantes pour la fonction métabolique de la protéine (USCS \cite{kent2002human}, Ensembl \cite{hubbard2002ensembl}, etc.). 
-
-
 \subsection{Visualisation moléculaire 3d} \label{visu_molecular}
 
 Il est important de stocker les structures 3d de protéines résolues de façon théorique ou expérimentale mais il est tout autant important de pouvoir les visualiser de façon efficace. La visualisation moléculaire est indissociable des progrès effectués par la biologie au cours de son histoire. Tout d'abord utilisée comme moyen de communication et parfois de vulgarisation, elle est aujourd'hui un des vecteurs majeurs d'acquisition de nouvelles informations.
@@ -956,7 +957,7 @@ Ce dernier point, couplé au rapprochement entre les méthodes provenant de disc
   \hspace{0.2cm}
 \end{figure}
 
-\section{Limites et perspectives de la biologie structurale} \label{limits_persp_bio_struct}
+\section{Perspectives et nouveaux usages de la biologie structurale} \label{limits_persp_bio_struct}
 
 La biologie structurale a pris du retard pour caractériser la structure tridimensionnelle des protéines dont la séquence a déjà pu être identifiée de façon systématique et fiable. Pour preuve l'écart entre le nombre de protéines dont la séquence est déposée dans UniProtKB\footnote{\url{http://www.uniprot.org/uniprot/}} et le nombre de protéines possédant effectivement une structure déposée dans PDB\footnote{\url{http://www.rcsb.org/}}: Aujourd'hui, seul 1\% des protéines séquencées possèdent une structure répertoriée dans la PDB. 
 
