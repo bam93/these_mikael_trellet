@@ -1,0 +1,137 @@
+\select@language {french}
+\contentsline {starchapter}{Remerciements}{3}{chapter*.1}
+\contentsline {starchapter}{Notations et expressions}{9}{chapter*.3}
+\contentsline {starchapter}{Introduction}{11}{chapter*.5}
+\select@language {francais}
+\contentsline {chapter}{\numberline {1}Contextes, usages et enjeux en biologie structurale}{17}{chapter.1}
+\contentsline {section}{\numberline {1.1}Acteurs et processus de la biologie mol\IeC {\'e}culaire}{19}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Les biomol\IeC {\'e}cules au coeur de la machinerie cellulaire}{19}{subsection.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1.1}L'ADN}{20}{subsubsection.1.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1.2}L'ARN}{21}{subsubsection.1.1.1.2}
+\contentsline {subsubsection}{\numberline {1.1.1.3}Les prot\IeC {\'e}ines}{21}{subsubsection.1.1.1.3}
+\contentsline {subsubsection}{\numberline {1.1.1.4}Les polysaccharides}{24}{subsubsection.1.1.1.4}
+\contentsline {subsubsection}{\numberline {1.1.1.5}Les lipides}{24}{subsubsection.1.1.1.5}
+\contentsline {subsection}{\numberline {1.1.2}De l'information g\IeC {\'e}n\IeC {\'e}tique aux unit\IeC {\'e}s fonctionnelles}{26}{subsection.1.1.2}
+\contentsline {subsubsection}{\numberline {1.1.2.1}La transcription, de l'ADN \IeC {\`a} l'ARN}{26}{subsubsection.1.1.2.1}
+\contentsline {subsubsection}{\numberline {1.1.2.2}La traduction, de l'ARN \IeC {\`a} la prot\IeC {\'e}ine}{27}{subsubsection.1.1.2.2}
+\contentsline {subsubsection}{\numberline {1.1.2.3}Maturation et acquisition de la fonction prot\IeC {\'e}ique}{28}{subsubsection.1.1.2.3}
+\contentsline {section}{\numberline {1.2}M\IeC {\'e}thodes et outils de la biologie structurale}{29}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Exp\IeC {\'e}rimentations}{30}{subsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.1.1}Cristallographie \IeC {\`a} rayons X ou radiocristallographie}{31}{subsubsection.1.2.1.1}
+\contentsline {subsubsection}{\numberline {1.2.1.2}Spectroscopie \IeC {\`a} R\IeC {\'e}sonance Magn\IeC {\'e}tique Nucl\IeC {\'e}aire - RMN}{31}{subsubsection.1.2.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1.3}Cryo-microscopie \IeC {\'e}lectronique - Cryo-EM}{32}{subsubsection.1.2.1.3}
+\contentsline {subsubsection}{\numberline {1.2.1.4}Diffusion des rayons X - SAXS}{33}{subsubsection.1.2.1.4}
+\contentsline {subsubsection}{\numberline {1.2.1.5}Banques de structures prot\IeC {\'e}iques}{35}{subsubsection.1.2.1.5}
+\contentsline {subsection}{\numberline {1.2.2}Mod\IeC {\'e}lisation et simulation}{36}{subsection.1.2.2}
+\contentsline {subsubsection}{\numberline {1.2.2.1}Mod\IeC {\`e}les et niveaux d'\IeC {\'e}chelle}{37}{subsubsection.1.2.2.1}
+\contentsline {paragraph}{Mod\IeC {\`e}le quantique}{37}{paragraph*.21}
+\contentsline {paragraph}{Mod\IeC {\`e}le classique}{38}{paragraph*.22}
+\contentsline {subsubsection}{\numberline {1.2.2.2}Simulation mol\IeC {\'e}culaire}{41}{subsubsection.1.2.2.2}
+\contentsline {paragraph}{M\IeC {\'e}canique mol\IeC {\'e}culaire}{41}{paragraph*.25}
+\contentsline {paragraph}{Minimisation mol\IeC {\'e}culaire}{41}{paragraph*.26}
+\contentsline {paragraph}{Algorithme de Monte-Carlo}{42}{paragraph*.27}
+\contentsline {paragraph}{Dynamique mol\IeC {\'e}culaire}{42}{paragraph*.28}
+\contentsline {paragraph}{Simulation mol\IeC {\'e}culaire interactive}{43}{paragraph*.29}
+\contentsline {paragraph}{\IeC {\'E}valuation}{44}{paragraph*.30}
+\contentsline {subsubsection}{\numberline {1.2.2.3}Pr\IeC {\'e}diction de structure tertiaire}{45}{subsubsection.1.2.2.3}
+\contentsline {subsubsection}{\numberline {1.2.2.4}Docking mol\IeC {\'e}culaire}{45}{subsubsection.1.2.2.4}
+\contentsline {paragraph}{\IeC {\'E}valuation}{46}{paragraph*.31}
+\contentsline {subsection}{\numberline {1.2.3}Visualisation mol\IeC {\'e}culaire 3d}{46}{subsection.1.2.3}
+\contentsline {subsubsection}{\numberline {1.2.3.1}Evolution des repr\IeC {\'e}sentations mol\IeC {\'e}culaires}{46}{subsubsection.1.2.3.1}
+\contentsline {paragraph}{Repr\IeC {\'e}sentations physiques}{48}{paragraph*.33}
+\contentsline {paragraph}{Repr\IeC {\'e}sentations virtuelles \textit {in silico}}{49}{paragraph*.36}
+\contentsline {subsubsection}{\numberline {1.2.3.2}La visualisation mol\IeC {\'e}culaire contemporaine}{53}{subsubsection.1.2.3.2}
+\contentsline {subsubsection}{\numberline {1.2.3.3}Perspectives de la visualisation mol\IeC {\'e}culaire}{56}{subsubsection.1.2.3.3}
+\contentsline {section}{\numberline {1.3}Perspectives et nouveaux usages de la biologie structurale}{57}{section.1.3}
+\vspace \bigskipamount 
+\contentsline {chapter}{\numberline {2}La R\IeC {\'e}alit\IeC {\'e} Virtuelle et la Biologie Structurale : usages, enjeux et persectives}{59}{chapter.2}
+\contentsline {section}{\numberline {2.1}La R\IeC {\'e}alit\IeC {\'e} Virtuelle}{61}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Immersion}{61}{subsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.1.1}Visuelle}{62}{subsubsection.2.1.1.1}
+\contentsline {paragraph}{St\IeC {\'e}r\IeC {\'e}oscopie ou rendu 3d}{62}{paragraph*.42}
+\contentsline {paragraph}{Vision adaptative gr\IeC {\^a}ce au \textit {tracking}}{63}{paragraph*.43}
+\contentsline {paragraph}{Dispositifs}{64}{paragraph*.45}
+\contentsline {subsubsection}{\numberline {2.1.1.2}Audio}{67}{subsubsection.2.1.1.2}
+\contentsline {subsection}{\numberline {2.1.2}Interactions}{67}{subsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.2.1}P\IeC {\'e}riph\IeC {\'e}riques physiques}{67}{subsubsection.2.1.2.1}
+\contentsline {subsubsection}{\numberline {2.1.2.2}Interfaces sensori-motrices}{68}{subsubsection.2.1.2.2}
+\contentsline {subsubsection}{\numberline {2.1.2.3}Interactions gestuelles}{68}{subsubsection.2.1.2.3}
+\contentsline {subsection}{\numberline {2.1.3}Navigation}{69}{subsection.2.1.3}
+\contentsline {subsubsection}{\numberline {2.1.3.1}D\IeC {\'e}finition}{69}{subsubsection.2.1.3.1}
+\contentsline {subsubsection}{\numberline {2.1.3.2}Malaise virtuel ou \textit {cybersickness}}{70}{subsubsection.2.1.3.2}
+\contentsline {section}{\numberline {2.2}Apports et usages de la r\IeC {\'e}alit\IeC {\'e} virtuelle en biologie structurale}{71}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Les apports de la perception 3d et de l'immersion pour la visualisation mol\IeC {\'e}culaire}{72}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Les interactions multimodales}{72}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Outils et applications}{73}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Limites et perspectives en RV pour la biologie structurale}{74}{section.2.3}
+\contentsline {chapter}{\numberline {3}Exploration interactive de donn\IeC {\'e}es mol\IeC {\'e}culaire en immersion}{77}{chapter.3}
+\contentsline {section}{\numberline {3.1}Les images st\IeC {\'e}r\IeC {\'e}oscopiques au service de la visualisation mol\IeC {\'e}culaire}{79}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}L'\IeC {\'e}volution des m\IeC {\'e}thodes de communication du monde scientifique}{79}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}DepthMol3d}{80}{subsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.2.1}Ajouter la 3e dimension \IeC {\`a} une sc\IeC {\`e}ne mol\IeC {\'e}culaire}{81}{subsubsection.3.1.2.1}
+\contentsline {subsubsection}{\numberline {3.1.2.2}Explorer des mod\IeC {\`e}les 3d de mol\IeC {\'e}cules}{81}{subsubsection.3.1.2.2}
+\contentsline {section}{\numberline {3.2}Navigation dans des sc\IeC {\`e}nes r\IeC {\'e}alistes ou scientifiques}{81}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}M\IeC {\'e}thodes de navigation dans des sc\IeC {\`e}nes virtuelles r\IeC {\'e}alistes}{81}{subsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.1.1}Navigation automatique et semi-assist\IeC {\'e}e}{82}{subsubsection.3.2.1.1}
+\contentsline {subsubsection}{\numberline {3.2.1.2}Navigation manuelle}{83}{subsubsection.3.2.1.2}
+\contentsline {subsubsection}{\numberline {3.2.1.3}Paradigmes de navigation r\IeC {\'e}alistes}{83}{subsubsection.3.2.1.3}
+\contentsline {subsection}{\numberline {3.2.2}M\IeC {\'e}thodes de navigation dans des sc\IeC {\`e}nes virtuelles abstraites}{83}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Nouveaux paradigmes pour la RV}{85}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Sym\IeC {\'e}trie mol\IeC {\'e}culaire et axes remarquables comme ancrage visuel}{85}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Contributions pour la repr\IeC {\'e}sentation spatiale}{86}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Exploration guid\IeC {\'e}e}{86}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Optimisation du parcours des r\IeC {\'e}gions r\IeC {\'e}p\IeC {\'e}t\IeC {\'e}es}{88}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Trouver un point de vue optimal}{88}{subsection.3.3.5}
+\contentsline {subsubsection}{\numberline {3.3.5.1}Algorithme}{88}{subsubsection.3.3.5.1}
+\contentsline {chapter}{\numberline {4}La visualisation analytique, outil de la R\IeC {\'e}alit\IeC {\'e} Virtuelle}{91}{chapter.4}
+\contentsline {section}{\numberline {4.1}Analyse post-simulation mol\IeC {\'e}culaire}{93}{section.4.1}
+\contentsline {section}{\numberline {4.2}Visualisation analytique}{95}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}D\IeC {\'e}finition}{95}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Outils et techniques}{97}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Applications en biologie structurale}{99}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Repr\IeC {\'e}sentation des connaissances}{100}{subsection.4.2.4}
+\contentsline {subsubsection}{\numberline {4.2.4.1}Choix du formalisme}{101}{subsubsection.4.2.4.1}
+\contentsline {paragraph}{R\IeC {\'e}seaux s\IeC {\'e}mantiques}{101}{paragraph*.56}
+\contentsline {paragraph}{Graphes Conceptuels}{101}{paragraph*.57}
+\contentsline {paragraph}{Logique classique}{102}{paragraph*.59}
+\contentsline {paragraph}{Logique de description}{103}{paragraph*.60}
+\contentsline {subsubsection}{\numberline {4.2.4.2}Logiques et ontologies en biologie}{103}{subsubsection.4.2.4.2}
+\contentsline {subsection}{\numberline {4.2.5}web s\IeC {\'e}mantique et formalismes \IeC {\`a} base de graphes}{104}{subsection.4.2.5}
+\contentsline {subsubsection}{\numberline {4.2.5.1}Mod\IeC {\`e}le RDF}{105}{subsubsection.4.2.5.1}
+\contentsline {paragraph}{Formats et langages autour du RDF}{107}{paragraph*.63}
+\contentsline {subsubsection}{\numberline {4.2.5.2}RDF Schema}{108}{subsubsection.4.2.5.2}
+\contentsline {subsubsection}{\numberline {4.2.5.3}OWL}{109}{subsubsection.4.2.5.3}
+\contentsline {subsubsection}{\numberline {4.2.5.4}SPARQL}{109}{subsubsection.4.2.5.4}
+\contentsline {subsection}{\numberline {4.2.6}Impl\IeC {\'e}mentations et outils}{110}{subsection.4.2.6}
+\contentsline {chapter}{\numberline {5}La repr\IeC {\'e}sentation s\IeC {\'e}mantique comme support de l'int\IeC {\'e}gration de la visualisation et de l'analyse dans un contexte immersif}{113}{chapter.5}
+\contentsline {section}{\numberline {5.1}Liste des figures}{115}{section.5.1}
+\contentsline {section}{\numberline {5.2}S\IeC {\'e}mantique et donn\IeC {\'e}es li\IeC {\'e}es}{117}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Ontologie OWL}{118}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Base de donn\IeC {\'e}es RDF/(S)}{119}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Requ\IeC {\^e}tes SPARQL comme base logicielle}{121}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Moteur de conversion mots-cl\IeC {\'e}s -> RDF -> commandes}{121}{subsection.5.2.4}
+\contentsline {subsubsection}{\numberline {5.2.4.1}Reconnaissance vocale via Sphinx}{121}{subsubsection.5.2.4.1}
+\contentsline {subsubsection}{\numberline {5.2.4.2}Classification des mots-cl\IeC {\'e}s}{122}{subsubsection.5.2.4.2}
+\contentsline {paragraph}{Action}{122}{paragraph*.67}
+\contentsline {paragraph}{Composant}{122}{paragraph*.68}
+\contentsline {paragraph}{Identifiant}{123}{paragraph*.69}
+\contentsline {paragraph}{Propri\IeC {\'e}t\IeC {\'e}}{123}{paragraph*.70}
+\contentsline {paragraph}{Repr\IeC {\'e}sentation}{123}{paragraph*.71}
+\contentsline {subsubsection}{\numberline {5.2.4.3}Composition de la commande}{123}{subsubsection.5.2.4.3}
+\contentsline {section}{\numberline {5.3}Preuve de concept}{124}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Cr\IeC {\'e}ation de la base de donn\IeC {\'e}e RDF}{125}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Gestion des donn\IeC {\'e}es RDF et requ\IeC {\^e}tes SPARQL}{126}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Visualisation des donn\IeC {\'e}es mol\IeC {\'e}culaire 3d}{127}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Visualisation des r\IeC {\'e}sultats d'analyses 2d}{127}{subsection.5.3.4}
+\contentsline {subsection}{\numberline {5.3.5}Analyses semi-automatiques}{128}{subsection.5.3.5}
+\contentsline {subsection}{\numberline {5.3.6}Synchronisation}{129}{subsection.5.3.6}
+\contentsline {subsection}{\numberline {5.3.7}Exemples}{130}{subsection.5.3.7}
+\contentsline {subsubsection}{\numberline {5.3.7.1}Sc\IeC {\'e}nario I}{130}{subsubsection.5.3.7.1}
+\contentsline {section}{\numberline {5.4}R\IeC {\'e}sum\IeC {\'e} et conclusion}{132}{section.5.4}
+\vspace \bigskipamount 
+\vspace \bigskipamount 
+\contentsline {chapter}{Liste des tableaux}{135}{chapter*.74}
+\contentsline {xchapter}{}{135}{chapter*.74}
+\contentsline {chapter}{Table des figures}{137}{chapter*.75}
+\contentsline {xchapter}{}{141}{chapter*.75}
+\contentsline {chapter}{Bibliographie}{143}{chapter*.76}

@@ -221,9 +221,10 @@ Même si l'exploration peut apporter un grand nombre d'informations, certains ph
 L'algorithme utilisé pour obtenir les cônes de vue peut être décomposé de la sorte:
 
 \begin{enumerate}
-	\item L'utilisateur fournit les coordonnées 3d de la cible soit en entrant les valeurs (x, y , z) au sein d'une fenêtre de saisie, soit via une sélection directe. Si la cible comporte plus d'un atome alors les coordonnées du centre de masse de la sélection seront calculées. La hauteur désirée du cône de vue \textit{d} est également demandée, elle correspondra à la distance de la caméra par rapport à la cible.
+	\item L'utilisateur fournit les coordonnées 3d de la cible soit en entrant les valeurs (x,y,z) au sein d'une fenêtre de saisie, soit via une sélection directe. Si la cible comporte plus d'un atome alors les coordonnées du centre de masse de la sélection seront calculées. La hauteur désirée du cône de vue \textit{d} est également demandée, elle correspondra à la distance de la caméra par rapport à la cible.
 	\item Tous les atomes situés au sein d'une sphère de rayon \textit{d} et centré sur les coordonnées de la cible sont considérés comme voisins et comme potentielles occlusions, ou obstacles, pour le cône de vue. Leurs coordonnées 3d sont stockées.
-	\item L'ensemble des coordonnées 3d des atomes voisins stockés précédemment sont décalés dans l'espace d'un vecteur correspondant aux coordonnées 3d de la cible (un cible située en $(1.2, -9.2, 5.5)$ entraînera un décalage des coordonnées de $\overrightarrow{(1.2, -9.2, 5.5)}$).
+	\item L'ensemble des coordonnées 3d des atomes voisins stockés précédemment sont décalés dans l'espace d'un vecteur correspondant aux coordonnées 3d de la cible (un cible située en $(1.2,-9.2,5.5)$ entraînera un décalage des coordonnées de $\overrightarrow{(1.2,-9.2,5.5)}$). Cela entraîne la création d'une sphère dont les coordonnées d'atomes sont centrées autour d'une origine (la cible) située en $(0,0,0)$. L'ensemble des coordonnées cartésiennes des atomes contenus dans la sphère sont transformées en coordonnées sphériques. Les coordonnées sphériques sont composées de 3 paramètres: une distance radiale à l'origine \textit{r}, un angle polaire $\theta$ (theta) et un azimuth $\phi$ (phi).
+	\item 
 \end{enumerate}
 
 

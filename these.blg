@@ -1,0 +1,66 @@
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: these.aux
+A level-1 auxiliary file: pagedegarde.aux
+A level-1 auxiliary file: dedicace.aux
+A level-1 auxiliary file: remerciements.aux
+A level-1 auxiliary file: notations.aux
+A level-1 auxiliary file: introduction.aux
+A level-1 auxiliary file: chapitre1.aux
+A level-1 auxiliary file: chapitre2.aux
+A level-1 auxiliary file: chapitre3.aux
+A level-1 auxiliary file: chapitre4.aux
+A level-1 auxiliary file: chapitre5.aux
+The style file: plain.bst
+Database file #1: these.bib
+Warning--empty journal in brickley2004rdf
+Warning--empty journal in delano_pymol_2002
+Warning--empty journal in klyne2006resource
+Warning--empty booktitle in martin_hardware_2014
+Warning--there's a number but no volume in mcbride2002jena
+Warning--there's a number but no volume in noy2001creating
+Warning--empty journal in ortega_shocam_2015
+Warning--empty journal in sowa1983conceptual
+Warning--empty institution in weibel1998dublin
+You've used 137 entries,
+            2118 wiz_defined-function locations,
+            1259 strings with 31528 characters,
+and the built_in function-call counts, 54358 in all, are:
+= -- 5225
+> -- 3284
+< -- 32
++ -- 1321
+- -- 1157
+* -- 4327
+:= -- 9147
+add.period$ -- 426
+call.type$ -- 137
+change.case$ -- 965
+chr.to.int$ -- 0
+cite$ -- 146
+duplicate$ -- 1774
+empty$ -- 3681
+format.name$ -- 1157
+if$ -- 11011
+int.to.chr$ -- 0
+int.to.str$ -- 137
+missing$ -- 143
+newline$ -- 686
+num.names$ -- 278
+pop$ -- 947
+preamble$ -- 1
+purify$ -- 840
+quote$ -- 0
+skip$ -- 1255
+stack$ -- 0
+substring$ -- 3221
+swap$ -- 366
+text.length$ -- 32
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 522
+warning$ -- 9
+while$ -- 491
+width$ -- 140
+write$ -- 1500
+(There were 9 warnings)
