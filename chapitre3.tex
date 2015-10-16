@@ -34,7 +34,48 @@ Notre approche se place au plus près des techniques d'immersion cognitive qui c
 
 Notre approche se base sur l'utilisation d'images 2d, beaucoup plus légères que des modèles 3d et permettant un certain degré de personnalisation de la part des utilisateurs. Indépendante de logiciels experts de visualisation, notre méthode ne nécessite qu'un périphérique mobile pour fonctionner et expérimenter l'effet 3d. Un nombre important de visualiseurs moléculaires peuvent être utilisés pour générer du contenu, VMD, Chimera, PyMol ou Yasara ont par exemple été utilisé pour générer plusieurs scènes exemples.
 
-Deux images sont nécessaire pour parvenir à un effet 3d, une image de \textbf{texture} et une \textbf{carte de profondeur} (cf. Figure \ref{}). L'image de \textit{texture} est une capture de la scène 3d moléculaire. La \textit{carte de profondeur} possède elle les informations de profondeur pour l'image de texture à travers un gradient de couleur grise. Ce gradient de gris correspond à la distance entre chaque point de l'objet 3d et l'écran. Plus un objet est distant de la caméra (ou de l'écran d'ordinateur) et plus la couleur est sombre. Une fois que les deux images ont été générées, elles doivent être transférées sur le périphérique mobile où elles sont lues et traitées par notre application. Un navigateur de fichier intégré permet à l'utilisateur de trouver ses images et de les charger. Le principe d'une telle application est de créer un objet 3d à partir de la carte de profondeur dont la surface sera ensuite colorée par la texture associée (\ref{}). Avec ces données, l'application crée l'illusion d'une 3e dimension en ajoutant aux objets une sensation d'espace et de profondeur qui s'étend loin derrière l'écran. Cela est rendu possible par les calculs permanents de la direction de vue basée sur l'orientation du périphérique, mesurée par un accéléromètre ou un gyroscope embarqués dans la majorité des périphériques mobiles d'aujourd'hui, amenant à la sensation de regarder à l'intérieur d'une boîte qui s'étendrait derrière la surface d'écran de l'appareil.
+Deux images sont nécessaire pour parvenir à un effet 3d, une image de \textbf{texture} et une \textbf{carte de profondeur} (cf. Figure \ref{Fig:depthmol3d_process}). L'image de \textit{texture} est une capture de la scène 3d moléculaire. La \textit{carte de profondeur} possède elle les informations de profondeur pour l'image de texture à travers un gradient de couleur grise. Ce gradient de gris correspond à la distance entre chaque point de l'objet 3d et l'écran. Plus un objet est distant de la caméra (ou de l'écran d'ordinateur) et plus la couleur est sombre. Une fois que les deux images ont été générées, elles doivent être transférées sur le périphérique mobile où elles sont lues et traitées par notre application. Un navigateur de fichier intégré permet à l'utilisateur de trouver ses images et de les charger. Le principe d'une telle application est de créer un objet 3d à partir de la carte de profondeur dont la surface sera ensuite colorée par la texture associée (\ref{Fig:heightmap_texture_unity}). Avec ces données, l'application crée l'illusion d'une 3e dimension en ajoutant aux objets une sensation d'espace et de profondeur qui s'étend loin derrière l'écran. Cela est rendu possible par les calculs permanents de la direction de vue basée sur l'orientation du périphérique, mesurée par un accéléromètre ou un gyroscope embarqués dans la majorité des périphériques mobiles d'aujourd'hui, amenant à la sensation de regarder à l'intérieur d'une boîte qui s'étendrait derrière la surface d'écran de l'appareil.
+Il est possible d'utiliser jusque 4 images (2 fois deux images contenant une carte de profondeur et une texture associée) afin de créer des scènes plus complexes possédant par exemple une légende ou des informations en transparence supplémentaires.
+Plusieurs exemples sont fournis avec l'application permettant à l'utilisateur d'appréhender les rendus 3d possibles et d'avoir une première prise en main des possibilités qu'offrent l'application. Les 6 exemples sont illustrés dans la Figure \ref{Fig:depthmol3d_exemple}.
+
+\begin{figure}
+\begin{subfigure}
+  \centering
+  {\includegraphics[width=.75\linewidth]{./figures/ch2/depthmol3d_process}}
+    \caption{}
+  \label{Fig:pymol_stereo}
+  % \hspace{0.3cm}
+\end{subfigure}
+\begin{subfigure}
+  \centering
+  {\includegraphics[width=.75\linewidth]{./figures/ch2/heightmap_texture_unity}}
+    \caption{}
+  \label{Fig:heightmap_texture_unity}
+  % \hspace{0.3cm}
+\end{subfigure}
+\caption{{\it (a) Schéma du fonctionnement de notre application mobile. La première étape consiste à générer une carte de profondeur et une capture d'image de la scène moléculaire que l'on souhaite visualiser. Les deux images sont ensuite combinées au sein de l'application pour créer une perception 3d de la scène initiale.
+(b) Le processus d'obtention d'un objet 3d à partir de 2 images. La première étape consiste à analyser la carte de profondeur pixel par pixel et de générer une surface aux dimensions identiques (à un facteur d'échelle près) dont la hauteur de chaque sommet sera corrélée avec le niveau de gris du pixel correspondant.}}
+\end{figure}
+
+\begin{figure}
+\begin{subfigure}
+  \centering
+  {\includegraphics[width=.75\linewidth]{./figures/ch2/depthmol3d_exemple}}
+    \caption{}
+  \label{Fig:depthmol3d_exemple}
+  % \hspace{0.3cm}
+\end{subfigure}
+\begin{subfigure}
+  \centering
+  {\includegraphics[width=.75\linewidth]{./figures/ch2/depthmol3d_screenshots}}
+    \caption{}
+  \label{Fig:depthmol3d_screenshots}
+  % \hspace{0.3cm}
+\end{subfigure}
+\caption{{\it (a) Scènes moléculaires proposées par défaut en exemple au sein de l'application.
+A. Visualisation d'une poche de liaison à la surface de GLIC (Ligand-Gated Ion Channel), une protéine transmembranaire responsable du passage des ions et des molécules d'eau à travers la membrane cellulaire. Scène extraite de VMD. B. Carte de basse résolution obtenue à partir de cryo-EM pour un filament d'actine. La position de la structure atomique dans l'enveloppe de basse résolution est en premier-plan alors que la carte électromagnétique est présentée en arrière-plan. Visualisation provenant de Chimera C. Couple verticale du modèle de la capside du virus Influenza A exposant la membrane externe et l'intérieur du virus. GraphiteLifeExplorer a été utilisé pour visualiser la coupure. D. Interaction entre une protéine SNARE et une membrane biologique lors d'une dynamique moléculaire (arrière-plan). Un graphe 3d rapportant le taux de courbure de la membrane est présenté en premier-plan. La surface 3d a été générée par Paraview (programme de visualisation scientifique) E. Scènes extraites d'un programme d'animation, MolecularMaya, dédié à la création de films scientifiques pour une audience large. Les scènes extraites mettent en avant deux virus au milieu de villosités à gauche et de multiples virus à droite.
+(b) Captures d'écran provenant de l'application DepthMol3D et mettant en avant le menu en haut et une scène 3d type représentant la surface d'une protéine en bas.}}
+\end{figure}
 
 \subsubsection{Explorer des modèles 3d de molécules}
 
@@ -261,7 +302,9 @@ Fort du constat de l'absence de développements de navigation spécifiques à la
 
 Une étape supplémentaire dans notre approche et dans le développement de notre set de paradigmes serait d'accorder une plus grande importance à l'utilisateur pour décider des patterns et des structures qui définiraient les chemins de navigation calculés. Il nous semble important d'utiliser l'expertise scientifique afin de créer des paradigmes de navigation répondant à des besoins spécifiques pouvant varier suivant la nature du complexe moléculaire étudié. Ce plus haut niveau d'interaction ne doit pourtant pas dépasser le niveau d'implication cognitive que doit comporter la navigation, cette dernière restant bien souvent un moyen d'accéder à d'autres tâches plus complexes et nécessitant davantage de réflexion de la part de l'utilisateur. Et même si les études ont montré qu'une augmentation de la charge cognitive est une bonne manière de réduire le \textit{cybersickness} (voir section \ref{cybersickness}) elle peut également réduire l'efficacité des tâches annexes au processus de navigation.
 
-Le retour d'expérience des utilisateurs d'un logiciel est important mais néanmoins souvent oublié quand on arrive aux étapes de post-développement. Avec l'évolution rapide des techniques, plateformes et approches de visualisation, il est important de revoir les nouveaux besoins des experts et les nouvelles possibilités offertes par les nouvelles technologies. Des méthodes ergonomiques comme 
+Des méthodes ergonomiques comme la HTA nous ont permis de mettre en évidence les apports en terme de performance et de simplification des processus de nos paradigmes de navigation.
+
+Le retour d'expérience des utilisateurs d'un logiciel est important mais néanmoins souvent oublié quand on arrive aux étapes de post-développement. Avec l'évolution rapide des techniques, plateformes et approches de visualisation, il est important de revoir les nouveaux besoins des experts et les nouvelles possibilités offertes par les nouvelles technologies. 
 
 
 
