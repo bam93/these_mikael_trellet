@@ -94,6 +94,8 @@ Les limitations de notre application résident tout d'abord dans la résolution 
 
 \section{Navigation dans des scènes réalistes ou scientifiques}
 
+Nous avons vu dans le chapitre précédent (voir section \ref{navigation}) que la navigation dans des EV immersifs était une problématique
+
 % La navigation dans des environnements virtuels 3d possède un certain degré de similitude avec la navigation dans le réel. La différence principale entre la navigation dans les espaces réel et virtuel se situe au niveau des modes/techniques de navigation qui sont propres à chaque réalité. La navigation est un concept très vaste qui nécessite dans un premier temps une clarification terminologique. Darken et Peterson (2002), spécialistes en cognition spatiale, remarquent qu'une confusion apparaît dans la littérature sur les termes employés. Ainsi, certains auteurs emploient comme synonyme les termes de « navigation », « déplacement » ou encore « exploration ». Ces trois termes sont au centre de la présente recherche d’où l’importance de définir clairement ces mots-clés. 
 % La navigation dans des environnements réels ou virtuels se définit à la fois par des composantes \textbf{motrices} et à la fois par des composantes \textbf{cognitives} \cite{bowman_doug_a_3d_2002}.
 
@@ -153,9 +155,34 @@ Cela passe également par la mise en place de contraintes, soit d'orientation, s
 
 On regroupe dans ces méthodes les approches permettant à l'utilisateur de diriger ses déplacements au sein d'un EV. Ce contrôle peut passer par des techniques directes, parfois appelées de façon abusive <<naturelles>>, ou des techniques indirectes où l'interaction dirigeant le mouvement dans l'EV se fait via un dispositif physique tel qu'une manette ou une tablette.
 
-Parmi les dispositifs indirects, on retrouve une certaine influence des moyens de navigation provenant de systèmes non-immersifs. L'utilisation de casques virtuels, ces derniers s'utilisant bien souvent de façon fixe avec un utilisateur assis, s'appuie particulièrement sur ces dispositifs car ils ne demandent pas à l'utilisateur d'avoir une conscience spatiale précise de ses mains. Une manette, après un temps d'apprentissage relativement court, peut être utiliser sans que l'utilisateur ait besoin de la regarder. 
+Parmi les dispositifs indirects, on retrouve une certaine influence des moyens de navigation provenant de systèmes non-immersifs. L'utilisation de casques virtuels, ces derniers s'utilisant bien souvent de façon fixe avec un utilisateur assis, est particulièrement friande de ces dispositifs car ils ne demandent pas à l'utilisateur d'avoir une conscience spatiale précise de ses mains. Une manette, après un temps d'apprentissage relativement court, peut être utiliser sans que l'utilisateur ait besoin de la regarder. 
 
-Cependant, les développements les plus conséquents en RV sont passés par des techniques naturelles, où la technologie du \textit{tracking} optique joue un rôle important puisqu'elle permet une certaine liberté de mouvement à l'utilisateur. En plus de profiter des espaces d'évolution larges qu'offrent les systèmes CAVE ou de murs d'écrans, les solution de \textit{tracking} permettent une implication plus importante du système vestibulaire de l'utilisateur et ainsi réduisent la décorrélation entre le déplacement virtuel et le déplacement ou mouvement réel. Cette réduction entraîne en parallèle une réduction importante du \textit{cybersickness} et constitue donc une alternative pertinente pour la navigation en RV.
+Cependant, les développements les plus conséquents en RV sont passés par des techniques naturelles. 
+On peut citer les \textbf{tapis roulants multidirectionnels} qui sont des dispositifs mécaniques permettant de simuler plusieurs actions physiques du monde réel dont la marche, la course, le fait de s'accroupir et parfois même de s'asseoir (voir Figure \ref{cyberith_virtualizer}). Leur fonctionnement est similaire aux tapis roulants standards mais la grande différence provient de leur capacité à bouger dans toutes les directions, offrant ainsi à l'utilisateur une possibilité de déplacement à 360 degrés. Leur second avantage est leur positionnement fixe, restreignant ainsi l'espace nécessaire à leur utilisation. Ils permettent également de libérer les mains de l'utilisateur de tout périphérique dédié à la navigation. Enfin, l'implication physique de l'utilisateur permet de réduire le phénomène de \textit{cybersickness} comme évoqué dans la section \ref{cybersickness}.
+Ces périphériques se couplent aussi bien à des dispositifs immersifs type CAVE qu'à des dispositifs mobiles comme les HMD.
+
+\begin{figure}[h]
+  \begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=0.9\linewidth]{./figures/ch3/cyberith_virtualizer}}
+    \caption{}
+    \label{Fig:cyverith_virtualizer}
+  % \hspace{0.3cm}
+  \end{subfigure}
+  \begin{subfigure}{.4\textwidth}
+  \centering
+  {\includegraphics[width=0.7\linewidth]{./figures/ch3/omnideck}}
+    \caption{}
+    \label{Fig:omnideck}
+  \hspace{0.3cm}
+  \end{subfigure}
+  \caption{\it (a) Tapis roulant multidirectionnel statique (\textit{Cyberith Virtualizer}) permettant de reconnaître, en plus de la marche et la course, des mouvements verticaux comme le saut ou l'accroupissement.
+  (b) Premier tapis roulant multidirectionnel large et statique (\textit{Omnifinity Omnideck}), utilisé en couplage avec une technologie de \textit{tracking} optique afin de garantir un suivi précis des mouvements de l'utilisateur.
+  }
+  % \hspace{0.3cm}
+\end{figure}
+
+La technologie du \textit{tracking} optique joue également un rôle important puisqu'elle permet une certaine liberté de mouvement à l'utilisateur. En plus de profiter des espaces d'évolution larges qu'offrent les systèmes CAVE ou de murs d'écrans, les solution de \textit{tracking} permettent une implication plus importante du système vestibulaire de l'utilisateur et ainsi réduisent la décorrélation entre le déplacement virtuel et le déplacement ou mouvement réel. Cette réduction entraîne en parallèle une réduction importante du \textit{cybersickness} et constitue donc une alternative pertinente pour la navigation en RV.
 
 \subsubsection{Paradigmes de navigation réalistes}
 
