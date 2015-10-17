@@ -119,6 +119,27 @@ Le \textbf{son binaural} est le fruit de l'application de filtres sur une source
 La technique de \textit{\textbf{Wave Field Synthesis}} désigne un procédé permettant de capter ou de synthétiser une scène sonore, par analogie aux scènes visuelles, en préservant les informations spatiales de distance et de direction des sources sonores (cf. Figure \ref{Fig:wfs_edit}). L'idée est d'émettre des vagues d'ondes synthétisées par un ensemble de haut-parleurs. A la différence des systèmes audio classiques type stéréo ou 5.1, la WFS reconstruit un champ sonore où il n'est pas nécessaire de rester au centre du dispositif pour garder une perception cohérente de la localisation des sources.
 Cette technique nécessite un nombre important de haut-parleurs pour fonctionner de façon optimale et est relativement sensible à l'acoustique de la salle. C'est donc un dispositif relativement coûteux et qu'on retrouve généralement associé à des dispositifs visuels de grande taille.
 
+\begin{figure}[h]
+  \begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=0.9\linewidth]{./figures/ch2/HRTF}}
+    \caption{}
+    \label{Fig:HRTF}
+  % \hspace{0.3cm}
+  \end{subfigure}
+  \begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=0.9\linewidth]{./figures/ch2/wfs_edit.png}}
+    \caption{}
+    \label{Fig:wfs_edit}
+  \hspace{0.3cm}
+  \end{subfigure}
+  \caption{\it (a) Illustration de la différence de fréquence et de niveau des ondes sonores interprétées par le cerveau suivant la localisation de leurs sources.
+  (b) Schéma simplifié de la technique de Wave Field Synthesis consistant à reproduire des vagues sonores complexes grâce à une ligne de haut-parleurs permettant de dissocier les sources sonores suivant leur nature et leur localisation.
+  }
+  % \hspace{0.3cm}
+\end{figure}
+
 \subsection{Interactions}
 
 Nous avons vu que les moyens dédiés à l'immersion sont nombreux et permettent d'assurer pour un individu un sentiment presque total d'appartenance à un monde virtuel quand les outils sont utilisés correctement.
@@ -225,7 +246,7 @@ Au-delà de la stéréoscopie, la surface, ou davantage le volume quand on parle
 
 La notion d'interaction n'intervient pas que dans un sens unique et même si la méthode permettant d'interagir avec un objet est primordiale, le retour sensoriel provoqué par l'interaction est, en RV, un sujet d'étude à part entière. 
 Nous avons vu que ces retours sensoriels participent à l'immersion ressentie par l'utilisateur dans un monde virtuel, mais ils peuvent également servir de repères ou de vecteurs d'informations utilisés pour compléter les informations visuelles. Même s'il est possible de mettre en place certaines sollicitations autres que visuelles lors d'un travail sur un poste de travail standard, il est très rare de trouver des retours sonores ou haptiques lors d'une session de travail. Au-delà des limites matérielles qui peuvent exister, un retour haptique impliquant par exemple la nécessité de posséder un dispositif muni d'un système de retour d'effort, les limites sont souvent logicielles. Peu de programmes implémentent des retours sensoriels autres que visuels dans le design de leurs outils d'analyses de données. Il est au contraire très commun de prendre en compte ces retours sensoriels lors du développement de solutions logicielles dédiées à la RV. La RV est par essence définie par l'implication de l'utilisateur. Elle a donc dû développer très tôt des moyens pour retranscrire un maximum de sensations aux utilisateurs lors de leurs expériences virtuelles. Les systèmes haptiques ont su rapidement venir de la RV jusqu'aux laboratoires de biologie structurale dans le but permanent d'améliorer la perception 3d des structures moléculaires d'intérêt. La possibilité de toucher une molécule, en combinaison de sa visualisation 3d, offre une complémentarité importante pour la compréhension de certaines particularités structurelles \cite{stocks2009interacting}. 
-Le domaine du docking moléculaire fut assez friand de la technologie de bras haptique afin de permettre le ressenti des forces d'interaction prenant place entre deux partenaires \cite{nagata2002concept, sankaranarayanan2003role}. L'ajout de la flexibilité dans les technique de docking et l'utilisation de techniques de simulations interactives (voir section \ref{simu_interactive}) où des forces peuvent être ajoutées par l'utilisateur au sein d'une simulation en cours fut aussi un terrain propice à l'utilisation de systèmes de retours haptiques \cite{stone2001system}. Ces derniers permettent en effet un contrôle fin de la force appliquée et imposent une limite physique à celle-ci que l'utilisateur ne peut dépasser. Le matériel a pu évolué avec le temps afin de répondre aux besoins évoluant des équipes de recherche et une aperçu de cette évolution est illustrée dans la Figure \ref{}.
+Le domaine du docking moléculaire fut assez friand de la technologie de bras haptique afin de permettre le ressenti des forces d'interaction prenant place entre deux partenaires \cite{nagata2002concept, sankaranarayanan2003role}. L'ajout de la flexibilité dans les technique de docking et l'utilisation de techniques de simulations interactives (voir section \ref{simu_interactive}) où des forces peuvent être ajoutées par l'utilisateur au sein d'une simulation en cours fut aussi un terrain propice à l'utilisation de systèmes de retours haptiques \cite{stone2001system}. Ces derniers permettent en effet un contrôle fin de la force appliquée et imposent une limite physique à celle-ci que l'utilisateur ne peut dépasser. Le matériel a pu évolué avec le temps afin de répondre aux besoins évoluant des équipes de recherche et une aperçu de cette évolution est illustrée dans la Figure \ref{Fig:taylor_haptic}.
 
 \begin{figure}[h]
   \begin{subfigure}{.5\textwidth}
