@@ -312,29 +312,24 @@ A chaque création de graphique dans l'espace de visualisation, l'information de
 Parmi les différentes techniques de visualisation analytique citées dans la section \ref{visu_ana_tools}, celle du Focus+Context, et plus spécifiquement de la technique du \textit{brush-and-link}, est un candidat pertinent pour mettre en avant des informations supplémentaires obtenues à partir des analyses indépendantes effectuées sur une simulation. En biologie structurale, les résultats d'analyse peuvent souvent être représentés au travers de nuages de points, d'histogrammes ou de diagrammes à bandes. Ces représentations s'adaptent particulièrement bien à la technique du \textit{brush-and-link} puisque la sélection de sous-ensembles y est aisée. De plus, la perspective d'une fenêtre dynamique regroupant le contexte global et les détails dans un même ensemble est particulièrement adapté à un environnement immersif. En effet, l'immersion peut être considérablement impactée, et ce de façon négative, lors du partage spatial du dispositif immersif en plusieurs contextes de travail.
 Du point de vue de la visualisation, le but est d'être capable de sélectionner un sous-ensemble structural d'un complexe moléculaire afin de mettre en avant les informations correspondant à ce sous-ensemble dans l'espace d'analyses. Par exemple, et comme illustré dans la Figure \ref{Fig:bilateral_selection}, la sélection d'un ou plusieurs modèles de la trajectoire aura pour conséquence de mettre en avant cette sélection au sein de la structure et de mettre en avant le sous-ensemble, si existant, dans les graphiques d'analyse. Chaque point des graphiques est relié à un niveau hiérarchique structural précis (modèle/chaîne/résidu/atome) et une action sur un ensemble de points aura pour effet d’entraîner une action sur le niveau structural correspondant. 
 
-
-\subsection{Exemples}
-
-\subsubsection{Scénario I}
-
-Un exemple d'utilisation de notre application est illustré dans la figure X.
+\subsection{Exemple}
 
 Dans le scénario choisi, le premier événement pris en compte au sein de l'application est le choix de l'utilisateur quant aux analyses qu'il désire afficher. Ce choix lancera une première paramétrisation de l'espace d'analyse qui pourra ainsi se connecter à l'espace de visualisation. 
 Il est cependant possible de démarrer une session de travail par une exploration de la trajectoire étudiée mais cette exploration ne déclenchera pas d'événements dans l'espace visuel, ce dernier n'étant pas paramétré.
 Le choix des analyses se déroule sur la page HTML et va interroger de façon quasi instantanée la base de données RDF par l'intermédiaire du serveur web et via des requêtes SPARQL transmises du module de gestion RDF. La première requête vise à identifier les propriétés pour lesquels une valeur littérale existe pour le groupe structurel d'intérêt choisi par l'utilisateur. Ces valeurs littérales peuvent provenir de données structurales pures générées par GROMACS lors de la simulation moléculaire ou bien d'analyses post-simulations ayant été intégrées au sein de la base de données. Toutes les propriétés possédant une valeur littérale sont donc affichées dans deux colonnes. Une colonne permet de choisir la propriété à afficher sur l'axe des abscisses, la seconde colonne désigne la propriété qui sera affiché sur l'axe des ordonnées. L'utilisateur a la possibilité de choisir plusieurs combinaisons de propriétés à afficher sous forme de graphes. Quand son choix est terminé, une requête SPARQL est envoyé à la base de données pour récupérer les valeurs des propriétés choisies. Ces données sont ensuite mises sous forme de graphes et structurées grâce à d3js.
 Lorsque les graphes sont générés, l'utilisateur a la possibilité d'interagir avec eux de différentes manières: 
 \begin{itemize}
-	\item Il peut sélectionner un point unique dans un des graphes afin d'obtenir des informations plus précises via un cadre rassemblant les informations contenues dans la base de données pour l'individu sélectionné.
-	\item Il est possible de sélectionner un ensemble de points dans un des graphes et afficher un cadre d'information rassemblant plusieurs statistiques sur l'ensemble des propriétés des individus ainsi sélectionnés (moyenne, écart-type, pourcentages, etc.).
-	\item Il est également possible de synchroniser la sélection d'un groupe de points afin de mettre en évidence les individus concernés dans l'ensemble des graphes de la page.
+  \item Il peut sélectionner un point unique dans un des graphes afin d'obtenir des informations plus précises via un cadre rassemblant les informations contenues dans la base de données pour l'individu sélectionné.
+  \item Il est possible de sélectionner un ensemble de points dans un des graphes et afficher un cadre d'information rassemblant plusieurs statistiques sur l'ensemble des propriétés des individus ainsi sélectionnés (moyenne, écart-type, pourcentages, etc.).
+  \item Il est également possible de synchroniser la sélection d'un groupe de points afin de mettre en évidence les individus concernés dans l'ensemble des graphes de la page.
 \end{itemize}
 
 Toute sélection au sein d'un ou plusieurs graphes de la page déclenche un événement transmis depuis le client web jusqu'au module de gestion 3d entraînant une adaptation de la visualisation pour mettre en avant le ou les individu(s) ayant été sélectionnés. Il est aussi possible d'obtenir, sous forme de fenêtre indépendante, un résumé des informations disponibles sur le ou les individus. Dans le cas d'un individu unique, une liste de ses propriétés et de leurs valeurs sera affichée alors que pour plusieurs individus, une moyenne effectuée sur les valeurs de leurs propriétés remplacera les valeurs brutes.
 Chaque sélection réduit donc le focus de l'utilisateur à un sous-ensemble d'individus, à la fois dans l'espace d'analyses mais également de façon synchrone dans l'espace de visualisation. Il est possible d'adapter ce focus suivant les besoins de l'utilisateur en modifiant le niveau de contexte dans lequel il désire que sa sélection apparaisse. Trois niveaux de contextualisation sont possibles:
 \begin{itemize}
-	\item Aucun contexte - La sélection d'individu(s) entraîne la visualisation unique de ces individus dans l'espace de visualisation et d'analyse et donc cache tout individu n'étant pas sélectionné
-	\item Contexte faible - La sélection d'individu(s) met en avant ces individus dans les espaces de travail et réduit la perception des autres individus du jeu de données (couleur grise, transparence, rendu visuel simplifié, etc.)
-	\item Contexte fort - La sélection d'individu(s) n'est perçu qu'à travers une mise en avant simple de ces individus dans les espaces de travail. Tout autre individu apparaîtra également avec des paramètres visuels proches des individus sélectionnés.
+  \item Aucun contexte - La sélection d'individu(s) entraîne la visualisation unique de ces individus dans l'espace de visualisation et d'analyse et donc cache tout individu n'étant pas sélectionné
+  \item Contexte faible - La sélection d'individu(s) met en avant ces individus dans les espaces de travail et réduit la perception des autres individus du jeu de données (couleur grise, transparence, rendu visuel simplifié, etc.)
+  \item Contexte fort - La sélection d'individu(s) n'est perçu qu'à travers une mise en avant simple de ces individus dans les espaces de travail. Tout autre individu apparaîtra également avec des paramètres visuels proches des individus sélectionnés.
 \end{itemize}
 
 Ces différents niveaux permettent soit de mettre en évidence les différences entre la sélection et le reste du jeu de données, soit de mettre en place un environnement de travail épuré sur une sélection d’intérêt pour l'utilisateur. Ces niveaux s'appliquent à la fois pour la partie visuelle et analytique via des systèmes de rendus visuels propres à chaque espace.
@@ -343,11 +338,70 @@ Lorsque une sous-sélection d'individus est effectuée, l'utilisateur a toute li
 Au-delà du changement visuel induit par la sélection dans l'espace de visualisation, ce changement va également produire un rafraîchissement de l'affichage de l'espace d'analyses, de la même manière que la précédente sélection effectuée dans l'espace d'analyses induisait une synchronisation dans l'espace de visualisation. Ici, deux possibilités sont présentes. La première est que l’utilisateur désire conserver le niveau structurel de sélection qu'il avait adopté dans la première étape. Dans ce cas, le changement de l'espace d'analyse sera uniquement une mise à jour du sous-groupe d'individus à mettre en avant au sein des différents graphes. La seconde possibilité est que le niveau structurel de sélection diffère du niveau précédent. Dans ce cas, les graphes ne portent pas l'information de ce niveau structurel précis et doivent donc être rechargés pour de nouvelles valeurs, correspondant au niveau structurel désiré. Ce comportement est le comportement par défaut de l'espace d'analyses, cependant, il peut être modifié afin de garder les informations précédentes et donc de couper la synchronisation avec l'espace de visualisation. Dans ce mode asynchrone, aucune action effectué dans chacun des espaces n'aura d'influence sur le second espace. La synchronisation se réactivera à tout moment lorsque les niveaux structurels des deux espaces seront identiques.
 Alors que le mode asynchrone est activable à tout moment, il n'est pas possible de forcer le mode synchrone puisqu'une incohérence existera entre les informations demandées dans un espace et celles présentées dans le second espace.
 
+
+\subsection{Evaluation par la méthode HTA}
+
+
+Nous avons repris la méthode HTA afin d'évaluer les apports de nos développements pour une tâche experte identifiée et commune en biologie structurale. Nous comparerons deux conditions de travail différentes, la première sera une utilisation classique d'un logiciel de visualisation moléculaire et d'un terminal permettant l'exploration de fichiers d'analyses. Nous ferons dans ces conditions l'hypothèse que l'ensemble des valeurs d'analyse nécessaires ont été obtenues.
+La seconde condition se basera sur l'utilisation de notre programme, combinant l'utilisation d'un logiciel de visualisation moléculaire et une interface web regroupant le traitement automatique des analyse en graphiques.
+\\
+\\
+\begin{tikzpicture}
+\tikzset{grow'=right,level distance=120pt}
+\tikzset{execute at begin node=\strut}
+\tikzset{every tree node/.style={anchor=base west}}
+\Tree 
+ [.\node[draw, font=\tiny, align=center]{1. Trouver le diamètre du pore\\ pour le modèle avec la plus\\basse énergie potentielle};
+    [.\node[draw, font=\tiny, align=center]{1.1. Trouver modèle de\\ plus basse énergie} ;
+        [.\node[draw, font=\tiny, align=center]{1.1.1. Lister modèles à plus\\ de 4A de RMSD \\ env. 8 sec}; ]
+        [.\node[draw, font=\tiny, align=center](start){1.1.2. Identifier celui de \\plus basse énergie\\env. 8 sec}; ] ]
+    [.\node[draw, font=\tiny, align=center]{1.2. Visualiser le modèle} ;
+        [.\node[draw, font=\tiny, align=center]{1.2.1. Charger modèle \\env. 3 sec}; ]
+        [.\node[draw, font=\tiny, align=center]{1.2.2. Positionner caméra au-dessus\\ du complexe moléculaire \\env. 2 sec}; ] ]
+    [.\node[draw, font=\tiny, align=center]{1.3. Calculer distance};
+      [.\node[draw, font=\tiny, align=center]{1.3.1. Sélectionner 2 atomes opposés \\env. 4 sec}; ]
+      [.\node[draw, font=\tiny, align=center]{1.3.2. Calculer distance \\env. 4 sec}; ] ] 
+    ] 
+    \\           
+\end{tikzpicture}
+\\
+\\
+\begin{tikzpicture}
+\tikzset{grow'=right,level distance=120pt}
+\tikzset{execute at begin node=\strut}
+\tikzset{every tree node/.style={anchor=base west}}
+\Tree 
+ [.\node[draw, font=\tiny, align=center]{1. Trouver le diamètre du pore\\ pour le modèle avec la plus\\basse énergie potentielle};
+    [.\node[draw, font=\tiny, align=center]{1.1. Trouver modèle de\\ plus basse énergie} ;
+        [.\node[draw, font=\tiny, align=center]{1.1.1. Afficher graphes \\RMSD + énergie \\ env. 4 sec}; ]
+        [.\node[draw, font=\tiny, align=center]{1.1.2. Sélectionner modèles à plus\\ de 4A de RMSD \\ env. 2 sec}; ]
+        [.\node[draw, font=\tiny, align=center](start){1.1.3. Identifier celui de \\plus basse énergie\\env. 2 sec}; ] ]
+    [.\node[draw, font=\tiny, align=center]{1.2. Visualiser le modèle} ;
+        [.\node[draw, font=\tiny, align=center]{1.2.1. Sélectionner point du graphe \\env. 1 sec}; ]
+        [.\node[draw, font=\tiny, align=center]{1.2.2. Positionner caméra au-dessus\\ du complexe moléculaire \\env. 2 sec}; ] ]
+    [.\node[draw, font=\tiny, align=center]{1.3. Calculer distance};
+      [.\node[draw, font=\tiny, align=center]{1.3.1. Sélectionner 2 atomes opposés \\env. 4 sec}; ]
+      [.\node[draw, font=\tiny, align=center]{1.3.2. Calculer distance \\env. 4 sec}; ] ] 
+    ] 
+    \\           
+\end{tikzpicture}
+\\
+
+
+Le scénario de tâche que nous avons choisi peut être divisé en trois étapes distinctes. Il nécessite une première étape de traitement des données d'analyse où l'on cherchera le modèle de plus basse énergie parmi les modèles distants de plus de 4\r{A} de RMSD du modèle de référence. Lorsque le modèle concerné est identifié, il convient de le visualiser de façon appropriée le complexe moléculaire de façon à voir le pore et pouvoir sélectionner ses extrémités. La troisième étape consiste finalement à calculer la distance entre deux atomes de part et d'autre du pore.
+On retrouve un temps d'exécution significativement inférieur lors de l'utilisation de notre programme (19 s) comparé à une utilisation standard des outils d'analyse et de visualisation (29 s). La première étape d'analyse est l'étape où la différence est la plus importante. Cette différence s'explique par l'utilisation de graphes interactifs pour visualiser les valeurs de RMSD et d'énergie pour l'ensemble des modèles. Cet outils nous permet de mettre en avant par un simple rectangle de sélection l'ensemble des modèles à plus de 4\r{A} du modèle de référence. L'identification du modèle de plus basse énergie au sein des modèles mis en avant consiste ensuite en une simple analyse visuelle du graphe d'énergie.
+A l'opposé, l'utilisation d'outils en ligne de commandes est beaucoup plus fastidieuse car nécessite un traitement visuel plus complexe. Il est en effet beaucoup plus aisé de trouver une valeur minimale au sein d'un nuage de point qu'au sein d'un fichier texte simple. L'étape de chargement du modèle au sein du logiciel de visualisation est également plus simple puisque notre application permet d'interpréter la sélection du modèle concerné directement dans le logiciel de visualisation.
+
+
 \section{Résumé et conclusion}
 \label{sec:ConclusionVisuAna}
 
-Afin d'optimiser le travail autour de l'étude de structures moléculaires au sein d'un environnement immersif, nous avons développé une suite logicielle basée une communication bi-latérale entre deux espaces indispensables en biologie structurale: un espace de visualisation et un espace d'analyses. Cette communication entre deux espaces aux caractéristiques différentes est rendue possible grâce à la représentation haut-niveau de l'ensemble des concepts avec lesquels l'utilisateur interagit lors d'une session de travail. Ces concepts peuvent être aussi bien scientifiques, et concernés les données manipulées et observées, que logiciels, décrivant les composants et les actions de la plateforme choisie. L'ontologie créée permet une homogénéité des données échangées entre l'ensemble des modules de calculs (rendu visuel, analyses, simulation) puisque chaque module peut accéder aux données qu'il utilise au sein de la base de données construite autour de l'ontologie. On retrouve cette notion d'homogénéité en dehors de l'utilisation même de l'application puisque la représentation ontologique des concepts permet également d'assurer une cohérence et un modèle commun de données à respecter par les utilisateurs lors de la mise en place de nouvelles bases de données de complexes moléculaires. Ainsi, il est possible de mettre en commun certaines informations et d'enrichir les connaissances grâce à des requêtes croisées SPARQL par exemple. La communication inter-modules est la clé de voûte de notre application et l'approche passant par représentation sémantique des données favorise grandement sa mise en place. Cette approche n'a pas pour seul effet de garantir la cohérence des données échangées, elle permet aussi une certaine anticipation de certaines actions de l'utilisateur et donc de mettre en place des processus d'interaction plus simples et plus directes correspondant parfaitement aux environnements immersifs dans lesquels nous travaillons.
+Afin d'optimiser le travail autour de l'étude de structures moléculaires au sein d'un environnement immersif, nous avons développé une suite logicielle basée sur une communication bi-latérale entre deux espaces indispensables en biologie structurale: un espace de visualisation et un espace d'analyses. Cette communication entre deux espaces aux caractéristiques différentes est rendue possible grâce à la représentation haut-niveau de l'ensemble des concepts avec lesquels l'utilisateur interagit lors d'une session de travail. Ces concepts peuvent être aussi bien scientifiques, et concernés les données manipulées et observées, que logiciels, décrivant les composants et les actions de la plateforme choisie. 
+
+L'ontologie créée permet une homogénéité des données échangées entre l'ensemble des modules de calculs (rendu visuel, analyses, simulation) puisque chaque module peut accéder aux données qu'il utilise au sein de la base de données construite autour de l'ontologie. On retrouve cette notion d'homogénéité en dehors de l'utilisation même de l'application puisque la représentation ontologique des concepts permet également d'assurer une cohérence et un modèle commun de données à respecter par les utilisateurs lors de la mise en place de nouvelles bases de données de complexes moléculaires. Ainsi, il est possible de mettre en commun certaines informations et d'enrichir les connaissances grâce à des requêtes croisées SPARQL par exemple. La communication inter-modules est la clé de voûte de notre application et l'approche passant par représentation sémantique des données favorise grandement sa mise en place. Cette approche n'a pas pour seul effet de garantir la cohérence des données échangées, elle permet aussi une certaine anticipation de certaines actions de l'utilisateur et donc de mettre en place des processus d'interaction plus simples et plus directes correspondant parfaitement aux environnements immersifs dans lesquels nous travaillons.
+
 Notre application, malgré la présence de multiples communications entre les modules, respecte les contraintes temporelles inhérentes à tout application interactive. La figure X montre les temps d'exécution des principales actions utilisateurs lors d'une session de travail. On constate qu'elles sont toutes réalisables dans un temps considéré comme interactif puisque de l'ordre de ce que l'on pourrait attendre pour une application standard.
+
 Les bases de données sont un excellent moyen de stocker et mettre à disposition à tout instant les informations obtenues par l'utilisateur lors de ses sessions immersives de travail. Chaque nouvelle analyse met en jeu des résultats qui seront automatiquement stockés dans la base de données et réutilisables par la suite. Ceci assure une continuité dans le travail et permet de reprendre toute session à un point bien particulier. Les possibilités de partager ainsi une session de travail entre collaborateurs ou de reprendre une session de travail à l'état où elle se trouvait lors de sa dernière utilisation sont des caractéristiques que la majorité des scientifiques apprécient lors de l'utilisation de leurs outils. L'étude de l'évolution de structures moléculaires est un processus long et, comme évoqué précédemment, structuré en boucles successives, il est donc important d'être capable d'avoir un suivi stricte du travail effectué. La communication est également un enjeu majeur dans les sciences où le partage des informations entre collaborateurs et scientifiques du même milieu est primordial puisqu'elle constitue une partie des processus d'évaluation. Il est possible d'aller plus loin dans ce partage d'informations au sein de notre application en développant l'aspect collaboratif. La mise en place d'un formatage stricte des états de visualisation dans un format lisible et utilisable par notre application pourrait permettre la sauvegarde de toute évolution sous forme de fichiers, partageables ensuite dans d'autres environnements. L'une des forces de notre application repose également sur son développement autour d'une base de données construite autour d'une ontologie précise. Les modules au coeur de l'application n'ont aucune connaissance des logiciels ou librairies utilisés pour l'affichage 2d et 3d. Cette dissociation permet le couplage d'un nombre important de logiciels de visualisation 3d et 2d. Ce couplage passerait par un simple portage des modules de conversion des données en commandes spécifiques pour les logiciels de visualisation choisis.
 
 
