@@ -124,167 +124,6 @@ Les limitations de notre application résident tout d'abord dans la résolution 
 
 Nous avons vu dans le chapitre précédent (voir section \ref{navigation}) que la navigation dans des EV immersifs se caractérisait par la volonté d'étendre les capacités d'exploration de mondes virtuels en dépit des limites physiques imposées par les EV immersifs.
 
-La navigation dans des données de différentes natures a amené la RV à développer différentes techniques de navigation afin de répondre efficacement aux différents contenus et interactions proposés. Ces techniques répondent à différents niveaux de contrôle laissés à l'utilisateur dans sa tâche de navigation et doivent permettre d'assurer une expérience la plus intuitive et confortable qui soit.
-
-Après avoir énoncé les différents niveaux de contrôle existants pour la navigation en EV immersif, nous nous intéresserons aux paradigmes ayant été développés pour répondre à la fois aux scènes virtuelles réalistes, axe majeur d'étude en RV, et également aux scènes que nous appellerons <<abstraites>>, accusant d'un retard plus important.
-Nous présenterons enfin notre contribution, cherchant à répondre au retard mis en évidence précédemment  et dédié à l'exploration efficace de complexes moléculaires en conditions immersives.
-
-% La navigation dans des environnements virtuels 3d possède un certain degré de similitude avec la navigation dans le réel. La différence principale entre la navigation dans les espaces réel et virtuel se situe au niveau des modes/techniques de navigation qui sont propres à chaque réalité. La navigation est un concept très vaste qui nécessite dans un premier temps une clarification terminologique. Darken et Peterson (2002), spécialistes en cognition spatiale, remarquent qu'une confusion apparaît dans la littérature sur les termes employés. Ainsi, certains auteurs emploient comme synonyme les termes de « navigation », « déplacement » ou encore « exploration ». Ces trois termes sont au centre de la présente recherche d’où l’importance de définir clairement ces mots-clés. 
-% La navigation dans des environnements réels ou virtuels se définit à la fois par des composantes \textbf{motrices} et à la fois par des composantes \textbf{cognitives} \cite{bowman_doug_a_3d_2002}.
-
-% \begin{itemize}
-% 	\item La composante motrice définit le mouvement/déplacement réel d’un utilisateur dans l’espace. Il existe plusieurs modes ou techniques de déplacement. Bowman (2002) les classe en deux catégories, selon la métaphore employée pour se déplacer dans l’espace virtuel :
-% 		\begin{itemize}
-% 			\item Les métaphores réelles qui font appel à des comportements réalistes et/ou naturels comme le déplacement en mode « marche », « vol », « à vélo » ou encore « en conduisant ».
-% 			\item Les métaphores « virtuelles » où les chercheurs utilisent le potentiel du virtuel pour imaginer et créer des modes de déplacement dans l’espace. Ainsi, ces métaphores permettent de s’extraire des contraintes physiques. Elles demandent par conséquent l’apprentissage de leur fonctionnement. Parmi ces métaphores dites « virtuelles », on peut citer la téléportation (on spécifie les coordonnés de la cible à atteindre) par exemple.
-% 		\end{itemize}
-% 	\item La composante cognitive ou « wayfinding » est un processus cognitif de définition d’un chemin à travers un environnement. Le « wayfinding » a pour rôle de se construire une « carte cognitive »[26] de l’espace visité et de l’utiliser.
-% \end{itemize}
-
-% Dans un environnement virtuel, les utilisateurs peuvent disposer de plusieurs objectifs ou tâches à effectuer. Trois tâches de navigation ont été identifiées par Darken et Sibert \cite{darken1996navigating} de façon générique alors que Van dam et al. \cite{van_dam_immersive_2000} ainsi que Bowman \cite{bowman_doug_a_3d_2002} en proposent une quatrième prenant tout son sens dans le cadre de la navigation pour la visualisation scientifique:
-
-% \begin{enumerate}
-% 	\item  L'\textbf{exploration} c’est-à-dire une navigation sans cible explicite à atteindre. Le but étant uniquement de connaître et comprendre le nouvel environnement exploré. L’exploration peut aussi être psychologiquement active si le sujet doit suivre des indications. Dans le cas contraire, l’exploration est dite psychologiquement passive.
-% 	\item La \textbf{recherche d'une cible inconnue} où le sujet cherche une cible/destination particulière mais ne connaît pas la position de celle-ci.
-% 	\item La \textbf{recherche d'une cible dont la position est connue} (à un certain degré). La tâche/objectif étant de retrouver la cible.
-% 	\item La \textbf{manoeuvre} consiste en des mouvements courts et précis destinés à positionner ou orienter l'utilisateur de façon optimale pour effectuer une tâche.
-% \end{enumerate}
-
-
-% La dissociation entre les distances pouvant être parcourues dans un monde virtuel et les contraintes dimensionnelles des dispositifs immersifs a rapidement obligé les experts en RV de mettre au point des méthodes de navigation adaptées. Ces nouvelles méthodes ne répondent pas seulement au besoin de changement d'échelle entre l'espace réel d'interaction et l'espace virtuel de navigation, elles doivent également prendre en compte la contre-productivité d'une navigation libre menant souvent à une perte de repères spatiaux. C'est par exemple le cas d'exploration immersive de structures bornées et courbées par des couloirs ou des parois que, sans retour haptique performant, l'utilisateur ne pourra que difficilement éviter. 
-
-% Cette perte de repères spatiaux n'est pas le seul fait de paradigmes de navigation offrant trop de liberté, elle sera également accentuée par l'abstraction des données observées. Alors que la navigation au sein d'une ville ou d'une pièce peut permettre, par l'hétérogénéité des objets/bâtiments/personnages s'y trouvant, de garder une conscience de sa position et de son orientation suffisante, la navigation dans une scène possédant une majorité d'informations abstraites et/ou non orientées diminuera cette capacité à savoir à chaque instant sa position par rapport au contenu et au monde virtuel. Les degrés de liberté de l'utilisateur pour naviguer dans sa scène virtuelle sont également un facteur pouvant compromettre sa bonne conscience spatiale. Alors que les scènes réalistes vont souvent induire une navigation avec 2 degrés de liberté parallèlement au sol virtuel, les scènes possédant des données abstraites peuvent aisément permettre une navigation en 3 dimensions dans l'ensemble du volume composant la scène virtuelle. Cela influe également l'orientation de l'utilisateur qui gardera souvent un point de vue parallèle à l'horizontale de la scène dans le cas de scènes réalistes, point de vue qui n'aura pas les mêmes contraintes lors de la navigation avec 3 degrés de liberté.
-
-% La réduction ou l'absence de repères spatiaux n'a pas seulement une conséquence sur le fait qu'un utilisateur puisse se sentir perdu au milieu d'une scène virtuelle. Elles peut également déclencher ou favoriser l'apparition d'un malaise, communément appelé \textit{cybersickness}. 
-
-% \subsection{Malaise virtuel ou \textit{cybersickness}}
-
-% Le \textit{cybersickness} peut s'apparenter au mal des transports, transposé aux mondes virtuels, et se caractérisant par plusieurs effets néfastes pour l'utilisateur. En plus de simples sensations d'inconfort, on retrouve comme symptômes de la fatigue excessive, des vertiges, des maux de tête ou des nausées, tous très négatifs pour l'expérience de l'utilisateur \cite{kolasinski1995simulator,laviola_jr_discussion_2000}. Ce malaise empêche donc clairement l'efficacité de l'utilisateur pour effectuer ses tâches expertes et induit également un phénomène de "méfiance" vis-à-vis du dispositif immersif pouvant entraîner une volonté de ne pas reproduire l'expérience. Ce phénomène fut donc étudié de près afin d'en identifier les causes et d'en trouver des solutions. Les causes principales ressorties des expériences de RV menées dans le but d'induire ce phénomène passent presque exclusivement par la dissociation des canaux perceptifs du corps humain. Le découplage des informations fournies par canal visuel avec celles du système vestibulaire est particulièrement problématique. La différence de la nature des informations provenant des différents systèmes sensoriels par rapport à l'expérience usuelle de l'utilisateur a donc une chance importante d'induire ce malaise chez certaines personnes\cite{reason1975motion}.
-
-% Typiquement, une scène virtuelle impliquant un déplacement non contrôlé de l'utilisateur et dont les paramètres de vitesse, d'accélération et de rotations ne sont pas finement paramétrés, entraînera dans beaucoup de cas un malaise de l'utilisateur. Ces situations de déplacements incontrôlés sont également responsables du mal des transports. L'absence d'implication d'un usager sur son moyen de transport, quand celui-ci possède une trajectoire et une vitesse variant de façon aléatoire, peut aussi induire un malaise. Ce phénomène de retrouve de façon négligeable lors du visionnage d'un film ou d'un contenu vidéo impliquant les mêmes déplacements mais sur un support 2d. L'immersion joue donc un rôle très important dans ce phénomène et la fidélité de restitution d'une scène réaliste impliquera souvent une probabilité de malaise plus important. Un exemple récent du rôle de l'immersion et de la stéréoscopie comme facteur de \textit{cybersickness} est le film "The Walk"\footnote{\url{https://en.wikipedia.org/wiki/The\_Walk\_\%282015\_film\%29}}, sorti au cinéma en format 3D en septembre 2015, a vu un nombre significatif de personnes souffrir de nausées et de vomissements \footnote{\url{http://www.theguardian.com/film/2015/sep/30/robert-zemeckis-3d-the-walk-audiences-vertigo}}. Il n'est cependant pas envisageable de réduire cette immersion afin de réduire le \textit{cybersickness}, il faut donc s'intéresser à d'autres solutions.
-
-% Le taux de rafraîchissement des images affichées, plus lent que la vitesse d'analyse du cerveau, peut créer un différentiel faisant apparaître des défauts dans l'espace d'affichage et ainsi participer à l'apparition d'un malaise. Ce défaut, principalement technique, s'explique par les ressources importantes demandées par les dispositifs immersifs et les contenus virtuels. Un taux de rafraîchissement supérieur à 40 images par seconde pour chacun des yeux (en cas de stéréoscopie active) n'est pas toujours atteignable pour les contenus virtuels complexes. De nombreux efforts sont donc effectués pour réduire les temps de réponse et de latence des environnements immersifs afin de rapprocher l'expérience immersive de l'expérience réelle. 
-% Parmi les autres pistes de solutions, nous avons vu qu'une incohérence de niveau de sollicitation du système vestibulaire de l'utilisateur par rapport à ce qu'il voit peut entraîner une augmentation de la probabilité de malaise. Augmenter l'implication corporelle de l'utilisateur pourrait donc constituer une réduction significative des risques d'apparition du \textit{cybersickness}. Cette augmentation de l'implication corporelle peut se faire à travers les paradigmes de navigation développés. Lorsque l'utilisateur est suivi par un système de \textit{tracking}, son corps et ses mouvements peuvent être interprétés afin de déclencher des mouvements dans le monde virtuel. Plusieurs techniques de navigation découlent du \textit{tracking} de gestes ou de position afin de diriger la navigation virtuelle.
-
-\subsection{Méthodes de navigation dans des scènes virtuelles réalistes}
-
-Il existe plusieurs degrés de contrôle de la navigation dans des environnements virtuels 3d, allant d'une totale automatisation des chemins de navigation empruntés par l'utilisateur et calculés par le programme jusqu'à un contrôle absolu de l'utilisateur sur ses déplacements au sein de la scène virtuelle explorée.
-
-\subsubsection{Navigation automatique et semi-assistée}
-
-La navigation automatique dans une scène virtuelle peut s'apparenter à une navigation dans un véhicule sur lequel l'utilisateur n'aurait aucun contrôle. Cette navigation complètement automatique, où les déplacements de l'utilisateur seront dirigés par le programme, peut se faire selon deux méthodes principales:
-
-\begin{itemize}
-	\item Méthodes de \textit{\textbf{path finding}}: ces méthodes demandent la définition de points de passage dans la scène virtuelle. Ces points de passage, considérés comme les meilleurs points de vue, peuvent être définis manuellement ou automatiquement. En cas de définition automatique, on se servira de la nature de la scène à explorer afin de les définir. Plusieurs méthodes existent pour trouver les points singuliers de la scène. Ces points sont souvent des points de vue sur un nombre d'informations plus important que la moyenne. Ainsi, il est possible de les définir en analysant les aires de projection des surfaces 3D constituant les éléments de la scène virtuelle \cite{vazquez2001viewpoint}. Ces méthodes se basent sur des analyses de l'entropie de la scène et cherchent les points de vue permettant de visualiser un maximum d'objets 3D en même temps. Il est également possible de se baser sur les informations lumineuses afin d'extraire les meilleurs points de vue \cite{gumhold2002maximum}. Dans ce cas là, ce seront les points de vue maximisant l'illumination de la scène qui seront retenus et constitueront les points de passage de la caméra pendant l'exploration automatique de la scène.
-	\item Méthodes de contrôle \textbf{basées sur les images}: il est ici question de déplacer la caméra en optimisant une fonction de coût dont les paramètres sont définis suivant des propriétés des images. Plus simplement, le positionnement de la caméra se fait à travers les informations perçues dans les images \cite{courty2001computer}. Il sera donc possible de réagir à des modifications de l'environnement et de suivre des singularités de la scène, un objet en mouvement par exemple. 
-\end{itemize}
-
-Dans une situation de navigation automatisée, la seule liberté de l'utilisateur se retrouve souvent dans l'orientation de son regard, le \textit{tracking} de tête ou les informations du système gyroscopique associé au dispositif utilisé permettant de suivre la direction du regard de l'utilisateur.
-
-Il est possible de mettre également en place une navigation semi-assistée ou semi-contrôlée où cette fois l'utilisateur pourra contrôler une partie des paramètres de navigation. Parmi ces paramètres, soit la direction, la vitesse ou l'accélération seront le fait d'interactions de l'utilisateur, les autres paramètres étant dirigés par le programme. Il est ainsi possible de créer des chemins de navigation pré-calculés à partir d'une position de l'utilisateur, ce dernier devant choisir le chemin qu'il considère optimal pour sa tâche. A chaque nouvelle position, de nouveaux chemins optimaux seront calculés et soumis au choix de l'utilisateur.
-Cela passe également par la mise en place de contraintes, soit d'orientation, soit de direction, ou encore de vitesse qui viendront influencer le déplacement de l'utilisateur vers un point donné ou autour d'un objet d'intérêt. Ces contraintes, lorsqu'elles sont mises en place reflètent souvent la volonté de la part du créateur de la scène virtuelle de garder l'attention de l'utilisateur sur le coeur de sa tâche et de simplifier sa navigation pour qu'il se concentre sur l’exécution de cette tâche.
-
-\subsubsection{Navigation manuelle}
-
-On regroupe dans ces méthodes les approches permettant à l'utilisateur de diriger ses déplacements au sein d'un EV. Ce contrôle peut passer par des techniques directes, parfois appelées de façon abusive <<naturelles>>, ou des techniques indirectes où l'interaction dirigeant le mouvement dans l'EV se fait via un dispositif physique tel qu'une manette ou une tablette.
-
-Parmi les dispositifs indirects, on retrouve une certaine influence des moyens de navigation provenant de systèmes non-immersifs. L'utilisation de casques virtuels, ces derniers s'utilisant bien souvent de façon fixe avec un utilisateur assis, est particulièrement friande de ces dispositifs car ils ne demandent pas à l'utilisateur d'avoir une conscience spatiale précise de ses mains. Une manette, après un temps d'apprentissage relativement court, peut être utiliser sans que l'utilisateur ait besoin de la regarder. 
-
-Cependant, les développements les plus conséquents en RV sont passés par des techniques naturelles. 
-On peut citer les \textbf{tapis roulants multidirectionnels} qui sont des dispositifs mécaniques permettant de simuler plusieurs actions physiques du monde réel dont la marche, la course, le fait de s'accroupir et parfois même de s'asseoir (voir Figure \ref{Fig:cyberith_virtualizer}). Leur fonctionnement est similaire aux tapis roulants standards mais la grande différence provient de leur capacité à bouger dans toutes les directions, offrant ainsi à l'utilisateur une possibilité de déplacement à 360 degrés. Leur second avantage est leur positionnement fixe, restreignant ainsi l'espace nécessaire à leur utilisation. Ils permettent également de libérer les mains de l'utilisateur de tout périphérique dédié à la navigation. Enfin, l'implication physique de l'utilisateur permet de réduire le phénomène de \textit{cybersickness} comme évoqué dans la section \ref{cybersickness}.
-Ces périphériques se couplent aussi bien à des dispositifs immersifs type CAVE qu'à des dispositifs mobiles comme les HMD.
-
-\begin{figure}[h]
-  \begin{subfigure}{.5\textwidth}
-  \centering
-  {\includegraphics[width=0.9\linewidth]{./figures/ch3/cyberith_virtualizer}}
-    \caption{}
-    \label{Fig:cyberith_virtualizer}
-  % \hspace{0.3cm}
-  \end{subfigure}
-  \begin{subfigure}{.5\textwidth}
-  \centering
-  {\includegraphics[width=0.9\linewidth]{./figures/ch3/omnideck}}
-    \caption{}
-    \label{Fig:omnideck}
-  \hspace{0.3cm}
-  \end{subfigure}
-  \caption{\it (a) Tapis roulant multidirectionnel statique (\textit{Cyberith Virtualizer}) permettant de reconnaître, en plus de la marche et la course, des mouvements verticaux comme le saut ou l'accroupissement.
-  (b) Premier tapis roulant multidirectionnel large et statique (\textit{Omnifinity Omnideck}), utilisé en couplage avec une technologie de \textit{tracking} optique afin de garantir un suivi précis des mouvements de l'utilisateur.
-  }
-  % \hspace{0.3cm}
-\end{figure}
-
-La technologie du \textit{tracking} optique joue également un rôle important puisqu'elle permet une certaine liberté de mouvement à l'utilisateur. En plus de profiter des espaces d'évolution larges qu'offrent les systèmes CAVE ou de murs d'écrans, les solution de \textit{tracking} permettent une implication plus importante du système vestibulaire de l'utilisateur et ainsi réduisent la décorrélation entre le déplacement virtuel et le déplacement ou mouvement réel. Cette réduction entraîne en parallèle une réduction importante du \textit{cybersickness} et constitue donc une alternative pertinente pour la navigation en RV.
-
-\subsubsection{Paradigmes de navigation dans des scènes virtuelles réalistes}
-
-Au delà des dispositifs et systèmes permettant la navigation, les paradigmes permettant de traduire une action dans le monde réel par un déplacement dans le monde virtuel sont nombreux. Ils ont été optimisé par les professionnels du jeu vidéo ou de la simulation professionnelle pour citer les plus actifs et ont permis de mettre au point des méthodes de navigation optimisées pour des contenus spécifiques et souvent réalistes.
-
-Parmi les paradigmes de navigation s'appuyant sur le \textit{tracking} de tête ou du corps, on retrouve plusieurs approches: certaines considèrent chaque position de l'utilisateur par rapport à une zone spatiale de référence. Un déplacement dans la direction de la droite reliant la zone de référence à la position de l'utilisateur, à la manière d'un joystick où l'utilisateur serait le sommet du manche et la zone de référence constituerait la base de ce manche (voir Figure \ref{Fig:HCNAV}) \cite{Bourdot2002HCNav}.
-
-\begin{figure}[h]
- \centering
- {\includegraphics[width=0.8\linewidth]{./figures/ch3/HCNAV}}
-   \caption{\it Exemple de l'utilisateur des déplacements relatifs d'un utilisateur par rapport à une zone de référence pour contrôler son déplacement dans le monde virtuel. L'orientation de son regard décidera également des rotations dans le monde virtuel. Il est donc possible d'avoir un contrôle de 6 degrés de liberté pour la navigation (3 en translation et 3 en rotation).}
-   \label{Fig:HCNAV}
- \hspace{0.3cm}
-\end{figure}
-
-Le \textit{tracking} des mouvements de l'utilisateur peuvent permettre de traduire le mouvement naturel de la marche en un équivalent dans le monde virtuel. La \textbf{marche redirigée} permet par exemple de reporter une marche en ligne droite dans le monde virtuel alors que la marche dans le monde réel est légèrement contrainte afin de ne pas sortir de l'aire de l'expérience \cite{bruder_redirecting_2012}.
-
-Les paradigmes propres aux simulation de transports comme le vol ou la conduite de véhicule sont utilisés dans les scènes virtuelles constituées de grandes étendues à explorer (cf Figure \ref{Fig:driving_simu}). Proches des conditions réelles de pilotage ou de conduite, ils permettent d'assurer une certaine unicité de l'expérience réelle/virtuelle et possède une courbe d'apprentissage courte puisque basée sur l'expérience des utilisateurs.
-
-Il existe donc une large variété de paradigmes permettant l'exploration et la navigation au sein de scènes écologiques. 
-
-\begin{figure}[h]
-  \begin{subfigure}{.5\textwidth}
-  \centering
-  {\includegraphics[width=0.9\linewidth]{./figures/ch3/driving_simu}}
-    \caption{}
-    \label{Fig:driving_simu}
-  % \hspace{0.3cm}
-  \end{subfigure}
-  \begin{subfigure}{.5\textwidth}
-  \centering
-  {\includegraphics[width=0.9\linewidth]{./figures/ch3/flight_simu}}
-    \caption{}
-    \label{Fig:flight_simu}
-  \hspace{0.3cm}
-  \end{subfigure}
-  \caption{\it (a) Exemple d'un simulateur de vol où les déplacements virtuels sont la conséquences des mouvements réels de l'utilisateur adoptant une posture de chute libre.
-  (b) Simulateur de conduite dans un système de rétroprojection sur écran courbé.
-  }
-  % \hspace{0.3cm}
-\end{figure}
-
-\subsection{Méthodes de navigation dans des scènes virtuelles abstraites}
-
-Conçus autour de contenus réalistes, les paradigmes cités précédemment sont néanmoins transposables à l'identique dans des scènes abstraites. Leur efficacité est cependant limitée du fait de la nature très différentes des données à observer. Alors que la navigation aura tendance à permettre l'exploration d'une surface virtuelle horizontale relativement étendue dans des scènes réalistes, les scènes abstraites scientifiques, et plus particulièrement les scènes moléculaires, concentrent les informations dans une zone centrale autour de laquelle l'utilisateur va évoluer. L'échelle de visualisation des données est capable d'augmenter la distance (toujours à l'échelle) des données observées mais la nature même de l'exploration est souvent différente. Sheidermann décrit la visualisation de données comme un processus où l'exploration est l'étape préliminaire avant les étapes de zoom et de filtre qui précèdent elle-même l'étape finale de l'obtention des détails à la demande \cite{shneiderman_eyes_1996}. Les différentes échelles de précision mises en avant dans cette description sont rarement retrouvées dans les paradigmes de navigation au sein de scènes virtuelles réalistes.
-
-Bien qu'il existe de nombreux portages de logiciels experts de visualisation moléculaire dans des EV, la navigation au sein de données scientifiques dans ces derniers s’inspire encore largement de la manipulation d'objet retrouvé dans les logiciels de visualisation moléculaire courants (voir Figure \ref{Fig:pymol_nav}) \cite{frohlich1999exploring}. La manipulation d'objets n'est cependant pas adaptée aux environnements virtuels. Le nombre et la complexité des tâches de manipulation sont trop nombreuses pour s'adapter aux EV immersifs qui favorisent des paradigmes de navigation simplifiées. La taille des objets, dont l'ordre de grandeur est ramené à la taille humaine pour une meilleure immersion, est un second frein à l'approche par manipulation. Elle favorise en effet la perte du peu de repères spatiaux que pouvaient posséder l'utilisateur, ces repères étant souvent limités au seul objet intérêt, l'environnement (skybox, paysage, etc.) étant majoritairement vide avec un arrière-plan de couleur unie.   
-
-\begin{figure}[h]
-  \begin{subfigure}{.5\textwidth}
-  \centering
-  {\includegraphics[width=0.9\linewidth]{./figures/ch3/pymol_nav}}
-  % \hspace{0.3cm}
-  \caption{}
-  \label{Fig:pymol_nav}
-  \end{subfigure}
-  \begin{subfigure}{.5\textwidth}
-  \centering
-  {\includegraphics[width=0.9\linewidth]{./figures/ch3/vmd_nav}}
-  \hspace{0.3cm}
-  \label{Fig:vmd_nav}
-  \end{subfigure}
-  \caption{\it Capture d'écran des interfaces de manipulation offerts par PyMol (à gauche) et VMD à droite. Ils sont constitués de nombreuses combinaisons souris/clavier pour permettre d'utiliser l'ensemble des possibilités de manipulation disponibles.
-  }
-  % \hspace{0.3cm}
-\end{figure}
-
-Les seules tâches de navigation pouvant être identifiées au sein de logiciels experts de visualisation moléculaire se rapporte à des transitions progressives permettant de rejoindre une position spécifique depuis la position actuelle de l'utilisateur. Enfin, ces logiciels ne présentent aucune adaptation de la manipulation suivant le type de molécule observé et les paradigmes mis en jeu sont les mêmes que l'objet observé soit une protéine de quelques acides aminés ou bien un virus de plusieurs millions d'atomes. Dans tous les cas ils permettent une navigation totalement libre autour de la molécule et n'imposent aucune contrainte, au détriment de la conscience spatiale de l'utilisateur.
-
 \section{Nouveaux paradigmes pour la RV}
 
 Nous avons mis en évidence le besoin de mettre en place des paradigmes de navigation qui répondent aux problématiques posées par la visualisation moléculaire qui met en jeu des objets scientifiques abstraits, de plus en plus complexes, dans des environnements présentant un nombre réduit de repères spatiaux pour l'utilisateur.
@@ -300,7 +139,7 @@ Même si non-exclusif, notre attention fut rapidement portée sur les molécules
 
 \begin{figure}[h]
   \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch3/molecular_symmetries_drawing}}
+  {\includegraphics[width=.5\linewidth]{./figures/ch3/molecular_symmetries_drawing}}
     \caption{{\it Différents types de symétries retrouvés dans des complexes moléculaires. En haut, GLIC, une protéine transmembranaire composée de 5 monomères avec un axe de symétrie correspondant au centre du pore formé par l'agencement des 5 monomères. Vue du dessus (à gauche) et vue de côté (à droite). En bas à gauche, une capside de virus composée de 4 types de monomères présentant un centre de symétrie superposé au centre de gravité du virus. En bas à droite, enchevêtrement de tubulines agencées autour d'une symétrie hélicoïdale (axiale + translation verticale) formant un microtubule.}}
   \label{Fig:molecular_symmetries_drawing}
   \hspace{0.2cm}
@@ -316,7 +155,7 @@ Bien que sommaire, ce réarrangement permet de fournir un premier repère spatia
 
 \begin{figure}[h]
   \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch3/orientation_camera_EV}}
+  {\includegraphics[width=.5\linewidth]{./figures/ch3/orientation_camera_EV}}
     \caption{{\it Schéma de l'orientation dans l'espace de l'utilisateur/camera et de la scène virtuelle (ici dans un système CAVE en gris). L'orientation dans l'espace est représenté par les 3 vecteur up/forward/right.}}
   \label{Fig:orientation_camera_EV}
   \hspace{0.2cm}
@@ -332,7 +171,7 @@ Durant l'étape d'exploration externe l'utilisateur possède donc 3 degrés de l
 
 \begin{figure}[h]
   \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch3/degree_of_freedom_glic}}
+  {\includegraphics[width=.5\linewidth]{./figures/ch3/degree_of_freedom_glic}}
     \caption{{\it Suivant sa position relative au complexe et dépendant du mode de navigation, la caméra possède un nombre précis de degrés de liberté prédéfinis, à la fois en translation et en rotation. Dans notre illustration, les mouvements de translation possibles sont représentés en rouge alors que les points de vue autorisés sont représentés par des flèches noires. Au cours d'une navigation verticale, la caméra est contrainte sur un axe parallèle à l'axe de symétrie (en vert) quand elle est située à l'extérieur de la protéine (en haut à gauche) ou le long de ce même axe (en haut à droite). Une navigation extérieure contraint le vecteur forward de la caméra pour qu'elle fasse face à la protéine alors qu'à l'intérieur la caméra peut tourner à 360 degrés sur elle-même. Enfin, les chemins de navigation horizontaux à l'extérieur de la protéine (en bas) contraignent le vecteur right de la caméra de façon à ce qu'ils soient circulaires ou perpendiculaires à la protéine pour un effet de zoom avant/arrière.}}
   \label{Fig:degree_of_freedom_glic}
   \hspace{0.2cm}
@@ -352,7 +191,7 @@ Même si l'exploration peut apporter un grand nombre d'informations, certains ph
 
 \begin{figure}[h]
   \centering
-  {\includegraphics[width=.7\linewidth]{./figures/ch3/voronoi_2D_algo_v2}}
+  {\includegraphics[width=.5\linewidth]{./figures/ch3/voronoi_2D_algo_v2}}
     \caption{{\it Schéma de l'étape 3 de l'algorithme de point de vue optimal, représenté en 2d. A gauche, notre cible est représentée en vert, ses atomes voisins en rouge et le cercle représente la distance à laquelle l'utilisateur veut placer sa caméra. A droite, les atomes voisins sont projetés sur le cerle et on cherche la portion de ce cerle possédant le plus large espace vide afin d'obtenir le cône de vue le plus large représenté en bleu.}}
   \label{Fig:voronoi_2D_algo}
   \hspace{0.2cm}
@@ -391,7 +230,7 @@ Une transition progressive et automatique est ainsi mise en place. Pour calculer
 
 \begin{figure}[h]
   \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch3/optimal_pov_camera_path}}
+  {\includegraphics[width=.5\linewidth]{./figures/ch3/optimal_pov_camera_path}}
     \caption{{\it Schéma de l'algorithme de recherche du meilleur chemin de caméra pour atteindre un point de vue optimal. La cible à visualiser est représentée en vert et ses atomes voisins en rouge. Chaque cercle représente une distance précise entre la caméra et la cible, le cercle le plus petit désignant la distance désirée par l'utilisateur. Pour chaque distance, l'algorithme de point de vue optimal est utilisé afin d'obtenir les meilleurs point de vue sur la cible. Les cônes bleus représentent les cônes de vue les plus larges trouvés alors qu'en vert et violet sont représentés les aires vides les plus larges entre les différentes distances de caméra. Le chemin qu'empruntera la caméra pour atteindre le point de vue optimal est ainsi représenté grâce aux symboles de couleur noire. Ce chemin est calculé pour garder un point de vue le plus dégagé possible jusqu'à atteindre le point final.}}
   \label{Fig:optimal_pov_camera_path}
   \hspace{0.2cm}
@@ -409,7 +248,7 @@ Dans le cas où l'algorithme de point de vue optimal n'est pas suffisant pour pe
 
 \begin{figure}[h]
   \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch3/fragmented_view}}
+  {\includegraphics[width=.5\linewidth]{./figures/ch3/fragmented_view}}
     \caption{{\it Dessin illustratif d'une protéine présentant un pore central constituant son axe de symétrie. A gauche, les monomères du complexe moléculaires sont écartées de l'axe de symétrie. Au centre, différentes région d'intérêt ont été identifiées le long des monomères et le complexe est écarté de façon verticale. A droite sont combinés la séparation des monomères et des régions d'intérêt. Illustration de Davide Spalvieri.}}
   \label{Fig:fragmented_view}
   \hspace{0.2cm}
@@ -463,7 +302,7 @@ Nous avons identifié une tâche métier type consistant à identifier, au sein 
 
 \subsection{Conclusion}
 
-La visualisation de données est un processus analytique où l'observation et l'exploration des données amènent de nouvelles informations au scientifique. Cette information peut être acquise d'une façon active, en mesurant par exemple la distance entre deux atomes, ou de façon passive, en se déplaçant et en observant des phénomènes qui ne peuvent être que partiellement décrits par des valeurs brutes. C'est le cas par exemple de la forme des surfaces situées à l'interface entre deux partenaires biologiques se liant entre-eux qui ne peuvent être définis que de manière parcellaire par des propriétés d'hydrophobicité, d'accessibilité au solvant ou de volumee et qui nécessitent donc d'être visualisés afin d'être totalement comprises. L'acquisition d'informations passe donc par un processus de navigation qui dirige l'utilisateur vers les événements qu'il désire observer ou vers des régions avec lesquelles il désire interagir. La navigation est un processus important en immersion car il peut décider du confort de l'utilisateur pour effectuer ses tâches, passives ou actives. Le malaise du virtuel, lié en partie à la perte de repères spatiaux est un phénomène qu'il est important de prendre en compte mais qui fut absent des approches de navigation, et  plus précisément de manipulation, développées avec les logiciels experts de visualisation moléculaire. Cette absence est principalement due à l'aspect négligeable du cybersickness en conditions non-immersives.
+La visualisation de données est un processus analytique où l'observation et l'exploration des données amènent de nouvelles informations au scientifique. Cette information peut être acquise d'une façon active, en mesurant par exemple la distance entre deux atomes, ou de façon passive, en se déplaçant et en observant des phénomènes qui ne peuvent être que partiellement décrits par des valeurs brutes. C'est le cas par exemple de la forme des surfaces situées à l'interface entre deux partenaires biologiques se liant entre-eux qui ne peuvent être définis que de manière parcellaire par des propriétés d'hydrophobicité, d'accessibilité au solvant ou de volume et qui nécessitent donc d'être visualisés afin d'être totalement comprises. L'acquisition d'informations passe donc par un processus de navigation qui dirige l'utilisateur vers les événements qu'il désire observer ou vers des régions avec lesquelles il désire interagir. La navigation est un processus important en immersion car il peut décider du confort de l'utilisateur pour effectuer ses tâches, passives ou actives. Le malaise du virtuel, lié en partie à la perte de repères spatiaux est un phénomène qu'il est important de prendre en compte mais qui fut absent des approches de navigation, et  plus précisément de manipulation, développées avec les logiciels experts de visualisation moléculaire. Cette absence est principalement due à l'aspect négligeable du cybersickness en conditions non-immersives.
 
 Fort du constat de l'absence de développements de navigation spécifiques à la visualisation de données scientifiques et plus particulièrement moléculaires, nous avons proposé plusieurs paradigmes ou modes de navigation pouvant répondre à ce besoin. Nos efforts se sont portés sur l'utilisation de l'objet d'intérêt, ici un complexe moléculaire, comme base intelligente et dynamique de la créations de chemins de navigation contraints, semi-automatisés ou automatisés suivant les modes de navigation considérés. Notre approche peut s'inscrire dans le processus de visualisation de données évoqué par Shneidermann et introduisant une échelle de granularité partant de l'exploration globale des données à l'observation précise de certains phénomènes ponctuels et locaux.
 
