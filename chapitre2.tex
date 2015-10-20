@@ -295,7 +295,7 @@ Parmi les paradigmes de navigation s'appuyant sur le \textit{tracking} de tête 
 
 \begin{figure}[h]
  \centering
- {\includegraphics[width=0.8\linewidth]{./figures/ch3/HCNAV}}
+ {\includegraphics[width=0.8\linewidth]{./figures/ch3/HCNav}}
    \caption{\it Exemple de l'utilisateur des déplacements relatifs d'un utilisateur par rapport à une zone de référence pour contrôler son déplacement dans le monde virtuel. L'orientation de son regard décidera également des rotations dans le monde virtuel. Il est donc possible d'avoir un contrôle de 6 degrés de liberté pour la navigation (3 en translation et 3 en rotation).}
    \label{Fig:HCNAV}
  \hspace{0.3cm}
@@ -369,6 +369,12 @@ Le domaine du docking moléculaire fut assez friand de la technologie de bras ha
 
 En visualisation de données abstraites et/ou scientifiques, l'utilisation de méthodes de retours sensoriels a donc pu être détournée de son but premier, l'immersion, pour communiquer des informations supplémentaires à l'utilisateur pendant ses phases d'interactions. La possibilité par exemple de déclencher un événement sonore lors de la sélection de données critiques ou extrêmes dans un set de données est l'un des exemples de l'utilisation d'un retour auditif pour transmettre une information \cite{ferey_multisensory_2009}. De la même façon, le domaine de la conception assistée par ordinateur (CAO), très présent en RV, utilise des dispositifs de retour de force afin de juger de la résistance de matériaux ou de limites de torsion/translation des objets \cite{sun2010haptic}. La chirurgie est également demandeuse de solutions précises de retours haptiques au sein de ses récentes applications de RV dédiées à l’entraînement des chirurgiens à des opérations spécifiques ou développées pour le contrôle de robots pour des opérations sur des patients réels \cite{kusumoto_application_2006}. Étendre ces moyens de fournir des informations par d'autres canaux que les canaux visuels pour la visualisation de données scientifiques en RV est donc une solution réaliste et concrète, simplifiée par les méthodes de RV déjà existantes.
 
+\subsection{Interface moléculaire tangible et réalité augmentée}
+
+Olson
+Xavier
+
+
 \subsection{Simulation moléculaire interactive} \label{simu_interactive}
 
 Certaines simulations moléculaires, couplées à de rendus graphiques très performants et des dispositifs d'interactions adaptés, permettent à l'utilisateur de contraindre certaines parties d'une structure moléculaire pendant sa simulation en injectant dans les calculs physiques des forces s'appliquant sur les particules manipulées \cite{bolopion_comparing_2010}. Le jeu sérieux Foldit\footnote{\url{https://fold.it/portal/}} s'appuie sur les stratégies et l'esprit d'analyse des utilisateurs, experts ou non du domaine, pour guider les changements conformationnels de protéines par des commandes simples. Un score est calculé en temps réel permettant de rendre compte de la stabilité énergétique de la structure obtenue. Alors que le chemin énergétique suivi par un algorithme standard va favoriser les changements conformationnels peu coûteux, l'esprit humain est capable d'anticiper un changement qui va contraindre la protéine de façon importante, mais permettant d'obtenir une structure plus stable par la suite \cite{khatib2011crystal}.
@@ -395,7 +401,7 @@ Nous avons dessiné dans la section \ref{RV_science} les contours de la RV et mi
 
 Parmi les problématiques soulevées par la RV pour les données abstraites et scientifiques, nous avons déjà évoqué le cantonnement de la discipline à des tâches d'exploration et de visualisation de structures 3d. La réalisation de tâches nécessitant une interaction avec les données mises en jeu, dans un premier temps exclusivement 3d, nécessite la mise en place de méthodes de navigation adaptées. Or la navigation au sein des mondes virtuels est l'un des obstacles cruciaux à franchir pour assurer une expérience optimale aux utilisateurs. En effet, la notion de monde virtuel implique la possibilité pour l'utilisateur d'évoluer au sein d'un environnement étendu de la même manière qu'il évoluerait dans la vie réelle. Or, si cette navigation virtuelle peut être inspirée de paradigme utilisé dans un cadre de navigation réelle dans le cas d'environnements virtuels écologiques, là où le contenu virtuel proposé est une copie artificielle d'éléments réels, la question est tout autre lorsque la scène observée n'est plus écologique et implique des éléments abstraits. 
 
-\subsection{Méthodes de navigation dans des scènes virtuelles abstraites}
+%\subsection{Méthodes de navigation dans des scènes virtuelles abstraites}
 
 Conçus autour de contenus réalistes, les paradigmes cités précédemment sont néanmoins transposables à l'identique dans des scènes abstraites. Leur efficacité est cependant limitée du fait de la nature très différentes des données à observer. Alors que la navigation aura tendance à permettre l'exploration d'une surface virtuelle horizontale relativement étendue dans des scènes réalistes, les scènes abstraites scientifiques, et plus particulièrement les scènes moléculaires, concentrent les informations dans une zone centrale autour de laquelle l'utilisateur va évoluer. L'échelle de visualisation des données est capable d'augmenter la distance (toujours à l'échelle) des données observées mais la nature même de l'exploration est souvent différente. Sheidermann décrit la visualisation de données comme un processus où l'exploration est l'étape préliminaire avant les étapes de zoom et de filtre qui précèdent elle-même l'étape finale de l'obtention des détails à la demande \cite{shneiderman_eyes_1996}. Les différentes échelles de précision mises en avant dans cette description sont rarement retrouvées dans les paradigmes de navigation au sein de scènes virtuelles réalistes.
 
