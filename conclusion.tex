@@ -12,6 +12,13 @@
 \markboth{Conclusion générale et perspectives}{Conclusion générale et perspectives}
 
 
+
+La com
+
+
+
+\section*{Contributions de la thèse}
+
 Nous avons mis en évidence, dans la première partie de ce manuscrit, les \textbf{usages actuels en biologie structurale}, coeur d'application de nos travaux de recherche. Ce domaine spécifique de la biologie moléculaire, cherchant à décrypter les structures des protéines afin d'en déduire leurs fonctions, a su évoluer avec les outils informatiques, et ce malgré la part importante des méthodes expérimentales dans la résolution de structures 3d. 
 L'informatique a tout d'abord fait partie intégrante du traitement des signaux générés par la majorité des méthodes expérimentales pour être ensuite considérée comme support de méthodes fiables de modélisation de structures protéiques. La modélisation théorique de structures moléculaire reçu d'ailleurs ses plus belles lettres de noblesse en 2013, ses pionniers recevant le prix Nobel de chimie. L'informatique graphique a ensuite constitué une méthode de communication et de diffusion des modèles de structures primordiale pour le monde scientifique, permettant de partager les avancées du domaine au plus grand nombre.
 
@@ -33,9 +40,8 @@ Grâce à l'utilisation d'axes et centres de symétries, nos paradigmes de navig
 
 %%%%%%%%%%% Appli mobile %%%%%%%%%%%%%%%%%
 
-Nous avons également présenté un premier outil de visualisation dédié au partage simple et rapide de représentations graphiques 3d à partir de simples paires d'images 2d générés par des programmes de visualisation moléculaire. Cet outil se base sur l'utilisation de périphériques mobiles, largement démocratisés dans le monde scientifique, pour intégrer une représentation améliorée de concepts biologiques structuraux accessible à tous. Cette première approche d'immersion cognitive répond à l'évolution constante des moyens de communication en science et se démarque par sa généricité à la fois en terme de support matériel que de natures des contenus.
 
-La visualisation Les moyens de communication dans le monde scientifique ont connu une évolution rapide ces dernières années profitant de l'évolution des moyens de communication standard. Ces derniers sont maintenant essentiellement basés autour du réseau internet et du support informatique. Au-delà de la simple lecture d'articles scientifiques sur un écran fixe, on tend à déporter cette lecture sur des périphériques mobiles type smartphones ou tablettes, ces derniers possédant la résolution nécessaire pour une expérience de lecture satisfaisante. Les moyens d'interactions avec les informations scientifiques ont également changé, profitant de l'outil informatique pour ajouter des couches de données aux simples textes et images.
+Motivés par les apports de la RV dans les technologies de visualisation avancées et l'approche d'immersion cognitive, notre intérêt s'est ensuite porté sur les moyens de communication dans le monde scientifique. Ces derniers ont connu une évolution rapide ces dernières années profitant de l'évolution des moyens de communication standards. Ces derniers sont maintenant essentiellement basés autour du réseau internet et du support informatique. Au-delà de la simple lecture d'articles scientifiques sur un écran fixe, on tend à déporter cette lecture sur des périphériques mobiles type smartphones ou tablettes, ces derniers possédant la résolution nécessaire pour une expérience de lecture satisfaisante. Les moyens d'interactions avec les informations scientifiques ont également changé, profitant de l'outil informatique pour ajouter des couches de données aux simples textes et images.
 
 Notre approche s'est inscrite dans cette évolution et a pour but de fournir une méthode simple et rapide pour explorer des données de structures 3d de molécules à partir de fichiers légers et facilement échangeables ou téléchargeables. Basée sur un moteur de jeu largement utilisé au sein de la communauté des développeurs d'application mobiles, Unity3D, nous avons créé une application permettant de générer un objet 3d correspondant à une scène moléculaire grâce à l'utilisation de seulement 2 fichiers images, une image de texture et une carte de profondeur. Grâce à l'utilisation du gyroscope présent dans la grande majorité des périphériques mobiles, nous pouvons permettre à l'utilisateur de visualiser sous plusieurs angles une structure moléculaire avec la perception de profondeur qu'offre la 3d.
 Dans la continuité de notre approche, nous avons également mis au point la possibilité d'explorer un modèle 3d complet de molécule en situant l'utilisateur au milieu de sa structure et permettant à l'utilisateur d'utiliser son smartphone comme une fenêtre sur le monde virtuel.
@@ -43,32 +49,21 @@ Dans la continuité de notre approche, nous avons également mis au point la pos
 %%%%%%%%%%% Visu Ana %%%%%%%%%%%%%%%%
 
 La quatrième partie du manuscrit réintroduit la volonté de mettre l'utilisateur au coeur du contrôle de sa simulation afin de lui permettre de filtrer les données générées et ainsi réduire la quantité de données rapatriée depuis les centres de calcul vers les laboratoires. Nous sommes revenus sur la nécessité d'intégrer un tel schéma de travail afin de faire évoluer le schéma actuel, passant aujourd'hui par une dissociation des étapes de visualisation et d'analyses, pourtant tout deux étroitement liés et en communication constante.
-Le rapprochement de ces deux espaces est l'un des sujets d'étude central du \textit{Visual Analytics}. Ce domaine se base sur la mise en place d'une interactivité avancée au coeur de la visualisation de données scientifiques. 
-En immersion, la fusion des outils visuels et analytiques au sein d'un même espace colle parfaitement à leur intégration au sein d'environnements immersifs. Cette fusion permet la mise en place de techniques d'interactions directes, retrouvées régulièrement au sein des sujets d'étude de RV.
+Le rapprochement de ces deux espaces est l'un des sujets d'étude central du \textit{Visual Analytics}. Ce domaine se base sur la mise en place d'une interactivité avancée au coeur de la visualisation de données scientifiques. Notre réflexion autour des techniques de \textit{Visual Analytics} nous ont amené à considéré comme une solution optimale, la réunion des concepts manipulés au sein des espaces de visualisation et d'analyses.
+Nous avons montré que grâce aux outils du web sémantique, il est possible de stocker autour d'une architecture définie l'ensemble des données générées au cours d'un processus d'étude de biologie structurale. Au-delà de la simplicité d'accès à ces données, il est possible de raisonner sur celles-ci et de mettre en place des liens forts entre leurs différentes représentations graphiques. Il est ainsi aisé de créer des méthodes d'interactions simplifiées permettant de passer de la visualisation à l'analyse et inversement dans un temps interactif.
 
-La visualisation a constitué notre base de travail pour la mise en place de modèles de représentation des données permettant de lier des notions hétérogènes comme celles retrouvées au sein des espaces d'analyses et de visualisation. Nous avons donc détaillé dans une cinquième partie la création d'une plateforme de travail mixant visualisation et analyses au sein d'un même espace de travail immersif. Après avoir introduit les facettes de notre plateforme, nous l'avons évalué au moyen de scénario précis et de méthodes ergonomiques existantes.
+Cette fusion des activités n'a pu se faire que grâce à la mise en place d'une description haut-niveau des concepts mis en jeu dans ces deux activités. La cinquième et dernière partie de notre manuscrit met en avant notre réflexion autour des récentes avancées faites dans le Web Sémantique pour parvenir à créer une ontologie métier spécialisée nous permettant de structurer les différents concepts d'analyses et de visualisation et de les lier autour d'une même problématique, la visualisation analytique structurale.
+Nous avons donc détaillé la création d'une plateforme de travail mixant visualisation et analyses au sein d'un même espace de travail immersif. Après avoir introduit les différentes facettes de notre plateforme, nous l'avons évalué au moyen de scénario précis et de méthodes ergonomiques existantes.
+
+Conscients de la nécessité d'optimiser les processus d'interactions afin de coller au plus près des standards imposés par la RV et profitant de la capacité d'immersion qu'elle fournit, nous avons cherché à mettre en place un cadre logiciel générique permettant de lier visualisation et analyses au sein d'un même espace de travail.
+
+%%%%%%%%% Sémantique %%%%%%%%%%%%%%
+
+
 
 L'intégration complète de ces outils au sein d'un dispositif immersif est le dernier pas que nous devons encore franchir pour proposer un outil complet opérationnel aux experts du domaine et constituerait la seule nuance apportée à l'ensemble de nos contributions.
 
-\section*{Contributions de la thèse}
 
-
-% \subsection*{Navigation guidée par le contenu et la tâche}
-
-
-
-
-
-% \subsection*{Application mobile de communication scientifique immersive}
-
-
-
-% \subsection*{Simplifier la fusion entre visualisation et analyses de données complexes}
-
-La boucle illustrant le processus standard de l'étude d'un phénomène biologique à l'échelle de la structure de ses acteurs présente une certaine dissociation des étapes de visualisation et d'analyses pourtant toutes deux très proches et présentant de nombreuses passerelles d'échanges de données. Conscients de la nécessité d'optimiser les processus d'interactions afin de coller au plus près des standards imposés par la RV et profitant de la capacité d'immersion qu'elle fournit, nous avons cherché à mettre en place un cadre logiciel générique permettant de lier visualisation et analyses au sein d'un même espace de travail.
-
-Cette fusion des activités n'a pu se faire que grâce à la mise en place d'une description haut-niveau des concepts mis en jeu dans ces deux activités. Nous nous sommes inspirés des récentes avancées faites dans le Web Sémantique pour parvenir à créer une ontologie métier spécialisée nous permettant de structurer les différents concepts d'analyses et de visualisation et de les lier autour d'une même problématique, la visualisation analytique structurale. 
-Grâce aux outils du web sémantique, il nous est possible de stocker autour d'une architecture définie l'ensemble des données générées au cours d'un processus d'étude de biologie structurale. Au-delà de la simplicité d'accès à ces données, il est possible de raisonner sur celles-ci et de mettre en place des liens forts entre leurs différentes représentations graphiques. Il est ainsi aisé de créer des méthodes d'interactions simplifiées permettant de passer de la visualisation à l'analyse et inversement dans un temps interactif.
 
 
 \section*{Perspectives}
@@ -91,7 +86,9 @@ L'une des forces de notre application DepthMol3D est sa simplicité d'utilisatio
 
 Le retour d'expérience des utilisateurs d'un logiciel est important mais néanmoins souvent oublié quand on arrive aux étapes de post-développement. Avec l'évolution rapide des techniques, plateformes et approches de visualisation, il est important de revoir les nouveaux besoins des experts et les nouvelles possibilités offertes par les nouvelles technologies. 
 
-Il nous semble également important d'utiliser l'expertise scientifique afin de créer des paradigmes de navigation répondant à des besoins spécifiques, ceux-ci évoluant avec la nature du complexe moléculaire étudié. Ce plus haut niveau d'interaction ne doit pourtant pas dépasser le niveau d'implication cognitive que doit comporter la navigation, cette dernière restant bien souvent un moyen d'accéder à d'autres tâches plus complexes et nécessitant davantage de réflexion de la part de l'utilisateur. Et même si les études ont montré qu'une augmentation de la charge cognitive est une bonne manière de réduire le \textit{cybersickness} (voir section \ref{cybersickness}) elle peut également réduire l'efficacité des tâches annexes au processus de navigation.
+Il nous semble également important d'utiliser l'expertise de l'utilisateur afin de créer des paradigmes de navigation répondant à leurs besoins, ceux-ci évoluant avec la nature du complexe moléculaire étudié. Ce plus haut niveau d'interaction ne doit pourtant pas dépasser le niveau d'implication cognitive que doit comporter la navigation, cette dernière restant bien souvent un moyen d'accéder à d'autres tâches plus complexes et nécessitant davantage de réflexion de la part de l'utilisateur. Et même si les études ont montré qu'une augmentation de la charge cognitive est une bonne manière de réduire le \textit{cybersickness} (voir section \ref{cybersickness}) elle peut également réduire l'efficacité des tâches annexes au processus de navigation.
+
+
 
 \subsection*{Visualisation analytique et sémantique}
 
