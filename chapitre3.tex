@@ -130,8 +130,8 @@ Nous avons mis en évidence le besoin de mettre en place des paradigmes de navig
 
 Une piste de réflexion étudiée pour faire du processus de navigation un processus intuitif pour l'utilisateur est de le rendre cohérent avec les données qu'il observe. Si la trajectoire suivie par un utilisateur durant son exploration possède des échos dans la nature même de ce qu'il voit, alors nous parvenons à fournir une information pendant que l'utilisateur effectue une simple tâche de navigation. A l'image de ce qui a été fait pour les scènes réalistes, il est donc important de prendre en compte le contenu virtuel à explorer pour mettre en place un paradigme de navigation efficace. De la même façon, la navigation étant le support d'un nombre important de tâches en visualisation moléculaire, il nous a paru important de prendre également en compte l'activité des experts. 
 
-Il nous a donc paru nécessaire et évident d'utiliser à la fois le contenu moléculaire et la tâche des experts pour guider les paradigmes de navigation. Ce travail a pu être fait en collaboration avec des biologistes travaillant sur des exemples concrets de modélisation de phénomènes biologiques précis et utilisant l'outil de la visualisation moléculaire quotidiennement. Il fut également possible de travailler pendant quelques temps avec des ergonomistes dont les approches d'analyses et de recueil des informations furent très utiles à l'identification des besoins des experts. Il est en effet important d'associer les experts du domaine aux étapes initiales de conception de paradigmes afin d'éviter un écart trop important entre leurs attentes et le résultat final.
-Nous avons finalement, à la fin d'un premier processus de développement logiciel, mis en place un modèle d'évaluation sous la forme d'une décomposition hiérarchique en utilisant la méthodologie de \textit{Hierarchical Task Analysis} (HTA) afin d'évaluer la performance de nos paradigmes de navigation par rapport à une navigation libre.
+Il nous a donc paru nécessaire et évident d'utiliser à la fois le contenu moléculaire et la tâche des experts pour guider les paradigmes de navigation. Ce travail a pu être fait en collaboration avec des biologistes travaillant sur des exemples concrets de modélisation de phénomènes biologiques précis et utilisant l'outil de la visualisation moléculaire quotidiennement. Il fut également possible de travailler avec des ergonomistes dont les approches d'analyses et de recueil des informations au travers d'entretiens encadrés furent très utiles à l'identification des besoins des experts. Il est en effet important d'associer les experts du domaine aux étapes initiales de conception de paradigmes afin d'éviter un écart trop important entre leurs attentes et le résultat final.
+Nous avons finalement, à la fin d'un premier processus de développement logiciel, mis en place un modèle d'évaluation sous la forme d'une décomposition hiérarchique en utilisant la méthodologie de \textit{Hierarchical Task Analysis} (HTA) afin d'évaluer la performance de nos paradigmes de navigation par rapport à une navigation libre \cite{annett2003hierarchical}.
 
 \subsection{Symétrie moléculaire et axes remarquables comme ancrage visuel}
 
@@ -257,9 +257,15 @@ Dans le cas où l'algorithme de point de vue optimal n'est pas suffisant pour pe
 
 \subsubsection{Evaluation par Analyse Hiérarchique de la Tâche (HTA)}
 
-Nous avons choisi d'évaluer nos paradigmes de navigation au moyen de la décomposition hiérarchique de deux tâches identifiées comme habituelles pour les experts scientifiques. Le choix de ces tâches a pu se faire grâce à la contribution d'ergonomes et au moyen de méthodes 
+Nous avons choisi d'évaluer nos paradigmes de navigation au moyen de la décomposition hiérarchique de deux tâches identifiées comme habituelles pour les experts scientifiques. Le choix de ces tâches a pu se faire grâce à la contribution d'ergonomes et au moyen de méthodes d'entretiens supervisés.
+Nous sommes partis du constat que l'évaluation systématique de tâches métier est impossible ou très difficile à cause de plusieurs facteurs: (1) la spécialisation de l'outil évalué est très importante et nous faisons face à un outil dont la nature (PyMol, VMD, Yasara) varie suivant les usages usuels des experts scientifiques interrogés. (2) L'implémentation et l'adaptation de nos paradigmes sur un ensemble représentatif d'outils spécialisés est compliquée et très chronophage. (3) Notre démarche est biaisée de part son développement basé sur l'exécution de tâches expertes. L'utilisation de tâches expertes pour l'évaluation d'une approche basée sur ces tâches nous parait litigieuse. 
 
-L'arbre de tâche HTA est présenté ci-dessous et décrit la manière de répondre à une tâche courante de visualisation moléculaire, la recherche des acides aminés impliqués dans une liaison avec un ligand selon les monomères envisagés. Ce modèle a été extrait grâce aux experts du domaine et donne une subdivision progressive de la tâche énoncée. Les subdivisions les plus externes pouvant finalement être évaluées d'un point de vue temporel et ainsi permettre une approximation de la durée de la tâche suivant un set de conditions particulier. Ici nous comparons des conditions de navigation libres avec des conditions de navigation guidée utilisant les paradigmes expliqués précédemment. Nous ferons l'hypothèse d'une
+Nous proposons donc dans cette partie l'emploi d'une méthode d'évaluation plus théorique qu'empirique pour cerner l'efficacité de notre approche. La méthode HTA consiste en une subdivision d'une tâche principale en plusieurs sous-tâches précises. Chaque sous-tâche peut à son tour être subdivisée jusqu'à ce que les sous-tâches atteignent un degré de précision suffisant pour qu'il soit possible de donner une approximation du temps d'exécution qu'elle nécessite pour être accomplies.
+
+C'est une méthode très usitée par les ergonomistes qui la dédient à plusieurs fins dont l'optimisation de tâches, la conception d'interfaces, etc.
+
+
+L'arbre de tâche HTA présenté ci-dessous décrit la manière de répondre à une tâche courante de visualisation moléculaire, la recherche d'un ligand au sein d'un complexe moléculaire. Nous utiliserons l'exemple de la liaison du bromoforme avec GLIC pour illustrer cet exemple. Ce modèle, extrait grâce aux experts du domaine, donne une subdivision progressive de la tâche énoncée. Les subdivisions les plus externes pouvant finalement être évaluées d'un point de vue temporel. Nous comparons ici des conditions de navigation libres avec des conditions de navigation guidée utilisant les paradigmes expliqués précédemment. Nous ferons l'hypothèse d'une situation initiale identique dans le même logiciel de visualisation moléculaire pour les deux conditions évaluées.
 \\
 \\
 \begin{tikzpicture}
@@ -267,16 +273,46 @@ L'arbre de tâche HTA est présenté ci-dessous et décrit la manière de répon
 \tikzset{execute at begin node=\strut}
 \tikzset{every tree node/.style={anchor=base west}}
 \Tree 
- [.\node[draw, font=\tiny, align=center]{1. Trouver résidus impliqués \\dans la liaison au ligand \\sur l'ensemble des monomères};
+ [.\node[draw, font=\tiny, align=center]{1. Trouver ligand au sein\\ du complexe moléculaire};
     [.\node[draw, font=\tiny, align=center]{1.1. Situer ligand} ;
         [.\node[draw, font=\tiny, align=center](start){1.1.1. Sélectionner ligand \\env. 2 sec}; ]
         [.\node[draw, font=\tiny, align=center]{1.1.2. Déplacer camera vers ligand \\env. 10 sec}; ] ]
-    [.\node[draw, font=\tiny, align=center]{1.2. Identifier résidus} ;
-        [.\node[draw, font=\tiny, align=center]{1.2.1. Calculer distance entre résidus et ligand \\env. 10 sec}; ]
-        [.\node[draw, font=\tiny, align=center]{1.2.2. Lister résidus a moins de 2A \\env. 2 sec}; ] ]
-    [.\node[draw, font=\tiny, align=center]{1.3. Identifier prochain monomère};
-    	[.\node[draw, font=\tiny, align=center]{1.3.1. Retour vue d'ensemble \\env. 4 sec}; ]
-    	[.\node[draw, font=\tiny, align=center](end){1.3.2. Identifier monomère cible \\env. 4 sec}; ] ] 
+ ] 
+    \\           
+\end{tikzpicture}
+\\
+\\
+\begin{tikzpicture}
+\tikzset{grow'=right,level distance=150pt}
+\tikzset{execute at begin node=\strut}
+\tikzset{every tree node/.style={anchor=base west}}
+\Tree 
+ [.\node[draw, font=\tiny, align=center]{1. Trouver ligand au sein\\ du complexe moléculaire};
+    [.\node[draw, font=\tiny, align=center]{1.1. Situer ligand} ;
+        [.\node[draw, font=\tiny, align=center]{1.1.1. Sélectionner ligand et\\ distance de la caméra \\env. 3 sec}; ]
+        [.\node[draw, font=\tiny, align=center]{1.1.2. Calcul optimal du\\ point de vue \\ env. 2 sec}; ] ]
+ ] \\           
+\end{tikzpicture}
+\\
+
+Cette première tâche peut être considérée comme simple et ne comporte après sa décomposition en sous-divisions que deux étapes. Tout d'abord la sélection du ligand pour le mettre en avant au sein de la scène moléculaire puis le déplacement de la caméra pour une vision rapprochée sur sa position et son environnement proche. Alors que cette tâche prendre environ 12 secondes lors d'une session de navigation sans contraintes, elle est réduite à 4 secondes avec les paradigmes de navigation mis à disposition. L'algorithme de point de vue optimal est particulièrement utile ici puisqu'il permet, grâce à la sélection du ligand et une distance de caméra émise par l'utilisateur, de calculer automatiquement le meilleur point de vue sur le ligand ainsi que le chemin optimal pour y accéder.
+
+Nous avons identifié une seconde tâche métier type, dans la continuité de la première, et consistant à identifier, au sein d'un complexe protéique multimérique composé de 5 monomères, les différents acides aminés impliqués dans la liaison avec le ligand identifier précédemment. Cette identification des résidus en contact avec le ligand devra être effectuée pour chaque monomère du complexe. Cette tâche est divisible en deux étapes principales: L'identification des résidus en interaction et l'accès au monomère suivant. Suivant les conditions d'expérience initiales, la subdivision de chacune de ces deux étapes est différente et décrite dans les deux arbres hiérarchiques suivants. On obtient un temps d’exécution pour cette tâche plus élevé dans les conditions normales (environ 2 min 12 s) que dans les conditions intégrant nos paradigmes de navigation (environ 1 min 8 s). L'accès à la cible (ici le ligand) et la recherche du monomère suivant sont les deux étapes cruciales où les paradigmes de navigation permettent un gain de temps substantiel. De façon moins tangible car difficilement mesurable, nos paradigmes permettent également d'assurer une vision sans occultations de la zone cible et donc pourrait être considéré comme facilitant l'étape 2.2.
+\\
+\\
+\begin{tikzpicture}
+\tikzset{grow'=right,level distance=120pt}
+\tikzset{execute at begin node=\strut}
+\tikzset{every tree node/.style={anchor=base west}}
+\Tree 
+ [.\node[draw, font=\tiny, align=center]{2. Trouver résidus impliqués \\dans la liaison au ligand \\sur l'ensemble des monomères};
+    [.\node[draw, font=\tiny, align=center]{2.2. Identifier résidus} ;
+        [.\node[draw, font=\tiny, align=center](start){2.2.1. Calculer distance entre résidus et ligand \\env. 10 sec}; ]
+        [.\node[draw, font=\tiny, align=center]{2.2.2. Lister résidus a moins de 2A \\env. 2 sec}; ] ]
+    [.\node[draw, font=\tiny, align=center]{2.3. Identifier prochain résidu};
+    	[.\node[draw, font=\tiny, align=center]{2.3.1. Retour vue d'ensemble \\env. 4 sec}; ]
+    	[.\node[draw, font=\tiny, align=center]{2.3.2. Identifier monomère cible \\env. 4 sec}; ] 
+    	[.\node[draw, font=\tiny, align=center](end){2.3.3. Déplacer caméra sur ligand \\env. 10 sec}; ] ] 
     ] 
  \draw[semithick,->] (end)..controls +(east:5) and +(east:5)..(start);
     \\           
@@ -288,19 +324,17 @@ L'arbre de tâche HTA est présenté ci-dessous et décrit la manière de répon
 \tikzset{execute at begin node=\strut}
 \tikzset{every tree node/.style={anchor=base west}}
 \Tree 
- [.\node[draw, font=\tiny, align=center]{1. Trouver résidus impliques \\dans la liaison au ligand \\sur l'ensemble des monomeres};
-    [.\node[draw, font=\tiny, align=center]{1.1. Situer ligand} ;
-        [.\node[draw, font=\tiny, align=center]{1.1.1. Sélectionner ligand \\ env. 2 sec}; ]
-        [.\node[draw, font=\tiny, align=center]{1.1.2. Calcul optimal du\\ point de vue \\ env. 2 sec}; ] ]
-    [.\node[draw, font=\tiny, align=center]{1.2. Identifier résidus} ;
-        [.\node[draw, font=\tiny, align=center]{1.2.1. Calculer distance entre \\résidus et ligand \\ env. 10 sec}; ]
-        [.\node[draw, font=\tiny, align=center]{1.2.2. Lister résidus à moins de 2A \\ env. 2 sec}; ] ]
-    [.\node[draw, font=\tiny, align=center]{1.3. Identifier prochain monomère};
-    	[.\node[draw, font=\tiny, align=center]{1.3.1. Activer la translation automatique \\ vers prochain monomère \\ env. 2 sec}; ] ] ] \\           
+ [.\node[draw, font=\tiny, align=center]{2. Trouver résidus impliques \\dans la liaison au ligand \\sur l'ensemble des monomeres};
+    [.\node[draw, font=\tiny, align=center]{2.2. Identifier résidus} ;
+        [.\node[draw, font=\tiny, align=center](start){2.2.1. Calculer distance entre \\résidus et ligand \\ env. 10 sec}; ]
+        [.\node[draw, font=\tiny, align=center]{2.2.2. Lister résidus à moins de 2A \\ env. 2 sec}; ] ]
+    [.\node[draw, font=\tiny, align=center]{2.3. Identifier prochain monomère};
+    	[.\node[draw, font=\tiny, align=center](end){2.3.1. Activer la translation automatique \\ vers prochain monomère \\ env. 2 sec}; ] ] 
+ ] 
+\draw[semithick,->] (end)..controls +(east:5) and +(east:5)..(start);
+    	\\           
 \end{tikzpicture}
 \\
-
-Nous avons identifié une tâche métier type consistant à identifier, au sein d'un complexe protéique multimérique composé de 5 monomères, les différents acides aminés impliqués dans la liaison avec un ligand particulier pour chaque monomère du complexe. Nous utiliserons l'exemple de la liaison du bromoforme avec GLIC pour illustrer cet exemple. Cette tâche est divisable en trois étapes principales: Recherche du ligand dans un monomère, l'identification des résidus en interaction, accès au monomère suivant. Suivant les conditions d'expérience initiales, la subdivision de chacune de ces trois étapes est différente et décrite dans les deux arbres hiérarchiques précédents. On obtient un temps d’exécution pour cette tâche plus élevé dans les conditions normales (environ 2 min 32 s) que dans les conditions intégrant nos paradigmes de navigation (environ 1 min 28 s). L'accès à la cible (ici le ligand) et la recherche du monomère suivant sont les deux étapes cruciales où les paradigmes de navigation permettent un gain de temps substantiel. De façon moins tangible car difficilement mesurable, nos paradigmes permettent également d'assurer une vision claire de la zone cible et donc pourrait être considéré comme facilitant l'étape 1.3.
 
 \subsection{Conclusion}
 
