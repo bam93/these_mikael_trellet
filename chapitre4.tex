@@ -19,7 +19,8 @@ Nous avons vu qu'au sein du processus d'étude de structures moléculaire, ces d
 Nous avons décrit les différentes facettes de la visualisation, moyen de compréhension, communication et création de nouvelles connaissances.
 La navigation guidée par le contenu et la tâche présentée dans le chapitre précédent constitue une solution à la gestion de la complexité des structures moléculaire de grande taille au sein de cette de visualisation. Mais si elle offre la possibilité d'explorer de façon immersive des contenus moléculaires important, elle ne permet par contre pas de réduire leur complexité. La problématique de la complexité des données manipulées et échangées entre les différentes étapes du processus reste donc intacte.
 
-Cette complexité peut être abordée par l'intermédiaire du traitement analytique prenant place au coeur de la simulation moléculaire. Plus grande génératrice de nouvelles données, l'étape de simulation est également la principale pourvoyeuse de données brutes à interpréter et analyser et est donc en grande partie responsable de la surcharge de données du processus de biologie structurale.
+Cette complexité est également présente au sein du traitement analytique de la simulation moléculaire. La simulation est la principale génératrice de nouvelles données brutes à interpréter et analyser et est donc en grande partie responsable de la surcharge de données du processus de biologie structurale. Cependant l'analyse joue également un rôle central dans la génération de connaissances, souvent sous forme de valeurs brutes venant complémenter et expliquer les données de la simulation.
+L'analyse constitue donc un autre goulot d'étranglement pour le flux de données.
 
 \section{Analyse post-simulation moléculaire}
 
@@ -451,5 +452,12 @@ Nous avons évoqué la présence de librairies ou plateformes implémentant les 
   \item \textbf{jOWL}\footnote{\url{http://jowl.ontologyonline.org/}} est une librairie jQuery permettant de naviguer et de visualiser des documents OWL-RDFS au sein d'un environnement JavaScript et donc pouvant être intégré au sein de pages web.
 \end{itemize}
 
+\section{Conclusion}
+
+La description du domaine du Visual Analytics a mis en avant la nécessité de lier les données afin de permettre leur manipulation au sein de techniques qu'elle introduit. Ces données sont cependant hétérogènes dans le cadre du processus d'étude de structures moléculaires puisqu'elles sont à la fois de nature structurelle et de nature analytique. Des informations 3d (distance au ligand, poches de liaisons, etc.) doivent donc être partagées avec des informations 2d (énergie potentielle, charge, etc.). Pour les regrouper au sein d'un même cadre descriptif, il est alors nécessaire de mettre en place un vocabulaire commun permettant de représenter l'ensemble des connaissances métier.
+
+Parmi les formalises à notre disposition pour cette représentation, la logique de description présente l'approche la plus en adéquation avec nos prérequis. Elle introduit la notion d'ontologie, utilisée par différents domaines d'application, en particulier biologiques, pour mettre en place une description des données utilisées et permettre leur réutilisation, comparaison et enrichissement autour d'un vocabulaire précis et formalisé dans l'ontologie.
+
+Les ontologies constituent la première pierre de la représentation des connaissances du web sémantique. Initiative présente dans de plus en plus d'institutions du web, nous avons choisi d'utiliser les outils et modèles du web sémantique comme base de développement pour la description d'une plateforme cherchant à rassembler au sein d'une même représentation haut-niveau des concepts hétérogènes comme ceux mis en jeu au sein de la visualisation et de l'analyse de simulations moléculaires. Notre plateforme devra s'appuyer sur une représentation complète du contenu, contexte et de la tâche afin de permettre la liaison des données et leur utilisation coordonnée.
 
 %%%%%%%%%%%%%%%%%%%%% FIN INTRO FROM CHAP.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
