@@ -5,77 +5,16 @@
 \minitoc
 \cleardoublepage
 
-% \bibliography{/Users/trellet/Documents/Manuscript_these/these}
-%% Commentaire : la commande \texorpdfstring permet de déclarer un titre de
-%% chapitre (ou section, sous-section) alternatif en texte seul, si besoin, qui
-%% est utilisé par hyperref pour fabriquer un menu dans les fichiers compilés
 
-%\chapter{\texorpdfstring{Contrôle gestuel de l'articulation}{Contrôle gestuel de l'articulation}}
-%% Commentaire : la commande \texorpdfstring permet de déclarer un titre de
-%% chapitre (ou section, sous-section) alternatif en texte seul, si besoin, qui
-%% est utilisé par hyperref pour fabriquer un menu dans les fichiers compilés
+La définition du Visual Analytics nous a permis dans le chapitre précédent de mettre en évidence le besoin d'une homogénéisation des parties visuelles et analytiques au sein d'un même espace avant de pouvoir mettre en place des techniques de visualisation avancées. Ces techniques doivent permettre le traitement simultané des informations hétérogènes que constituent les modèles 3d et les valeurs d'analyses associées.
 
-%Exemple de notation qui sera reprise dans l'index : soit $\Q$\index{Q@$\Q$} le corps des nombres rationnels.
-
-% % Intro Visu Analytics
-% \subsection{Visualisation analytique}
-
-% L'association étroite entre la visualisation d'informations scientifiques et les analyses associées, dans un même espace et simultanément, met en avant des techniques de visualisation connues et souvent définies en visualisation analytique. Cette discipline récente a en effet pour but de faciliter l'analyse visuelle de données complexes et/ou scientifiques et se définie par le "raisonnement analytique au travers d'interfaces visuelles interactives" \cite{cook_illuminating_2005}. Elle se place à la frontière de nombreux domaines de visualisation, d'interaction ou de perception afin de mettre en avant des informations qui n'auraient pu apparaître lors de l'utilisation cloisonnée des différents domaines mis en jeu. La visualisation analytique s'appuie sur des méthodes de visualisation simples et compréhensibles par l'être humain auxquelles elle ajoute une dimension interactive afin de les relier entre elles. Elle s'inspire donc par plusieurs niveaux aux études d'interactions homme-machine dont la réalité virtuelle s'inspire également \cite{arias-hernandez_visual_2011}. Son principal but est de mettre l'être humain au centre d'une boucle de décision qui sera facilitée par la mise en relation de données de différentes natures et de différentes sources. Ce contexte de travail généré par la visualisation analytique doit être cohérent pour le chercheur. C'est à ce niveau que le domaine de la perception et des études cognitives interviennent afin d'assurer une pleine compréhension et utilisation de l'espace de travail.
-
-% \begin{figure}
-%   \centering
-%   {\includegraphics[width=.75\linewidth]{./figures/ch4/ch4_structural_biology_process}}
-%     \caption{{\it Processus séquentiel standard de l'étude d'un système moléculaire en biologie structurale.}}
-%   \label{Fig:schema_seq_bio_struct}
-%   \hspace{0.3cm}
-% \end{figure}
-
-% \begin{figure}
-%   \centering
-%   {\includegraphics[width=.75\linewidth]{./figures/ch4/ch4_structural_biology_optim.pdf}}
-%     \caption{{\it Processus séquentiel optimisé pour l'étude d'un système moléculaire en biologie structurale.}}
-%   \label{Fig:schema_seq_bio_optim}
-%   \hspace{0.3cm}
-% \end{figure}
-
-% La visualisation analytique vise donc à combiner la visualisation de données passées en entrée et leurs analyses afin de créer de nouvelles connaissances qui pourront elles-mêmes être utilisées par la suite en entrée de la boucle. Ce processus, expliqué par Keim et al. \cite{keim2010mastering}, forme ainsi une boucle d'analyse fermée qui vient raccourcir considérablement la boucle habituelle présentée dans la figure X. Une nouvelle représentation de cette boucle intégrant la visualisation analytique peut être observée dans la figure Y.
-
-% % Intro sémantique / données liées
-% \subsection{Représentation des connaissances}
-
-%\section{Introduction}
-
-Nous avons vu dans le chapitre 1 que dans le schéma standard de l'étude d'un phénomène biologique à l'échelle atomique, la mise en place d'hypothèses de travail se fait suite à l'analyse standardisée d'une simulation moléculaire. Cette simulation, dans le meilleur des cas, aura mis en avant plusieurs pistes de réflexion provenant de changements structuraux ou énergétiques du complexe moléculaire d'intérêt. \commentaire{MB: pas d'accord avec la phrase suivante; il faut etre plus subtil; une seule simu apporte rarement une information suffisamment claire/tranchee pour emettre avec confiance une hypothese, mais un ensemble de simulations, parfois variant progressivement des parametres, peut-etre souvent necessaire..} Cependant, la majorité des simulations amènent que peu d'informations utilisables pour émettre de nouvelles hypothèse et seule une suite de simulations dont les paramètres ont évolué progressivement permet de dégager un résultat significatif. La simulation et son analyse sont donc deux des quatre tâches identifiées dans la boucle séquentielle de la biologie structurale que nous avons exposé en introduction. La succession de simulation->analyse->nouveau besoin (échantillonnage, réplique, changement de paramètres..)->simulation->analyse... est un processus long et coûteux. Tant en terme de quantité de données à traiter qu'en terme de temps de traitement et de communication des données. Notre approche vise à raccourcir ce processus itératif en combinant simulation et analyses afin de:
-\begin{enumerate}
-    \item Identifier et reconnaître les acteurs biologiques importants d'une simulation de façon rapide mais complète
-    \item Réduire la quantité de données générée afin de ne garder que la partie pertinente pour les hypothèses
-    \item Apporter à l'utilisateur les outils de décision adaptés en lui fournissant les liens logiques entre ses données
-    \item Orienter la simulation vers des paramètres plus pertinents suivant les décisions de l'utilisateur
-\end{enumerate}
-
-Notre but est de placer l'utilisateur au centre d'une boucle de décision dont les deux principaux fournisseurs de données seraient les changements structuraux induits par la simulation et les analyses physico-chimiques et statistiques associées. Ces deux moteurs seraient directement dirigés et manipulés par l'utilisateur suivant les hypothèses et les conclusions qu'il tirerait des données résultantes de leur combinaison.
-
-Ce raccourcissement du processus d'étude d'une protéine est aussi motivé par l'espace de travail que l'on lui dédie. En effet, la réalité virtuelle doit par nature se défaire du carcan clavier/souris et mettre en jeu des techniques d'interaction directes plus naturelles. Le nombre brut de commandes possibles pour interagir avec l'environnement est réduit comparé aux possibilités qu'offrent des conditions de bureau standards. L'ensemble des actions impliquant l'utilisation d'une souris ou d'un clavier (ou une combinaison des deux) ne peut être géré dans sa totalité par un mécanisme d'interaction associé à un périphérique adapté à l'immersion, à des commandes gestuelles ou vocales. \commentaire{MB: la prochaine phrase est a revoire/simplifier/splitter} La combinaison de la richesse des données à analyser et du nombre important de contrôles propre à la visualisation moléculaire où les possibilités de rendus et de manipulation des objets sont très nombreuses empêchent la mise en place en RV d'une structure logicielle copiant la structure des solutions standards pouvant exister. Il est nécessaire, en parallèle de la mutualisation des activités de visualisation et d'analyse, de mutualiser également les actions de contrôle afin de réduire le nombre d'étapes d'interaction que l'utilisateur devra effectuer pour arriver à un résultat. En plus de l'apport en simplicité, cette mutualisation permet de s'affranchir d'un maximum de dispositifs d'interaction qui viendraient réduire l'immersion pour l'utilisateur. De nombreuses recherches en interaction homme-machine ont tenté de répondre à cette problématique et plusieurs solutions matérielles et logicielles existent afin de prendre en compte des signaux naturels (mouvements ou voix par exemple) en entrée afin de permettre la mise en place d'actions, même complexes.
-
-Lorsqu'on se concentre sur un domaine d'étude en particulier, cette mutualisation est d'autant plus facile que certaines actions sont communes et peuvent donc être définies dans leur totalité à partir d'un minimum d'éléments en entrée. En effet, la connaissance d'un domaine doit permettre de prédire et de fournir des outils dont l'utilisateur aura besoin suivant l'étape du processus dans laquelle il se trouve et ses actions au sein de celle-ci. Comme nous venons de l'énoncer, cela ne peut se faire qu'à travers une excellente connaissance du métier et du domaine. Notre étude nous a donc mené à nous interroger sur la possibilité de formaliser les concepts qui sont utilisés dans le processus d'étude d'une molécule afin de permettre leur utilisation.
-
-Parmi les différentes techniques de visualisation analytique citées dans la section \ref{visu_ana_tools}, celle du Focus+Context, et plus spécifiquement de la technique du \textit{brush-and-link}, est un candidat pertinent pour mettre en avant des informations supplémentaires obtenues à partir des analyses indépendantes effectuées sur une simulation. En biologie structurale, les résultats d'analyse peuvent souvent être représentés au travers de nuages de points, d'histogrammes ou de diagrammes à bandes. Ces représentations s'adaptent particulièrement bien à la technique du \textit{brush-and-link} puisque la sélection de sous-ensembles y est aisée. De plus, la perspective d'une fenêtre dynamique regroupant le contexte global et les détails dans un même ensemble est particulièrement adapté à un environnement immersif. En effet, l'immersion peut être considérablement impactée, et ce de façon négative, lors du partage spatial du dispositif immersif en plusieurs contextes de travail.
-Du point de vue de la visualisation, le but est d'être capable de sélectionner un sous-ensemble structural d'un complexe moléculaire afin de mettre en avant les informations correspondant à ce sous-ensemble dans l'espace d'analyses. Par exemple, et comme illustré dans la Figure \ref{Fig:bilateral_selection}, la sélection d'un ou plusieurs modèles de la trajectoire aura pour conséquence de mettre en avant cette sélection au sein de la structure et de mettre en avant le sous-ensemble, si existant, dans les graphiques d'analyse. Chaque point des graphiques est relié à un niveau hiérarchique structural précis (modèle/chaîne/résidu/atome) et une action sur un ensemble de points aura pour effet d’entraîner une action sur le niveau structural correspondant. 
-% Cela ne peut se faire que si des liens existent entre les données structurales 3D et les données analytiques. Il doit exister une correspondance étroite et bilatérales entre les éléments présentés dans le rendu visuel de la structure 3D (atomes, résidus, chaînes, protéines,...) et dans le rendu visuel des analyses (points, barres, surfaces,...) afin de permettre une synchronisation des actions entre les deux espaces de rendus.
-Ces outils ne sont pas suffisant à eux seuls pour répondre à notre problématique. En effet, l'idée principale de notre approche vise à mettre en place une plateforme logicielle souple et générique afin de prendre en compte un nombre important de données hétérogènes en entrée sans nécessité de nouveaux développements pour assurer son fonctionnement. Cette généricité doit passer par une certaine automatisation des étapes de liaison entre les données hétéroclites que peuvent être des données dédiées à la visualisation 3D et des données provenant d'analyses ou de propriétés physico-chimiques.
-
-\begin{figure}
-  \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch4/ch4_visu2d_visu3d_link}}
-    \caption{\commentaire{MB: cette illustration est fictive me semble-t-il est pas un cas reel; je propose de l'indiquer clairement (par ex: illustration fictive du lien..)}
-    \it Illustration du lien entre des diagrammes de dispersion présentant deux résultats d'analyses et un visualiseur 3d. Une sélection d'individus dans les diagrammes entraîne une coloration et une mise en avant de la représentation 3d de ces mêmes individus.}
-  \label{Fig:bilateral_selection}
-  \hspace{0.3cm}
-\end{figure}
+Le web sémantique fut choisi comme base de développement et sa description théorique dans le chapitre précédent doit maintenant faire place à son application dans notre processus d'étude.
 
 \section{Sémantique et données liées}
 
-Parmi les solutions possibles, une première pourrait être de mettre en place un suivi strict des données en assignant des identifiants uniques aux données représentant les mêmes concepts afin de garder une cohérence complète entre chaque élément affiché dans l'espace de visualisation et chaque élément de l'espace d'analyse. L'un des problèmes de cette solution se trouve dans la possibilité pour les espaces d'évoluer rapidement et demande donc ainsi une évolution constante du pool \commentaire{MB: pool en francais?} d'identifiants. De plus, aucune information quant à la structure du complexe moléculaire ne serait extractible de ces identifiants, une gestion spécifique cherchant à maintenir la cohérence entre les identifiants du premier espace et les identifiants du second devrait ainsi être mise en place en parallèle.
+% Parmi les solutions possibles, une première pourrait être de mettre en place un suivi strict des données en assignant des identifiants uniques aux données représentant les mêmes concepts afin de garder une cohérence complète entre chaque élément affiché dans l'espace de visualisation et chaque élément de l'espace d'analyse. L'un des problèmes de cette solution se trouve dans la possibilité pour les espaces d'évoluer rapidement et demande donc ainsi une évolution constante du pool \commentaire{MB: pool en francais?} d'identifiants. 
+
+De plus, aucune information quant à la structure du complexe moléculaire ne serait extractible de ces identifiants, une gestion spécifique cherchant à maintenir la cohérence entre les identifiants du premier espace et les identifiants du second devrait ainsi être mise en place en parallèle.
 Une seconde solution est de donner au programme une couche d'abstraction supplémentaire via une définition ontologique des concepts manipulés afin de lui permettre de savoir quel concept est concerné par une éventuelle action (sélection, mise en avant, mise en arrière-plan, ...). Chaque élément avec lequel interagit l'utilisateur correspond à un individu unique dont la nature ou l'une de ses propriétés est mise en avant, soit à travers une représentation visuelle, soit à travers une représentation analytique. Chaque interaction avec cet individu déclenchera un résultat dans tous les espaces affichant au moins une de ses propriétés.
 Il est nécessaire de mettre en place un vocabulaire générique que manipulera la plateforme et que l'utilisateur aura simplement à remplir avec ses données spécifiques afin de former une base de données permanente décrivant son système. 
 Les concepts mis en jeu au sein de la plateforme doivent être correctement définis pour que l'utilisateur sache comment enrichir la base de données qui sera prise en entrée par les modules et afin que les données puissent être liées entre elles de façon optimale. La mise en place d'une ontologie permet que ces deux prérequis soient respectés. Le web sémantique tend à lier et structurer les données de façon à faciliter l'accès aux connaissances qu'elles contiennent. C'est également le but de notre étude et il semble adapté de reprendre les principes de cette approche afin de mettre en place la structure de notre base de données. Plusieurs avantages qu'offre la mise en place de données liées et d'une ontologie définissant les concepts étudiées peuvent être énumérés:
@@ -90,24 +29,25 @@ Les concepts mis en jeu au sein de la plateforme doivent être correctement déf
 
 Nous avons choisi comme support de représentation des données manipulées au sein de notre plateforme, la structure provenant du Web Sémantique basé sur le modèle RDF. L'avantage du langage RDF est sa possibilité d'être étendu et structuré grâce à une couche ontologique appelée \textit{Web Ontology Language} (OWL) qui reprend les critères standards des ontologies existantes et qui est le support de nombreuses ontologies recensées dans les portails officiels de bio-ontologies largement utilisées dans la communauté scientifique \cite{smith_obo_2007}. Le modèle RDF a également l'avantage de se baser sur une approche de logique de description permettant d'étendre les connaissances d'une base de données via des relations logiques définies dans l'ontologie sans que ces relations factuelles soient explicitement présentes dans la base de données.
 
-\begin{figure}
-  \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch4/ch4_ontology.pdf}}
-    \caption{\it Extrait de l'ontologie OWL créée pour la mise en place de notre représentation sémantique de la plateforme logicielle. Visualisation obtenue avec OWLGrEd \cite{barzdins2010owlgred}}
-  \label{Fig:extract_OWL_ontology}
-  \hspace{0.3cm}
-\end{figure}
+% \begin{figure}
+%   \centering
+%   {\includegraphics[width=.75\linewidth]{./figures/ch4/ch4_ontology.pdf}}
+%     \caption{\it }
+%   \label{Fig:extract_OWL_ontology}
+%   \hspace{0.3cm}
+% \end{figure}
 
 \subsection{Ontologie OWL pour la modélisation des concepts de biologie structurale}
 
 Comme le montre la Figure \ref{Fig:ontology}, nous avons essayé de définir de façon complète l'ensemble des concepts que l'utilisateur aurait à manipuler lors de ses activités de visualisation et d'analyses synchronisées. 
 Nous l'avons vu auparavant, plusieurs bio-ontologies ont été mises en place ces dernières années. Afin d'avoir une description la plus précise qui soit des concepts biologiques mis en jeu, nous nous sommes appuyés sur une ontologie déjà existante et disponible en ligne décrivant de façon complète les acides aminés et leurs propriétés \footnote{\url{http://bioportal.bioontology.org/ontologies/AMINO-ACID}}. Cette ontologie nous a permis de poser les bases biologiques d'un des principaux concepts de biologie structurale. En rassemblant des informations telles que la taille, l'hydrophobicité ou bien la charge de chaque acide-aminé il est ainsi possible d'extraire rapidement des groupes d'acides aminés possédant les mêmes propriétés et ainsi utiliser ces propriétés pour des raisonnements complexes lors de l'interrogation de la base de données. Parmi les nombreuses autres bio-ontologies disponibles, aucune d'entre-elles parvenait à définir aussi simplement que nous le désirions les autres concepts dont nous avions besoin. Leur complexité souvent beaucoup trop importante aurait rapidement surchargé notre ontologie. Nous avons donc créer notre propre définition de ces concepts et ainsi éviter un surplus considérable de concepts/propriétés inutilisés provenant d'ontologies trop précises. Il est cependant important de noter qu'une extension de notre ontologie est possible et même encouragée. Cette extension pourrait par exemple compléter et étoffer certaines propriétés biologiques intéressantes pour des études précises.
+
 En plus des concepts biologiques cités précédemment, nous avons également cherché à définir tous les concepts d'analyses et d'action qui seront en jeu lors de la session d'utilisation de notre plateforme. Les actions rassemblent toutes les actions que l'utilisateur pourrait vouloir effectuer avec les données qu'il manipule, de façon directe ou indirecte. Elles reprennent essentiellement les commandes permises par les logiciels de visualisation moléculaire et les outils d'analyse que nous utilisons. Dans les concepts analytiques sont rassemblés les éléments graphiques ou abstraits qui rentrent en jeu dans la création et la visualisation d'un résultat d'analyse. Nous ne définissons pas, volontairement, les processus d'analyse eux-mêmes car ceux-ci peuvent être de natures très différentes et possèdent un champ de définition bien trop large et complexe pour le sujet de cette thèse. De plus, nous séparons volontairement la visualisation des résultats d'analyses des processus/modules d'analyses. Cela ne signifie pas que certains processus d'analyses ne seront pas utiliser au sein de la plateforme logicielle, il n'est simplement pas pertinent de les ajouter à l'ontologie dans le but d'uniformiser les rendus 3D et d'analyses.
 
 \begin{figure}
   \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch4/ontology}}
-    \caption{\it Sous-partie de la représentation sous forme de graphe de l'ontologie créée dans le cadre de notre étude. Les cadres jaunes désignent les classes dont les liens de type (est-un) sont représentés par des flèches orientées. La complexité d'une telle représentation est telle qu'il est très difficile de regrouper dans un même espace l'ensemble des classes et des propriétés définies dans une ontologie complète.}
+  {\includegraphics[width=1.0\linewidth]{./figures/ch5/ontology}}
+    \caption{\it Extrait de l'ontologie OWL créée pour la mise en place de notre représentation sémantique de la plateforme logicielle. Visualisation obtenue avec OWLGrEd \cite{barzdins2010owlgred}}
   \label{Fig:ontology}
   \hspace{0.3cm}
 \end{figure}
