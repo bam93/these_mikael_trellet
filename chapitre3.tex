@@ -18,108 +18,6 @@ Ce phénomène, récurrent et connu en RV, a été l'objet de nombreuses études
 
 Nous détaillerons dans ce chapitre notre approche pour répondre à l'évolution des moyens de partager des informations de structure moléculaires dans le monde scientifique. Nous analyserons ensuite les méthodes de navigation dans des scènes écologiques pour identifier les progrès à réaliser dans les scènes de données abstraites. Finalement nous présenterons nos développements et apport pour répondre au besoin de paradigmes de navigation adaptés aux données moléculaires.
 
-\section{Les images stéréoscopiques au service de la visualisation moléculaire}
-
-Nous avons souligné dans le chapitre 2 l'importance que prenait la visualisation et la représentation de structures 3d de molécules pour la compréhension de leur fonctionnement. En plus de permettre d'appréhender leur rôle biologique, la visualisation moléculaire est également un excellent vecteur de communication dans le monde scientifique. Fort de ce constat, nous nous sommes intéressés aux améliorations possibles que nous pourrions apporter (1) aux méthodes de contrôle visuelles de simulation moléculaire distantes, (2) aux moyens de communication scientifique actuels qu'offre la visualisation moléculaire. Ces deux aspects de la visualisation moléculaire se concentrent exclusivement autour de l'échange de représentations graphiques générés par un certain nombre de logiciels experts comme PyMol, VMD ou YASARA pour ne citer qu'eux. Un rendu en deux dimensions d'une vue sur une partie ou l'ensemble d'une molécule permet, avec ou sans légendes appropriées, de rendre compte d'un phénomène ou d'une singularité structurelle précise. Si cette singularité est structurelle, elle est par définition 3d et pourrait donc être représentée de façon plus précise par un rendu 3d.
-
-\subsection{Rapprocher l'expert de sa simulation moléculaire}
-
-Une simulation moléculaires, consistant en une modélisation d'un complexe moléculaire de façon informatique, peut parfois s'étaler sur un laps de temps conséquents (plusieurs jours voire semaines pour les plus longues). Les ressources informatiques mobilisées sont importantes et une mauvaise paramétrisation de la simulation peut ainsi entraîner un perte de temps et de ressources. Des moyens de contrôles peuvent permettre de modifier d'éventuels mauvais paramètres ou de terminer une simulation avant son temps d'exécution total initialement prévu. Parmi ces moyens de contrôle, la visualisation de la structure du complexe moléculaire est une aide importante pour juger de l'état d'une simulation à un instant \textit{t}.
-Cette visualisation passe par la génération d'une photographie du complexe moléculaire au moyen de logiciels de rendu experts comme ceux cité dans la section \ref{visu_molecular}.
-
-Ces rendus sont cependant bien souvent 2d et peuvent manquer de précision pour cerner l'ensemble des enjeux de la simulation. L'ajout d'une dimension 3d à ces rendus, de façon simple et rapide peut permettre aux experts de prendre des décisions dans un laps de temps court. La possibilité de les communiquer dans le même esprit d'efficacité et de simplicité constitue également un avantage pour contrôler une simulation.
-
-\subsection{L'évolution des méthodes de communication du monde scientifique}
-
-Les moyens de communication scientifique se sont justement, en parallèle des moyens de communication standards, développés de façon importante sur les appareils mobiles type smartphone et tablettes. Les journaux physiques et papiers sont de plus en plus rares et la grande majorité des articles scientifiques sont numérisés et accessibles en ligne. Le format a quelque peu évolué et une publication d'un article scientifique, en ligne ou non, suit les mêmes standards de format, majoritairement PDF contenant du texte et des images 2d. Quelques évolutions notoires sont apparues afin d'enrichir les contenus et les rendre interactifs \cite{attwood2010utopia}. Les structures moléculaires peuvent retrouver une 3e dimension grâce à plusieurs méthodes \cite{kumar2008grasping,raush2009new} qui dépendant cependant de pré-requis logiciels minimums pour être complètement fonctionnels ou requièrent des programmes spécifiques (comme la version 3d améliorée d'Adobe Acrobat reader\footnote{\url{http://get.adobe.com/reader/}} ou les plugins spécifiques comme le navigateur ICM\footnote{\url{http://www.molsoft.com/icm_browser.html}}).
-
-En 1994, Green présenta le concept de <<stereoimages>> \cite{green_stereoimages_1994} pour les structures moléculaires. Basées sur la simple décomposition en deux vues, une pour l'oeil droit et une pour l'oeil gauche, de la représentation d'une molécule, elle permet d'avoir une perception 3d de la structure de façon simple et rapide. Nous avons mis à jour cette proposition à la lumière des nouvelles technologies désormais largement disponibles que sont les smartphones et les tablettes. Ces dispositifs mobiles offrent davantage de possibilités pour afficher du contenu scientifique et interagir avec lui facilement et de façon esthétique. Il semble ainsi qu'un décalage dans les habitudes de lecture d'articles scientifiques se fasse. Les éditeurs scientifiques ont d'ailleurs rapidement commencer à publier sur les périphériques mobiles: Cell Press\footnote{\url{http://www.cell.com/journalreader}}, ACS\footnote{\url{http://pubs.acs.org/page/tools/acsmobile/index.html}}, Nature Publishing\footnote{\url{http://www.nature.com/mobileapps}}, Science\footnote{\url{http://content.aaas.org/mobile}} ou PloS\footnote{\url{blogs.plos.org/everyone/2010/09/16/plos-reader-2-0/}} fournissent des application mobiles dédiées pour leurs publications. De la même manière, parmi les nombreuses applications mobiles dédiées à la procrastination, certaines se révèlent avoir une utilité scientifique significative \cite{powell_lab_2012}. On retrouve des applications de visualisation 3d de biomolécules, de visualisation 2d de petites molécules, des applications de calcul de masse molaire ou des applications informatives comme un tableau périodique. On retrouve communément parmi ces applications mobiles <<scientifiques>>, une simplicité et des qualités de graphismes modestes, principalement dues aux puissances graphiques matériellement limitées des périphériques mobiles. Cette limitation rend complexe le rendu 3d complet d'un complexe moléculaire de taille raisonnable sur ces périphériques.
-
-\subsection{DepthMol3d}
-
-Il est cependant possible d'utiliser la puissance graphique, même restreinte, des smartphones/tablettes pour créer une perception 3d améliorée de systèmes moléculaires. C'est le but du développement de notre application, DepthMol3d, basé sur le moteur de jeu Unity3D\footnote{\url{http://unity3d.com/}}. Cette approche offre de nombreuses opportunités pour la recherche, la communication, la discussion et le monde de l'éducation.
-
-Notre approche se place au plus près des techniques d'immersion cognitive qui cherche à jouer sur la réflexion des utilisateurs pour les immerger dans la scène virtuelle représentée. Les aspects 3d sont importants et la perception de l'objet jouera un rôle dans l'immersion mais elle sera naturellement limitée par le dispositif et l'absence de stimuli sensoriels autres que visuels. C'est donc la perception de profondeur, l'imagination de l'utilisateur et sa capacité de réflexion qui auront un rôle prépondérant pour son implication.
-
-\begin{figure}[h]
-\begin{subfigure}{.5\textwidth}
-  \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch3/depthmol3d_process_edit}}
-    \caption{}
-  \label{Fig:depthmol3d_process}
-  % \hspace{0.3cm}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch3/heightmap_texture_unity}}
-    \caption{}
-  \label{Fig:heightmap_texture_unity}
-  % \hspace{0.3cm}
-\end{subfigure}
-
-\caption{{\it (a) Schéma du fonctionnement de notre application mobile. La première étape consiste à générer une carte de profondeur et une capture d'image de la scène moléculaire que l'on souhaite visualiser. Les deux images sont ensuite combinées au sein de l'application pour créer une perception 3d de la scène initiale.
-(b) Le processus d'obtention d'un objet 3d à partir de 2 images. La première étape consiste à analyser la carte de profondeur pixel par pixel et de générer une surface aux dimensions identiques (à un facteur d'échelle près) dont la hauteur de chaque sommet sera corrélée avec le niveau de gris du pixel correspondant.}}
-\end{figure}
-
-\subsubsection{Ajouter la 3e dimension à une scène moléculaire}
-
-Notre approche se base sur l'utilisation d'images 2d, beaucoup plus légères que des modèles 3d et permettant un certain degré de personnalisation de la part des utilisateurs. Indépendante de logiciels experts de visualisation, notre application ne nécessite qu'un périphérique mobile pour fonctionner et expérimenter l'effet 3d. Un nombre important de visualiseurs moléculaires peuvent être utilisés pour générer du contenu, VMD, Chimera, PyMol ou Yasara peuvent par exemple être utilisés pour générer ces scènes.
-
-Deux images sont nécessaire pour parvenir à un effet 3d, une image de \textbf{texture} et une \textbf{carte de profondeur} (cf. Figure \ref{Fig:depthmol3d_process}). L'image de \textit{texture} est une capture simple de la scène 3d moléculaire alors que la \textit{carte de profondeur} ne possède elle que les informations de distance à l'écran pour l'image de texture. L'information de distance est codée grâce à un gradient de couleur grise. Ce gradient de gris correspond à la distance entre chaque point de la scène moléculaire 3d et l'écran. De ce fait, plus un objet est distant de la caméra (ou plus simplement de l'écran de la station de travail) et plus la couleur est sombre. Une fois que les deux images ont été générées, elles doivent être transférées sur le périphérique mobile où elles sont lues et traitées par notre application. Un navigateur de fichier intégré permet à l'utilisateur de trouver ses images et de les charger. 
-
-Le traitement effectué par l'application permet tout d'abord de créer un objet 3d à partir de la carte de profondeur, objet dont la surface sera ensuite colorée par la texture associée (\ref{Fig:heightmap_texture_unity}). Le niveau de gris de chaque pixel de la carte de profondeur est ainsi interprété en tant que hauteur et correspond à un sommet de la surface 3d générée. Lorsque tous les pixels de la carte de profondeur ont été traités, les sommets de la surface 3d sont reliés par des segments afin de créer des objets continus qui seront ensuite colorés par la texture.
-
-La scène 3d générée crée l'illusion d'une 3e dimension en ajoutant aux objets une impression d'espace et de profondeur qui s'étend loin derrière l'écran. Cela est rendu possible par les calculs permanents de la direction de vue basée sur l'orientation du périphérique, mesurée par un accéléromètre ou un gyroscope embarqués dans la majorité des périphériques mobiles d'aujourd'hui, amenant ainsi l'impression de regarder à l'intérieur d'une boîte qui s'étendrait derrière la surface d'écran de l'appareil.
-Il est possible d'utiliser jusque 4 images (2 fois deux images contenant une carte de profondeur et une texture associée) afin de créer des scènes plus complexes possédant un arrière-plan et un premier-plan. Cette possibilité permet l'ajout d'informations complémentaires qui ne sont généralement pas présent au sein des visualiseur moléculaire d'où les scènes virtuelles sont extraites.
-
-Plusieurs exemples sont fournis avec l'application et permettent à l'utilisateur d'appréhender les rendus 3d possibles et d'avoir une première prise en main des possibilités qu'offrent l'application. Les 5 exemples sont illustrés dans la Figure \ref{Fig:depthmol3d_exemple}.
-
-
-\begin{figure}[h]
-\begin{subfigure}{.5\textwidth}
-  \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch3/depthmol3d_exemple}}
-    \caption{}
-  \label{Fig:depthmol3d_exemple}
-  % \hspace{0.3cm}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch3/depthmol3d_screenshots}}
-    \caption{}
-  \label{Fig:depthmol3d_screenshots}
-  % \hspace{0.3cm}
-\end{subfigure}
-\caption{{\it (a) Scènes moléculaires proposées par défaut en exemple au sein de l'application.
-A. Visualisation d'une poche de liaison à la surface de GLIC (Ligand-Gated Ion Channel), une protéine transmembranaire responsable du passage des ions et des molécules d'eau à travers la membrane cellulaire. Scène extraite de VMD. B. Carte de basse résolution obtenue à partir de cryo-EM pour un filament d'actine. La position de la structure atomique dans l'enveloppe de basse résolution est en premier-plan alors que la carte électromagnétique est présentée en arrière-plan. Visualisation provenant de Chimera C. Couple verticale du modèle de la capside du virus Influenza A exposant la membrane externe et l'intérieur du virus. GraphiteLifeExplorer a été utilisé pour visualiser la coupure. D. Interaction entre une protéine SNARE et une membrane biologique lors d'une dynamique moléculaire (arrière-plan). Un graphe 3d rapportant le taux de courbure de la membrane est présenté en premier-plan. La surface 3d a été générée par Paraview (programme de visualisation scientifique) E. Scènes extraites d'un programme d'animation, MolecularMaya, dédié à la création de films scientifiques pour une audience large. Les scènes extraites mettent en avant deux virus au milieu de villosités à gauche et de multiples virus à droite.
-(b) Captures d'écran provenant de l'application DepthMol3D et mettant en avant le menu principal de l'application permettant de charger une image ou un objet 3d (en haut) et une scène 3d type représentant la surface d'une protéine avec les différentes options de paramétrisation (en bas).}}
-\end{figure}
-
-\subsubsection{Explorer des modèles 3d de molécules}
-
-Un deuxième mode de visualisation permet d'importer directement des fichiers d'objets 3d dans DepthMol3d. Avec ce type de données 3d, un seul fichier est nécessaire pour créer une perspective 3d complète de l'objet. Après importation, il est possible de manipuler l'objet, de le tourner, le déplacer en avant ou arrière. Cette visualisation se rapproche de ce qui peut se retrouver dans les visualiseurs moléculaires pour périphériques mobiles.
-Pour aller plus loin dans l'immersion, l'utilisateur aura également la possibilité de changer l'échelle de la molécule et de plonger à l'intérieur et d'activer une visualisation plus interactive.
-Il utilisera en effet son périphérique comme une fenêtre sur le monde virtuel et le manipulera en orientant le périphérique à la main et en l'utilisant comme une vue adaptative sur un monde virtuel présent tout autour de lui. Basés sur le gyroscope du périphérique, l'objet 3d est visualisable à 360 degrés mais à partir d'une position fixe. 
-
-Pour une étape supplémentaire vers une immersion plus importante, un rendu stéréoscopique peut être effectué au sein d'un support de casque, à la manière de ce que proposent de nombreux acteurs de la RV aujourd'hui n'ayant pas franchi le pas de la conception de casques de RV mais fournissant des supports pour l'utilisation de smartphones (voir section \ref{dispositifs_RV}). Dans cette configuration, un simple mouvement de tête permet de regarder une zone différente de la molécule (voir Figure \ref{Fig:molexplorer_screenshot}). Cette approche est rendue possible par un mode stéréoscopique \textit{side-by-side} intégré au sein de l'application. 
-
-\begin{figure}[h]
-  \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch3/molexplorer_screenshot.png}}
-    \caption{{\it Captures d'écran du mode d'exploration de modèles 3d au sein de l'application. La différence de point de vue entre les deux captures d'écran est le résultat d'une rotation du périphérique mobile tenu par l'utilisateur.}}
-  \label{Fig:molexplorer_screenshot}
-  \hspace{0.2cm}
-\end{figure}
-
-\subsubsection{Bilan}
-
-La préparation des images utilisées au sein de l'application est relativement simple et rapide, des tutoriels sont en plus préparés pour aider les utilisateur à effectuer les actions nécessaires. Notre approche est indépendante de la plateforme de visualisation et la majorité des visualiseurs moléculaires permettant de générer des rendus graphiques de structures permettent de générer les images demandées. Il est également possible d'utiliser des outils génériques tels que Povray\footnote{\url{www.povray.com}} ou Paraview\footnote{\url{www.paraview.org}}. La création de vues complexes est rendue possible grâce à la notion d'arrière-plan et de premier-plan permettant ainsi de mettre en valeur certains aspects d'une scène virtuelle où la seule structure ne serait pas assez illustrative d'un phénomène particulier.
-
-La performance de l'application permet son utilisation sur la plupart des smartphones et tablettes Android et iOS de moins de 5 ans et la quasi-intégralité des derniers smartphones/tablettes. DepthMol3D est gratuit et le code source est disponible à la demande.
-
-Les limitations de notre application résident tout d'abord dans la résolution des écrans des périphériques et leurs angles de vue, tout deux limités par rapport aux stations de travail ou aux ordinateurs portables à cause de leur taille. Les cartes de profondeur sont pour le moment limitées à des résolutions assez basses et peuvent faire apparaître des artefacts quand les détails de la scènes sont trop fins. La limitation de la résolution des cartes de profondeur considérées dans l'application est due à la limitation technique du moteur Unity3D qui ne peut gérer des objets 3d de plus de 65536 sommets. Ceci implique donc l'utilisation de cartes de profondeur de 255*255 pixels de résolution au maximum. Il n'existe par contre aucune limitation dans la résolution de la texture tant que celle-ci est aux mêmes dimensions que la carte de profondeur. L'utilisation d'images 2d ne permet pas un contrôle total de l'objet 3d généré et sa manipulation dans l'espace. Notre mode d'importation d'objets 3d permet de pallier en partie cette limitation mais la performance du rendu est moindre, tout autant que la facilité de création de nouvelles structures.
-
-
 \section{Navigation dans des scènes réalistes ou scientifiques}
 
 Nous avons vu dans le chapitre précédent (voir section \ref{navigation}) que la navigation dans des EV immersifs se caractérisait par la volonté d'étendre les capacités d'exploration de mondes virtuels en dépit des limites physiques imposées par les EV immersifs.
@@ -348,6 +246,107 @@ La généricité de notre approche peut également être soulignée par le nombr
 
 Des méthodes ergonomiques comme la HTA nous ont permis de mettre en évidence les apports en terme de performance et de simplification des processus de nos paradigmes de navigation. 
 
+
+\section{Les images stéréoscopiques au service de la visualisation moléculaire}
+
+Nous avons souligné dans le chapitre 2 l'importance que prenait la visualisation et la représentation de structures 3d de molécules pour la compréhension de leur fonctionnement. En plus de permettre d'appréhender leur rôle biologique, la visualisation moléculaire est également un excellent vecteur de communication dans le monde scientifique. Fort de ce constat, nous nous sommes intéressés aux améliorations possibles que nous pourrions apporter (1) aux méthodes de contrôle visuelles de simulation moléculaire distantes, (2) aux moyens de communication scientifique actuels qu'offre la visualisation moléculaire. Ces deux aspects de la visualisation moléculaire se concentrent exclusivement autour de l'échange de représentations graphiques générés par un certain nombre de logiciels experts comme PyMol, VMD ou YASARA pour ne citer qu'eux. Un rendu en deux dimensions d'une vue sur une partie ou l'ensemble d'une molécule permet, avec ou sans légendes appropriées, de rendre compte d'un phénomène ou d'une singularité structurelle précise. Si cette singularité est structurelle, elle est par définition 3d et pourrait donc être représentée de façon plus précise par un rendu 3d.
+
+\subsection{Rapprocher l'expert de sa simulation moléculaire}
+
+Une simulation moléculaires, consistant en une modélisation d'un complexe moléculaire de façon informatique, peut parfois s'étaler sur un laps de temps conséquents (plusieurs jours voire semaines pour les plus longues). Les ressources informatiques mobilisées sont importantes et une mauvaise paramétrisation de la simulation peut ainsi entraîner un perte de temps et de ressources. Des moyens de contrôles peuvent permettre de modifier d'éventuels mauvais paramètres ou de terminer une simulation avant son temps d'exécution total initialement prévu. Parmi ces moyens de contrôle, la visualisation de la structure du complexe moléculaire est une aide importante pour juger de l'état d'une simulation à un instant \textit{t}.
+Cette visualisation passe par la génération d'une photographie du complexe moléculaire au moyen de logiciels de rendu experts comme ceux cité dans la section \ref{visu_molecular}.
+
+Ces rendus sont cependant bien souvent 2d et peuvent manquer de précision pour cerner l'ensemble des enjeux de la simulation. L'ajout d'une dimension 3d à ces rendus, de façon simple et rapide peut permettre aux experts de prendre des décisions dans un laps de temps court. La possibilité de les communiquer dans le même esprit d'efficacité et de simplicité constitue également un avantage pour contrôler une simulation.
+
+\subsection{L'évolution des méthodes de communication du monde scientifique}
+
+Les moyens de communication scientifique se sont justement, en parallèle des moyens de communication standards, développés de façon importante sur les appareils mobiles type smartphone et tablettes. Les journaux physiques et papiers sont de plus en plus rares et la grande majorité des articles scientifiques sont numérisés et accessibles en ligne. Le format a quelque peu évolué et une publication d'un article scientifique, en ligne ou non, suit les mêmes standards de format, majoritairement PDF contenant du texte et des images 2d. Quelques évolutions notoires sont apparues afin d'enrichir les contenus et les rendre interactifs \cite{attwood2010utopia}. Les structures moléculaires peuvent retrouver une 3e dimension grâce à plusieurs méthodes \cite{kumar2008grasping,raush2009new} qui dépendant cependant de pré-requis logiciels minimums pour être complètement fonctionnels ou requièrent des programmes spécifiques (comme la version 3d améliorée d'Adobe Acrobat reader\footnote{\url{http://get.adobe.com/reader/}} ou les plugins spécifiques comme le navigateur ICM\footnote{\url{http://www.molsoft.com/icm_browser.html}}).
+
+En 1994, Green présenta le concept de <<stereoimages>> \cite{green_stereoimages_1994} pour les structures moléculaires. Basées sur la simple décomposition en deux vues, une pour l'oeil droit et une pour l'oeil gauche, de la représentation d'une molécule, elle permet d'avoir une perception 3d de la structure de façon simple et rapide. Nous avons mis à jour cette proposition à la lumière des nouvelles technologies désormais largement disponibles que sont les smartphones et les tablettes. Ces dispositifs mobiles offrent davantage de possibilités pour afficher du contenu scientifique et interagir avec lui facilement et de façon esthétique. Il semble ainsi qu'un décalage dans les habitudes de lecture d'articles scientifiques se fasse. Les éditeurs scientifiques ont d'ailleurs rapidement commencer à publier sur les périphériques mobiles: Cell Press\footnote{\url{http://www.cell.com/journalreader}}, ACS\footnote{\url{http://pubs.acs.org/page/tools/acsmobile/index.html}}, Nature Publishing\footnote{\url{http://www.nature.com/mobileapps}}, Science\footnote{\url{http://content.aaas.org/mobile}} ou PloS\footnote{\url{blogs.plos.org/everyone/2010/09/16/plos-reader-2-0/}} fournissent des application mobiles dédiées pour leurs publications. De la même manière, parmi les nombreuses applications mobiles dédiées à la procrastination, certaines se révèlent avoir une utilité scientifique significative \cite{powell_lab_2012}. On retrouve des applications de visualisation 3d de biomolécules, de visualisation 2d de petites molécules, des applications de calcul de masse molaire ou des applications informatives comme un tableau périodique. On retrouve communément parmi ces applications mobiles <<scientifiques>>, une simplicité et des qualités de graphismes modestes, principalement dues aux puissances graphiques matériellement limitées des périphériques mobiles. Cette limitation rend complexe le rendu 3d complet d'un complexe moléculaire de taille raisonnable sur ces périphériques.
+
+\subsection{DepthMol3d}
+
+Il est cependant possible d'utiliser la puissance graphique, même restreinte, des smartphones/tablettes pour créer une perception 3d améliorée de systèmes moléculaires. C'est le but du développement de notre application, DepthMol3d, basé sur le moteur de jeu Unity3D\footnote{\url{http://unity3d.com/}}. Cette approche offre de nombreuses opportunités pour la recherche, la communication, la discussion et le monde de l'éducation.
+
+Notre approche se place au plus près des techniques d'immersion cognitive qui cherche à jouer sur la réflexion des utilisateurs pour les immerger dans la scène virtuelle représentée. Les aspects 3d sont importants et la perception de l'objet jouera un rôle dans l'immersion mais elle sera naturellement limitée par le dispositif et l'absence de stimuli sensoriels autres que visuels. C'est donc la perception de profondeur, l'imagination de l'utilisateur et sa capacité de réflexion qui auront un rôle prépondérant pour son implication.
+
+\begin{figure}[h]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=.75\linewidth]{./figures/ch3/depthmol3d_process_edit}}
+    \caption{}
+  \label{Fig:depthmol3d_process}
+  % \hspace{0.3cm}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=.75\linewidth]{./figures/ch3/heightmap_texture_unity}}
+    \caption{}
+  \label{Fig:heightmap_texture_unity}
+  % \hspace{0.3cm}
+\end{subfigure}
+
+\caption{{\it (a) Schéma du fonctionnement de notre application mobile. La première étape consiste à générer une carte de profondeur et une capture d'image de la scène moléculaire que l'on souhaite visualiser. Les deux images sont ensuite combinées au sein de l'application pour créer une perception 3d de la scène initiale.
+(b) Le processus d'obtention d'un objet 3d à partir de 2 images. La première étape consiste à analyser la carte de profondeur pixel par pixel et de générer une surface aux dimensions identiques (à un facteur d'échelle près) dont la hauteur de chaque sommet sera corrélée avec le niveau de gris du pixel correspondant.}}
+\end{figure}
+
+\subsubsection{Ajouter la 3e dimension à une scène moléculaire}
+
+Notre approche se base sur l'utilisation d'images 2d, beaucoup plus légères que des modèles 3d et permettant un certain degré de personnalisation de la part des utilisateurs. Indépendante de logiciels experts de visualisation, notre application ne nécessite qu'un périphérique mobile pour fonctionner et expérimenter l'effet 3d. Un nombre important de visualiseurs moléculaires peuvent être utilisés pour générer du contenu, VMD, Chimera, PyMol ou Yasara peuvent par exemple être utilisés pour générer ces scènes.
+
+Deux images sont nécessaire pour parvenir à un effet 3d, une image de \textbf{texture} et une \textbf{carte de profondeur} (cf. Figure \ref{Fig:depthmol3d_process}). L'image de \textit{texture} est une capture simple de la scène 3d moléculaire alors que la \textit{carte de profondeur} ne possède elle que les informations de distance à l'écran pour l'image de texture. L'information de distance est codée grâce à un gradient de couleur grise. Ce gradient de gris correspond à la distance entre chaque point de la scène moléculaire 3d et l'écran. De ce fait, plus un objet est distant de la caméra (ou plus simplement de l'écran de la station de travail) et plus la couleur est sombre. Une fois que les deux images ont été générées, elles doivent être transférées sur le périphérique mobile où elles sont lues et traitées par notre application. Un navigateur de fichier intégré permet à l'utilisateur de trouver ses images et de les charger. 
+
+Le traitement effectué par l'application permet tout d'abord de créer un objet 3d à partir de la carte de profondeur, objet dont la surface sera ensuite colorée par la texture associée (\ref{Fig:heightmap_texture_unity}). Le niveau de gris de chaque pixel de la carte de profondeur est ainsi interprété en tant que hauteur et correspond à un sommet de la surface 3d générée. Lorsque tous les pixels de la carte de profondeur ont été traités, les sommets de la surface 3d sont reliés par des segments afin de créer des objets continus qui seront ensuite colorés par la texture.
+
+La scène 3d générée crée l'illusion d'une 3e dimension en ajoutant aux objets une impression d'espace et de profondeur qui s'étend loin derrière l'écran. Cela est rendu possible par les calculs permanents de la direction de vue basée sur l'orientation du périphérique, mesurée par un accéléromètre ou un gyroscope embarqués dans la majorité des périphériques mobiles d'aujourd'hui, amenant ainsi l'impression de regarder à l'intérieur d'une boîte qui s'étendrait derrière la surface d'écran de l'appareil.
+Il est possible d'utiliser jusque 4 images (2 fois deux images contenant une carte de profondeur et une texture associée) afin de créer des scènes plus complexes possédant un arrière-plan et un premier-plan. Cette possibilité permet l'ajout d'informations complémentaires qui ne sont généralement pas présent au sein des visualiseur moléculaire d'où les scènes virtuelles sont extraites.
+
+Plusieurs exemples sont fournis avec l'application et permettent à l'utilisateur d'appréhender les rendus 3d possibles et d'avoir une première prise en main des possibilités qu'offrent l'application. Les 5 exemples sont illustrés dans la Figure \ref{Fig:depthmol3d_exemple}.
+
+
+\begin{figure}[h]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=.75\linewidth]{./figures/ch3/depthmol3d_exemple}}
+    \caption{}
+  \label{Fig:depthmol3d_exemple}
+  % \hspace{0.3cm}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=.75\linewidth]{./figures/ch3/depthmol3d_screenshots}}
+    \caption{}
+  \label{Fig:depthmol3d_screenshots}
+  % \hspace{0.3cm}
+\end{subfigure}
+\caption{{\it (a) Scènes moléculaires proposées par défaut en exemple au sein de l'application.
+A. Visualisation d'une poche de liaison à la surface de GLIC (Ligand-Gated Ion Channel), une protéine transmembranaire responsable du passage des ions et des molécules d'eau à travers la membrane cellulaire. Scène extraite de VMD. B. Carte de basse résolution obtenue à partir de cryo-EM pour un filament d'actine. La position de la structure atomique dans l'enveloppe de basse résolution est en premier-plan alors que la carte électromagnétique est présentée en arrière-plan. Visualisation provenant de Chimera C. Couple verticale du modèle de la capside du virus Influenza A exposant la membrane externe et l'intérieur du virus. GraphiteLifeExplorer a été utilisé pour visualiser la coupure. D. Interaction entre une protéine SNARE et une membrane biologique lors d'une dynamique moléculaire (arrière-plan). Un graphe 3d rapportant le taux de courbure de la membrane est présenté en premier-plan. La surface 3d a été générée par Paraview (programme de visualisation scientifique) E. Scènes extraites d'un programme d'animation, MolecularMaya, dédié à la création de films scientifiques pour une audience large. Les scènes extraites mettent en avant deux virus au milieu de villosités à gauche et de multiples virus à droite.
+(b) Captures d'écran provenant de l'application DepthMol3D et mettant en avant le menu principal de l'application permettant de charger une image ou un objet 3d (en haut) et une scène 3d type représentant la surface d'une protéine avec les différentes options de paramétrisation (en bas).}}
+\end{figure}
+
+\subsubsection{Explorer des modèles 3d de molécules}
+
+Un deuxième mode de visualisation permet d'importer directement des fichiers d'objets 3d dans DepthMol3d. Avec ce type de données 3d, un seul fichier est nécessaire pour créer une perspective 3d complète de l'objet. Après importation, il est possible de manipuler l'objet, de le tourner, le déplacer en avant ou arrière. Cette visualisation se rapproche de ce qui peut se retrouver dans les visualiseurs moléculaires pour périphériques mobiles.
+Pour aller plus loin dans l'immersion, l'utilisateur aura également la possibilité de changer l'échelle de la molécule et de plonger à l'intérieur et d'activer une visualisation plus interactive.
+Il utilisera en effet son périphérique comme une fenêtre sur le monde virtuel et le manipulera en orientant le périphérique à la main et en l'utilisant comme une vue adaptative sur un monde virtuel présent tout autour de lui. Basés sur le gyroscope du périphérique, l'objet 3d est visualisable à 360 degrés mais à partir d'une position fixe. 
+
+Pour une étape supplémentaire vers une immersion plus importante, un rendu stéréoscopique peut être effectué au sein d'un support de casque, à la manière de ce que proposent de nombreux acteurs de la RV aujourd'hui n'ayant pas franchi le pas de la conception de casques de RV mais fournissant des supports pour l'utilisation de smartphones (voir section \ref{dispositifs_RV}). Dans cette configuration, un simple mouvement de tête permet de regarder une zone différente de la molécule (voir Figure \ref{Fig:molexplorer_screenshot}). Cette approche est rendue possible par un mode stéréoscopique \textit{side-by-side} intégré au sein de l'application. 
+
+\begin{figure}[h]
+  \centering
+  {\includegraphics[width=.75\linewidth]{./figures/ch3/molexplorer_screenshot.png}}
+    \caption{{\it Captures d'écran du mode d'exploration de modèles 3d au sein de l'application. La différence de point de vue entre les deux captures d'écran est le résultat d'une rotation du périphérique mobile tenu par l'utilisateur.}}
+  \label{Fig:molexplorer_screenshot}
+  \hspace{0.2cm}
+\end{figure}
+
+\subsubsection{Bilan}
+
+La préparation des images utilisées au sein de l'application est relativement simple et rapide, des tutoriels sont en plus préparés pour aider les utilisateur à effectuer les actions nécessaires. Notre approche est indépendante de la plateforme de visualisation et la majorité des visualiseurs moléculaires permettant de générer des rendus graphiques de structures permettent de générer les images demandées. Il est également possible d'utiliser des outils génériques tels que Povray\footnote{\url{www.povray.com}} ou Paraview\footnote{\url{www.paraview.org}}. La création de vues complexes est rendue possible grâce à la notion d'arrière-plan et de premier-plan permettant ainsi de mettre en valeur certains aspects d'une scène virtuelle où la seule structure ne serait pas assez illustrative d'un phénomène particulier.
+
+La performance de l'application permet son utilisation sur la plupart des smartphones et tablettes Android et iOS de moins de 5 ans et la quasi-intégralité des derniers smartphones/tablettes. DepthMol3D est gratuit et le code source est disponible à la demande.
+
+Les limitations de notre application résident tout d'abord dans la résolution des écrans des périphériques et leurs angles de vue, tout deux limités par rapport aux stations de travail ou aux ordinateurs portables à cause de leur taille. Les cartes de profondeur sont pour le moment limitées à des résolutions assez basses et peuvent faire apparaître des artefacts quand les détails de la scènes sont trop fins. La limitation de la résolution des cartes de profondeur considérées dans l'application est due à la limitation technique du moteur Unity3D qui ne peut gérer des objets 3d de plus de 65536 sommets. Ceci implique donc l'utilisation de cartes de profondeur de 255*255 pixels de résolution au maximum. Il n'existe par contre aucune limitation dans la résolution de la texture tant que celle-ci est aux mêmes dimensions que la carte de profondeur. L'utilisation d'images 2d ne permet pas un contrôle total de l'objet 3d généré et sa manipulation dans l'espace. Notre mode d'importation d'objets 3d permet de pallier en partie cette limitation mais la performance du rendu est moindre, tout autant que la facilité de création de nouvelles structures.
 
 
 
