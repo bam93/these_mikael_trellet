@@ -82,18 +82,27 @@ Afin de répondre à chacun des prérequis que l'immersion génère, il est poss
 Nous retrouvons: les \textit{interfaces sensorielles} qui vont permettre à l'homme de percevoir le monde virtuel, les \textit{interfaces motrices} qui vont permettre à l'homme de se séplacer et d'agir dans le monde virtuel et enfin les \textit{interfaces sensori-motrices} qui vont permettre une communication bidirectionnelle entre l'homme et le monde virtuel.
 Nous ne donnerons pas une liste exhaustive des dispositifs de RV, que l'on peut retrouver dans le Traité de la Réalité Virtuelle - Volume 2. \cite{fuchs2006traite}.
 
-Parmi les dispositifs fixes utilisés en RV, on retrouve les murs d'écrans. Evolution naturelle des écrans d'ordinateur classiques, ce sont de larges surfaces composées de plusieurs écrans aux bords fins collés les uns aux autres. Les murs d'écrans peuvent être de différentes natures, même si tous les écrans d'un même mur sont identiques, ils peuvent être rétro-projetés ou non, 2d ou 3d, tactiles ou non et de résolutions différentes. Ils permettent l'affichage de larges images à de hautes résolutions et sont souvent utilisés pour les études scientifiques mettant en jeu de nombreuses données à des échelles très différentes. Ils permettent également de diffuser des contenus à une audience élargie grâce à leur surface d'affichage étendue.
+\begin{figure}
+  \centering
+  {\includegraphics[width=.65\linewidth]{./figures/ch2/screen_wall}}
+    \caption{{\it Exemple de WILDER, mur d'écran de 6 m sur 2 composé de 75 écrans, présent au sein du bâtiment Digiteo sur le campus de l'université Paris-Sud.}}
+  \label{Fig:screen_wall}
+  \hspace{0.3cm}
+\end{figure}
+
+Parmi les dispositifs fixes utilisés en RV, on retrouve les murs d'écrans (cf. Figure \ref{Fig:screen_wall}). Évolution naturelle des écrans d'ordinateur classiques, ce sont de larges surfaces composées de plusieurs écrans aux bords fins collés les uns aux autres. Les murs d'écrans peuvent être de différentes natures, même si tous les écrans d'un même mur sont identiques, ils peuvent être rétro-projetés ou non, 2d ou 3d, tactiles ou non et de résolutions différentes. Ils permettent l'affichage de larges images à de hautes résolutions et sont souvent utilisés pour les études scientifiques mettant en jeu de nombreuses données à des échelles très différentes. Ils permettent également de diffuser des contenus à une audience élargie grâce à leur surface d'affichage étendue.
 
 L'immersion peut atteindre un niveau supérieur lorsque sont utilisés des environnements immersifs de type CAVE \cite{cruz-neira_cave:_1992} comme illustré dans la Figure \ref{Fig:eve_cave_system}. Le système CAVE consiste en une série de projecteurs permettant la projection d'images sur 3 à 6 faces d'un cube de la taille d'une pièce. Les projecteurs peuvent être remplacés par des écrans plats dans certains cas, mais cette configuration est plus rare, car bien plus coûteuse à espace d'affichage similaire. Bien qu'il n'existe pas de tailles limites inférieures ou supérieures lorsqu'on évoque la taille des CAVEs, il est commun de pouvoir s'y tenir debout et donc d'y évoluer. Les projecteurs sont usuellement situés derrière les écrans afin de ne subir aucune entrave dans le rayon de projection. Le contenu affiché est bien souvent 3d et de haute résolution. Les utilisateurs portent des lunettes 3d pour percevoir la stéréoscopie et leurs mouvements sont généralement capturés par un système de tracking optique. Il est possible dans un CAVE d'afficher des objets virtuels flottants autour desquels l'utilisateur pourra se déplacer.
+
 Il n'est pas rare de voir des systèmes audio 3d associés aux CAVEs. Ces systèmes audio profitent du large espace de la pièce pour disposer de multiples enceintes à l'image des systèmes WFS détaillés dans la section \ref{immersion_audio}.
 L'avantage des CAVEs est leur taille et la possibilité de se déplacer dans un monde virtuel de taille raisonnable simplement en marchant. L'intégration de dispositifs d'interaction est également facilitée par la contrainte de taille limitée. 
 Certaines CAVEs utilisent plus d'un projecteur par écran leur permettant d'afficher des images pour deux points de vue distincts, en 3d et simultanément, c'est le cas d'EVE\footnote{\url{http://www.limsi.fr/venise/EVEsystem}} (Evolutive Virtuel Environments) du groupe VENISE du LIMSI-CNRS. La multi-stéréoscopie permet de mettre en place des scénarios collaboratifs entre les utilisateurs partageant la même scène virtuelle, mais selon leur propre point de vue.
 
 \begin{figure}
   \centering
-  {\includegraphics[width=.35\linewidth]{./figures/ch2/eve_cave_system}}
-    \caption{{\it Photo de EVE, système CAVE présent au LIMSI/CNRS.}}
-  \label{Fig:eve_cave_system}
+  {\includegraphics[width=.65\linewidth]{./figures/ch2/eve_collaboratif}}
+    \caption{{\it Exemple de EVE, système CAVE composé de 4 écrans (gauche, face, droite et sol), présent au LIMSI-CNRS sur le campus de l'université Paris-Sud.}}
+  \label{Fig:eve_collaboratif}
   \hspace{0.3cm}
 \end{figure}
 
@@ -347,22 +356,30 @@ Nous avons vu que ces retours sensoriels participent à l'immersion ressentie pa
 Le domaine du docking moléculaire fut assez friand de la technologie de bras haptique afin de permettre le ressenti des forces d'interaction prenant place entre deux partenaires \cite{nagata2002concept, sankaranarayanan2003role}. L'ajout de la flexibilité dans les technique de docking et l'utilisation de techniques de simulations interactives (voir section \ref{simu_interactive}) où des forces peuvent être ajoutées par l'utilisateur au sein d'une simulation en cours fut aussi un terrain propice à l'utilisation de systèmes de retours haptiques \cite{stone2001system}. Ces derniers permettent en effet un contrôle fin de la force appliquée et imposent une limite physique à celle-ci que l'utilisateur ne peut dépasser. Le matériel a pu évolué avec le temps afin de répondre aux besoins évoluant des équipes de recherche et une aperçu de cette évolution est illustrée dans la Figure \ref{Fig:taylor_haptic}.
 
 \begin{figure}[h]
-  \begin{subfigure}{.5\textwidth}
+  \begin{subfigure}{.33\textwidth}
   \centering
   {\includegraphics[width=0.9\linewidth]{./figures/ch2/taylor_haptic}}
     \caption{}
     \label{Fig:taylor_haptic}
   % \hspace{0.3cm}
   \end{subfigure}
-  \begin{subfigure}{.4\textwidth}
+  \begin{subfigure}{.33\textwidth}
   \centering
-  {\includegraphics[width=0.7\linewidth]{./figures/ch2/ferey_haptic}}
+  {\includegraphics[width=0.9\linewidth]{./figures/ch2/haptic_docking}}
+    \caption{}
+    \label{Fig:haptic_docking}
+  % \hspace{0.3cm}
+  \end{subfigure}
+  \begin{subfigure}{.33\textwidth}
+  \centering
+  {\includegraphics[width=0.9\linewidth]{./figures/ch2/ferey_haptic}}
     \caption{}
     \label{Fig:ferey_haptic}
   \hspace{0.3cm}
   \end{subfigure}
   \caption{\it (a) Système haptique appelée \textit{the Docker} conçu et construit par Ming Ouh-young et permettant de simuler les forces et les torsions dues aux interactions électrostatiques entre les deux molécules.
-  (b) Système haptique de dimensions réduites permettant la manipulation d'une protéine dans le cadre ????????????
+  (b) Système haptique Phantom utilisé dans la salle immersive d'un laboratoire de réalité virtuelle dans le cadre d'une expérience mettant en jeu le contrôle d'un docking par interaction haptique. 
+  (c) Système haptique permettant la manipulation d'une protéine au sein d'un laboratoire de biologie structurale dans le cadre d'une expérience de simulation moléculaire interactive (voir section \ref{simu_interactive}).
   }
   % \hspace{0.3cm}
 \end{figure}
@@ -377,7 +394,28 @@ Avant tout approfondissement des cas d'usages de ces modèles physiques, nous re
 L'impression 3d est quant à elle une technologie de gravure et sculpture en 3 dimensions, au moyen de lasers, permettant de fabriquer des objets à partir de leur modèle 3d informatique. La précision des imprimantes 3d est variable mais souvent très importante. 
 
 Combinées ensemble, ces techniques permettent par exemple, après la conception et l'impression d'un modèle physique de protéine, son traitement visuel en temps réel pour le suivre (par \textit{tracking} de marqueurs spécifiques ou \textit{tracking} de forme/couleurs) et permettre un rendu visuel du modèle et l'affichage de propriétés ou d'informations de façon dynamique et toujours en temps réel \cite{gillet2005tangible}. 
-Les modèles physiques de protéine peuvent être des modèles statiques monobloc mais peuvent aussi être des modèles physiques complexes et résultats d'assemblages de sous-unités physiques faisant l'analogie des acides aminés. Au-delà de la simple analogie, ce découpage permet de mettre en place des solutions techniques visant à imiter les énergies rotationnelles inter-acides aminés à l'échelle des sous-unités physiques \cite{chakraborty2013coarse}. Ces modèles physiques avancées peuvent être envisagés comme moyens d'interactions pour la reconstruction assistée de peptides ou l'estimation d'énergie potentielle \cite{martinez2015virtual}. Leurs changements conformationnels de modèles informatiques 3d simulés seraient induits par les déformations du modèle physique manipulé.
+Les modèles physiques de protéine peuvent être des modèles statiques monobloc mais peuvent aussi être des modèles physiques complexes et résultats d'assemblages de sous-unités physiques faisant l'analogie des acides aminés. Au-delà de la simple analogie, ce découpage permet de mettre en place des solutions techniques visant à imiter les énergies rotationnelles inter-acides aminés à l'échelle des sous-unités physiques \cite{chakraborty2013coarse}. Ces modèles physiques avancées peuvent être envisagés comme moyens d'interactions pour la reconstruction assistée de peptides ou l'estimation d'énergie potentielle \cite{martinez2015virtual}. Leurs changements conformationnels de modèles informatiques 3d simulés seraient induits par les déformations du modèle physique manipulé (voir Figure \ref{Fig:tangible_xav}).
+
+\begin{figure}[h]
+  \begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=0.9\linewidth]{./figures/ch2/tangible_marker}}
+    \caption{}
+    \label{Fig:tangible_marker}
+  % \hspace{0.3cm}
+  \end{subfigure}
+  \begin{subfigure}{.4\textwidth}
+  \centering
+  {\includegraphics[width=0.7\linewidth]{./figures/ch2/tangible_xav}}
+    \caption{}
+    \label{Fig:tangible_xav}
+  \hspace{0.3cm}
+  \end{subfigure}
+  \caption{\it (a) Système haptique appelée \textit{the Docker} conçu et construit par Ming Ouh-young et permettant de simuler les forces et les torsions dues aux interactions électrostatiques entre les deux molécules.
+  (b) Système haptique de dimensions réduites permettant la manipulation d'une protéine dans le cadre ????????????
+  }
+  % \hspace{0.3cm}
+\end{figure}
 
 
 \subsection{Simulation moléculaire interactive} \label{simu_interactive}
