@@ -106,16 +106,25 @@ Certaines CAVEs utilisent plus d'un projecteur par écran leur permettant d'affi
   \hspace{0.3cm}
 \end{figure}
 
-Les visiocasques (appelés également casques immersifs ou casques de RV ou encore casques HMD for \textit{Head-Mounted Display} en anglais) sont des dispositifs se portant à la manière de casques standards et composés de deux écrans situés en face des yeux de l'utilisateur. Grâce à un système de lentilles, l'utilisateur est capable de distinguer les images affichées sur chacun des écrans de façon nette. L'affichage peut être soit monoculaire et donc perçu en 2d, soit binoculaire et donc perçu en 3d. Dans ce dernier mode, le contenu affiché sur les écrans est découpé de telle sorte que chaque œil perçoit une image différence correspondant au point de vue qui devrait être le sien dans la réalité comme illustrée dans la Figure \ref{Fig:pymol_stereo}. Le contenu affiché évolue suivant l'orientation de la tête de l'utilisateur. Cela est rendu possible par la présence d'un gyroscope calculant l'orientation relative de la tête par rapport à un point d'origine calibré au début de l'expérience. L'utilisateur possède donc une vue sur un contenu virtuel à 360 degrés qu'il peut regarder de la même façon que s'il se trouvait sur une chaise statique, mais tournant à 360 degrés. Bien que les premiers visiocasques binoculaires commercialisés datent de 1995, le domaine des casques immersifs a connu depuis quelques années un intérêt significatif de la part du monde de la recherche et du jeu vidéo. Cet intérêt peut s'expliquer par la résolution atteinte par les écrans de petite taille (type smartphone) et la précision des capteurs d'orientation utilisés pour adapter l'image à l'orientation de l'utilisateur. Certains acteurs de la RV ont d'ailleurs profiter de la démocratisation du smartphone et de leurs capacités d'affichage de plus en plus performante pour proposer des supports type casque permettant de positionner un smartphone devant les yeux et de rendre une image stéréoscopique grâce à deux lentilles intégrées au support. L'exemple le plus connu est le \textit{cardboard} de Google permettant de mettre un smartphone d'environ 5 pouces de diagonale au sein d'un support en carton pliable comportant un jeu de lentille. 
+Les visiocasques (appelés également casques immersifs ou casques de RV ou encore casques HMD for \textit{Head-Mounted Display} en anglais) sont des dispositifs se portant à la manière de casques standards et composés de deux écrans situés en face des yeux de l'utilisateur (cf Figure \ref{occulus}). Grâce à un système de lentilles, l'utilisateur est capable de distinguer les images affichées sur chacun des écrans de façon nette. L'affichage peut être soit monoculaire et donc perçu en 2d, soit binoculaire et donc perçu en 3d. Dans ce dernier mode, le contenu affiché sur les écrans est découpé de telle sorte que chaque œil perçoit une image différence correspondant au point de vue qui devrait être le sien dans la réalité comme illustrée dans la Figure \ref{Fig:pymol_stereo}. Le contenu affiché évolue suivant l'orientation de la tête de l'utilisateur. Cela est rendu possible par la présence d'un gyroscope calculant l'orientation relative de la tête par rapport à un point d'origine calibré au début de l'expérience. L'utilisateur possède donc une vue sur un contenu virtuel à 360 degrés qu'il peut regarder de la même façon que s'il se trouvait sur une chaise statique, mais tournant à 360 degrés. Bien que les premiers visiocasques binoculaires commercialisés datent de 1995, le domaine des casques immersifs a connu depuis quelques années un intérêt significatif de la part du monde de la recherche et du jeu vidéo. Cet intérêt peut s'expliquer par la résolution atteinte par les écrans de petite taille (type smartphone) et la précision des capteurs d'orientation utilisés pour adapter l'image à l'orientation de l'utilisateur. Certains acteurs de la RV ont d'ailleurs profiter de la démocratisation du smartphone et de leurs capacités d'affichage de plus en plus performante pour proposer des supports type casque permettant de positionner un smartphone devant les yeux et de rendre une image stéréoscopique grâce à deux lentilles intégrées au support. L'exemple le plus connu est le \textit{cardboard} de Google permettant de mettre un smartphone d'environ 5 pouces de diagonale au sein d'un support en carton pliable comportant un jeu de lentille. 
 
 Du point de vue du coût, ces dispositifs sont très peu onéreux comparés aux systèmes fixes. Cependant, l'un de leurs inconvénients est le fait qu'ils dissocient l'utilisateur du monde extérieur, favorisant une utilisation solitaire.
 
 \begin{figure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=.75\linewidth]{./figures/ch2/occulus}}
+    \caption{{\it Casque de réalité virtuelle, l'Oculus Rift, appartenant à Facebook et constituant l'un des premiers casques de RV ayant été disponible sur le marché.}}
+  \label{Fig:occulus}
+  \hspace{0.3cm}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
   \centering
   {\includegraphics[width=.75\linewidth]{./figures/ch2/pymol_stereo}}
     \caption{{\it Capture d'écran de PyMol exécuté en mode stéréoscopique <<cross-eyes>>: l'image de la protéine de droite correspond à l'oeil gauche et inversement.}}
   \label{Fig:pymol_stereo}
   \hspace{0.3cm}
+\end{subfigure}
 \end{figure}
 
 
@@ -159,8 +168,16 @@ Mais les stimuli sensoriels ne sont pas seuls capables d'immerger un individu da
 
 \subsubsection{Périphériques physiques} \label{peripheriques}
 
-L'utilisation de périphériques physiques pour interagir avec un EV immersif est une solution retrouvée au sein de plusieurs EV immersifs. A la différence des moyens d'interaction en conditions standards, ils ont du s'adapter à des conditions d'utilisation en position debout et dans des conditions d'obscurité permanente. La souris des stations de travail standards a fait place à des périphériques tels que la souris 3d, appelée aussi \textit{Flystick} permettant une certaine précision dans le contrôle de l'interaction mais nécessitant d'être transporté de façon permanente (cf Figure \ref{}). Le \textit{Flystick} se caractérise par un périphérique à une main composé de boutons et dont les contrôle directionnels sont déportés sur un mini-joystick ou une \textit{tracking ball} manipulables au pouce. La manette reste un dispositif très utilisé du fait de sa courbe d'apprentissage relativement courte due à sa démocratisation et également du fait de son nombre de commandes possibles important via ses nombreux boutons et combinaisons de bouton.
+L'utilisation de périphériques physiques pour interagir avec un EV immersif est une solution retrouvée au sein de plusieurs EV immersifs. A la différence des moyens d'interaction en conditions standards, ils ont du s'adapter à des conditions d'utilisation en position debout et dans des conditions d'obscurité permanente. La souris des stations de travail standards a fait place à des périphériques tels que la souris 3d, appelée aussi \textit{Flystick} permettant une certaine précision dans le contrôle de l'interaction mais nécessitant d'être transporté de façon permanente (cf Figure \ref{Fig:art_flystick}). Le \textit{Flystick} se caractérise par un périphérique à une main composé de boutons et dont les contrôle directionnels sont déportés sur un mini-joystick ou une \textit{tracking ball} manipulables au pouce. La manette reste un dispositif très utilisé du fait de sa courbe d'apprentissage relativement courte due à sa démocratisation et également du fait de son nombre de commandes possibles important via ses nombreux boutons et combinaisons de bouton.
 On retrouve également des dispositifs spécialisés reprenant la forme des outils qu'ils sont censés représenter permettant une similarité dans leur utilisation. Ces outils sont suivis par des dispositifs de tracking optique permettant de les intégrer à travers des avatars dans les scènes virtuelles. Ces périphériques sont particulièrement utilisés dans des situation d'apprentissage virtuel.
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=.65\linewidth]{./figures/ch2/art_flystick}}
+    \caption{{\it Flystick, ou souris 3d, permettant d'interagir avec un environnement 3d en position fixe ou mobile.}}
+  \label{Fig:art_flystick}
+  \hspace{0.3cm}
+\end{figure}
 
 % Afin de se mouvoir et d'évoluer dans le monde virtuel, l'utilisateur doit pouvoir être positionné par la plateforme de rendu. La navigation dans un environnement virtuel est une problématique cruciale en RV, d'autant plus lorsqu'elle s'effectue au sein d'un environnement virtuel abstrait et en l'absence des repères spatiaux habituellement rencontrés dans le monde réel.
 % Parmi les dispositifs permettant de récupérer les positions de la tête ou du corps de l'utilisateur, le \textit{tracking} optique est l'un des plus usités. Il fonctionne au moyen de caméras infrarouges et de marqueurs réfléchissants (voir Figure \ref{Fig:ir-tracking}). Des motifs de marqueurs vont servir de cibles pour les caméras infrarouges qui vont opérer une triangulation afin d'en extraire leur position. Chaque motif différent peut être associé à un objet particulier, une partie du corps ou un dispositif d'interaction. Le suivi de la tête est particulièrement utile dans les environnements immersifs puisqu'il permet de connaître la position et l’orientation de la tête et donc du regard au sein du monde virtuel. Grâce à cela, les ordinateurs responsables du rendu graphique peuvent adapter les images affichées sur les écrans pour qu'elle corresponde au point de vue de l'utilisateur dans le monde virtuel.
@@ -375,7 +392,7 @@ Le domaine du docking moléculaire fut assez friand de la technologie de bras ha
   {\includegraphics[width=0.9\linewidth]{./figures/ch2/ferey_haptic}}
     \caption{}
     \label{Fig:ferey_haptic}
-  \hspace{0.3cm}
+  % \hspace{0.3cm}
   \end{subfigure}
   \caption{\it (a) Système haptique appelée \textit{the Docker} conçu et construit par Ming Ouh-young et permettant de simuler les forces et les torsions dues aux interactions électrostatiques entre les deux molécules.
   (b) Système haptique Phantom utilisé dans la salle immersive d'un laboratoire de réalité virtuelle dans le cadre d'une expérience mettant en jeu le contrôle d'un docking par interaction haptique. 
