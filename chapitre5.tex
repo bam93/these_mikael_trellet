@@ -56,7 +56,7 @@ En plus de lier étroitement les espaces partageant les représentations des mê
 %   \hspace{0.3cm}
 % \end{figure}
 
-\subsection{Ontologie OWL pour la modélisation des concepts de biologie structurale}
+\subsection{Ontologie OWL pour la modélisation des concepts de biologie structurale} \label{owl_ontology}
 
 Comme le montre en partie la Figure \ref{Fig:ontology}, nous avons essayé de définir de façon complète l'ensemble des concepts que l'utilisateur aurait à manipuler lors de ses activités de visualisation et d'analyses synchronisées. 
 
@@ -89,12 +89,12 @@ En plus des concepts biologiques et de représentations cités précédemment, n
 
 Une fois l'ontologie mise en place, il est possible d'alimenter la base de faits qu'elle définie en ajoutant les informations biologiques regroupées par l'expert scientifique. Ces informations vont devoir respecter le vocabulaire et la classification définie par les règles présentes dans l'ontologie OWL.
 
-\subsection{Le RDF(/S), format des bases de connaissances moléculaires}
+\subsection{Le RDF, format des bases de connaissances moléculaires} \label{rdf_import}
 
 La description d'un environnement d'intérêt passe par l'analyse de toutes les informations biologiques pouvant être labellisées par une chaîne de caractère ou une valeur et qui correspondent à un concept ou une propriété identifiée dans l'ontologie OWL. Chaque information alimentera une base de données RDF organisant toutes les informations, de la même manière que pour les descriptions ontologiques, sous forme de triplets de type Sujet/Propriété/Objet.
 
 Dans le cas qui nous intéresse pour ce travail de thèse, les simulations numériques moléculaires peuvent être découpées en une succession de modèles statiques 3D successifs. Chaque modèle correspond au concept \textit{Model} décrite dans notre ontologie. C'est le groupe structurel le plus large que nous ayons défini dans les composants structurels biologiques. Plusieurs triplets présents dans notre base de données finale sont illustrés dans le Listing \ref{rdf_xml}. Chaque atome présent dans un modèle possède une position 3d ainsi qu'un résidu auquel il appartient et indirectement, de la même manière, une chaîne et son modèle de référence grâce aux règles d'inférence. Ces informations n'ont pas besoin d'être spécifiées explicitement puisque les règles d'inférence définies dans l'ontologie instaurent, entre autres, le fait qu'un atome est sous-composant d'un résidu qui est un sous-composant d'une chaîne elle-même sous-composante d'un modèle. 
-Cette information n'est donc pas présente dans la base de données sous forme d'un triplet explicite de type \textit{ATOM\_1234 my\_ontology:belongs\_to CHAIN\_12} mais ce triplet pourra être tout de même obtenu lors d'une requête cherchant à obtenir l'identifiant de la chaîne dont l'atome est l'un des composants. 
+Cette information n'est donc pas présente dans la base de données sous forme d'un triplet explicite de type \textit{ATOM\_1234 my\:belongs\_to CHAIN\_12} mais ce triplet pourra être tout de même obtenu lors d'une requête cherchant à obtenir l'identifiant de la chaîne dont l'atome est l'un des composants. 
 
 Toutes les propriétés géométriques (position, angles, distance, etc.), physico-chimiques (accessibilité, charge partielle, liaisons, etc.) ou analytiques (énergie, RMSD, température, etc.) pouvant être exportées des jeux de données étudiés sont donc intégrés dans la base de données de faits et surtout associés aux individus créés à partir des structures 3d de la simulation (atomes/résidus/chaîne/modèles). Ces individus sont des instances des concepts définis dans l'ontologie. Ils forment la population de la base de données et la majorité des propriétés définies se rapportent à eux.
 
@@ -127,7 +127,7 @@ Au-delà du stockage et de la mise à disposition des données suivant les règl
 
 \end{lstlisting}
 
-\subsection{SPARQL, pour l'interaction directe}
+\subsection{SPARQL, pour l'interaction directe} \label{sparql_interpretation_engine}
 
 Lorsque les données ont été intégrées au sein de la base RDF, sous forme d'instance des concepts définis au sein de l'ontologie OWL, il est nécessaire de mettre en place un système d'interrogation et de récupération des données pour leur visualisation et traitement au sein de l'espace de travail de l'expert. Nous avons vu dans le chapitre précédent que RDF et OWL pouvaient être interrogés grâce au langage de requête SPARQL. A la manière du langage SQL pour les bases de données relationnelles, SPARQL est optimisé pour l'interrogation de bases RDF sous forme de triplets.
 
@@ -171,9 +171,9 @@ Une fois la réception des mots-clés effectuée, notre moteur va donc catégori
 
 Cette classification est effectuée des requêtes SPARQL distinctes pour chaque catégorie et interrogeant l'ontologie OWL.
 
-Alors que les catégories \textit{Action}, \textit{Composant}, \textit{Propriété} et \textit{Représentation} possèdent leurs propres concepts et peuvent être identifiées par un mot unique ($Hide$, $Chain$, $Charged$, $Sphere$, etc.), la catégorie \textit{Identifiant} est elle ontologiquement liée à un concept de la catégorie \textit{Composant}. Étant donné la possible redondance des identifiants dans une base de donnée de simulation moléculaire puisque chaque modèle 3d décrit le même système moléculaire autant de fois qu'il y a d'unité de temps découpant la trajectoire, il est nécessaire d'avoir une association forte entre un identifiant et le composant, quel que soit son niveau structurel. Un identifiant ne pourra donc être classé comme tel que si un composant existe, et seulement si ce composant possède effectivement l'identifiant demandé. Ce pré-requis constitue la première règle de notre classification de mots-clés.
+Alors que les catégories \textit{Action}, \textit{Composant}, \textit{Propriété} et \textit{Représentation} possèdent leurs propres concepts et peuvent être identifiées par un mot unique ($Hide$, $Chain$, $Charged$, $Sphere$, etc.), la catégorie \textit{Identifiant} est elle liée à une instance d'un concept de la catégorie \textit{Composant}. Étant donné la possible redondance des identifiants dans une base de donnée de simulation moléculaire puisque chaque modèle 3d décrit le même système moléculaire autant de fois qu'il y a d'unité de temps découpant la trajectoire, l'association entre un identifiant et un composant est obligatoire, quel que soit son niveau structurel. Un identifiant ne pourra donc être classé comme tel que si un composant existe, et seulement si ce composant possède effectivement l'identifiant demandé. Ce pré-requis constitue la première règle de notre classification de mots-clés.
 
-Les commandes SPARQL permettant de dire si un mot-clé appartient ou non à une catégorie utilise l'opérateur \textit{ASK} qui prend en argument un ou plusieurs triplets et retourne un booléen \textit{true} si l'ensemble des triplets se vérifie (existe) dans la base de données et \textit{false} si au moins un triplet n'est pas présent. Les cinq requêtes SPARQL formulées pour la classification sont donc construites sur la même forme et illustrées dans le Listing \ref{sparql_cmd}. Les règles de raisonnement et d'inférence sont utilisées lors de l'ensemble des requêtes SPARQL. Par exemple, la requête
+Les commandes SPARQL permettant de dire si un mot-clé appartient ou non à une catégorie utilise l'opérateur \textit{ASK} qui prend en argument un ou plusieurs triplets et retourne un booléen \textit{true} si l'ensemble des triplets se vérifie (existe) dans la base de données. Les cinq requêtes SPARQL formulées pour la classification sont donc construites sur la même forme et illustrées dans le Listing \ref{sparql_cmd}. Les règles de raisonnement et d'inférence sont utilisées lors de l'ensemble des requêtes SPARQL. Par exemple, la requête
 
 \begin{lstlisting}[language=XML]
 ASK {my:Alanine rdfs:subClassOf my:Biological_component}
@@ -207,7 +207,7 @@ Un composant est un ensemble d'atomes ou un unique atome identifié dans notre o
 
 \myparagraph{Identifiant}
 
-Un identifiant ne peut être trouvé seul, il est toujours associé à un composant qu'il désigne. Les identifiants ont aussi la particularité de ne pas être recherché à un niveau ontologique mais au niveau de la base de données RDF puisqu'il n'existe pas de listes d'identifiants fixes dans notre ontologie, ces derniers variant significativement entre les systèmes moléculaires étudiés. Lorsqu'un couple composant/identifiant existe au sein de la base de données, ces deux éléments sont regroupés et constituent un groupe syntaxique indépendant.
+Un identifiant ne peut être trouvé seul, il est toujours associé à un composant qu'il désigne. Les identifiants ont aussi la particularité de ne pas être recherché à un niveau ontologique mais au niveau de la base de données RDF puisqu'il n'existe pas de listes d'identifiants fixes dans notre ontologie, ces derniers variant entre les systèmes moléculaires étudiés. Lorsqu'un couple composant/identifiant existe au sein de la base de données, ces deux éléments sont regroupés et constituent un groupe syntaxique indépendant.
 
 \myparagraph{Propriété}
 
@@ -219,26 +219,39 @@ Les propriétés vont agir comme un filtre direct sur le sous-ensemble structure
 
 Une représentation est une propriété visuelle associée directement et presque exclusivement à l'espace de visualisation. Les mots-clés désignant des concepts \textit{Représentation} sont associés aux actions centrées sur les changements de visualisation. Ils décrivent les états visuels sur lesquels l'utilisateur voudrait intervenir. Ils rassemblent par exemple les méthodes de représentation utilisés dans le visualiseur moléculaire, les couleurs utilisées, etc.
 \\
-Une fois que chaque mot-clé est validé, c'est à dire identifié comme un concept (ou un individu pour les identifiants) et éventuellement associé à un autre mot-clé, il constitue un groupe syntaxique. Chaque groupe syntaxique possède une information qui correspond à différentes partie de la commande métier. Chaque type de commande est construite autour d'un agencement précis de groupes syntaxiques.
+\\
+Une fois que chaque mot-clé est validé, c'est à dire identifié comme un concept (ou un individu pour les identifiants) et éventuellement associé à un autre mot-clé, il constitue un groupe syntaxique. Chaque groupe syntaxique possède une information qui correspond à différentes partie de la commande métier. Chaque type de commande est construite autour d'un agencement précis de groupes syntaxiques. On remarque que l'étape de classification possède une forte tolérance à l'ordre des mots-clés, ceux-ci pouvant être introduits dans n'importe quel ordre.
 
 
 \subsubsection{De la commande vocale par mots-clés à la commande applicative} \label{command}
 
-Au sein de notre programme, une commande est composée d'une succession de groupements syntaxiques distincts mais liés les uns aux autres pour former une requête d'action. C'est l'unique type de commande présent pour le moment au sein de notre plateforme mais ses différentes déclinaisons permettent d'appliquer un large choix d'actions différentes sur les espaces de visualisation et d'analyses. Il est possible de décrire le type de commande que nous avons défini de la façon suivante:
+Au sein de notre programme, une commande vocale est composée d'une succession de groupements syntaxiques distincts mais liés les uns aux autres pour former une requête d'action. C'est l'unique type de commande présent pour le moment au sein de notre plateforme mais ses différentes déclinaisons permettent d'appliquer un large choix d'actions différentes sur les espaces de visualisation et d'analyses. Il est possible de décrire le type de commande que nous avons défini de la façon suivante:
 
 $$action\ [paramètre]^+,\ (\ groupe\_structurel\ [identifiant]^+\ )^+$$
 
 Les groupes syntaxiques sans crochets $[]$ sont obligatoires à l'inverse de ceux entre crochets qui sont optionnels. Le $^+$ désigne la possibilité d'avoir 0, 1 ou plusieurs occurrences du groupe syntaxique. Enfin les parenthèses désignent un bloc de groupes syntaxiques.
 
-Alors que la présence d'un identifiant est un filtre explicite des individus sur lesquels l'action va opérer, en l'absence d'identifiant, l'action désignée par la future commande va s'appliquer à tous les individus du groupe structurel précisé dans l'un des groupes syntaxiques.
-les individus groupes structurels sur lesquels vont s'appliquer l'action 
+Cette représentation mathématique des groupes syntaxiques est présente dans notre ontologie. En effet, le concept \textit{Action} comporte dans sa définition ontologique un certain nombre de concepts associés, sous forme de pré-requis, nécessaires à son exécution. Ces pré-requis sont indispensables car ils se comportent comme des paramètres de la commande exécutée. Une action de type \textit{Color} nécessite par exemple la présence d'une propriété de type \textit{Colors} et d'une suite de mots-clés désignant un sous-ensemble structurel. 
 
-Cette représentation mathématique des groupes syntaxiques est présente dans notre ontologie. En effet, le concept \textit{Action} comporte dans sa définition ontologique un certain nombre de concepts associés, sous forme de pré-requis, nécessaires à son exécution. Ces pré-requis sont indispensables car ils se comportent comme des paramètres de la commande exécutée. Une action de type \textit{Color} nécessite par exemple la présence d'une propriété de type \textit{Colors} et d'une suite de mots-clés désignant un sous-ensemble structurel. Ce sous-ensemble structurel peut être obtenu de différentes manières, dépendant directement du critère choisi par l'utilisateur pour filtrer les données sur lesquelles il souhaite appliquer son action. Une première manière de désigner un sous-ensemble structurel est la combinaison d'un composant moléculaire et d'un ensemble d'identifiant (unique, listé ou sous forme de plages continues). Sans identifiant, l'ensemble des individus appartenant au concept indiqué sera pris en compte. Une seconde manière de désigner un sous-ensemble structurel est la possibilité de combiner un composant et une propriété. Cette propriété devra seulement être cohérente avec le concept édicté.
-Par défaut, le sous-ensemble structurel désigné dans la commande vocale dépendra directement du jeu de données affiché dans l'espace de travail afin d'éviter une surcharge de précision à donner par l'utilisateur. Par exemple, si deux modèles sont affichés dans l'espace de travail, la commande \textit{Alanine 147} désignera uniquement les alanines dont l'identifiant est 147 parmi les deux modèles affichés et non pas parmi l'ensemble des modèles présents dans la base de données.
+De la même façon que pour l'action, la désignation d'un sous-ensemble structurel est obligatoire et peut être obtenu de différentes manières, dépendant directement du critère choisi par l'utilisateur pour filtrer les données sur lesquelles il souhaite appliquer son action. Les différentes manières d'obtenir un sous-ensemble structurel sont :
 
-Si tous les pré-requis associés à une action sont présents, alors la commande est ordonnée de façon à respecter la syntaxe de l'environnement de visualisation utilisé. La dernière étape est donc une simple transformation des concepts et des individus en une formulation compréhensible par les espaces de travail.
+\begin{enumerate}
+  \item Composant seul, l'ensemble des individus appartenant au concept indiqué sera pris en compte.
+  \item Combinaison d'un composant moléculaire et d'un ensemble d'identifiant (unique, listé ou sous forme de plages continues). Cohérence entre identifiant et composant requis.
+  \item Propriété seule, l'ensemble des individus possédant la propriété indiquée sera pris en compte.
+  \item Combinaison d'un composant et d'une propriété. Cohérence nécessaire entre propriété et composant requis.
+\end{enumerate}
 
-\subsubsection{}
+Par soucis d'homogénéité, chaque sous-groupe structurel, mais s'il est désigné par un concept sans identifiant, est ramené à la liste d'individus le composant. SPARQL permet de récupérer directement les individus désignés par le sous-groupe structurel. Cette étape permet de désambiguïsé les résultats entre les commandes. La commande générée sera par contre plus complexe puisqu'elle comportera à chaque fois la liste détaillée des individus concernés par la commande.
+
+Par défaut, le sous-ensemble structurel désigné dans la commande vocale dépendra directement du jeu de données affiché dans l'espace de travail afin d'éviter une surcharge de précision à donner par l'utilisateur. Par exemple, si deux modèles sont affichés dans l'espace de travail, la commande \textit{Alanine 147} désignera uniquement les alanines dont l'identifiant est 147 parmi les deux modèles affichés.
+
+Si tous les pré-requis associés à une action sont respectés, alors la commande est ordonnée de façon à respecter la syntaxe de l'environnement de visualisation utilisé. La dernière étape est donc une simple transformation des concepts et des individus en une formulation compréhensible par les espaces de travail.
+
+\subsubsection{Performance}
+
+
+
 
 \begin{figure}
   \centering
@@ -251,8 +264,9 @@ Si tous les pré-requis associés à une action sont présents, alors la command
 
 \section{Vers une approche de Visual Analytics immersive pour la biologie structurale}
 
-Les différents outils présentés ici nous ont permis de mettre en place un espace de travail combinant visualisation et analyses qui repose exclusivement sur une interrogation constante de la base de données crées à partir de nos données de simulation et respectant l'ontologie OWL mise en place pour ce projet.
-La conception de notre programme repose sur un schéma complexe permettant de relier efficacement ses différents composants de manière à les faire communiquer de façon optimale. La base de notre programme se trouve dans les données manipulées, toutes rassemblées au sein de la base de données RDF. Dans le schéma illustré dans la Figure \ref{Fig:schema_prog_visu_ana}, nous l'avons volontairement placé au centre d'une boucle bi-latérale de communication reliant l'espace de visualisation à l'espace d'analyse.
+L'ontologie métier définie dans la section \ref{owl_ontology} et la base de données générée à partir de données de simulation moléculaire dans la section \ref{rdf_import} nous ont permis de mettre en place un espace de travail combinant visualisation et analyses reposant repose exclusivement sur une interrogation constante de la base de données grâce à SPARQL.
+
+La conception de notre programme repose sur une architecture logicielle complexe. Dans le schéma illustré dans la Figure \ref{Fig:schema_prog_visu_ana}, nous l'avons volontairement placé au centre d'une boucle bi-latérale de communication reliant l'espace de visualisation à l'espace d'analyse.
 
 Notre base de données est hébergée dans un serveur web Virtuoso accessible depuis le réseau afin de garantir un accès privilégié et optimisé à nos données. Ce serveur possède l'ensemble des informations obtenues à partir de la trajectoire d'une simulation moléculaire test reprenant l'évolution structurelle et énergétique d'une protéine transmembranaire, GLIC, pendant 2ns. Le système contient également un ligand identifié de GLIC, le bromoforme, dont on cherche à connaître le mode de liaison et surtout son impact sur la forme de GLIC au cours du temps. Le solvant utilisé pour la simulation est un modèle simplifié d'eau.
 
@@ -262,7 +276,7 @@ Comme nous l'avons évoqué précédemment, nous avons mis en place une ontologi
 Concernant la partie expérimentale, nous sommes partis de données réelles de simulation moléculaires générées par des experts du domaine. La trajectoire étudiée correspond à une dynamique moléculaire d'une protéine transmembranaire, GLIC, et d'un ligand connu pour être un de ses inhibiteurs, le bromoforme. Cette simulation de 2 nanosecondes a été effectué en solvant explicite grâce à un modèle d'eau standard, XXX et met en évidence la présence du bromoforme dans plusieurs sites de liaisons de la protéine. GLIC est une protéine responsable de la perméation de la cellule puisqu'elle régule le passage des molécules d'eau et des ions entre la partie extra- et intra-cellulaire des cellules. Plusieurs anesthésiques ont été identifié comme possédant une affinité suffisante avec GLIC pour qu'une liaison s'effectue, le bromoforme étant un des ligands concernés. La structure générale de GLIC ainsi que du bromoforme peut être observée dans la Figure \ref{Fig:glic+bromoform}. Le choix de GLIC ne fut pas anodin, trois grandes raisons ont dictées notre décision:
 \begin{enumerate}
 	\item C'est une protéine bien connue des experts avec lesquels nous travaillons, il est ainsi aisé d'identifié les analyses pertinentes que nous pourrons associées par la suite.
-	\item La taille de GLIC est relativement importante, en particulier lorsque la membrane est représentée, nous considérons donc ce complexe comme un cas d'étude intéressant pour mettre en avant les limites de nos méthodes.
+	\item La taille de GLIC est relativement importante, en particulier lorsque la membrane est représentée, nous considérons donc ce complexe comme un cas d'étude intéressant pour tester les limites de nos méthodes en terme de performance.
 	\item L'environnement de GLIC est très hétérogène, permettant de manipuler des concepts comme les membranes et les ligands et donc de vérifier la robustesse de notre programme pour des concepts particuliers.
 \end{enumerate}
 
