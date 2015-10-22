@@ -1,0 +1,73 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: these.aux
+A level-1 auxiliary file: pagedegarde.aux
+A level-1 auxiliary file: dedicace.aux
+A level-1 auxiliary file: remerciements.aux
+A level-1 auxiliary file: notations.aux
+A level-1 auxiliary file: introduction.aux
+A level-1 auxiliary file: chapitre1.aux
+A level-1 auxiliary file: chapitre2.aux
+A level-1 auxiliary file: chapitre3.aux
+A level-1 auxiliary file: chapitre4.aux
+A level-1 auxiliary file: chapitre5.aux
+A level-1 auxiliary file: conclusion.aux
+The style file: plain.bst
+Database file #1: these.bib
+Repeated entry---line 4425 of file these.bib
+ : @article{gillet2005tangible
+ :                            ,
+I'm skipping whatever remains of this entry
+Warning--to sort, need author or key in _nobel_2013
+Warning--empty journal in brickley2004rdf
+Warning--empty journal in delano_pymol_2002
+Warning--empty journal in klyne2006resource
+Warning--empty journal in kuhlen2011parallel
+Warning--empty booktitle in martin_hardware_2014
+Warning--there's a number but no volume in mcbride2002jena
+Warning--there's a number but no volume in noy2001creating
+Warning--empty journal in ortega_shocam_2015
+Warning--empty journal in sowa1983conceptual
+Warning--empty institution in weibel1998dublin
+You've used 155 entries,
+            2118 wiz_defined-function locations,
+            1343 strings with 34850 characters,
+and the built_in function-call counts, 60930 in all, are:
+= -- 5888
+> -- 3577
+< -- 39
++ -- 1438
+- -- 1255
+* -- 4779
+:= -- 10191
+add.period$ -- 482
+call.type$ -- 155
+change.case$ -- 1066
+chr.to.int$ -- 0
+cite$ -- 166
+duplicate$ -- 2036
+empty$ -- 4202
+format.name$ -- 1255
+if$ -- 12422
+int.to.chr$ -- 0
+int.to.str$ -- 155
+missing$ -- 159
+newline$ -- 774
+num.names$ -- 312
+pop$ -- 1060
+preamble$ -- 1
+purify$ -- 924
+quote$ -- 0
+skip$ -- 1451
+stack$ -- 0
+substring$ -- 3652
+swap$ -- 438
+text.length$ -- 39
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 594
+warning$ -- 11
+while$ -- 558
+width$ -- 158
+write$ -- 1693
+(There was 1 error message)

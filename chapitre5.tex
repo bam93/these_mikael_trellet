@@ -6,9 +6,18 @@
 \cleardoublepage
 
 
-La définition du Visual Analytics nous a permis dans le chapitre précédent de mettre en évidence le besoin d'une homogénéisation des parties visuelles et analytiques au sein d'un même espace avant de pouvoir mettre en place des techniques de visualisation avancées. Ces techniques doivent permettre le traitement simultané des informations hétérogènes que constituent les modèles 3d et les valeurs d'analyses associées.
+La définition du Visual Analytics nous a permis dans le chapitre précédent de mettre en évidence le besoin d'une homogénéisation des parties visuelles et analytiques au sein d'un même espace avant de pouvoir mettre en place des techniques de visualisation avancées (voir Figure \ref{Fig:process_bio_struct_VA}). Ces techniques doivent permettre le traitement simultané des informations hétérogènes que constituent les modèles 3d et les valeurs d'analyses associées.
 
 Le web sémantique fut choisi comme base de développement et sa description théorique dans le chapitre précédent doit maintenant faire place à son application dans notre processus d'étude.
+
+\begin{figure}
+  \centering
+  {\includegraphics[width=1.0\linewidth]{./figures/ch5/process_bio_struct_VA}}
+    \caption{\it Schéma du processus itératif d'étude d'une structure moléculaire en biologie structurale. Nous illustrons dans ce chapitre l'utilisation du Visual Analytics pour fusionner les outils de visualisation et d'analyse.}
+  \label{Fig:process_bio_struct_VA}
+  \hspace{0.3cm}
+\end{figure}
+
 
 \section{Approche applicative de la sémantique}
 
@@ -50,35 +59,45 @@ En plus de lier étroitement les espaces partageant les représentations des mê
 \subsection{Ontologie OWL pour la modélisation des concepts de biologie structurale}
 
 Comme le montre en partie la Figure \ref{Fig:ontology}, nous avons essayé de définir de façon complète l'ensemble des concepts que l'utilisateur aurait à manipuler lors de ses activités de visualisation et d'analyses synchronisées. 
+
 Nous l'avons vu auparavant, plusieurs bio-ontologies ont été mises en place ces dernières années. Afin d'avoir une description la plus précise qui soit des concepts biologiques mis en jeu, nous nous sommes appuyés sur une ontologie déjà existante et disponible en ligne décrivant de façon complète les acides aminés et leurs propriétés \footnote{\url{http://bioportal.bioontology.org/ontologies/AMINO-ACID}}. Cette ontologie nous a permis de poser les bases biologiques d'un des principaux concepts de biologie structurale. En rassemblant des informations telles que la taille, l'hydrophobicité ou bien la charge de chaque acide-aminé il est ainsi possible d'extraire rapidement des groupes d'acides aminés possédant les mêmes propriétés et ainsi utiliser ces propriétés pour des raisonnements complexes lors de l'interrogation de la base de données. Parmi les nombreuses autres bio-ontologies disponibles, aucune d'entre-elles parvenait à définir aussi simplement que nous le désirions les autres concepts dont nous avions besoin. Il est cependant important de noter qu'une extension de notre ontologie est possible et même encouragée. Cette extension pourrait par exemple compléter et étoffer certaines propriétés biologiques omises mais intéressantes pour des études ponctuelles ou spécialisées.
 
-En plus des concepts biologiques cités précédemment, nous avons également cherché à définir tous les concepts d'analyses et d'action qui seront en jeu lors de la session d'utilisation de notre plateforme. Les actions rassemblent toutes les actions que l'utilisateur pourrait vouloir effectuer avec les données qu'il manipule, de façon directe ou indirecte. Elles reprennent essentiellement les commandes permises par les logiciels de visualisation moléculaire et les outils d'analyse que nous utilisons. Dans les concepts analytiques sont rassemblés les éléments graphiques ou abstraits qui rentrent en jeu dans la création et la visualisation d'un résultat d'analyse. Nous ne définissons pas, volontairement, les processus d'analyse eux-mêmes car ceux-ci peuvent être de natures très différentes et possèdent un champ de définition bien trop large et complexe pour le sujet de cette thèse. De plus, nous séparons volontairement la visualisation des résultats d'analyses des processus/modules d'analyses. Cela ne signifie pas que certains processus d'analyses ne seront pas utiliser au sein de la plateforme logicielle, il n'est simplement pas pertinent de les ajouter à l'ontologie dans le but d'uniformiser les rendus 3D et d'analyses.
+L'ontologie a été conçue autour de 5 ensembles de définition distincts, s'adressant à 5 éléments différents composant notre plateforme : 
+
+\begin{itemize}
+  \item \textbf{Connaissance biologique} - Regroupe les concepts de biologie structurale et leurs propriétés
+  \item \textbf{Représentation 3d} - Regroupe les moyens de représentation des modèles 3d
+  \item \textbf{Représentation 2d} - Regroupe les moyens de représentation des analyses 2d
+  \item \textbf{Interactions 3d} - Regroupe les modes et possibilités d'interaction dans l'espace de visualisation
+  \item \textbf{Interactions 2d} - Regroupe les modes et possibilités d'interaction dans l'espace d'analyses
+\end{itemize}
+
+La distinction des ensembles de définition ne signifie pas que des liens existent entre ces ensembles, au contraire. La concept de <<Secondary Structure>> fait par exemple partie de l'ensemble de définition \textit{Connaissance biologique} mais est également rattaché au concept <<Cartoon>> de l'ensemble de définition \textit{Représentation 3d}. C'est l'ensemble de ces connections qui permettront par la suite de raisonner sur l'ontologie afin d'extraire des tâches automatisées au sein de moteurs de décision ou multimodaux.
+
+Les concepts et propriétés présentes au sein des ensembles de définition de \textit{Représentation 2d} et de \textit{Représentation 3d} désignent les éléments graphiques permettant de représenter les concepts de l'ensemble des \textit{Connaissance biologique}. Les notions de forme, couleur mais également de types de graphes sont des notions qui seront définies dans ces ensembles. 
+Il est à noter que les concepts analytiques sont définis par les éléments graphiques ou abstraits qui rentrent en jeu dans la création et la visualisation d'un résultat d'analyse, notions définies dans les deux ensemble de définition de \textit{Représentation}. Nous ne définissons cependant pas, volontairement, les processus d'analyse eux-mêmes car ceux-ci peuvent être de natures très différentes et possèdent un champ de définition bien trop large et complexe pour le sujet de cette thèse. Cela ne signifie pas que certains processus d'analyses ne seront pas utiliser au sein de la plateforme logicielle, il n'est simplement pas pertinent de les intégrer à l'ontologie, ne participant à l'uniformisation des rendus 3D et d'analyses.
+
+En plus des concepts biologiques et de représentations cités précédemment, nous avons donc également cherché à définir tous les concepts d'interaction qui seront en jeu lors de la session d'utilisation de notre plateforme. Les interactions rassemblent toutes les actions que l'utilisateur pourrait vouloir effectuer sur les données qu'il manipule, de façon directe ou indirecte. Elles reprennent essentiellement les commandes permises par les logiciels de visualisation moléculaire et les outils d'analyse utilisés.
 
 \begin{figure}
   \centering
-  {\includegraphics[width=1.0\linewidth]{./figures/ch5/ontology}}
+  {\includegraphics[width=1.00\linewidth]{./figures/ch5/ontology}}
     \caption{\it Extrait de l'ontologie OWL créée pour la mise en place de notre représentation sémantique de la plateforme logicielle. Visualisation obtenue avec OWLGrEd \cite{barzdins2010owlgred}}
   \label{Fig:ontology}
   \hspace{0.3cm}
 \end{figure}
 
-L'ontologie a été conçue autour de 5 ensembles de définition distincts, s'adressant à 5 éléments différents composant notre plateforme : 
+Une fois l'ontologie mise en place, il est possible d'alimenter la base de faits qu'elle définie en ajoutant les informations biologiques regroupées par l'expert scientifique. Ces informations vont devoir respecter le vocabulaire et la classification définie par les règles présentes dans l'ontologie OWL.
 
-\begin{itemize}
-  \item Connaissance biologique - Regroupe les concepts de biologie structurale et leurs propriétés
-  \item Représentation 3d - Regroupe les moyens de représentation des modèles 3d.
-  \item Représentation 2d - Regroupe les moyens de représentation des analyses 2d.
-  \item Interactions 3d - Regroupe les modes et possibilités d'interaction dans l'espace de visualisation
-  \item Interactions 2d - Regroupe les modes et possibilités d'interaction dans l'espace d'analyses
-\end{itemize}  
+\subsection{Le RDF(/S), format des bases de connaissances moléculaires}
 
+La description d'un environnement d'intérêt passe par l'analyse de toutes les informations biologiques pouvant être labellisées par une chaîne de caractère ou une valeur et qui correspondent à un concept ou une propriété identifiée dans l'ontologie OWL. Chaque information alimentera une base de données RDF organisant toutes les informations, de la même manière que pour les descriptions ontologiques, sous forme de triplets de type Sujet/Propriété/Objet.
 
-Une fois l'ontologie mise en place, il est possible d'alimenter la base de connaissance en ajoutant les informations biologiques regroupées par l'expert scientifique. Ces informations vont devoir respecter le vocabulaire et la classification définie par les règles présentes dans l'ontologie OWL.
+Dans le cas qui nous intéresse pour ce travail de thèse, les simulations numériques moléculaires peuvent être découpées en une succession de modèles statiques 3D successifs. Chaque modèle correspond au concept \textit{Model} décrite dans notre ontologie. C'est le groupe structurel le plus large que nous ayons défini dans les composants structurels biologiques. Plusieurs triplets présents dans notre base de données finale sont illustrés dans le Listing \ref{rdf_xml}. Chaque atome présent dans un modèle possède une position 3d ainsi qu'un résidu auquel il appartient et indirectement, de la même manière, une chaîne et son modèle de référence grâce aux règles d'inférence. Ces informations n'ont pas besoin d'être spécifiées explicitement puisque les règles d'inférence définies dans l'ontologie instaurent, entre autres, le fait qu'un atome est sous-composant d'un résidu qui est un sous-composant d'une chaîne elle-même sous-composante d'un modèle. 
+Cette information n'est donc pas présente dans la base de données sous forme d'un triplet explicite de type \textit{ATOM\_1234 my\_ontology:belongs\_to CHAIN\_12} mais ce triplet pourra être tout de même obtenu lors d'une requête cherchant à obtenir l'identifiant de la chaîne dont l'atome est l'un des composants. 
 
-\subsection{Le RDF/(S), format des bases de connaissances moléculaires}
+Toutes les propriétés géométriques (position, angles, distance, etc.), physico-chimiques (accessibilité, charge partielle, liaisons, etc.) ou analytiques (énergie, RMSD, température, etc.) pouvant être exportées des jeux de données étudiés sont donc intégrés dans la base de données de faits et surtout associés aux individus créés à partir de la simulation (atomes/résidus/chaîne/modèles). Ces individus sont des instances des concepts définis dans l'ontologie. Ils forment la population de la base de données et la majorité des propriétés définies se rapportent à eux.
 
-La description d'un environnement d'intérêt passe par l'analyse de toutes les informations biologiques pouvant être labellisées par une chaîne de caractère ou une valeur et qui correspond à un concept ou une propriété identifiée dans l'ontologie OWL. Chaque information alimentera une base de données RDF organisant toutes les informations, de la même manière que pour les descriptions ontologiques, sous forme de triplets de type Sujet/Propriété/Objet.
-Dans le cas qui nous intéresse pour ce travail de thèse, les simulations numériques moléculaires peuvent être découpées en une succession de modèles statiques 3D successifs. Chaque modèle correspond à l'échelle \textit{Model} décrite dans notre ontologie. C'est le groupe structurel le plus large que nous ayons défini dans les composants structurels biologiques. Plusieurs triplets présents dans notre base de données finale sont illustrés dans le Listing \ref{rdf_xml}. Chaque atome possède une position 3d ainsi qu'un résidu auquel il appartient et indirectement, de la même manière, une chaîne et un modèle de référence grâce aux règles d'inférence. Cette information n'a donc pas besoin d'être spécifiée puisque les règles d'inférence instaure, entre autres, le fait qu'un résidu est l'un des composants d'une chaîne qui est elle-même composante d'un modèle. Cette information n'est donc pas présente dans la base de données sous forme d'un triplet explicite de type \textit{ATOM\_1234 my\_ontology:belongs\_to CHAIN\_12} mais ce triplet pourra être obtenu lors d'une requête cherchant à identifier par exemple l'identifiant de la chaîne dont l'atome est l'un des composants. Toutes les propriétés géométriques (position, angles, distance, etc.), physico-chimiques (accessibilité, charge partielle, liaisons, etc.) ou analytiques (énergie, RMSD, température, etc.) pouvant être exportées des jeux de données étudiés sont donc intégrés dans a base de données et surtout associés aux individus créés à partir de la simulation. Ces individus sont des instances des concepts définis dans l'ontologie. Ils forment la population de la base de données et la majorité des propriétés définies se rapportent à eux.
 Au-delà du stockage et de la mise à disposition des données suivant les règles pré-définies, la base de donnée RDF et plus particulièrement l'ontologie OWL la décrivant permettent de mettre en place des moteurs d'interprétation de commandes ou requêtes qui vont avoir pour objectif de récupérer une liste d'individus respectant un certain nombre de propriétés énoncées.
 
 \begin{lstlisting}[language=XML, caption=Exemple de triplets RDF présents dans notre base de données, label=rdf_xml]
@@ -110,7 +129,7 @@ Au-delà du stockage et de la mise à disposition des données suivant les règl
 
 \subsection{SPARQL, au coeur du raisonnement pour l'interaction visualisation/analyse}
 
-Notre base de données est hébergée dans un serveur web Virtuoso accessible depuis le réseau afin de garantir un accès privilégié et optimisé à nos données. Ce serveur possède l'ensemble des informations obtenues à partir de la trajectoire d'une simulation moléculaire test reprenant l'évolution structurelle et énergétique d'une protéine transmembranaire, GLIC, pendant 2ns. Le système contient également un ligand identifié de GLIC, le bromoforme, dont on cherche à connaitre le mode de liaison et surtout son impact sur la forme de GLIC au cours du temps. Le solvant utilisé pour la simulation est un modèle simplifié d'eau.
+
 
 \subsection{Sémantique comme support d'une reconnaissance vocale opérationnelle}
 
@@ -192,6 +211,8 @@ Si tous les pré-requis associés à une action sont présents, alors la command
 
 Les différents outils présentés ici nous ont permis de mettre en place un espace de travail combinant visualisation et analyses qui repose exclusivement sur une interrogation constante de la base de données crées à partir de nos données de simulation et respectant l'ontologie OWL mise en place pour ce projet.
 La conception de notre programme repose sur un schéma complexe permettant de relier efficacement ses différents composants de manière à les faire communiquer de façon optimale. La base de notre programme se trouve dans les données manipulées, toutes rassemblées au sein de la base de données RDF. Dans le schéma illustré dans la Figure \ref{Fig:schema_prog_visu_ana}, nous l'avons volontairement placé au centre d'une boucle bi-latérale de communication reliant l'espace de visualisation à l'espace d'analyse.
+
+Notre base de données est hébergée dans un serveur web Virtuoso accessible depuis le réseau afin de garantir un accès privilégié et optimisé à nos données. Ce serveur possède l'ensemble des informations obtenues à partir de la trajectoire d'une simulation moléculaire test reprenant l'évolution structurelle et énergétique d'une protéine transmembranaire, GLIC, pendant 2ns. Le système contient également un ligand identifié de GLIC, le bromoforme, dont on cherche à connaitre le mode de liaison et surtout son impact sur la forme de GLIC au cours du temps. Le solvant utilisé pour la simulation est un modèle simplifié d'eau.
 
 \subsection{Création de la base de donnée RDF}
 
