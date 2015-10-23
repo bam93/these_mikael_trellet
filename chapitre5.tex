@@ -1,6 +1,6 @@
 %!TEX root = these.tex
 
-\chapter[Interactions directes pour la visualisation et l'analyse]{Visual Analytics comme support de l'intégration de la visualisation et de l'analyse dans un contexte interactif commun}
+\chapter[Conception, architecture et implémentation d'une application de Visual Analytics Moléculaire adaptée au contexte immersif]{Conception, architecture et implémentation d'une application de Visual Analytics Moléculaire adaptée au contexte immersif}
 \label{Sec:visuAna}
 \minitoc
 \cleardoublepage
@@ -30,7 +30,7 @@ Le web sémantique fut choisi comme base de développement et sa description th�
 
 Les outils du web sémantique décrits dans le chapitre précédent donnent une base de travail structurée pour intégrer des données liées au sein d'une plateforme. Cette plateforme n'est cependant pas déclinée et utilisée de la même façon pour l'ensemble des applications.
 
-Factuellement, au sein du processus d'analyse structurelle et statistique d'une simulation dans un espace de travail fusionné, chaque élément avec lequel interagit l'utilisateur correspond à un individu unique dont la nature ou l'une de ses propriétés est mise en avant, soit à travers une représentation visuelle, soit à travers une représentation analytique. Chaque interaction avec cet individu devra déclencher un résultat dans tous les espaces possédant la référence d'au moins une de ses propriétés.
+Au sein du processus d'analyse structurelle et ou numérique d'une simulation dans un espace de travail conjoint, chaque élément avec lequel interagit l'utilisateur correspond à un individu unique dont la nature ou l'une de ses propriétés est mise en avant, soit à travers une représentation visuelle, soit à travers une représentation analytique. Chaque interaction avec cet individu devra déclencher un résultat dans tous les espaces possédant la référence d'au moins une de ses propriétés.
 
 Cet objectif de fonctionnement implique que les concepts mis en jeu au sein de la plateforme doivent être correctement définis et aussi complets que possibles. La définition d'une sémantique pour ces concepts rempli ce rôle
 En plus de lier étroitement les espaces partageant les représentations des mêmes individus, la représentation sémantique sous forme d'ontologie apporte différents avantages :
@@ -40,7 +40,7 @@ En plus de lier étroitement les espaces partageant les représentations des mê
 % , afin que l'utilisateur sache comment enrichir la base de données qui sera prise en entrée par les modules et afin que les données puissent être liées entre elles de façon optimale. La mise en place d'une ontologie permet que ces deux prérequis soient respectés. Le web sémantique tend à lier et structurer les données de façon à faciliter l'accès aux connaissances qu'elles contiennent. C'est également le but de notre étude et il semble adapté de reprendre les principes de cette approche afin de mettre en place la structure de notre base de données. Plusieurs avantages qu'offre la mise en place de données liées et d'une ontologie définissant les concepts étudiées peuvent être énumérés:
 
 \begin{itemize}
-    \item L'identification pour chaque interaction des concepts mis en jeu par l'utilisateur pour la proposition d'actions adaptées
+    \item L'identification pour chaque interaction avec les représentation des objets mis en jeu par l'utilisateur pour la proposition d'actions adaptées
     \item Représentation hiérarchisée des concepts obligeant une cohérence et une compatibilité des nouvelles connaissances/données
     \item Partage possible des données utilisées puisque estampillées autour d'un ensemble de définition précis
     \item Ontologie évolutive et potentiellement auto-extensible si des mécanismes d'interprétation des requêtes métier sont mis en place.
@@ -65,14 +65,14 @@ Nous l'avons vu auparavant, plusieurs bio-ontologies ont été mises en place ce
 L'ontologie a été conçue autour de 5 ensembles de définition distincts, s'adressant à 5 éléments différents composant notre plateforme : 
 
 \begin{itemize}
-  \item \textbf{Connaissance biologique} - Regroupe les concepts de biologie structurale et leurs propriétés
-  \item \textbf{Représentation 3d} - Regroupe les moyens de représentation des modèles 3d
-  \item \textbf{Représentation 2d} - Regroupe les moyens de représentation des analyses 2d
-  \item \textbf{Interactions 3d} - Regroupe les modes et possibilités d'interaction dans l'espace de visualisation
-  \item \textbf{Interactions 2d} - Regroupe les modes et possibilités d'interaction dans l'espace d'analyses
+  \item \textbf{Connaissance biomoléculaire} - Regroupe les concepts métier et la objets de de la biologie structurale 
+  \item \textbf{Représentation 3d des structure} - Regroupe les concepts liés à représentation des complexes moléculaires 3d
+  \item \textbf{Représentation 2d} - Regroupe les moyens de représentation des analyses numériques 2d en biologie moléculaire 
+  \item \textbf{Interactions 3d} - Regroupe concepts liés à l'interaction dans les environnements 3d
+  \item \textbf{Interactions 2d} - Regroupe concepts liés à l'interaction dans les environnements 2d
 \end{itemize}
 
-La distinction des ensembles de définition ne signifie pas que des liens existent entre ces ensembles, au contraire. La concept de <<Secondary Structure>> fait par exemple partie de l'ensemble de définition \textit{Connaissance biologique} mais est également rattaché au concept <<Cartoon>> de l'ensemble de définition \textit{Représentation 3d}. C'est l'ensemble de ces connections qui permettront par la suite de raisonner sur l'ontologie afin d'extraire des tâches automatisées au sein de moteurs de décision ou multimodaux.
+La distinction des ensembles ne signifie pas qu'il n'existe pas de relation entre deux ensembles, au contraire. La concept de <<Secondary Structure>> fait par exemple partie de l'ensemble de définition \textit{Connaissance biologique} mais est également rattaché au concept <<Cartoon>> de l'ensemble de définition \textit{Représentation 3d}. C'est l'ensemble de ces connections qui permettront par la suite de raisonner sur l'ontologie afin d'extraire des tâches automatisées au sein de moteurs de décision ou multimodaux.
 
 Les concepts et propriétés présentes au sein des ensembles de définition de \textit{Représentation 2d} et de \textit{Représentation 3d} désignent les éléments graphiques permettant de représenter les concepts de l'ensemble des \textit{Connaissance biologique}. Les notions de forme, couleur mais également de types de graphes sont des notions qui seront définies dans ces ensembles. 
 Il est à noter que les concepts analytiques sont définis par les éléments graphiques ou abstraits qui rentrent en jeu dans la création et la visualisation d'un résultat d'analyse, notions définies dans les deux ensemble de définition de \textit{Représentation}. Nous ne définissons cependant pas, volontairement, les processus d'analyse eux-mêmes car ceux-ci peuvent être de natures très différentes et possèdent un champ de définition bien trop large et complexe pour le sujet de cette thèse. Cela ne signifie pas que certains processus d'analyses ne seront pas utiliser au sein de la plateforme logicielle, il n'est simplement pas pertinent de les intégrer à l'ontologie, ne participant à l'uniformisation des rendus 3D et d'analyses.

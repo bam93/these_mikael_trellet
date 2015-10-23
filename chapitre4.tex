@@ -1,6 +1,6 @@
 %!TEX root = these.tex
 
-\chapter[La visualisation analytique, outil de la Réalité Virtuelle]{La visualisation analytique, outil de la Réalité Virtuelle}
+\chapter[Visual Analytics et approches sémantiques dédiées à la biologie moléculaire]{Visual Analytics et approches sémantiques dédiées à la biologie moléculaire}
 \label{Sec:VisuAna_def}
 \minitoc
 \cleardoublepage
@@ -30,7 +30,7 @@ Pour permettre à l'expert une compréhension globale de son système, il est n�
 
 %%%%%%%%%%%%%%%%%%%%% DEBUT INTRO FROM CHAP.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Visualisation analytique : définition, outils et applications}
+\section{Visual Analytics : définition, outils et applications}
 
 Une première pierre pour cette réflexion pourrait venir, selon nous, du domaine de la visualisation analytique et de ses problématiques, parfois proches de celles que nous retrouvons en RV.
 Lorsque l'on s'intéresse à la place de la visualisation analytique dans les disciplines de biologie et de médecine (voir Figure \ref{Fig:VA_pubmed_trend}), on s'aperçoit que la visualisation analytique connaît une progression identique à celle de la RV. Il est possible d'expliquer cette croissance par la nécessité de trouver des algorithmes de visualisation adaptés aux données manipulées aujourd'hui.
@@ -93,7 +93,7 @@ Ces recommandation ergonomiques guident le développement de nouvelles générat
 
 \subsection{Outils et techniques} \label{visu_ana_tools}
 
-Plusieurs outils ou techniques découlent de ce couplage étroit entre visualisation de données brutes et analyses associées caractéristique de la visualisation analytique \cite{cockburn2008review}:
+Plusieurs outils ou techniques découlent de ce couplage étroit entre visualisation de données brutes et analyses associées en Visual Analytics.
 
 \begin{enumerate}
     \item <<Overview+Detail>>: Cette technique met en relation plusieurs vues, synchrones ou asynchrones et dont l'une présente une vue globale du sujet,le tout dans des espaces visuels distincts. L'absence de synchronisation peut se retrouver dans la vue globale ou dans la vue détaillée. Une interaction dans l'une ou les autres des vues n'entraîne pas obligatoirement un changement dans les autres vues. Cependant, dans la plupart des cas, les vues sont synchrones et une cohérence est assurée entre les données affichées afin de pouvoir lier leur contenu. Une application connue de cette technique est retrouvée dans les programmes de visualisation de cartes comme illustrée dans la Figure \ref{Fig:overview+detail}. Ces visualiseurs de cartes géographiques présentent deux échelles spatiales différentes dans deux fenêtres distinctes. Seule l'interaction dans la fenêtre de contexte globale (la plus grande / principale) a un effet dans la seconde fenêtre.
@@ -230,7 +230,7 @@ L'ensemble des caractéristiques principales du RDFS est repris dans un langage 
   \hspace{0.3cm}
 \end{figure}
 
-\subsection{Modèle RDF} \label{rdf_model}
+\subsection{Modèle RDF, formats et langages} \label{rdf_model}
 
 Le langage RDF est le langage de base du web Sémantique qui l'utilise afin de mettre en place un réseau de données partagées et libres. C'est un modèle de graphe destiné à décrire de façon formelle des ressources et leurs métadonnées associées, de façon à permettre leur traitement automatique.
 
@@ -277,8 +277,6 @@ GRAPHE Pierre --âge--> 25
 
 Fabien Gandon met très bien en avant le fait que le modèle RDF possède d'ailleurs plusieurs similarités avec le modèle des graphes conceptuels \cite{gandon_graphes_2008}. Ils partagent en effet la distinction entre sémantique (support pour les GC et schémas RDFS/OWL pour RDF) et la connaissance factuelle ou assertionnelle. Dans les deux modèles, cette connaissance est positive, conjonctive et existentielle, pouvant être représentée par des graphes orientés étiquetés. Les schémas RDF et GC possèdent une hiérarchie similaire des classes/propriétés pour RDF et concept/relation pour GC. Les relations et propriétés sont d'ailleurs indépendantes et définies en dehors des classes/concepts et se définissent donc comme de 1ers ordres dans la hiérarchie de ces deux modèles. Enfin, les deux modèles implémentent un mécanisme de déduction équivalent basé sur la subsomption en RDFS et la projection en GC. Ils s'éloignent cependant sur plusieurs points. Alors que RDF permet la multi-instanciation, GC ne possède pas d'équivalent. Une déclaration de propriété en RDF peut indiquer plusieurs domaines de définition et d'ensembles d'arrivée ce qui n'est pas le cas en GC. Les GC permettent par des relations d'arité supérieures à deux alors que les graphes RDF sont binaires. Les GC proposent également des extensions supérieures à l'expressivité de RDF/S.
 Des travaux ont donc cherché à rapprocher ces deux formalismes afin de profiter de leurs avantages respectifs et gommer leurs défauts dans la mesure du possible. C'est le cas du projet CORESE \cite{corby_searching_2006} qui est un moteur de recherche s'appuyant sur le formalisme de RDF(S)/XML pour exprimer et partager ses données, mais utilise les mécanismes de requête et d'inférence fournis par les GC.
-
-\subsubsection{Formats et langages autour du RDF}
 
 Les données RDF peuvent être représentées sous différents formats, du plus lisible pour l'être humain au plus optimisé pour le traitement informatique, souvent au détriment de sa lisibilité. De la même façon, ils peuvent répondre à différentes applications logicielles et donc ont été déclinés également pour leur intégration dans d'autres formats courants.
 
@@ -423,10 +421,10 @@ Nous avons évoqué la présence de librairies ou plateformes implémentant les 
 
 \section{Conclusion}
 
-La description du domaine du \textit{Visual Analytics} a mis en avant la nécessité de lier les données afin de permettre leur manipulation au sein de techniques qu'elle introduit. Ces données sont cependant hétérogènes dans le cadre du processus d'étude de structures moléculaires puisqu'elles sont à la fois de nature structurelle et de nature analytique. Des informations 3d (distance au ligand, poches de liaisons, etc.) doivent donc être partagées avec des informations 2d (énergie potentielle, charge, etc.). Pour les regrouper au sein d'un même cadre descriptif, il est alors nécessaire de mettre en place un vocabulaire commun permettant de représenter l'ensemble des connaissances métier.
+La description du domaine du \textit{Visual Analytics} a mis en avant la nécessité de lier les données afin de permettre leur manipulation au sein de techniques qu'elle introduit. Ces données sont cependant hétérogènes dans le cadre du processus d'étude de structures moléculaires puisqu'elles sont à la fois de nature géométrique et de nature analytique. Des informations 3d (distance au ligand, poches de liaisons, etc.) doivent donc être partagées avec des informations 2d (énergie potentielle, charge, etc.). Pour les regrouper au sein d'un même contexte interactif, il est nécessaire de mettre en place un formalisme commun permettant de représenter l'ensemble des connaissances métier.
 
-Parmi les formalises à notre disposition pour cette représentation, la logique de description présente l'approche la plus en adéquation avec nos prérequis. Elle introduit la notion d'ontologie, utilisée par différents domaines d'application, en particulier biologiques, pour mettre en place une description des données utilisées et permettre leur réutilisation, comparaison et enrichissement autour d'un vocabulaire précis et formalisé dans l'ontologie. Les logiques de description permettent également d'étendre les connaissances d'une base de connaissances via des relations logiques définies dans l'ontologie sans que ces relations factuelles soient explicitement présentes dans la base de connaissances.
+Parmi les formalismes à notre disposition pour cette représentation, la logique de description présente l'approche la plus en adéquation avec nos prérequis. Elle introduit la notion d'ontologie, utilisée par différents domaines d'application, en particulier biologiques, pour mettre en place une description des données utilisées et permettre leur réutilisation, comparaison et enrichissement autour d'un vocabulaire précis et formalisé dans l'ontologie. Les logiques de description permettent également d'étendre les connaissances d'une base de connaissances \textit{via} des relations logiques définies dans l'ontologie sans que ces relations factuelles soient explicitement présentes dans la base de connaissances.
 
-Les ontologies constituent la première pierre de la représentation des connaissances du web sémantique. Le web sémantique est une initiative présente dans de plus en plus d'institutions du web, nous avons choisi d'utiliser ses outils et modèles comme base de développement pour la description d'une plateforme cherchant à rassembler au sein d'une même représentation haut-niveau des concepts hétérogènes comme ceux mis en jeu au sein de la visualisation et de l'analyse de simulations moléculaires. Notre plateforme devra s'appuyer sur une représentation complète du contenu, contexte et de la tâche afin de permettre la liaison des données et leur utilisation coordonnée.
+La construction d'ontologies est la première étape du processus de formalisation sémantique des connaissances. Le web sémantique est une initiative présente dans de plus en plus d'institutions du web, nous avons choisi d'utiliser ses outils et modèles comme base de développement pour la description d'une plateforme cherchant à rassembler au sein d'une même représentation haut-niveau des concepts hétérogènes comme ceux mis en jeu au sein de la visualisation et de l'analyse de simulations moléculaires. Notre plateforme devra s'appuyer sur une représentation complète du contenu, du contexte interactif et de la tâche afin de permettre la liaison des données et leur manipulation  conjointe.
 
 %%%%%%%%%%%%%%%%%%%%% FIN INTRO FROM CHAP.2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
