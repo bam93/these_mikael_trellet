@@ -13,7 +13,7 @@ Le web sémantique fut choisi comme base de développement et sa description th�
 \begin{figure}
   \centering
   {\includegraphics[width=1.0\linewidth]{./figures/ch5/process_bio_struct_VA}}
-    \caption{\it Schéma du processus itératif d'étude d'une structure moléculaire en biologie structurale. Nous illustrons dans ce chapitre l'utilisation du Visual Analytics pour fusionner les outils de visualisation et d'analyse.}
+    \caption[Schéma du processus itératif d'étude d'une structure moléculaire en biologie structurale.]{\it Schéma du processus itératif d'étude d'une structure moléculaire en biologie structurale. Nous illustrons dans ce chapitre l'utilisation du Visual Analytics pour fusionner les outils de visualisation et d'analyse.}
   \label{Fig:process_bio_struct_VA}
   \hspace{0.3cm}
 \end{figure}
@@ -82,7 +82,7 @@ En plus des concepts biologiques et de représentations cités précédemment, n
 \begin{figure}
   \centering
   {\includegraphics[width=0.8\linewidth]{./figures/ch5/ontology}}
-    \caption{\it Extrait de l'ontologie OWL créée pour la mise en place de notre représentation sémantique de la plateforme logicielle. Visualisation obtenue avec OWLGrEd \cite{barzdins2010owlgred}}
+    \caption[Extrait de notre l'ontologie OWL.]{\it Extrait de l'ontologie OWL créée pour la mise en place de notre représentation sémantique de la plateforme logicielle. Visualisation obtenue avec OWLGrEd \cite{barzdins2010owlgred}}
   \label{Fig:ontology}
   \hspace{0.3cm}
 \end{figure}
@@ -184,7 +184,7 @@ renverra donc \textit{true} malgré l'absence de lien direct, le concept \textit
 \begin{figure}
   \centering
   {\includegraphics[width=0.8\linewidth]{./figures/ch5/alanine_owl}}
-    \caption{\it Extrait de l'ontologie OWL créée pour la mise en place de notre représentation sémantique de la plateforme logicielle. Visualisation obtenue avec le plugin OWLViz de Protégé}
+    \caption[Extrait de l'ontologie OWL pour le concept \textit{Alanine}.]{\it Extrait de l'ontologie OWL pour le concept \textit{Alanine}.}
   \label{Fig:alanine_owl}
   \hspace{0.3cm}
 \end{figure}
@@ -256,7 +256,7 @@ Si tous les pré-requis associés à une action sont respectés, alors la comman
 \begin{figure}
   \centering
   {\includegraphics[width=.75\linewidth]{./figures/ch5/platform_architecture}}
-    \caption{{\it Diagramme de déploiement des modules et leur connectivité au sein de notre plateforme immersive de Visual Analytics.}}
+    \caption[Diagramme de déploiement de notre plateforme de \textit{Visual Analytics} immersive.]{{\it Diagramme de déploiement des modules et leur connectivité au sein de notre plateforme immersive de Visual Analytics.}}
   \label{Fig:platform_architecture}
   \hspace{0.3cm}
 \end{figure}
@@ -279,12 +279,12 @@ Comme nous l'avons évoqué précédemment, nous avons mis en place une ontologi
 \begin{figure}
   \centering
   {\includegraphics[width=.75\linewidth]{./figures/ch5/glic+bromoform.pdf}}
-    \caption{{\it Rendu graphique de la liaison d'un bromoforme (sphères blanches) sur la protéine GLIC (<<cartoon>> rouge) au sein d'une membrane cellulaire (lignes vert).}}
+    \caption[Rendu graphique de GLIC et son ligand.]{{\it Rendu graphique de la liaison d'un bromoforme (sphères blanches) sur la protéine GLIC (<<cartoon>> rouge) au sein d'une membrane cellulaire (lignes vert).}}
   \label{Fig:glic+bromoform}
   \hspace{0.3cm}
 \end{figure}
 
-Concernant la partie expérimentale, nous sommes partis de données réelles de simulation moléculaires générées par des experts du domaine. La trajectoire étudiée correspond à une dynamique moléculaire d'une protéine transmembranaire, GLIC, et d'un ligand connu pour être un de ses inhibiteurs, le bromoforme. Cette simulation de 2 nanosecondes a été effectué en solvant explicite grâce à un modèle d'eau standard, XXX et met en évidence la présence du bromoforme dans plusieurs sites de liaisons de la protéine. GLIC est une protéine responsable de la perméation de la cellule puisqu'elle régule le passage des molécules d'eau et des ions entre la partie extra- et intra-cellulaire des cellules. Plusieurs anesthésiques ont été identifié comme possédant une affinité suffisante avec GLIC pour qu'une liaison s'effectue, le bromoforme étant un des ligands concernés. La structure générale de GLIC ainsi que du bromoforme peut être observée dans la Figure \ref{Fig:glic+bromoform}. Le choix de GLIC ne fut pas anodin, trois grandes raisons ont dictées notre décision :
+Concernant la partie expérimentale, nous sommes partis de données réelles de simulation moléculaires générées par des experts du domaine. La trajectoire étudiée correspond à une dynamique moléculaire d'une protéine transmembranaire, GLIC, et d'un ligand connu pour être un de ses inhibiteurs, le bromoforme. Cette simulation de 2 nanosecondes a été effectué en solvant explicite grâce à un modèle d'eau standard et met en évidence la présence du bromoforme dans plusieurs sites de liaisons de la protéine. GLIC est une protéine responsable de la perméation de la cellule puisqu'elle régule le passage des molécules d'eau et des ions entre la partie extra- et intra-cellulaire des cellules. Plusieurs anesthésiques ont été identifié comme possédant une affinité suffisante avec GLIC pour qu'une liaison s'effectue, le bromoforme étant un des ligands concernés. La structure générale de GLIC ainsi que du bromoforme peut être observée dans la Figure \ref{Fig:glic+bromoform}. Le choix de GLIC ne fut pas anodin, trois grandes raisons ont dictées notre décision :
 \begin{enumerate}
 	\item C'est une protéine bien connue des experts avec lesquels nous travaillons, il est ainsi aisé d'identifié les analyses pertinentes que nous pourrons associées par la suite.
 	\item La taille de GLIC est relativement importante, en particulier lorsque la membrane est représentée, nous considérons donc ce complexe comme un cas d'étude intéressant pour tester les limites de nos méthodes en terme de performance.
@@ -297,7 +297,7 @@ La transformation des données expérimentales en triplets RDF s'est faite grâc
 \begin{figure}
   \centering
   {\includegraphics[width=.75\linewidth]{./figures/ch5/pdb_parsing_to_ttl.pdf}}
-    \caption{{\it Schéma du processus de parsing effectué au sein d'un module Java utilisant la librairie de gestion de données OWL/RDF(S) Jena. Les fichiers PDB ont été obtenus à partir d'une simulation moléculaire et chaque PDB représente la conformation spatiale du système simulé à un instant $t$.}}
+    \caption[Processus de traitement de fichiers PDB par Jena, plugin Java.]{{\it Schéma du processus de parsing effectué au sein d'un module Java utilisant la librairie de gestion de données OWL/RDF(S) Jena. Les fichiers PDB ont été obtenus à partir d'une simulation moléculaire et chaque PDB représente la conformation spatiale du système simulé à un instant $t$.}}
   \label{Fig:pdb_parsing_to_ttl}
   \hspace{0.3cm}
 \end{figure}
@@ -330,7 +330,7 @@ PyMol est la partie frontale de notre application, elle est reliée indirectemen
 
 \subsection{Visualisation des résultats d'analyses 2d}
 
-Afin de visualiser les différents graphiques résultant des analyses effectuées \textit{a priori} ou \textit{a posteriori} de la session de travail, nous avons mis en place une interface web de visualisation/interaction avec ces graphiques. Nous souhaitions garantir une utilisation générique et indépendante du type de dispositif d'interaction. Pour ce faire, nous nous appuyons sur une librairie JavaScript de création de graphiques au sein de pages HTML appelée d3js \footnote{\url{http://d3js.org/}}. Cette librairie possède plusieurs outils de chargement de données via différentes sources, sous forme de fichiers ou à travers des flux de données. D3js permet de mettre en place des graphiques de façon relativement simple mais extrêmement paramétrables dans leur apparence ainsi que leur nature. S'appuyant sur JavaScript, elle est directement intégrée dans le code HTML d'une page web et accessible à travers toutes les plateformes permettant de visualiser du contenu HTML.
+Afin de visualiser les différents graphiques résultant des analyses effectuées \textit{a priori} ou \textit{a posteriori} de la session de travail, nous avons mis en place une interface web de visualisation/interaction avec ces graphiques. Nous souhaitions garantir une utilisation générique et indépendante du type de dispositif d'interaction. Pour ce faire, nous nous appuyons sur une librairie JavaScript de création de graphiques au sein de pages HTML appelée d3js \footnote{\url{http://d3js.org/}}. Cette librairie possède plusieurs outils de chargement de données via différentes sources, sous forme de fichiers ou à travers des flux de données. D3js permet de mettre en place des graphiques de façon simple mais extrêmement paramétrables dans leur apparence ainsi que leur nature. S'appuyant sur JavaScript, elle est directement intégrée dans le code HTML d'une page web et accessible à travers toutes les plateformes permettant de visualiser du contenu HTML.
 
 Nous utilisons un serveur web basé sur une librairie python, Flask, afin de mettre en place notre environnement web. Plusieurs extensions existent dont Flask-SocketIO qui permet aux applications Flask d'accéder à une communication bi-directionnelle et de faible latence entre le serveur et le client web. Côté client, la librairie JavaScript SocketIO est suffisante pour pouvoir envoyer et recevoir des messages vers ou depuis le serveur web Flask. Une connexion permanente peut ainsi être mise en place entre le client et le serveur (voir Figure \ref{Fig:platform_architecture}).
 
@@ -340,7 +340,7 @@ L'espace de visualisation des résultats d'analyses est divisé en niveaux hiér
 \begin{figure}
   \centering
   {\includegraphics[width=1.0\linewidth]{./figures/ch5/2d_interface}}
-    \caption{{\it Interface web 2d permettant la mise en place des graphes d'analyse sur les donnée de la base RDF.}}
+    \caption[Interface web 2d pour la visualisation de graphes d'analyses.]{{\it Interface web 2d permettant la mise en place des graphes d'analyse sur les donnée de la base RDF.}}
   \label{Fig:multi_collaboratif}
   \hspace{0.3cm}
 \end{figure}
@@ -374,7 +374,7 @@ SELECT DISTINCT ?distance WHERE {?indiv rdf:type my:Distance . ?indiv
 
 \subsection{Synchronisation}
 
-La nature hétérogène des modules de notre application nous empêche d'adopter une communication directe entre les différentes instances Python créées par les différents modules. La synchronisation entre l'espace visuel et l'espace d'analyses, représenté respectivement par PyMol et le serveur web Flask, se fait au travers de communication entre leurs modules de gestion respectifs. Cette communication s'appuie sur des messages OSC envoyées par les modules à chaque événement déclenché dans un des espaces de travail. Chacun des modules est ainsi associé à un serveur OSC opérant en arrière-plan dans un sous-processus et surveillant tout message arrivant sur le port qui lui est dédié. Nous utilisons la librairie Python pyliblo \footnote{\url{http://das.nasophon.de/pyliblo/}} qui est une interface Python pour liblo \footnote{\url{http://liblo.sourceforge.net/}}, une implémentation du protocole \textit{Open Sound Control} (OSC). OSC est un format de transmission de données conçu pour être utilisé en temps réel. Pyliblo, en plus de permettre la création d'un serveur OSC, fournit également les fonctions nécessaires pour envoyer un message. Ces messages sont envoyés localement sur un port ouvert référencé par la machine qu'un serveur OSC <<surveille>> afin de détecter tout message entrant.
+La nature hétérogène des modules de notre application nous empêche d'adopter une communication directe entre les différentes instances Python créées par les différents modules. La synchronisation entre l'espace visuel et l'espace d'analyses, représenté respectivement par PyMol et le serveur web Flask, se fait au travers de communication entre leurs modules de gestion respectifs. Cette communication s'appuie sur des messages OSC (\textit{Open Sound Control}) envoyées par les modules à chaque événement déclenché dans un des espaces de travail. Chacun des modules est ainsi associé à un serveur OSC opérant en arrière-plan dans un sous-processus et surveillant tout message arrivant sur le port qui lui est dédié. Nous utilisons la librairie Python pyliblo \footnote{\url{http://das.nasophon.de/pyliblo/}} qui est une interface Python pour liblo \footnote{\url{http://liblo.sourceforge.net/}}, une implémentation du protocole OSC. OSC est un format de transmission de données conçu pour être utilisé en temps réel. Pyliblo, en plus de permettre la création d'un serveur OSC, fournit également les fonctions nécessaires pour envoyer un message. Ces messages sont envoyés localement sur un port ouvert référencé par la machine qu'un serveur OSC <<surveille>> afin de détecter tout message entrant.
 
 Les communications constantes entre les modules à travers les ports de nos serveurs OSC permettent donc d'assurer une synchronisation des actions utilisateurs dans chacun des espaces de travail. Les actions identifiées comme synchronisables sont effectuées en coordination entre les espaces.
 

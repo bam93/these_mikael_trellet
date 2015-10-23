@@ -21,7 +21,7 @@ Nous détaillerons dans ce chapitre notre approche pour répondre à l'évolutio
 \begin{figure}
   \centering
   {\includegraphics[width=1.0\linewidth]{./figures/ch3/process_bio_struct_navigation}}
-    \caption{\it Schéma du processus itératif d'étude d'une structure moléculaire en biologie structurale. Nous nous intéressons ici à l'outil de visualisation et plus spécifiquement à l'une des méthodes qu'elle introduit, la navigation.}
+    \caption[Schéma du processus itératif d'étude d'une structure moléculaire en biologie structurale.]{\it Schéma du processus itératif d'étude d'une structure moléculaire en biologie structurale. Nous nous intéressons ici à l'outil de visualisation et plus spécifiquement à l'une des méthodes qu'elle introduit, la navigation.}
   \label{Fig:process_bio_struct_navigation}
   \hspace{0.3cm}
 \end{figure}
@@ -46,7 +46,7 @@ Même si non-exclusif, notre attention fut rapidement portée sur les molécules
 \begin{figure}[h]
   \centering
   {\includegraphics[width=.5\linewidth]{./figures/ch3/molecular_symmetries_drawing}}
-    \caption{{\it Différents types de symétries retrouvés dans des complexes moléculaires. En haut, GLIC, une protéine transmembranaire composée de 5 monomères avec un axe de symétrie correspondant au centre du pore formé par l'agencement des 5 monomères. Vue du dessus (à gauche) et vue de côté (à droite). En bas à gauche, une capside de virus composée de 4 types de monomères présentant un centre de symétrie superposé au centre de gravité du virus. En bas à droite, enchevêtrement de tubulines agencées autour d'une symétrie hélicoïdale (axiale + translation verticale) formant un microtubule.}}
+    \caption[Types de symétries retrouvées dans l'agencement de complexes protéiques majeurs.]{{\it Différents types de symétries retrouvés dans des complexes moléculaires. En haut, GLIC, une protéine transmembranaire composée de 5 monomères avec un axe de symétrie correspondant au centre du pore formé par l'agencement des 5 monomères. Vue du dessus (à gauche) et vue de côté (à droite). En bas à gauche, une capside de virus composée de 4 types de monomères présentant un centre de symétrie superposé au centre de gravité du virus. En bas à droite, enchevêtrement de tubulines agencées autour d'une symétrie hélicoïdale (axiale + translation verticale) formant un microtubule.}}
   \label{Fig:molecular_symmetries_drawing}
   \hspace{0.2cm}
 \end{figure}
@@ -59,13 +59,13 @@ Ces axes de symétrie, obtenus de façon automatisés ou renseignés manuellemen
 L'un des principaux avantages résultant de la réorientation de la scène virtuelle est la possibilité de fusionner l'axe de symétrie d'un complexe et le vecteur \textit{up} de la scène virtuelle. Un schéma rapportant les notions d'orientation à la fois de la scène virtuelle et de la caméra (ou par extension de l'utilisateur puisqu'ils sont considérés comme fusionnés) est fournie dans la Figure \ref{Fig:orientation_camera_EV}. 
 Bien que sommaire, ce réarrangement permet de fournir un premier repère spatial fixe à l'utilisateur. Pour qu'il soit considéré comme tel tout au long de l'expérience virtuelle, nous contraignons le complexe moléculaire à garder cette orientation à tout instant. L'utilisateur est ainsi maintenu orienté de façon cohérente par rapport à l'objet d'étude à tout moment. Pour accroître l'apport spatial de cette réorientation, nous avons choisi d'ajouter une \textit{skybox} entourant la protéine. Une skybox est une texture fixe, présente tout autour de la scène virtuelle et jouant de rôle de paysage visuel non interactif. Le choix de la skybox doit respecter un certain nombre de pré-requis afin de remplir complètement son rôle \cite{vinson_design_1999}, ici de permettre à l'utilisateur de s'orienter à tout instant en regardant autour de lui. La skybox sélectionnée doit comporter deux parties supérieures et inférieures distinctes qui correspondrait à la partie haute et la partie basse de la molécule après sa réorientation. Elle peut très bien remplacer un environnement moléculaire (une membrane typiquement)non explicite et absente du modèle 3d observé.
 
-\begin{figure}[h]
-  \centering
-  {\includegraphics[width=.5\linewidth]{./figures/ch3/orientation_camera_EV}}
-    \caption{{\it Schéma de l'orientation dans l'espace de l'utilisateur/camera et de la scène virtuelle (ici dans un système CAVE en gris). L'orientation dans l'espace est représenté par les 3 vecteur up/forward/right.}}
-  \label{Fig:orientation_camera_EV}
-  \hspace{0.2cm}
-\end{figure}
+% \begin{figure}[h]
+%   \centering
+%   {\includegraphics[width=.5\linewidth]{./figures/ch3/orientation_camera_EV}}
+%     \caption{{\it Schéma de l'orientation dans l'espace de l'utilisateur/camera et de la scène virtuelle (ici dans un système CAVE en gris). L'orientation dans l'espace est représenté par les 3 vecteur up/forward/right.}}
+%   \label{Fig:orientation_camera_EV}
+%   \hspace{0.2cm}
+% \end{figure}
 
 \subsection{Exploration guidée}
 
@@ -78,7 +78,7 @@ Durant l'étape d'exploration externe l'utilisateur possède donc 3 degrés de l
 \begin{figure}[h]
   \centering
   {\includegraphics[width=.5\linewidth]{./figures/ch3/degree_of_freedom_glic}}
-    \caption{{\it Suivant sa position relative au complexe et dépendant du mode de navigation, la caméra possède un nombre précis de degrés de liberté prédéfinis, à la fois en translation et en rotation. Dans notre illustration, les mouvements de translation possibles sont représentés en rouge alors que les points de vue autorisés sont représentés par des flèches noires. Au cours d'une navigation verticale, la caméra est contrainte sur un axe parallèle à l'axe de symétrie (en vert) quand elle est située à l'extérieur de la protéine (en haut à gauche) ou le long de ce même axe (en haut à droite). Une navigation extérieure contraint le vecteur forward de la caméra pour qu'elle fasse face à la protéine alors qu'à l'intérieur la caméra peut tourner à 360 degrés sur elle-même. Enfin, les chemins de navigation horizontaux à l'extérieur de la protéine (en bas) contraignent le vecteur right de la caméra de façon à ce qu'ils soient circulaires ou perpendiculaires à la protéine pour un effet de zoom avant/arrière.}}
+    \caption[Représentation des chemins de navigation générés en exploration externe et interne d'un complexe moléculaire.]{{\it Suivant sa position relative au complexe et dépendant du mode de navigation, la caméra possède un nombre précis de degrés de liberté prédéfinis, à la fois en translation et en rotation. Dans notre illustration, les mouvements de translation possibles sont représentés en rouge alors que les points de vue autorisés sont représentés par des flèches noires. Au cours d'une navigation verticale, la caméra est contrainte sur un axe parallèle à l'axe de symétrie (en vert) quand elle est située à l'extérieur de la protéine (en haut à gauche) ou le long de ce même axe (en haut à droite). Une navigation extérieure contraint le vecteur forward de la caméra pour qu'elle fasse face à la protéine alors qu'à l'intérieur la caméra peut tourner à 360 degrés sur elle-même. Enfin, les chemins de navigation horizontaux à l'extérieur de la protéine (en bas) contraignent le vecteur right de la caméra de façon à ce qu'ils soient circulaires ou perpendiculaires à la protéine pour un effet de zoom avant/arrière.}}
   \label{Fig:degree_of_freedom_glic}
   \hspace{0.2cm}
 \end{figure}
@@ -98,7 +98,7 @@ Même si l'exploration peut apporter un grand nombre d'informations, certains ph
 \begin{figure}[h]
   \centering
   {\includegraphics[width=.5\linewidth]{./figures/ch3/voronoi_2D_algo_v2}}
-    \caption{{\it Schéma de l'étape 3 de l'algorithme de point de vue optimal, représenté en 2d. A gauche, notre cible est représentée en vert, ses atomes voisins en rouge et le cercle représente la distance à laquelle l'utilisateur veut placer sa caméra. A droite, les atomes voisins sont projetés sur le cerle et on cherche la portion de ce cerle possédant le plus large espace vide afin d'obtenir le cône de vue le plus large représenté en bleu.}}
+    \caption[Schéma de l'étape 3 de l'algorithme de point de vue optimal, représenté en 2d.]{{\it Schéma de l'étape 3 de l'algorithme de point de vue optimal, représenté en 2d. A gauche, notre cible est représentée en vert, ses atomes voisins en rouge et le cercle représente la distance à laquelle l'utilisateur veut placer sa caméra. A droite, les atomes voisins sont projetés sur le cerle et on cherche la portion de ce cerle possédant le plus large espace vide afin d'obtenir le cône de vue le plus large représenté en bleu.}}
   \label{Fig:voronoi_2D_algo}
   \hspace{0.2cm}
 \end{figure}
@@ -124,7 +124,7 @@ Cet algorithme a une complexité faible en $\theta(n.\log{n})$ (avec $n$ désign
 \begin{figure}[h]
   \centering
   {\includegraphics[width=.5\linewidth]{./figures/ch3/voronoi_diagram}}
-    \caption{{\it En haut, graphique représentant les angles $\phi$ en fonction des angles $\theta$ des atomes voisins de la cible, chaque atome est représenté par un point bleu. En bas, même graphique contenant en plus les sommets (en vert) et les segments (lignes noirs) du diagramme de Voronoi ayant été calculé sur les coordonnées sphériques des atomes voisins (en bleu). Les cercles rouges représentent les plus larges cercles vides pouvant être trouvés au sein des points bleus.}}
+    \caption[Graphique représentant les angles $\phi$ en fonction des angles $\theta$ des atomes voisins de la cible.]{{\it En haut, graphique représentant les angles $\phi$ en fonction des angles $\theta$ des atomes voisins de la cible, chaque atome est représenté par un point bleu. En bas, même graphique contenant en plus les sommets (en vert) et les segments (lignes noirs) du diagramme de Voronoi ayant été calculé sur les coordonnées sphériques des atomes voisins (en bleu). Les cercles rouges représentent les plus larges cercles vides pouvant être trouvés au sein des points bleus.}}
   \label{Fig:voronoi_diagram}
   \hspace{0.2cm}
 \end{figure}
@@ -137,7 +137,7 @@ Une transition progressive et automatique est ainsi mise en place. Pour calculer
 \begin{figure}[h]
   \centering
   {\includegraphics[width=.5\linewidth]{./figures/ch3/optimal_pov_camera_path}}
-    \caption{{\it Schéma de l'algorithme de recherche du meilleur chemin de caméra pour atteindre un point de vue optimal. La cible à visualiser est représentée en vert et ses atomes voisins en rouge. Chaque cercle représente une distance précise entre la caméra et la cible, le cercle le plus petit désignant la distance désirée par l'utilisateur. Pour chaque distance, l'algorithme de point de vue optimal est utilisé afin d'obtenir les meilleurs point de vue sur la cible. Les cônes bleus représentent les cônes de vue les plus larges trouvés alors qu'en vert et violet sont représentés les aires vides les plus larges entre les différentes distances de caméra. Le chemin qu'empruntera la caméra pour atteindre le point de vue optimal est ainsi représenté grâce aux symboles de couleur noire. Ce chemin est calculé pour garder un point de vue le plus dégagé possible jusqu'à atteindre le point final.}}
+    \caption[Schéma de l'algorithme de recherche du meilleur chemin de caméra pour atteindre un point de vue optimal.]{{\it Schéma de l'algorithme de recherche du meilleur chemin de caméra pour atteindre un point de vue optimal. La cible à visualiser est représentée en vert et ses atomes voisins en rouge. Chaque cercle représente une distance précise entre la caméra et la cible, le cercle le plus petit désignant la distance désirée par l'utilisateur. Pour chaque distance, l'algorithme de point de vue optimal est utilisé afin d'obtenir les meilleurs point de vue sur la cible. Les cônes bleus représentent les cônes de vue les plus larges trouvés alors qu'en vert et violet sont représentés les aires vides les plus larges entre les différentes distances de caméra. Le chemin qu'empruntera la caméra pour atteindre le point de vue optimal est ainsi représenté grâce aux symboles de couleur noire. Ce chemin est calculé pour garder un point de vue le plus dégagé possible jusqu'à atteindre le point final.}}
   \label{Fig:optimal_pov_camera_path}
   \hspace{0.2cm}
 \end{figure}
@@ -155,7 +155,11 @@ Dans le cas où l'algorithme de point de vue optimal n'est pas suffisant pour pe
 \begin{figure}[h]
   \centering
   {\includegraphics[width=.5\linewidth]{./figures/ch3/fragmented_view}}
+<<<<<<< Updated upstream
     \caption{{\it Illustration d'une protéine présentant un pore central constituant son axe de symétrie. A gauche, les monomères du complexe moléculaires sont écartées de l'axe de symétrie. Au centre, différentes région d'intérêt ont été identifiées le long des monomères et le complexe est écarté de façon verticale. A droite sont combinés la séparation des monomères et des régions d'intérêt. Illustration de Davide Spalvieri.}}
+=======
+    \caption[Dessin illustratif d'une protéine présentant un pore central constituant son axe de symétrie.]{{\it Dessin illustratif d'une protéine présentant un pore central constituant son axe de symétrie. A gauche, les monomères du complexe moléculaires sont écartées de l'axe de symétrie. Au centre, différentes région d'intérêt ont été identifiées le long des monomères et le complexe est écarté de façon verticale. A droite sont combinés la séparation des monomères et des régions d'intérêt. Illustration de Davide Spalvieri.}}
+>>>>>>> Stashed changes
   \label{Fig:fragmented_view}
   \hspace{0.2cm}
 \end{figure}
@@ -274,7 +278,7 @@ En 1994, Green présenta le concept de <<stereoimages>> \cite{green_stereoimages
 
 \subsection{Vers une immersion sur dispositifs mobiles}
 
-Il est cependant possible d'utiliser la puissance graphique, même restreinte, des smartphones/tablettes pour créer une perception 3d améliorée de systèmes moléculaires. C'est le but du développement de notre application, DepthMol3d, basé sur le moteur de jeu Unity3D\footnote{\url{http://unity3d.com/}}. Cette approche offre de nombreuses opportunités pour la recherche, la communication, la discussion et le monde de l'éducation.
+Il est cependant possible d'utiliser la puissance graphique, même restreinte, des smartphones/tablettes pour créer une perception 3d améliorée de systèmes moléculaires. C'est le but du développement de notre application, basée sur le moteur de jeu Unity3D\footnote{\url{http://unity3d.com/}}. Cette approche offre de nombreuses opportunités pour la recherche, la communication, la discussion et le monde de l'éducation.
 
 Notre approche se place au plus près des techniques d'immersion cognitive qui cherche à jouer sur la réflexion des utilisateurs pour les immerger dans la scène virtuelle représentée. Les aspects 3d sont importants et la perception de l'objet jouera un rôle dans l'immersion mais elle sera naturellement limitée par le dispositif et l'absence de stimuli sensoriels autres que visuels. C'est donc la perception de profondeur, l'imagination de l'utilisateur et sa capacité de réflexion qui auront un rôle prépondérant pour son implication.
 
@@ -293,8 +297,7 @@ Notre approche se place au plus près des techniques d'immersion cognitive qui c
   \label{Fig:heightmap_texture_unity}
   % \hspace{0.3cm}
 \end{subfigure}
-
-\caption{{\it (a) Schéma du fonctionnement de notre application mobile. La première étape consiste à générer une carte de profondeur et une capture d'image de la scène moléculaire que l'on souhaite visualiser. Les deux images sont ensuite combinées au sein de l'application pour créer une perception 3d de la scène initiale.
+\caption[(a) Schéma du fonctionnement de notre application mobile. (b) Processus d'obtention d'un objet 3d à partir de 2 images.]{{\it (a) Schéma du fonctionnement de notre application mobile. La première étape consiste à générer une carte de profondeur et une capture d'image de la scène moléculaire que l'on souhaite visualiser. Les deux images sont ensuite combinées au sein de l'application pour créer une perception 3d de la scène initiale.
 (b) Le processus d'obtention d'un objet 3d à partir de 2 images. La première étape consiste à analyser la carte de profondeur pixel par pixel et de générer une surface aux dimensions identiques (à un facteur d'échelle près) dont la hauteur de chaque sommet sera corrélée avec le niveau de gris du pixel correspondant.}}
 \end{figure}
 
@@ -327,14 +330,14 @@ Plusieurs exemples sont fournis avec l'application et permettent à l'utilisateu
   \label{Fig:depthmol3d_screenshots}
   % \hspace{0.3cm}
 \end{subfigure}
-\caption{{\it (a) Scènes moléculaires proposées par défaut en exemple au sein de l'application.
+\caption[Exemples de scènes moléculaires crées pour l'application mobile.]{{\it (a) Scènes moléculaires proposées par défaut en exemple au sein de l'application.
 A. Visualisation d'une poche de liaison à la surface de GLIC (Ligand-Gated Ion Channel), une protéine transmembranaire responsable du passage des ions et des molécules d'eau à travers la membrane cellulaire. Scène extraite de VMD. B. Carte de basse résolution obtenue à partir de cryo-EM pour un filament d'actine. La position de la structure atomique dans l'enveloppe de basse résolution est en premier-plan alors que la carte électromagnétique est présentée en arrière-plan. Visualisation provenant de Chimera C. Couple verticale du modèle de la capside du virus Influenza A exposant la membrane externe et l'intérieur du virus. GraphiteLifeExplorer a été utilisé pour visualiser la coupure. D. Interaction entre une protéine SNARE et une membrane biologique lors d'une dynamique moléculaire (arrière-plan). Un graphe 3d rapportant le taux de courbure de la membrane est présenté en premier-plan. La surface 3d a été générée par Paraview (programme de visualisation scientifique) E. Scènes extraites d'un programme d'animation, MolecularMaya, dédié à la création de films scientifiques pour une audience large. Les scènes extraites mettent en avant deux virus au milieu de villosités à gauche et de multiples virus à droite.
-(b) Captures d'écran provenant de l'application DepthMol3D et mettant en avant le menu principal de l'application permettant de charger une image ou un objet 3d (en haut) et une scène 3d type représentant la surface d'une protéine avec les différentes options de paramétrisation (en bas).}}
+(b) Captures d'écran provenant de l'application mobile développée et mettant en avant le menu principal de l'application permettant de charger une image ou un objet 3d (en haut) et une scène 3d type représentant la surface d'une protéine avec les différentes options de paramétrisation (en bas).}}
 \end{figure}
 
 \subsubsection{Explorer des modèles 3d de molécules}
 
-Un deuxième mode de visualisation permet d'importer directement des fichiers d'objets 3d dans DepthMol3d. Avec ce type de données 3d, un seul fichier est nécessaire pour créer une perspective 3d complète de l'objet. Après importation, il est possible de manipuler l'objet, de le tourner, le déplacer en avant ou arrière. Cette visualisation se rapproche de ce qui peut se retrouver dans les visualiseurs moléculaires pour périphériques mobiles.
+Un deuxième mode de visualisation permet d'importer directement des fichiers d'objets 3d dans l'application. Avec ce type de données 3d, un seul fichier est nécessaire pour créer une perspective 3d complète de l'objet. Après importation, il est possible de manipuler l'objet, de le tourner, le déplacer en avant ou arrière. Cette visualisation se rapproche de ce qui peut se retrouver dans les visualiseurs moléculaires pour périphériques mobiles.
 Pour aller plus loin dans l'immersion, l'utilisateur aura également la possibilité de changer l'échelle de la molécule et de plonger à l'intérieur et d'activer une visualisation plus interactive.
 Il utilisera en effet son périphérique comme une fenêtre sur le monde virtuel et le manipulera en orientant le périphérique à la main et en l'utilisant comme une vue adaptative sur un monde virtuel présent tout autour de lui. Basés sur le gyroscope du périphérique, l'objet 3d est visualisable à 360 degrés mais à partir d'une position fixe. 
 
@@ -343,16 +346,16 @@ Pour une étape supplémentaire vers une immersion plus importante, un rendu st�
 \begin{figure}[h]
   \centering
   {\includegraphics[width=.75\linewidth]{./figures/ch3/molexplorer_screenshot.png}}
-    \caption{{\it Captures d'écran du mode d'exploration de modèles 3d au sein de l'application. La différence de point de vue entre les deux captures d'écran est le résultat d'une rotation du périphérique mobile tenu par l'utilisateur.}}
+    \caption[Captures d'écran du mode d'exploration de modèles 3d au sein de l'application.]{{\it Captures d'écran du mode d'exploration de modèles 3d au sein de l'application. La différence de point de vue entre les deux captures d'écran est le résultat d'une rotation du périphérique mobile tenu par l'utilisateur.}}
   \label{Fig:molexplorer_screenshot}
   \hspace{0.2cm}
 \end{figure}
 
 \subsubsection{Bilan}
 
-La préparation des images utilisées au sein de l'application est relativement simple et rapide, des tutoriels sont en plus préparés pour aider les utilisateur à effectuer les actions nécessaires. Notre approche est indépendante de la plateforme de visualisation et la majorité des visualiseurs moléculaires permettant de générer des rendus graphiques de structures permettent de générer les images demandées. Il est également possible d'utiliser des outils génériques tels que Povray\footnote{\url{www.povray.com}} ou Paraview\footnote{\url{www.paraview.org}}. La création de vues complexes est rendue possible grâce à la notion d'arrière-plan et de premier-plan permettant ainsi de mettre en valeur certains aspects d'une scène virtuelle où la seule structure ne serait pas assez illustrative d'un phénomène particulier.
+La préparation des images utilisées au sein de l'application est simple et rapide, des tutoriels sont en plus préparés pour aider les utilisateur à effectuer les actions nécessaires. Notre approche est indépendante de la plateforme de visualisation et la majorité des visualiseurs moléculaires permettant de générer des rendus graphiques de structures permettent de générer les images demandées. Il est également possible d'utiliser des outils génériques tels que Povray\footnote{\url{www.povray.com}} ou Paraview\footnote{\url{www.paraview.org}}. La création de vues complexes est rendue possible grâce à la notion d'arrière-plan et de premier-plan permettant ainsi de mettre en valeur certains aspects d'une scène virtuelle où la seule structure ne serait pas assez illustrative d'un phénomène particulier.
 
-La performance de l'application permet son utilisation sur la plupart des smartphones et tablettes Android et iOS de moins de 5 ans et la quasi-intégralité des derniers smartphones/tablettes. DepthMol3D est gratuit et le code source est disponible à la demande.
+La performance de l'application permet son utilisation sur la plupart des smartphones et tablettes Android et iOS de moins de 5 ans et la quasi-intégralité des derniers smartphones/tablettes. Notre application est gratuite et le code source est disponible à la demande.
 
 Les limitations de notre application résident tout d'abord dans la résolution des écrans des périphériques et leurs angles de vue, tout deux limités par rapport aux stations de travail ou aux ordinateurs portables à cause de leur taille. Les cartes de profondeur sont pour le moment limitées à des résolutions assez basses et peuvent faire apparaître des artefacts quand les détails de la scènes sont trop fins. La limitation de la résolution des cartes de profondeur considérées dans l'application est due à la limitation technique du moteur Unity3D qui ne peut gérer des objets 3d de plus de 65536 sommets. Ceci implique donc l'utilisation de cartes de profondeur de 255*255 pixels de résolution au maximum. Il n'existe par contre aucune limitation dans la résolution de la texture tant que celle-ci est aux mêmes dimensions que la carte de profondeur. L'utilisation d'images 2d ne permet pas un contrôle total de l'objet 3d généré et sa manipulation dans l'espace. Notre mode d'importation d'objets 3d permet de pallier en partie cette limitation mais la performance du rendu est moindre, tout autant que la facilité de création de nouvelles structures.
 

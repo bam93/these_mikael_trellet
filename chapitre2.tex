@@ -63,7 +63,7 @@ Parmi les dispositifs permettant de récupérer les positions de la tête ou du 
 \begin{figure}
   \centering
   {\includegraphics[width=.65\linewidth]{./figures/ch2/IR-tracking}}
-    \caption{{\it Schéma simplifié d'un système de tracking optique basé sur des signaux infrarouges lancés par des caméras et se reflétant sur des marqueurs spécifiques. La configuration spatiale des marqueurs est reconnue par le PC et la position associée est calculée à partir des intersections de rayons infrarouges reflétés.}}
+    \caption[Schéma simplifié d'un système de tracking optique.]{{\it Schéma simplifié d'un système de tracking optique basé sur des signaux infrarouges lancés par des caméras et se reflétant sur des marqueurs spécifiques. La configuration spatiale des marqueurs est reconnue par le PC et la position associée est calculée à partir des intersections de rayons infrarouges reflétés.}}
   \label{Fig:ir-tracking}
   \hspace{0.3cm}
 \end{figure}
@@ -85,7 +85,7 @@ Nous ne donnerons pas une liste exhaustive des dispositifs de RV, que l'on peut 
 \begin{figure}
   \centering
   {\includegraphics[width=.65\linewidth]{./figures/ch2/screen_wall}}
-    \caption{{\it Exemple de WILDER, mur d'écran de 6 m sur 2 composé de 75 écrans, présent au sein du bâtiment Digiteo sur le campus de l'université Paris-Sud.}}
+    \caption[Mur d'écrans WILDER.]{{\it Exemple de WILDER, mur d'écrans de 6 m sur 2 composé de 75 écrans, présent au sein du bâtiment Digiteo sur le campus de l'université Paris-Sud.}}
   \label{Fig:screen_wall}
   \hspace{0.3cm}
 \end{figure}
@@ -101,7 +101,7 @@ Certaines CAVEs utilisent plus d'un projecteur par écran leur permettant d'affi
 \begin{figure}
   \centering
   {\includegraphics[width=.65\linewidth]{./figures/ch2/eve_collaboratif}}
-    \caption{{\it Exemple de EVE, système CAVE composé de 4 écrans (gauche, face, droite et sol), présent au LIMSI-CNRS sur le campus de l'université Paris-Sud.}}
+    \caption[Système CAVE, EVE du LIMSI-CNRS.]{{\it Exemple de EVE, système CAVE composé de 4 écrans (gauche, face, droite et sol), présent au LIMSI-CNRS sur le campus de l'université Paris-Sud.}}
   \label{Fig:eve_collaboratif}
   \hspace{0.3cm}
 \end{figure}
@@ -114,17 +114,18 @@ Du point de vue du coût, ces dispositifs sont très peu onéreux comparés aux 
 \begin{subfigure}{.5\textwidth}
   \centering
   {\includegraphics[width=.75\linewidth]{./figures/ch2/occulus}}
-    \caption{{\it Casque de réalité virtuelle, l'Oculus Rift, appartenant à Facebook et constituant l'un des premiers casques de RV ayant été disponible sur le marché.}}
+    \caption{}
   \label{Fig:occulus}
   \hspace{0.3cm}
 \end{subfigure}
 \begin{subfigure}{.5\textwidth}
   \centering
   {\includegraphics[width=.75\linewidth]{./figures/ch2/pymol_stereo}}
-    \caption{{\it Capture d'écran de PyMol exécuté en mode stéréoscopique <<cross-eyes>>: l'image de la protéine de droite correspond à l'oeil gauche et inversement.}}
+    \caption{}
   \label{Fig:pymol_stereo}
   \hspace{0.3cm}
 \end{subfigure}
+\caption[(a) Casque de Réalité Virtuelle. (b) Capture d'écran du logiciel PyNol en mode stéréoscopique.]{\it (a) Casque de réalité virtuelle, l'Oculus Rift, appartenant à Facebook et constituant l'un des premiers casques de RV ayant été disponible sur le marché. (b) Capture d'écran du logiciel PyMol exécuté en mode stéréoscopique <<cross-eyes>>: l'image de la protéine de droite correspond à l'oeil gauche et inversement.}
 \end{figure}
 
 
@@ -138,7 +139,7 @@ Parmi les méthodes d'immersion auditives, appelée aussi spatialisation sonore,
 Le \textbf{son binaural} est le fruit de l'application de filtres sur une source sonore permettant au cerveau de traiter le son plus seulement de façon qualitative mais également spatiale. Cette technique s'inspire des traitements habituels que fait le cerveau pour identifier la localisation d'une source sonore. Suivant plusieurs paramètres morphologiques d'un individu, le cerveau peut identifier à tous les coups la distance, mais aussi la direction d'un son perçu. La différence entre un même son émis à différents endroits se fait au niveau de sa fréquence qui diffère suivant la position. Il est possible d'appliquer un filtre, appelé \textit{Head-Related Transfer Function} permettant de transformer la localisation d'un son (voir Figure \ref{Fig:HRTF}). Cette technique peut être associée à des techniques de tracking de positon afin de rendre de façon fidèle la complexité sonore d'une scène virtuelle. La difficulté principale repose dans le filtre HRTF même qui varie suivant les morphologies et est donc presque unique pour chaque individu.
 
 La technique de \textit{\textbf{Wave Field Synthesis}} désigne un procédé permettant de capter ou de synthétiser une scène sonore, par analogie aux scènes visuelles, en préservant les informations spatiales de distance et de direction des sources sonores (cf. Figure \ref{Fig:wfs_edit}). L'idée est d'émettre des vagues d'ondes synthétisées par un ensemble de haut-parleurs. A la différence des systèmes audio classiques type stéréo ou 5.1, la WFS reconstruit un champ sonore où il n'est pas nécessaire de rester au centre du dispositif pour garder une perception cohérente de la localisation des sources.
-Cette technique nécessite un nombre important de haut-parleurs pour fonctionner de façon optimale et est relativement sensible à l'acoustique de la salle. C'est donc un dispositif relativement coûteux et qu'on retrouve généralement associé à des dispositifs visuels de grande taille.
+Cette technique nécessite un nombre important de haut-parleurs pour fonctionner de façon optimale et est sensible à l'acoustique de la salle. C'est donc un dispositif assez coûteux et qui est retrouvé généralement associé à des dispositifs visuels de grande taille.
 
 \begin{figure}[h]
   \begin{subfigure}{.5\textwidth}
@@ -155,7 +156,7 @@ Cette technique nécessite un nombre important de haut-parleurs pour fonctionner
     \label{Fig:wfs_edit}
   \hspace{0.3cm}
   \end{subfigure}
-  \caption{\it (a) Illustration de la différence de fréquence et de niveau des ondes sonores interprétées par le cerveau suivant la localisation de leurs sources.
+  \caption[(a) Illustration de la différence de fréquence et de niveau des ondes sonores interprétées par le cerveau suivant la localisation de leurs sources. (b) Schéma simplifié de la technique de Wave Field Synthesis.]{\it (a) Illustration de la différence de fréquence et de niveau des ondes sonores interprétées par le cerveau suivant la localisation de leurs sources.
   (b) Schéma simplifié de la technique de Wave Field Synthesis consistant à reproduire des vagues sonores complexes grâce à une ligne de haut-parleurs permettant de dissocier les sources sonores suivant leur nature et leur localisation.
   }
   % \hspace{0.3cm}
@@ -168,13 +169,13 @@ Mais les stimuli sensoriels ne sont pas seuls capables d'immerger un individu da
 
 \subsubsection{Périphériques de tracking pour l'interaction} \label{peripheriques}
 
-L'utilisation de périphériques physiques pour interagir avec un EV immersif est une solution retrouvée au sein de plusieurs EV immersifs. A la différence des moyens d'interaction en conditions standards, ils ont du s'adapter à des conditions d'utilisation en position debout et dans des conditions d'obscurité permanente. La souris des stations de travail standards a fait place à des périphériques tels que la souris 3d, appelée aussi \textit{Flystick} permettant une certaine précision dans le contrôle de l'interaction mais nécessitant d'être transporté de façon permanente (cf Figure \ref{Fig:art_flystick}). Le \textit{Flystick} se caractérise par un périphérique à une main composé de boutons et dont les contrôle directionnels sont déportés sur un mini-joystick ou une \textit{tracking ball} manipulables au pouce. La manette reste un dispositif très utilisé du fait de sa courbe d'apprentissage relativement courte due à sa démocratisation et également du fait de son nombre de commandes possibles important via ses nombreux boutons et combinaisons de bouton.
+L'utilisation de périphériques physiques pour interagir avec un EV immersif est une solution retrouvée au sein de plusieurs EV immersifs. A la différence des moyens d'interaction en conditions standards, ils ont du s'adapter à des conditions d'utilisation en position debout et dans des conditions d'obscurité permanente. La souris des stations de travail standards a fait place à des périphériques tels que la souris 3d, appelée aussi \textit{Flystick} permettant une certaine précision dans le contrôle de l'interaction mais nécessitant d'être transporté de façon permanente (cf Figure \ref{Fig:art_flystick}). Le \textit{Flystick} se caractérise par un périphérique à une main composé de boutons et dont les contrôle directionnels sont déportés sur un mini-joystick ou une \textit{tracking ball} manipulables au pouce. La manette reste un dispositif très utilisé du fait de sa courte courbe d'apprentissage due à sa démocratisation et également du fait de son nombre de commandes possibles important via ses nombreux boutons et combinaisons de bouton.
 On retrouve également des dispositifs spécialisés reprenant la forme des outils qu'ils sont censés représenter permettant une similarité dans leur utilisation. Ces outils sont suivis par des dispositifs de tracking optique permettant de les intégrer à travers des avatars dans les scènes virtuelles. Ces périphériques sont particulièrement utilisés dans des situation d'apprentissage virtuel.
 
 \begin{figure}
   \centering
   {\includegraphics[width=.65\linewidth]{./figures/ch2/art_flystick}}
-    \caption{{\it Flystick, ou souris 3d, permettant d'interagir avec un environnement 3d en position fixe ou mobile.}}
+    \caption[Flystick, ou souris 3d.]{{\it Flystick, ou souris 3d, permettant d'interagir avec un environnement 3d en position fixe ou mobile.}}
   \label{Fig:art_flystick}
   \hspace{0.3cm}
 \end{figure}
@@ -200,7 +201,7 @@ Les bras à retour d'efforts permettent par exemple de manipuler des objets en 3
 
 Certains gants haptiques disposent de moteurs répartis sur l'ensemble de la main et des doigts permettant de faire ressentir à un utilisateur un objet particulier comme s'il l'attrapait réellement.
 
-Le domaine médical et plus généralement des opérations télé-robotisées profitent de ces dispositifs afin de garantir un ressenti tactile complémentaire à l'information visuelle parfois limitée et/ou non suffisante. , ils sont relativement courants en conception ou simulation de pilotages, car se rapprochent au plus près des conditions réelles et usuelles.
+Le domaine médical et plus généralement des opérations télé-robotisées profitent de ces dispositifs afin de garantir un ressenti tactile complémentaire à l'information visuelle parfois limitée et/ou non suffisante. Ils sont courants en conception ou simulation de pilotages, car se rapprochent au plus près des conditions réelles et usuelles.
 Dans les sciences, il sont de parfaits guides pour les manipulations de systèmes biologiques interagissant sous des contraintes particulières et nécessitant d'être mis en relation de façon précise.
 
 \subsubsection{Interactions gestuelles} \label{interface_nature}
@@ -291,7 +292,7 @@ Ces périphériques se couplent aussi bien à des dispositifs immersifs type CAV
     \label{Fig:omnideck}
   \hspace{0.3cm}
   \end{subfigure}
-  \caption{\it (a) Tapis roulant multidirectionnel statique (\textit{Cyberith Virtualizer}) permettant de reconnaître, en plus de la marche et la course, des mouvements verticaux comme le saut ou l'accroupissement.
+  \caption[(a) Tapis roulant multidirectionnel statique (\textit{Cyberith Virtualizer}). (b) Premier tapis roulant multidirectionnel large et statique (\textit{Omnifinity Omnideck})]{\it (a) Tapis roulant multidirectionnel statique (\textit{Cyberith Virtualizer}) permettant de reconnaître, en plus de la marche et la course, des mouvements verticaux comme le saut ou l'accroupissement.
   (b) Premier tapis roulant multidirectionnel large et statique (\textit{Omnifinity Omnideck}), utilisé en couplage avec une technologie de \textit{tracking} optique afin de garantir un suivi précis des mouvements de l'utilisateur.
   }
   % \hspace{0.3cm}
@@ -323,7 +324,7 @@ Parmi les paradigmes de navigation s'appuyant sur le \textit{tracking} de tête 
 \begin{figure}[h]
  \centering
  {\includegraphics[width=0.8\linewidth]{./figures/ch3/HCNav}}
-   \caption{\it Exemple de l'utilisateur des déplacements relatifs d'un utilisateur par rapport à une zone de référence pour contrôler son déplacement dans le monde virtuel. L'orientation de son regard décidera également des rotations dans le monde virtuel. Il est donc possible d'avoir un contrôle de 6 degrés de liberté pour la navigation (3 en translation et 3 en rotation).}
+   \caption[Technique de navigation HCNav.]{\it Exemple de l'utilisateur des déplacements relatifs d'un utilisateur par rapport à une zone de référence pour contrôler son déplacement dans le monde virtuel. L'orientation de son regard décidera également des rotations dans le monde virtuel. Il est donc possible d'avoir un contrôle de 6 degrés de liberté pour la navigation (3 en translation et 3 en rotation).}
    \label{Fig:HCNAV}
  \hspace{0.3cm}
 \end{figure}
@@ -349,7 +350,7 @@ Il existe donc une large variété de paradigmes permettant l'exploration et la 
     \label{Fig:flight_simu}
   \hspace{0.3cm}
   \end{subfigure}
-  \caption{\it (a) Exemple d'un simulateur de vol où les déplacements virtuels sont la conséquences des mouvements réels de l'utilisateur adoptant une posture de chute libre.
+  \caption[(a) Exemple d'un simulateur de vol. (b) Exemple d'un simulateur de conduite.]{\it(a) Exemple d'un simulateur de vol où les déplacements virtuels sont la conséquences des mouvements réels de l'utilisateur adoptant une posture de chute libre.
   (b) Simulateur de conduite dans un système de rétroprojection sur écran courbé.
   }
   % \hspace{0.3cm}
@@ -395,7 +396,7 @@ Le domaine du docking moléculaire fut assez friand de la technologie de bras ha
     \label{Fig:ferey_haptic}
   % \hspace{0.3cm}
   \end{subfigure}
-  \caption{\it (a) Système haptique appelée \textit{the Docker} conçu et construit par Ming Ouh-young et permettant de simuler les forces et les torsions dues aux interactions électrostatiques entre les deux molécules.
+  \caption[Système haptique \textit{the Docker}. (b) Système haptique Phantom. (c) Système haptique permettant la manipulation d'une protéine.]{\it (a) Système haptique appelée \textit{the Docker} conçu et construit par Ming Ouh-young et permettant de simuler les forces et les torsions dues aux interactions électrostatiques entre les deux molécules.
   (b) Système haptique Phantom utilisé dans la salle immersive d'un laboratoire de réalité virtuelle dans le cadre d'une expérience mettant en jeu le contrôle d'un docking par interaction haptique. 
   (c) Système haptique permettant la manipulation d'une protéine au sein d'un laboratoire de biologie structurale dans le cadre d'une expérience de simulation moléculaire interactive (voir section \ref{simu_interactive}).
   }
@@ -429,7 +430,7 @@ Les modèles physiques de protéine peuvent être des modèles statiques monoblo
     \label{Fig:tangible_xav}
   \hspace{0.3cm}
   \end{subfigure}
-  \caption{\it (a) Tracking par marqueurs de modèles monobloc de protéines et rendu vidéo en réalité augmentée ajoutant les résidus chargés en bleu et rouge.
+  \caption[(a) Système de Réalité Augmentée grâce à des modèles tangibles de protéines. (b) Reconstruction 3d d'un modèle à partir d'un modèle physique complexe.]{\it (a) Tracking par marqueurs de modèles monobloc de protéines et rendu vidéo en réalité augmentée ajoutant les résidus chargés en bleu et rouge.
   (b) Reconstruction 3d d'un modèle complexe de peptide formé de groupes physiques distincts et possédant des aimants afin de rapporter les forces rotationnelles de liaison grâce à un retour haptique. Un rendu temps réel est effectué en parallèle grâce à un tracking par analyses d'image. 
   }
   % \hspace{0.3cm}
@@ -453,7 +454,7 @@ Dans le cas de dynamiques moléculaires sur des systèmes de taille plus importa
 La biologie structurale n'a su que tardivement se placer par rapport à la RV. Si elle a utilisé certains de ses outils (systèmes haptiques par exemple), ce n'est que très récemment que certains programmes dédiés à l'exploration moléculaire ont commencé à être utilisés au sein de dispositifs de RV \cite{odonoghue_visualization_2010}. YASARA \cite{krieger2014yasara} ou VMD \cite{stone_immersive_2010} sont deux exemples de programmes de visualisation moléculaires disponibles pour un rendu stéréoscopique et adapté aux environnements immersifs. Ils permettent l'interfaçage de leur solution de visualisation avec de nombreuses librairies utilisées en RV dans les systèmes immersifs de type CAVE ou mur d'écran. Parmi ces librairies, nous pouvons citer VRPN \cite{taylor2001vrpn}, FreeVR \cite{pape2004commodity} ou VR Juggler par exemple.
 
 D'autres initiatives ponctuelles ont aussi vu le portage d'autres logiciels dans des environnements immersifs, mais ces développements spécifiques ont rarement dépassé l'extension du rendu graphique depuis le 2d jusqu'en 3d\footnote{\url{http://www.rug.nl/science-and-society/centre-for-information-technology/research/hpcv/vr\_visualisation/mol\_visualisation?lang=en}} ou la mise en place de librairies comme base de développement d'applications RV pour la visualisation moléculaire \cite{salvadori_moka:_2014}.  Afin d'améliorer l'apprentissage de certains concepts biologiques, il est parfois utile d'en améliorer la perception, en particulier quand ces concepts sont par aspects abstraits. Un projet éducatif a cherché à évaluer l'impact pour les étudiants de visualiser des objets moléculaires en RV dans le cadre de cours de biologie structurale \cite{tan_use_2013}. Selon leurs conclusions, les dispositifs immersifs ont permis un meilleur apprentissage des notions abordées ainsi qu'une compréhension globale de la biologie structurale plus complète.
-La liste des applications mêlant explicitement la biologie structurale et la RV est relativement courte. Le travail d'ingénierie est par aspects déjà fait, mais il semble manquer une réflexion ergonomique autour de l'intégration des outils de biologie structurale au sein de dispositifs immersifs.
+La liste des applications mêlant explicitement la biologie structurale et la RV est assez courte. Le travail d'ingénierie est par aspects déjà fait, mais il semble manquer une réflexion ergonomique autour de l'intégration des outils de biologie structurale au sein de dispositifs immersifs.
 
 
 \section{Limites et perspectives en RV pour la biologie structurale} % (fold)
@@ -465,7 +466,7 @@ Parmi les problématiques soulevées par la RV pour les données abstraites et s
 
 %\subsection{Méthodes de navigation dans des scènes virtuelles abstraites}
 
-Conçus autour de contenus réalistes, les paradigmes cités précédemment sont néanmoins transposables à l'identique dans des scènes abstraites. Leur efficacité est cependant limitée du fait de la nature très différentes des données à observer. Alors que la navigation aura tendance à permettre l'exploration d'une surface virtuelle horizontale relativement étendue dans des scènes réalistes, les scènes abstraites scientifiques, et plus particulièrement les scènes moléculaires, concentrent les informations dans une zone centrale autour de laquelle l'utilisateur va évoluer. L'échelle de visualisation des données est capable d'augmenter la distance (toujours à l'échelle) des données observées mais la nature même de l'exploration est souvent différente. Sheidermann décrit la visualisation de données comme un processus où l'exploration est l'étape préliminaire avant les étapes de zoom et de filtre qui précèdent elle-même l'étape finale de l'obtention des détails à la demande \cite{shneiderman_eyes_1996}. Les différentes échelles de précision mises en avant dans cette description sont rarement retrouvées dans les paradigmes de navigation au sein de scènes virtuelles réalistes.
+Conçus autour de contenus réalistes, les paradigmes cités précédemment sont néanmoins transposables à l'identique dans des scènes abstraites. Leur efficacité est cependant limitée du fait de la nature très différentes des données à observer. Alors que la navigation aura tendance à permettre l'exploration d'une surface virtuelle horizontale étendue dans des scènes réalistes, les scènes abstraites scientifiques, et plus particulièrement les scènes moléculaires, concentrent les informations dans une zone centrale autour de laquelle l'utilisateur va évoluer. L'échelle de visualisation des données est capable d'augmenter la distance (toujours à l'échelle) des données observées mais la nature même de l'exploration est souvent différente. Sheidermann décrit la visualisation de données comme un processus où l'exploration est l'étape préliminaire avant les étapes de zoom et de filtre qui précèdent elle-même l'étape finale de l'obtention des détails à la demande \cite{shneiderman_eyes_1996}. Les différentes échelles de précision mises en avant dans cette description sont rarement retrouvées dans les paradigmes de navigation au sein de scènes virtuelles réalistes.
 
 Bien qu'il existe de nombreux portages de logiciels experts de visualisation moléculaire dans des EV, la navigation au sein de données scientifiques dans ces derniers s’inspire encore largement de la manipulation d'objet retrouvé dans les logiciels de visualisation moléculaire courants (voir Figure \ref{Fig:pymol_nav}) \cite{frohlich1999exploring}. Les seules tâches de navigation pouvant être identifiées au sein de logiciels experts de visualisation moléculaire se rapporte à des transitions progressives permettant de rejoindre une position spécifique depuis la position actuelle de l'utilisateur. Enfin, ces logiciels ne présentent aucune adaptation de la manipulation suivant le type de molécule observé et les paradigmes mis en jeu sont identiques, que l'objet observé soit une protéine de quelques acides aminés ou un virus de plusieurs millions d'atomes.
 
@@ -486,7 +487,7 @@ Ils permettent une navigation totalement libre autour de la molécule et n'impos
   \hspace{0.3cm}
   \label{Fig:vmd_nav}
   \end{subfigure}
-  \caption{\it Capture d'écran des interfaces de manipulation offerts par PyMol (à gauche) et VMD à droite. Ils sont constitués de nombreuses combinaisons souris/clavier pour permettre d'utiliser l'ensemble des possibilités de manipulation disponibles.
+  \caption[Captures d'écran des menus de navigation au sein de PyMol et VMD.]{\it Capture d'écran des interfaces de manipulation offerts par PyMol (à gauche) et VMD à droite. Ils sont constitués de nombreuses combinaisons souris/clavier pour permettre d'utiliser l'ensemble des possibilités de manipulation disponibles.
   }
   % \hspace{0.3cm}
 \end{figure}
@@ -494,7 +495,7 @@ Ils permettent une navigation totalement libre autour de la molécule et n'impos
 
 Le caractère abstrait des objets de la biologie structurale, décidera directement de la qualité de repères spatiaux que l'utilisateur possédera pour naviguer. Afin de combler ce manque préjudiciable pour l'expérience utilisatrice lors de ses futures tâches en biologie structurale, nous avons développé une série de paradigmes de navigation, basées sur le contenu observé et les tâches usuelles en visualisation/exploration moléculaire.
 
-Dans la même optique de mettre en place un environnement virtuel respectant les contraintes de la RV, il nous a paru important d'adapter les interactions habituelles qu'un expert peut avoir dans des sessions de visualisation et d'analyses. Ces interactions, trop complexes et trop cloisonnées dans des environnements de bureau, doivent être simplifiées et harmonisées afin de pouvoir faire cohabiter et communiquer les étapes complémentaires que sont la visualisation et l'analyse. On remarque que dans la boucle de la VA (voir Figure \ref{Fig:visual_analytics_process_keim}), ces deux étapes sont couplées de manière très étroites proches, aussi bien en terme de données utilisées que d'implication de l'utilisateur. Leur rapprochement et fusion au sein d'un unique module est pertinent et pourrait donc se faire à travers la mise en place d'une représentation des notions utilisées dans chacune des étapes. L'utilisation d'ontologie comme illustrée précédemment permet cela et va même plus loin, car elle pourrait simplifier l'étape de \textit{transformation} des données en imposant un carcan et un vocabulaire précis aux données d'entrée. Ce deuxième pan de notre étude nous a menés à la mise en place d'une plateforme multi-composants s'appuyant sur l'utilisation d'une base de données RDF dont la structure dépend directement d'une ontologie OWL créée pour décrire notre domaine d'application.
+Dans la même optique de mettre en place un environnement virtuel respectant les contraintes de la RV, il nous a paru important d'adapter les interactions habituelles qu'un expert peut avoir dans des sessions de visualisation et d'analyses. Ces interactions, trop complexes et trop cloisonnées dans des environnements de bureau, doivent être simplifiées et harmonisées afin de pouvoir faire cohabiter et communiquer les étapes complémentaires que sont la visualisation et l'analyse. On remarque que dans la boucle de la VA (voir Figure \ref{Fig:visual_analytics_process_keim}), ces deux étapes sont couplées de manière très étroites proches, aussi bien en terme de données utilisées que d'implication de l'utilisateur. Leur rapprochement et fusion au sein d'un unique module est pertinent et pourrait donc se faire à travers la mise en place d'une représentation des notions utilisées dans chacune des étapes. L'utilisation d'ontologie comme illustrée précédemment permet cela et va même plus loin, car elle pourrait simplifier l'étape de \textit{transformation} des données en imposant un carcan et un vocabulaire précis aux données d'entrée. Ce deuxième pan de notre étude nous a menés à la mise en place d'une plateforme multi-composants s'appuyant sur l'utilisation d'une base de données RDF (Resource Description Framework) dont la structure dépend directement d'une ontologie OWL (Web Ontology Language) créée pour décrire notre domaine d'application.
 
 
 
