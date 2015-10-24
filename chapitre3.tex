@@ -30,7 +30,7 @@ Nous détaillerons dans ce chapitre notre approche pour répondre à l'évolutio
 
 Nous avons vu dans le chapitre précédent (voir section \ref{navigation}) que la navigation dans des EV immersifs se caractérisait par la volonté d'étendre les capacités d'exploration de mondes virtuels en dépit des limites physiques imposées par les EV immersifs.
 
-\section{Nouveaux paradigmes pour la RV}
+\section{Paradigmes de navigation pour l'exploration de complexes moléculaire}
 
 Nous avons mis en évidence le besoin de mettre en place des paradigmes de navigation qui répondent aux problématiques posées par la visualisation moléculaire qui met en jeu des objets scientifiques abstraits, de plus en plus complexes, dans des environnements présentant un nombre réduit de repères spatiaux pour l'utilisateur.
 
@@ -165,7 +165,7 @@ Dans le cas où l'algorithme de point de vue optimal n'est pas suffisant pour pe
 \end{figure}
 
 
-\subsubsection{Evaluation par Analyse Hiérarchique de la Tâche (HTA)} \label{hta_eval}
+\subsubsection{Evaluation par analyse hiérarchique de la tâche} \label{hta_eval}
 
 Nous avons choisi d'évaluer nos paradigmes de navigation au moyen de la décomposition hiérarchique de deux tâches identifiées comme habituelles pour les experts scientifiques. Le choix de ces tâches a pu se faire grâce à la contribution d'ergonomes et au moyen de méthodes d'entretiens supervisés.
 Nous sommes partis du constat que l'évaluation systématique de tâches métier est impossible ou très difficile à cause de plusieurs facteurs: (1) la spécialisation de l'outil évalué est très importante et nous faisons face à un outil dont la nature (PyMol, VMD, Yasara) varie suivant les usages usuels des experts scientifiques interrogés. (2) L'implémentation et l'adaptation de nos paradigmes sur un ensemble représentatif d'outils spécialisés est compliquée et très chronophage. (3) Notre démarche est biaisée de part son développement basé sur l'exécution de tâches expertes. L'utilisation de tâches expertes pour l'évaluation d'une approche basée sur ces tâches nous parait litigieuse. 
@@ -179,7 +179,7 @@ L'arbre de tâche HTA présenté ci-dessous décrit la manière de répondre à 
 \\
 \\
 \begin{tikzpicture}
-\tikzset{grow'=right,level distance=120pt}
+\tikzset{grow'=right,level distance=160pt}
 \tikzset{execute at begin node=\strut}
 \tikzset{every tree node/.style={anchor=base west}}
 \Tree 
@@ -193,7 +193,7 @@ L'arbre de tâche HTA présenté ci-dessous décrit la manière de répondre à 
 \\
 \\
 \begin{tikzpicture}
-\tikzset{grow'=right,level distance=150pt}
+\tikzset{grow'=right,level distance=180pt}
 \tikzset{execute at begin node=\strut}
 \tikzset{every tree node/.style={anchor=base west}}
 \Tree 
@@ -259,7 +259,7 @@ La généricité de notre approche peut également être soulignée par le nombr
 Des méthodes ergonomiques comme la HTA nous ont permis de mettre en évidence les apports en terme de performance et de simplification des processus de nos paradigmes de navigation. 
 
 
-\section{Les images stéréoscopiques au service de la visualisation moléculaire}
+\section{La visualisation adaptative au service de la visualisation moléculaire}
 
 Nous avons souligné dans le chapitre 2 l'importance que prenait la visualisation et la représentation de structures 3d de molécules pour la compréhension de leur fonctionnement. En plus de permettre d'appréhender leur rôle biologique, la visualisation moléculaire est également un excellent vecteur de communication dans le monde scientifique. Fort de ce constat, nous nous sommes intéressés aux améliorations possibles que nous pourrions apporter (1) aux méthodes de contrôle visuelles de simulation moléculaire distantes, (2) aux moyens de communication scientifique actuels qu'offre la visualisation moléculaire. Ces deux aspects de la visualisation moléculaire se concentrent exclusivement autour de l'échange de représentations graphiques générés par un certain nombre de logiciels experts comme PyMol, VMD ou YASARA pour ne citer qu'eux. Un rendu en deux dimensions d'une vue sur une partie ou l'ensemble d'une molécule permet, avec ou sans légendes appropriées, de rendre compte d'un phénomène ou d'une singularité structurelle précise. Si cette singularité est structurelle, elle est par définition 3d et pourrait donc être représentée de façon plus précise par un rendu 3d.
 
