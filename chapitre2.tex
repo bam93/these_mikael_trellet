@@ -275,14 +275,14 @@ Ces périphériques se couplent aussi bien à des dispositifs immersifs type CAV
 \begin{figure}[h]
   \begin{subfigure}{.5\textwidth}
   \centering
-  {\includegraphics[width=0.9\linewidth]{./figures/ch3/cyberith_virtualizer}}
+  {\includegraphics[width=0.9\linewidth]{./figures/ch2/cyberith_virtualizer}}
     \caption{}
     \label{Fig:cyberith_virtualizer}
   % \hspace{0.3cm}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
   \centering
-  {\includegraphics[width=0.9\linewidth]{./figures/ch3/omnideck}}
+  {\includegraphics[width=0.9\linewidth]{./figures/ch2/omnideck}}
     \caption{}
     \label{Fig:omnideck}
   \hspace{0.3cm}
@@ -335,7 +335,7 @@ Dans des domaines plus industriel, les paradigmes propres aux simulation de tran
   \hspace{0.3cm}
   \end{subfigure}
   \caption[(a) Exemple d'un simulateur de vol. (b) Exemple d'un simulateur de conduite.]{\it(a) Simulateur de conduite dans un système de rétroprojection sur écran courbé.\footnote{\url{http://www.lexus-int.com/design/virtual-reality.html}
-  (b) Exemple d'un simulateur de vol où les déplacements virtuels sont la conséquences des mouvements réels de l'utilisateur adoptant une posture de chute libre.}
+  (b) Exemple du simulateur de vol Birdly où les déplacements virtuels sont la conséquences des mouvements réels de l'utilisateur adoptant une posture de chute libre.}
   }
   % \hspace{0.3cm}
 \end{figure}
@@ -345,7 +345,7 @@ En réalité virtuelle, au delà des approches qui tentent de reproduire de mani
 
 \begin{figure}[h]
  \centering
- {\includegraphics[width=0.8\linewidth]{./figures/ch3/HCNav}}
+ {\includegraphics[width=0.8\linewidth]{./figures/ch2/HCNav}}
    \caption[Technique de navigation HCNav.]{\it Exemple de l'utilisateur des déplacements relatifs d'un utilisateur par rapport à une zone de référence pour contrôler son déplacement dans le monde virtuel. L'orientation de son regard décidera également des rotations dans le monde virtuel. Il est donc possible d'avoir un contrôle de 6 degrés de liberté pour la navigation (3 en translation et 3 en rotation).}
    \label{Fig:HCNAV}
  \hspace{0.3cm}
@@ -377,27 +377,30 @@ Mais l'étude de la structure seule ne peut suffire lors de l'étude d'un comple
 
 %La notion d'interaction n'intervient pas que dans un sens unique et même si la méthode permettant d'interagir avec un objet est primordiale, le retour sensoriel provoqué par l'interaction est, en RV, un sujet d'étude à part entière. 
 
-Nous avons vu que ces retours sensoriels participent à l'immersion ressentie par l'utilisateur dans un monde virtuel, mais ils peuvent également servir de repères ou de vecteurs d'informations utilisés pour compléter les informations visuelles. Même s'il est possible de mettre en place certaines sollicitations autres que visuelles lors d'un travail sur un poste de travail standard, il est très rare de trouver des retours sonores ou haptiques lors d'une session de travail. Au-delà des limites matérielles qui peuvent exister, un retour haptique impliquant par exemple la nécessité de posséder un dispositif muni d'un système de retour d'effort, les limites sont souvent logicielles. Peu de programmes implémentent des retours sensoriels autres que visuels dans le design de leurs outils d'analyses de données. Il est au contraire très commun de prendre en compte ces retours sensoriels lors du développement de solutions logicielles dédiées à la RV. La RV est par essence définie par l'implication de l'utilisateur. Elle a donc dû développer très tôt des moyens pour retranscrire un maximum de sensations aux utilisateurs lors de leurs expériences virtuelles. Les systèmes haptiques ont su rapidement venir de la RV jusqu'aux laboratoires de biologie structurale dans le but permanent d'améliorer la perception 3d des structures moléculaires d'intérêt. La possibilité de toucher une molécule, en combinaison de sa visualisation 3d, offre une complémentarité importante pour la compréhension de certaines particularités structurelles \cite{stocks2009interacting}. 
+Nous avons vu que ces retours sensoriels participent à l'immersion ressentie par l'utilisateur dans un monde virtuel, mais ils peuvent également servir de repères ou de vecteurs d'informations utilisés pour compléter les informations visuelles. Même s'il est possible de mettre en place certaines sollicitations autres que visuelles lors d'un travail sur un poste de travail standard, il est très rare de trouver des retours sonores ou haptiques lors d'une session de travail. Au-delà des limites matérielles qui peuvent exister, un retour haptique impliquant par exemple la nécessité de posséder un dispositif muni d'un système de retour d'effort, les limites sont souvent logicielles. Peu de programmes implémentent des retours sensoriels autres que visuels dans la conception de leurs outils d'analyses de données. Il est au contraire très commun de prendre en compte ces retours sensoriels lors du développement de solutions logicielles dédiées à la RV. 
+
+La RV est par essence définie par l'implication de l'utilisateur. Elle a donc dû développer très tôt des moyens pour retranscrire un maximum de sensations aux utilisateurs lors de leurs expériences virtuelles. Les systèmes haptiques ont su rapidement venir de la RV jusqu'aux laboratoires de biologie structurale dans le but permanent d'améliorer la perception 3d des structures moléculaires d'intérêt. La possibilité de toucher une molécule, en combinaison de sa visualisation 3d, offre une complémentarité importante pour la compréhension de certaines particularités structurelles \cite{stocks2009interacting}.
+
 Le domaine du docking moléculaire fut assez friand de la technologie de bras haptique afin de permettre le ressenti des forces d'interaction prenant place entre deux partenaires \cite{nagata2002concept, sankaranarayanan2003role}. L'ajout de la flexibilité dans les techniques de docking et l'utilisation de techniques de simulations interactives (voir section \ref{simu_interactive}) où des forces peuvent être ajoutées par l'utilisateur au sein d'une simulation en cours fut aussi un terrain propice à l'utilisation de systèmes de retours haptiques \cite{stone2001system}. Ces derniers permettent en effet un contrôle fin de la force appliquée et imposent une limite physique à celle-ci que l'utilisateur ne peut dépasser. Le matériel a pu évoluer avec le temps afin de répondre aux besoins évoluant des équipes de recherche et un aperçu de cette évolution est illustrée dans la Figure \ref{Fig:taylor_haptic}.
 
 \begin{figure}[h]
-  \begin{subfigure}{.33\textwidth}
+  \begin{subfigure}{.3\textwidth}
   \centering
-  {\includegraphics[width=0.9\linewidth]{./figures/ch2/taylor_haptic}}
+  {\includegraphics[width=0.95\linewidth]{./figures/ch2/taylor_haptic}}
     \caption{}
     \label{Fig:taylor_haptic}
   % \hspace{0.3cm}
   \end{subfigure}
-  \begin{subfigure}{.33\textwidth}
+  \begin{subfigure}{.34\textwidth}
   \centering
-  {\includegraphics[width=0.9\linewidth]{./figures/ch2/haptic_docking}}
+  {\includegraphics[width=0.98\linewidth]{./figures/ch2/haptic_docking}}
     \caption{}
     \label{Fig:haptic_docking}
   % \hspace{0.3cm}
   \end{subfigure}
-  \begin{subfigure}{.33\textwidth}
+  \begin{subfigure}{.34\textwidth}
   \centering
-  {\includegraphics[width=0.9\linewidth]{./figures/ch2/ferey_haptic}}
+  {\includegraphics[width=0.98\linewidth]{./figures/ch2/ferey_haptic}}
     \caption{}
     \label{Fig:ferey_haptic}
   % \hspace{0.3cm}
@@ -415,29 +418,30 @@ En visualisation de données abstraites et/ou scientifiques, l'utilisation  de r
 
 Nous avons vu dans le chapitre précédent la place majeure qu'avaient les modèles physiques comme moyens de représentation en premier lieu, les représentations par ordinateurs ne permettant pas au départ une complexité équivalente aux modèles physiques, puis comme moyens de communications, moyens les plus simples à transporter et présenter lors de congrès. Désormais, plusieurs études considèrent leur utilisation comme vecteurs d'interaction. Ces études s'appuient sur l'évolution conjointe des techniques de Réalité Augmentée (RA) et d'impression 3d. 
 
-Avant tout approfondissement des cas d'usages de ces modèles physiques, nous revenons rapidement sur les concepts de Réalité Augmentée et impression 3d. La RA se définit comme l'ajout en temps réel de contenus virtuels 2d ou 3d au sein du monde réel grâce à un dispositif informatique (smartphone, casques de RV, lunettes de RA). De nombreuses applications de la RA existent, du rendu de meubles virtuels dans des pièces d'habitation aux labels flottants d'information sur certains lieux touristiques. 
+Avant tout approfondissement des cas d'usages de ces modèles physiques, nous revenons rapidement sur les concepts de Réalité Augmentée et d'impression 3d. La RA se définit comme l'ajout en temps réel de contenus virtuels 2d ou 3d au sein du monde réel grâce à un dispositif informatique (smartphone, casques de RV, lunettes de RA). De nombreuses applications de la RA existent, du rendu de meubles virtuels dans des pièces d'habitation aux labels flottants d'information sur certains lieux touristiques. 
 L'impression 3d est quant à elle une technologie permettant de fabriquer des objets à partir de leur modèle 3d informatique. 
 
 Combinées ensemble, ces techniques permettent par exemple, après la conception et l'impression d'un modèle physique de protéine, son traitement visuel en temps réel pour le suivre (par \textit{tracking} de marqueurs spécifiques ou \textit{tracking} de forme/couleurs) et permettre un rendu visuel du modèle et l'affichage de propriétés ou d'informations de façon dynamique et toujours en temps réel \cite{gillet2005tangible}. 
 Les modèles physiques de protéine peuvent être des modèles statiques monobloc mais peuvent aussi être des modèles physiques complexes et résultats d'assemblages de sous-unités physiques faisant l'analogie des acides aminés. Au-delà de la simple analogie, ce découpage permet de mettre en place des solutions techniques visant à imiter les énergies rotationnelles inter-acides aminés à l'échelle des sous-unités physiques \cite{chakraborty2013coarse}. Ces modèles physiques avancés peuvent être envisagés comme moyens d'interactions pour la reconstruction assistée de peptides ou l'estimation d'énergie potentielle \cite{martinez2015virtual}. Leurs changements conformationnels de modèles informatiques 3d simulés seraient induits par les déformations du modèle physique manipulé (voir Figure \ref{Fig:tangible_xav}).
 
 \begin{figure}[h]
-  \begin{subfigure}{.5\textwidth}
+  \begin{subfigure}{.4\textwidth}
   \centering
   {\includegraphics[width=0.9\linewidth]{./figures/ch2/tangible_marker}}
     \caption{}
     \label{Fig:tangible_marker}
   % \hspace{0.3cm}
   \end{subfigure}
-  \begin{subfigure}{.4\textwidth}
+  \begin{subfigure}{.6\textwidth}
   \centering
-  {\includegraphics[width=0.7\linewidth]{./figures/ch2/tangible_xav}}
+  {\includegraphics[width=\linewidth]{./figures/ch2/tangible_xav}}
     \caption{}
     \label{Fig:tangible_xav}
   \hspace{0.3cm}
   \end{subfigure}
-  \caption[(a) Système de Réalité Augmentée grâce à des modèles tangibles de protéines. (b) Reconstruction 3d d'un modèle à partir d'un modèle physique complexe.]{\it (a) Tracking par marqueurs de modèles monobloc de protéines et rendu vidéo en réalité augmentée ajoutant les résidus chargés en bleu et rouge.
-  (b) Reconstruction 3d d'un modèle complexe de peptide formé de groupes physiques distincts et possédant des aimants afin de rapporter les forces rotationnelles de liaison grâce à un retour haptique. Un rendu temps réel est effectué en parallèle grâce à un tracking par analyses d'image. 
+  \caption[(a) Système de Réalité Augmentée grâce à des modèles tangibles de protéines. (b) Reconstruction 3d d'un modèle à partir d'un modèle physique complexe.]
+  {\it (a) Tracking par marqueurs de modèles monobloc de protéines et rendu vidéo en réalité augmentée ajoutant les résidus chargés en bleu et rouge. Travail effectué au sein du <<Olson Laboratory>>.\footnote{\url{http://mgl.scripps.edu/}}
+  (b) Reconstruction 3d d'un modèle complexe de peptide formé de groupes physiques distincts et possédant des aimants afin de rapporter les forces rotationnelles de liaison grâce à un retour haptique. Un rendu temps réel est effectué en parallèle grâce à un tracking par analyses d'image. Travail effectué au sein de VENISE, groupe du LIMSI-CNRS.
   }
   % \hspace{0.3cm}
 \end{figure}
@@ -499,15 +503,16 @@ La visualisation moléculaire met en scène des représentations artificielles d
 \begin{figure}[h]
   \begin{subfigure}{.5\textwidth}
   \centering
-  {\includegraphics[width=0.9\linewidth]{./figures/ch3/pymol_nav}}
+  {\includegraphics[width=0.9\linewidth]{./figures/ch2/pymol_nav}}
   % \hspace{0.3cm}
-  \caption{}
+  % \caption{}
   \label{Fig:pymol_nav}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
   \centering
-  {\includegraphics[width=0.9\linewidth]{./figures/ch3/vmd_nav}}
-  \hspace{0.3cm}
+  {\includegraphics[width=\linewidth]{./figures/ch2/vmd_nav}}
+  % \hspace{0.3cm}
+  % \caption{}
   \label{Fig:vmd_nav}
   \end{subfigure}
   \caption[Captures d'écran des menus de navigation au sein de PyMol et VMD.]{\it Capture d'écran des interfaces de manipulation offerts par PyMol (à gauche) et VMD à droite. Ils sont constitués de nombreuses combinaisons souris/clavier pour permettre d'utiliser l'ensemble des possibilités de manipulation disponibles.
