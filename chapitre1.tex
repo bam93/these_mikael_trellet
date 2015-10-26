@@ -196,14 +196,14 @@ Cette structuration est due aux interactions proches et longue distance formées
   {\includegraphics[width=0.9\linewidth]{./figures/ch1/secondary_structure.png}}
     \caption{}
     \label{Fig:secondary_structure}
-  \hspace{0.2cm}
+  % \hspace{0.2cm}
   \end{subfigure}
   \begin{subfigure}{.6\textwidth}
   \centering
   {\includegraphics[width=\linewidth]{./figures/ch1/tertiary_structure.jpg}}
     \caption{}
     \label{Fig:tertiary_structure}
-  \hspace{0.2cm}
+  % \hspace{0.2cm}
   \end{subfigure}
   \caption[(a) Représentation en rubans des motifs de structure secondaire. (b) Exemples de motifs communs de structures tertiaires.]{\it (a) Représentation en rubans des motifs de structure secondaire les plus communs, à gauche une hélice $\alpha$ et à droite un feuillet $\beta$, résultats de la configuration spatiale des atomes de la chaîne principale des protéines. Source : \cite{alberts2013essential}
   (b) Exemples de motifs communs de structures tertiaires. A gauche, représentation d'un paquet de 4 hélices $\alpha$ agencées autour du motif hélice-coude-hélice. Au centre, enchevêtrement d'hélices $\alpha$ et feuillets $\beta$. A droite, double couche de feuilles $\beta$. Dans ces illustrations sous forme de rubans de protéines, les hélices sont en vert, les feuillets en rouge et les coudes ou boucles en jaune. Source : \cite{alberts2013essential}
@@ -258,7 +258,7 @@ L'une des modifications post-transcriptionnelles courantes implique des enzymes 
 
 \begin{figure}[htb]
   \centering
-  {\includegraphics[width=0.55\linewidth]{./figures/ch1/codon_table_circle}}
+  {\includegraphics[width=0.5\linewidth]{./figures/ch1/codon_table_circle}}
     \caption[Tableau de correspondance des triplets d'acides nucléiques et les acides aminés.]{\it Tableau de correspondance des triplets d'acides nucléiques et les acides aminés pour lesquels ils codent. <<Initiation>> désigne les codons pouvant être retrouvés comme initiateur de la traduction, <<Stop>> désignent les codons responsables de l'arrêt du processus de traduction par le ribosome.}
     \label{Fig:codon_table}
   \hspace{0.2cm}
@@ -292,14 +292,14 @@ La majorité des protéines ne peut pas être fonctionnelle sans structure 3d, c
 
 \begin{figure}[h]
   \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch1/process_bio_struct_XP}}
-    \caption{{\it Les différentes étapes de l'étude d'un système moléculaire en biologie structurale.}}
+  {\includegraphics[width=\linewidth]{./figures/ch1/process_bio_struct_XP}}
+    \caption[Schéma du processus itératif d'étude d'une structure moléculaire en biologie structurale.]{\it Les différentes étapes de l'étude d'un système moléculaire en biologie structurale.}
   \label{Fig:schema_seq_bio_struct_XP}
   \hspace{0.2cm}
 \end{figure}
 
 Il est possible de diviser le processus d'étude de la biologie structurale en plusieurs étapes distinctes mais néanmoins étroitement liées.
-La Figure \ref{Fig:schema_seq_bio_struct_XP} donne un aperçu de ce découpage et identifie 3 grandes tâches : la collecte d'informations structurelles \textit{via} des techniques expérimentales et théoriques, la modélisation de structures à partir des informations récoltées et la simulation moléculaire qui permet d'ajouter une dimension dynamique indispensable pour l'étude de phénomènes et enfin l'analyse et l'interprétation de résultats permettent de postuler des hypothèses quant aux phénomènes étudiés et d'affiner les étapes de modélisation.
+La Figure \ref{Fig:schema_seq_bio_struct_XP} donne un aperçu de ce découpage et identifie 3 grandes tâches : la collecte d'informations structurelles via des techniques expérimentales et théoriques, la modélisation de structures à partir des informations récoltées et la simulation moléculaire qui permet d'ajouter une dimension dynamique indispensable pour l'étude de phénomènes et enfin l'analyse et l'interprétation de résultats permettent de postuler des hypothèses quant aux phénomènes étudiés et d'affiner les étapes de modélisation.
 Ces étapes ne mettent pas en jeu les mêmes outils et méthodes. Nous nous concentrerons dans cette section sur la collecte de données aboutissant à l'obtention de structures 3d.
 
 Les protéines sont des unités biologiques de taille microscopique, leur taille oscillant entre quelques dizaines et quelques centaines d'Angströms (\r{A} = \SI{e-10}{\metre}) et donc invisibles pour des systèmes de photographies standards. En effet, les techniques de microscopie optique ne peuvent permettre aujourd'hui une observation à l'échelle atomique, quel que soit l'objet d'étude. Notons que cette taille en Angströms est indicative et inappropriée pour désigner la grosseur des protéines. On préfère utiliser le kiloDalton (kDa) qui est une mesure de masse, 1 Da correspondant à la masse d'un atome d'hydrogène. Un acide aminé représente environ 110 Da et une protéine entre 15 et plusieurs millions de kDa pour les complexes multimériques les plus importants.
@@ -424,9 +424,7 @@ Parmi les informations stockées dans des bases de données et utilisées en bio
 
 \subsection{Modélisation et simulation} \label{model_simu}
 
-Comme il n'est pas possible expérimentalement de filmer une protéine dans son environnement, en complément des techniques expérimentales, il est nécessaire d'utiliser des approches computationnelles, notamment pour accéder aux propriétés dynamiques et mécaniques des protéines. Il s'agit aussi de compléter les informations structurelles recherchées ou de générer des modèles pour des protéines dont la nature empêche leur étude expérimentale (mauvaise solubilité, instabilité en solution, dégradation par les rayons X, etc.). Ces approches dites \textit{in silico} sont moins coûteuses que les approches expérimentales,
-% \commentaire{MB: je ne peux etre d'accord avec cette formulation, trop negative a mon sens; certes la modelisation a des limites, mais les approches exp. egalement. Prend ex. le boulot de DE Shaw Science 2010 qui etablit bien la maturite des approches si le bon champs de force est utilise et on dispose d'un temps de simulation suffisant.}
-mais ont un facteur de confiance légèrement moins important que les approches énoncées précédemment car elles dépendent uniquement d'un set de paramètres pour générer des modèles structuraux. Les approches computationnelles ont cependant beaucoup évolué ces deux dernières décennies, portées par l'essor de l'informatique. Elles intègrent des paramètres physico-chimiques de plus en plus précis permettant de modéliser des structures 3d avec de plus en plus de précisions. Leurs limitations actuelles se situent davantage au niveau du temps de simulation qui doit respecter un rapport étroit entre le temps nécessaire pour l'observation d'un phénomène biologique et le temps alloué aux experts pour leurs expérimentations \cite{shaw2010atomic}. De la même manière, la nature différente des protéines et de leur environnement nécessite un réglage précis des paramètres utilisés au sein de ces techniques. 
+Comme il n'est pas possible expérimentalement de filmer une protéine dans son environnement, en complément des techniques expérimentales, il est nécessaire d'utiliser des approches computationnelles, notamment pour accéder aux propriétés dynamiques et mécaniques des protéines. Il s'agit aussi de compléter les informations structurelles recherchées ou de générer des modèles pour des protéines dont la nature empêche leur étude expérimentale (mauvaise solubilité, instabilité en solution, dégradation par les rayons X, etc.). Ces approches dites \textit{in silico} sont moins coûteuses que les approches expérimentales, mais ont parfois un facteur de confiance légèrement moins important que les approches énoncées précédemment car elles dépendent uniquement d'un set de paramètres pour générer des modèles structuraux. Les approches computationnelles ont cependant beaucoup évolué ces deux dernières décennies, portées par l'essor de l'informatique. Elles intègrent des paramètres physico-chimiques de plus en plus précis permettant de modéliser des structures 3d avec de plus en plus de précisions. Leurs limitations actuelles se situent davantage au niveau du temps de simulation qui doit respecter un rapport étroit entre le temps nécessaire pour l'observation d'un phénomène biologique et le temps alloué aux experts pour leurs expérimentations \cite{shaw2010atomic}. De la même manière, la nature différente des protéines et de leur environnement nécessite un réglage précis des paramètres utilisés au sein de ces techniques. 
 La reconnaissance de l'apport des méthodes théoriques pour la modélisation moléculaire est d'ailleurs très présente aujourd'hui et fut mis en exergue en 2013 par l'obtention du prix Nobel de chimie par ses pionniers (Martin Kaplus, Michael Levitt et Arieh Warshel)\cite{_nobel_2013}.
 
 La différence entre la précision des techniques expérimentales et computationnelles est donc aujourd'hui très fine et ces deux approches sont utilisées de façon complémentaires au sein de nombreuses études.
@@ -477,26 +475,36 @@ Les énergies de liaison et d'angle entre particules sont souvent modélisées p
 
 \begin{figure}[htb]
   \centering
-  {\includegraphics[width=0.65\linewidth]{./figures/ch1/harmonic_vs_morse_potential.pdf}}
+  {\includegraphics[width=0.6\linewidth]{./figures/ch1/harmonic_vs_morse_potential.pdf}}
     \caption[Contributions énergétiques des liaisons covalentes.]{\it Contributions énergétiques des liaisons représenté par un potentiel harmonique (en vert) ou un potentiel de Morse (en bleu) en fonction de la distance entre deux atomes. Source : \cite{assumed_graphical_2006}}
     \label{Fig:harmonic_morse_potential}
   \hspace{0.2cm}
 \end{figure}
 
 Les termes d'énergie non liée sont plus difficiles à calculer, car chaque atome interagit de façon non liée avec l'ensemble des atomes du système alors qu'il agit de façon liée avec un ensemble limité d'atomes avec qui il possède une liaison covalente (4 atomes maximum). 
-Parmi les interactions non liées, les forces de Van der Waals sont rapidement négligeables lorsque la distance entre deux atomes est trop importante. Lorsque la contribution du terme de Van der Waals est modélisée par un potentiel de Lennard-Jones 6-12, un des potentiels les plus utilisés, elle décroît proportionnellement à $r^{-6}$ pour les forces attractives et $r^{-12}$ pour les forces répulsives où $r$ représente la distance entre les deux atomes considérés. Cette modélisation est cependant inexacte pour les forces répulsives lorsque la distance est réduite puisque celles-ci augmentent de façon exponentielle. Afin d'accélérer les calculs, on introduit usuellement un seuil pour la distance au-dessus duquel la contribution des interactions de Van der Waals est égale à 0.
+Parmi les interactions non liées, les forces de Van der Waals sont rapidement négligeables lorsque la distance entre deux atomes est trop importante. Lorsque la contribution du terme de Van der Waals est modélisée par un potentiel de Lennard-Jones 6-12, un des potentiels les plus utilisés, elle décroît proportionnellement à $r^{-6}$ pour les forces attractives et $r^{-12}$ pour les forces répulsives où $r$ représente la distance entre les deux atomes considérés (cf. Figure \ref{Fig:lennardjones}). Cette modélisation est cependant inexacte pour les forces répulsives lorsque la distance est réduite puisque celles-ci augmentent de façon exponentielle. Afin d'accélérer les calculs, on introduit usuellement un seuil pour la distance au-dessus duquel la contribution des interactions de Van der Waals est égale à 0.
 
-Les forces électrostatiques ne sont pas si aisées à calculer du fait de leur contribution non négligeable à des distances considérées comme grandes au sein d'une protéine et impliquant de nombreux atomes. Elles sont habituellement représentées grâce au potentiel de Coulomb qui ne décroît que proportionnellement à $r^{-1}$ comme illustré sur la Figure \ref{Fig:coulomb_lennardjones}. Plusieurs méthodes existent pour réduire la complexité de calcul induite par cette modélisation. Une solution repose, à la manière de ce qui est fait pour les contributions de Van der Waals, sur la mise en place d'un seuil au-delà duquel l'interaction est considérée comme négligeable. Cependant, cette technique provoque des artefacts importants du fait du changement brutal de la contribution électrostatique avant et après le seuil choisi. Une solution pour limiter ces artefacts est la mise en place d'une fonction de commutation qui introduit un facteur d'échelle compris entre 0 et 1 à l'extérieur et l'intérieur du seuil de distance. Il existe également d'autres méthodes plus coûteuses que les seuils, mais plus précises comme la méthode de \textit{Particle mesh Ewald} (PME) qui s'appuie sur des approximations des valeurs électrostatiques au-delà du seuil en considérant l'espace comme un espace de Fourier et nécessite seulement le découpage de l'espace en une grille régulière.
+Les forces électrostatiques ne sont pas si aisées à calculer du fait de leur contribution non négligeable à des distances considérées comme grandes au sein d'une protéine et impliquant de nombreux atomes. Elles sont habituellement représentées grâce au potentiel de Coulomb qui ne décroît que proportionnellement à $r^{-1}$ comme illustré sur la Figure \ref{Fig:electrostatic}. Plusieurs méthodes existent pour réduire la complexité de calcul induite par cette modélisation. Une solution repose, à la manière de ce qui est fait pour les contributions de Van der Waals, sur la mise en place d'un seuil au-delà duquel l'interaction est considérée comme négligeable. Cependant, cette technique provoque des artefacts importants du fait du changement brutal de la contribution électrostatique avant et après le seuil choisi. Une solution pour limiter ces artefacts est la mise en place d'une fonction de commutation qui introduit un facteur d'échelle compris entre 0 et 1 à l'extérieur et l'intérieur du seuil de distance. Il existe également d'autres méthodes plus coûteuses que les seuils, mais plus précises comme la méthode de \textit{Particle mesh Ewald} (PME) qui s'appuie sur des approximations des valeurs électrostatiques au-delà du seuil en considérant l'espace comme un espace de Fourier et nécessite seulement le découpage de l'espace en une grille régulière.
 
 \begin{figure}[htb]
+  \begin{subfigure}{.5\textwidth}
   \centering
-  {\includegraphics[width=0.65\linewidth]{./figures/ch1/electro_lennardjones.pdf}}
-    \caption[Contributions énergétiques des forces électrostatiques et de van der Waals.]{\it Contributions énergétiques des forces électrostatiques représentées par un potentiel de Coulomb (en rouge) et des forces de Van der Waals représentées par un potentiel de Lennard-Jones (en bleu) en fonction de la distance entre deux atomes.
+  {\includegraphics[height=5.3cm]{./figures/ch1/lennardjones.pdf}}
+    \caption{}
     % \commentaire{MB: ce sont de vraies courbes, et a l'echelle? Car dans mon souvenir l'electrostatique devrait etre comparativement plus important (plus negative) vers la droite du graphe.}
-    }
-    \label{Fig:coulomb_lennardjones}
-  \hspace{0.2cm}
+    \label{Fig:lennardjones}
+    \end{subfigure}
+  \begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[height=5.3cm]{./figures/ch1/electrostatic.pdf}}
+    \caption{}
+    \label{Fig:electrostatic}
+  \end{subfigure}
+  \caption[Contributions énergétiques des forces électrostatiques et de van der Waals]{\it (a) Contributions énergétiques des forces de Van der Waals représentées par un potentiel de Lennard-Jones. La courbe garde la même forme quels que soient les atomes considérés.
+  (b) Contributions énergétiques des forces électrostatiques représentées par un potentiel de Coulomb en fonction de la distance entre deux atomes. Des forces attractives prennent place entre deux atomes de charge différente alors que des forces répulsives prennent place entre deux atomes de même charge.}
+  % \hspace{0.2cm}
 \end{figure}
+
 
 Les paramètres utilisés au sein des champs de force sont dérivés de données expérimentales, mais peuvent également être le résultat de calculs computationnels de mécanique quantique. Parmi les champs de force, certains décrivent la protéine de façon atomique en considérant chaque atome comme une particule et en appliquant des paramètres propres à chaque atome dans les équations. Ces champs de force, appelés \textbf{tout-atome}, malgré leur précision, souffrent d'un temps de calcul de leurs équations très important qui est un frein significatif pour l'évaluation énergétique de systèmes moléculaires de plus de quelques centaines/milliers d'atomes. Afin de permettre l'étude de protéines dépassant cette taille, il est possible de simplifier le champ de force. Dans ces champs de force simplifiés, appelés \textbf{gros grain}, le modèle de la protéine est différent puisque certains groupes d'atomes, groupes dont les propriétés physiques sont bien connues, sont considérés comme des particules uniques, réduisant ainsi le nombre de particules du système. La différence entre deux modèles de champs de force tout-atome et gros grain est illustrée dans la Figure \ref{Fig:coarse_grain_ff}. Une particule étant régie par un ensemble d'équations, réduire le nombre de particules revient à réduire le nombre de calculs à effectuer. Les chaînes latérales des acides aminés ainsi que les groupements méthyles sont deux exemples de groupements d'atomes dont la contribution énergétique est suffisamment approximée pour pouvoir être simplifiés. Dans le même but de simplification des calculs, certains atomes dont la contribution est considérée comme négligeable sont enlevés des champs de force, c'est souvent le cas des atomes d'hydrogène par exemple.
 
@@ -518,7 +526,7 @@ Les différentes valeurs d'énergie potentielle d'une protéine sont obtenues pa
 \begin{figure}
   \centering
   {\includegraphics[width=0.65\linewidth]{./figures/ch1/energy_landscape_edit.png}}
-    \caption[Représentation d'un paysage énergétique d'une protéine suivant sa conformation spatiale.]{\it Représentation d'un paysage énergétique d'une protéine suivant sa conformation spatiale. Plus l'énergie potentielle est haute, plus la protéine est considérée comme désordonnée et donc instable. Plusieurs puits d'énergie traduisant des minimas locaux peuvent être identifiés mais un seul minimum global existe correspondant à l'énergie de la conformation la plus stable de la protéine appelé également l'état natif de la protéine.}
+    \caption[Représentation du paysage énergétique d'une protéine suivant sa conformation spatiale.]{\it Représentation d'un paysage énergétique d'une protéine suivant sa conformation spatiale. Plus l'énergie potentielle est haute, plus la protéine est considérée comme désordonnée et donc instable. Plusieurs puits d'énergie traduisant des minimas locaux peuvent être identifiés mais un seul minimum global existe correspondant à l'énergie de la conformation la plus stable de la protéine appelé également l'état natif de la protéine.}
     \label{Fig:energy_landscape_edit}
   \hspace{0.2cm}
 \end{figure}
