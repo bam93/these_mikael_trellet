@@ -357,7 +357,7 @@ Pour répondre à ces deux objectifs conjoints, d'une part de fournir un outil d
 (b) Le processus d'obtention d'un objet 3d à partir de 2 images. La première étape consiste à analyser la carte de profondeur pixel par pixel et de générer une surface aux dimensions identiques (à un facteur d'échelle près) dont la hauteur de chaque sommet sera corrélée avec le niveau de gris du pixel correspondant.}}
 \end{figure}
 
-\subsubsection{Donner à percevoir la profondeur sur dispositif mobile à la visualisation adaptative}
+\subsubsection{Donner à percevoir la profondeur sur dispositif mobile grâce à la visualisation adaptative}
 
 Notre approche se base sur l'utilisation d'images 2d, beaucoup plus légères que des modèles 3d et permettant un certain degré de personnalisation de la part des utilisateurs. Indépendante des formats de fichier utilisés dans les logiciels de visualisation, notre application ne nécessite qu'un périphérique mobile pour fonctionner donner à percevoir la profondeur de contenus 3d moléculaires. %Un nombre important de visualiseurs moléculaires peuvent être utilisés pour générer du contenu, VMD, Chimera, PyMol ou Yasara peuvent par exemple être utilisés pour générer ces scènes.
 
@@ -384,12 +384,12 @@ Sans disposer de rendu stéréoscopique sur dispositif mobile, la profondeur de 
   % \hspace{0.3cm}
 \end{subfigure}
 
-\caption[Exemples de scènes moléculaires crées pour l'application mobile.]{{\it (a) Scènes moléculaires proposées par défaut en exemple au sein de l'application.
+\caption[Exemples de scènes moléculaires créées pour l'application mobile.]{{\it (a) Scènes moléculaires proposées par défaut en exemple au sein de l'application.
 A. Visualisation d'une poche de liaison à la surface de GLIC (Ligand-Gated Ion Channel), une protéine transmembranaire responsable du passage des ions et des molécules d'eau à travers la membrane cellulaire. Scène extraite de VMD. B. Carte de basse résolution obtenue à partir de cryo-EM pour un filament d'actine. La position de la structure atomique dans l'enveloppe de basse résolution est en premier-plan alors que la carte électromagnétique est présentée en arrière-plan. Visualisation provenant de Chimera C. Couple verticale du modèle de la capside du virus Influenza A exposant la membrane externe et l'intérieur du virus. GraphiteLifeExplorer a été utilisé pour visualiser la coupure. D. Interaction entre une protéine SNARE et une membrane biologique lors d'une dynamique moléculaire (arrière-plan). Un graphe 3d rapportant le taux de courbure de la membrane est présenté en premier-plan. La surface 3d a été générée par Paraview (programme de visualisation scientifique) E. Scènes extraites d'un programme d'animation, MolecularMaya, dédié à la création de films scientifiques pour une audience large. Les scènes extraites mettent en avant deux virus au milieu de villosités à gauche et de multiples virus à droite.
 (b) Captures d'écran provenant de l'application mobile développée et mettant en avant le menu principal de l'application permettant de charger une image ou un objet 3d (en haut) et une scène 3d type représentant la surface d'une protéine avec les différentes options de paramétrisation (en bas).}}
 \end{figure}
 
-\subsubsection{Vers une véritable immersion sur dispositif mobilé}
+\subsubsection{Vers une véritable immersion sur dispositif mobile}
 
 Un deuxième mode de visualisation permet d'importer directement des fichiers d'objets 3d dans l'application. Avec ce type de données 3d, un seul fichier est nécessaire pour créer une perspective 3d complète de l'objet. Après importation, il est possible de manipuler l'objet, de le tourner, le déplacer en avant ou arrière. Cette visualisation se rapproche de ce qui peut se retrouver dans les visualiseurs moléculaires pour périphériques mobiles. Pour aller plus loin dans l'immersion, l'utilisateur aura également la possibilité de changer l'échelle de la molécule et de plonger à l'intérieur et d'activer une visualisation plus interactive. Il utilisera en effet son périphérique comme une fenêtre sur le monde virtuel et le manipulera en orientant le périphérique à la main et en l'utilisant comme une vue adaptative sur un monde virtuel présent tout autour de lui. Basés sur le gyroscope du périphérique, l'objet 3d est visualisable à 360 degrés mais à partir d'une position fixe. 
 
