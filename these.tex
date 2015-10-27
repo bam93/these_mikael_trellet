@@ -155,7 +155,7 @@
 
 %\usepackage{tocbibind}
 
-
+\usepackage{tikzpagenodes}
 
 
 % =========================== Commandes diverses ===============================
@@ -214,6 +214,12 @@
 % -- +(0,-15pt)
 % -| (\tikzchildnode)}}}
 
+% \lstnewenvironment{xmllisting}[1][]
+%   {\lstset{language=XML,float=tb,#1}}% \begin{javalisting}[...]
+%   {} % \end{javalisting}
+
+% To add a border to certain images with includegraphics option "frame"
+\usepackage[export]{adjustbox}
 % =========================== Info du document =================================
 
 \title{Exploration et analyse immersives de données moléculaires guidées par la tâche et la modélisation sémantique des contenus}
@@ -222,27 +228,27 @@
 
 % =========================== Choix des fichiers compilés ======================
 
-% \includeonly{
-%   biblio,  	
-%   pagedegarde, 
+\includeonly{
+  biblio,  	
+  pagedegarde, 
 %   dedicace,   
-%   remerciements,
+  remerciements,
 %   %audiovideo,
-%   introduction,
-%   notations,
-%   chapitre1,
+  introduction,
+  notations,
+  chapitre1,
 %   % partie1,
-%   chapitre2,
-%   chapitre3,
+  chapitre2,
+  chapitre3,
 %   partie2,
 % 	% chapitre6, 
-% 	% chapitre4,
-%   % chapitre5,
-%   % conclusion ,
+	chapitre4,
+  chapitre5,
+  conclusion ,
 % 	% annexe,
 % 	ann_pub,
-%   resume
-% } 
+  resume
+} 
 % Pendant le travail, commenter tous les fichiers sauf celui en cours.
 % �a permet de compiler plus vite, tout en gardant des r�f�rences crois�es et
 % de num�ros de pages corrects.

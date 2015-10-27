@@ -175,7 +175,7 @@ Les commandes SPARQL permettant de dire si un mot-clé appartient ou non à une 
 ASK {my:Alanine rdfs:subClassOf my:Biological_component}
 \end{lstlisting}
 
-renverra donc \textit{true} malgré l'absence de lien direct, le concept \textit{Residue} se situant entre ces deux concepts (voir Figure \ref{alanine_owl}).
+renverra donc \textit{true} malgré l'absence de lien direct, le concept \textit{Residue} se situant entre ces deux concepts (voir Figure \ref{Fig:alanine_owl}).
 
 \begin{figure}
   \centering
@@ -244,9 +244,9 @@ Par défaut, le sous-ensemble structurel désigné dans la commande vocale dépe
 
 Si tous les pré-requis associés à une action sont respectés, alors la commande est ordonnée et transformé en fonction de l'environnement de visualisation utilisé. La dernière étape est donc une simple transformation des concepts et des individus en une formulation compréhensible par les espaces de travail.
 
-\begin{figure}
+\begin{figure}[htb]
   \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch5/platform_architecture}}
+  {\includegraphics[width=.95\linewidth]{./figures/ch5/platform_architecture_def}}
     \caption[Diagramme de déploiement de notre plateforme de \textit{Visual Analytics} immersive.]{{\it Diagramme de déploiement des modules et leur connectivité au sein de notre plateforme immersive de Visual Analytics.}}
   \label{Fig:platform_architecture}
   \hspace{0.3cm}
@@ -257,7 +257,7 @@ Si tous les pré-requis associés à une action sont respectés, alors la comman
 
 L'ontologie métier définie dans la section \ref{owl_ontology} et la base de données générée à partir de données de simulation moléculaire dans la section \ref{rdf_import} nous ont permis de mettre en place un espace de travail combinant visualisation et analyses qui repose exclusivement sur une interrogation de la base de données grâce à SPARQL.
 
-La conception de notre programme repose sur une architecture logicielle complexe. Dans le schéma illustré dans la Figure \ref{Fig:schema_prog_visu_ana}, nous l'avons volontairement placé au centre d'une boucle bi-latérale de communication reliant l'espace de visualisation à l'espace d'analyse.
+La conception de notre programme repose sur une architecture logicielle complexe. Dans le schéma illustré dans la Figure \ref{Fig:platform_architecture}, nous l'avons volontairement placé au centre d'une boucle bi-latérale de communication reliant l'espace de visualisation à l'espace d'analyse.
 
 Notre base de données est hébergée dans un serveur web \textit{Virtuoso} accessible depuis le réseau afin de garantir un accès privilégié et optimisé à nos données. 
 
@@ -323,18 +323,20 @@ PyMol est la partie frontale de notre application, elle est reliée indirectemen
 
 Afin de visualiser les différents graphiques résultant des analyses effectuées \textit{a priori} ou \textit{a posteriori} de la session de travail, nous avons mis en place une interface web de visualisation/interaction avec ces graphiques. Nous souhaitions garantir une utilisation générique et indépendante du type de dispositif d'interaction. Pour ce faire, nous nous appuyons sur une librairie JavaScript de création de graphiques au sein de pages HTML appelée d3js \footnote{\url{http://d3js.org/}}. Cette librairie possède plusieurs outils de chargement de données via différentes sources, sous forme de fichiers ou à travers des flux de données. D3js permet de mettre en place des graphiques de façon simple mais extrêmement paramétrables dans leur apparence ainsi que leur nature. S'appuyant sur JavaScript, elle est directement intégrée dans le code HTML d'une page web et accessible à travers toutes les plateformes permettant de visualiser du contenu HTML.
 
-Nous utilisons un serveur web basé sur une librairie python, Flask, afin de mettre en place notre environnement web. Plusieurs extensions existent dont Flask-SocketIO qui permet aux applications Flask d'accéder à une communication bi-directionnelle et de faible latence entre le serveur et le client web. Côté client, la librairie JavaScript SocketIO est suffisante pour pouvoir envoyer et recevoir des messages vers ou depuis le serveur web Flask. Une connexion permanente peut ainsi être mise en place entre le client et le serveur (voir Figure \ref{Fig:platform_architecture}).
-
-La plupart des événements d'interaction déclenchés par l'utilisateur au sein de la page HTML et des graphiques d3js peuvent ainsi être répercutés directement au serveur web. Suivant la nature des événements, le serveur renvoie ensuite les informations aux modules concernés.
-L'espace de visualisation des résultats d'analyses est divisé en niveaux hiérarchiques structuraux qui correspondent à ceux référencés dans l'ontologie : \textit{Model} / \textit{Chain} / \textit{Residue} / \textit{Atom}. Les graphiques dessinés dans chaque niveau correspondent à des individus du niveau hiérarchique représenté. Afin de garder une cohérence entre les graphiques représentés, chaque sélection effectuée dans un graphique entraîne une mise à jour des graphiques présents dans les niveaux hiérarchiques inférieurs. Cette mise à jour se fait grâce à une requête émanant du script JS relayée ensuite au module de gestion RDF qui lancera une requête SPARQL pour les propriétés affichées dans les graphes mis à jour mais seulement pour les individus sélectionnés par l'utilisateur.
-
-\begin{figure}
+\begin{figure}[htb]
   \centering
   {\includegraphics[width=1.0\linewidth]{./figures/ch5/2d_interface}}
     \caption[Interface web 2d pour la visualisation de graphes d'analyses.]{{\it Interface web 2d permettant la mise en place des graphes d'analyse sur les donnée de la base RDF.}}
-  \label{Fig:multi_collaboratif}
+  \label{Fig:2d_interface}
   \hspace{0.3cm}
 \end{figure}
+
+Nous utilisons un serveur web basé sur une librairie python, Flask, afin de mettre en place notre environnement web. Plusieurs extensions existent dont Flask-SocketIO qui permet aux applications Flask d'accéder à une communication bi-directionnelle et de faible latence entre le serveur et le client web. Côté client, la librairie JavaScript SocketIO est suffisante pour pouvoir envoyer et recevoir des messages vers ou depuis le serveur web Flask. Une connexion permanente peut ainsi être mise en place entre le client et le serveur (voir Figure \ref{Fig:platform_architecture}).
+
+La plupart des événements d'interaction déclenchés par l'utilisateur au sein de la page HTML et des graphiques d3js peuvent ainsi être répercutés directement au serveur web. Suivant la nature des événements, le serveur renvoie ensuite les informations aux modules concernés.
+L'espace de visualisation des résultats d'analyses est divisé en niveaux hiérarchiques structuraux qui correspondent à ceux référencés dans l'ontologie : \textit{Model} / \textit{Chain} / \textit{Residue} / \textit{Atom}. Les graphiques dessinés dans chaque niveau correspondent à des individus du niveau hiérarchique représenté. Afin de garder une cohérence entre les graphiques représentés, chaque sélection effectuée dans un graphique entraîne une mise à jour des graphiques présents dans les niveaux hiérarchiques inférieurs. Cette mise à jour se fait grâce à une requête émanant du script JS relayée ensuite au module de gestion RDF qui lancera une requête SPARQL pour les propriétés affichées dans les graphes mis à jour mais seulement pour les individus sélectionnés par l'utilisateur (voir Figure \ref{Fig:2d_interface}).
+
+
 
 \subsection{Analyses semi-automatiques}
 
@@ -377,10 +379,20 @@ A chaque création de graphique dans l'espace de visualisation, l'information de
 Dans le scénario choisi, le premier événement pris en compte au sein de l'application est le choix de l'utilisateur quant aux analyses qu'il désire afficher. Ce choix lancera une première paramétrisation de l'espace d'analyse qui pourra ainsi se connecter à l'espace de visualisation. 
 Il est cependant possible de démarrer une session de travail par une exploration de la trajectoire étudiée mais cette exploration ne déclenchera pas d'événements dans l'espace visuel, ce dernier n'étant pas paramétré.
 
-Le choix des analyses se déroule sur la page HTML et va interroger la base de données RDF afin d'identifier les propriétés pour lesquelles une valeur littérale existe pour le groupe structurel choisi par l'utilisateur. 
+\begin{figure}[htb]
+  \centering
+  {\includegraphics[width=0.9\linewidth,frame]{./figures/ch5/1st_step_annot_sep}}
+    \caption[Première étape d'utilisation de notre plateforme.]{{\it Captures d'écran de la première étape de sélection des valeurs à afficher sous forme de graphes. A gauche, écran d'accueil, un simple bouton permet de lancer une requête vers la base de données pour rassembler les propriétés pouvant être analysées sur les graphes. A droite, une liste de propriétés visualisables au sein des graphes est disponible pour chaque niveau hiérarchique structural.}}
+  \label{Fig:1st_step}
+  % \hspace{0.3cm}
+\end{figure}
+
+Le choix des analyses se déroule sur la page HTML et va interroger la base de données RDF afin d'identifier les propriétés pour lesquelles une valeur littérale existe pour le groupe structurel choisi par l'utilisateur (cf. Figure \ref{Fig:1st_step}). 
 Ces valeurs littérales peuvent provenir de données structurales générées par la simulation moléculaire ou bien d'analyses post-simulations intégrées au sein de la base de données. 
 Toutes les propriétés possédant une valeur littérale sont affichées dans deux colonnes, la première permet de choisir la propriété à afficher sur l'axe des abscisses, la seconde désigne la propriété qui sera affiché sur l'axe des ordonnées. 
-L'utilisateur a la possibilité de générer plusieurs combinaisons de propriétés à afficher sous forme de graphes. 
+L'utilisateur a la possibilité de générer plusieurs combinaisons de propriétés à afficher sous forme de graphes (voir Figure \ref{Fig:3_graph_display}). 
+
+
 
 Quand le choix est terminé, des requêtes SPARQL sont envoyées à la base de données pour récupérer les valeurs des propriétés choisies. Ces données sont ensuite mises sous forme de graphes et structurées grâce à d3js.
 
@@ -391,8 +403,61 @@ Lorsque les graphes sont générés, l'utilisateur a la possibilité d'interagir
   \item Il est également possible de synchroniser la sélection d'un groupe de points afin de mettre en évidence les individus concernés dans l'ensemble des graphes de la page.
 \end{itemize}
 
+\begin{figure}[!htb]
+  \centering
+  {\includegraphics[width=0.9\linewidth,frame]{./figures/ch5/3_graph_display}}
+    \caption[Graphes analytiques obtenus à partir de la base de données RDF.]{{\it Capture d'écran des graphes générés suite au choix des types de valeurs à tracer en abscisse et ordonnée.}}
+  \label{Fig:3_graph_display}
+  % \hspace{0.3cm}
+\end{figure}
+
 Toute sélection au sein d'un ou plusieurs graphes de la page déclenche un événement transmis depuis le client web jusqu'au module de gestion 3d entraînant une adaptation de la visualisation pour mettre en avant le ou les individu(s) ayant été sélectionnés. Il est aussi possible d'obtenir, sous forme de fenêtre indépendante, un résumé des informations disponibles sur le ou les individus. Dans le cas d'un individu unique, une liste de ses propriétés et de leurs valeurs sera affichée alors que pour plusieurs individus, une moyenne effectuée sur les valeurs de leurs propriétés remplacera les valeurs brutes.
-Chaque sélection réduit donc le focus de l'utilisateur à un sous-ensemble d'individus, à la fois dans l'espace d'analyses mais également de façon synchrone dans l'espace de visualisation. Il est possible d'adapter ce focus suivant les besoins de l'utilisateur en modifiant le niveau de contexte dans lequel il désire que sa sélection apparaisse. Trois niveaux de contextualisation sont possibles :
+Chaque sélection réduit donc le focus de l'utilisateur à un sous-ensemble d'individus, à la fois dans l'espace d'analyses mais également de façon synchrone dans l'espace de visualisation (voir Figure \ref{Fig:4_multi_selection}). 
+
+\begin{figure}[!htb]
+\captionsetup[subfigure]{labelformat=empty}
+\centering
+  \begin{subfigure}{\textwidth}
+  \centering
+  {\includegraphics[width=0.9\linewidth,frame]{./figures/ch5/4_multi_selection}}
+    \caption{}
+  \label{Fig:4_multi_selection}
+  \end{subfigure}
+  \begin{subfigure}{0.5\textwidth}
+  \centering
+  {\includegraphics[width=\linewidth]{./figures/ch5/4_multi_selection_pymol}}
+    \caption{}
+  \label{Fig:4_multi_selection_pymol}
+  % \hspace{0.3cm}
+  \end{subfigure}
+  % \hspace{0.3cm}
+  \caption[Deuxième étape d'utilisation de notre plateforme]{\it (a) Capture d'écran d'une sélection des modèles dont le RMSD par rapport au modèle de référence est supérieur à 0.25\r{A}. Les modèles concernés apparaissent également dans le 1er graphe (temps VS énergie).
+  (b) Capture d'écran de l'espace de visualisation affichant les modèles sélectionnés dans l'espace d'analyses.}
+\end{figure}
+
+\begin{figure}[!htb]
+\captionsetup[subfigure]{labelformat=empty}
+\centering
+  \begin{subfigure}{0.5\textwidth}
+  \centering
+  {\includegraphics[width=\linewidth]{./figures/ch5/5_sub_selection_pymol3}}
+    \caption{}
+  \label{Fig:5_sub_selection_pymol}
+  \end{subfigure}
+  \vfill
+  \begin{subfigure}{\textwidth}
+  \centering
+  {\includegraphics[width=0.9\linewidth,frame]{./figures/ch5/5_sub_selection_edit}}
+    \caption{}
+  \label{Fig:5_sub_selection}
+  % \hspace{0.3cm}
+  \end{subfigure}
+  % \hspace{0.3cm}
+  \caption[Troisième étape d'utilisation de notre plateforme]{\it (a) Capture d'écran de l'espace de visualisation où un résidu à été sélectionné par l'utilisateur au sein des modèles filtrés lors de l'étape précédente.
+  (b) Capture d'écran de l'espace d'analyse où le résidu correspondant est mis en avant au sein des deux graphes où il apparaît.}
+\end{figure}
+
+Il est possible d'adapter ce focus suivant les besoins de l'utilisateur en modifiant le niveau de contexte dans lequel il désire que sa sélection apparaisse. Trois niveaux de contextualisation sont possibles :
 \begin{itemize}
   \item Aucun contexte - La sélection d'individu(s) entraîne la visualisation unique de ces individus dans l'espace de visualisation et d'analyse et donc cache tout individu n'étant pas sélectionné
   \item Contexte faible - La sélection d'individu(s) met en avant ces individus dans les espaces de travail et réduit la perception des autres individus du jeu de données (couleur grise, transparence, rendu visuel simplifié, etc.)
@@ -401,9 +466,9 @@ Chaque sélection réduit donc le focus de l'utilisateur à un sous-ensemble d'i
 
 Ces différents niveaux permettent soit de mettre en évidence les différences entre la sélection et le reste du jeu de données, soit de mettre en place un environnement de travail épuré sur une sélection d’intérêt pour l'utilisateur. Ces niveaux s'appliquent à la fois pour la partie visuelle et analytique via des systèmes de rendus visuels propres à chaque espace.
 
-Lorsque une sous-sélection d'individus est effectuée, l'utilisateur a toute liberté pour l'explorer dans l'espace de visualisation. Si, lors de son exploration, l'utilisateur désire sélectionner un sous-groupe plus précis au sein des individus affichés, il a à sa disposition deux manières de le faire : soit par une sélection directe via un dispositif d'interaction, soit par commande vocale en verbalisant le sous-groupe d’intérêt via la commande \textit{Select}.
+Lorsque une sous-sélection d'individus est effectuée, l'utilisateur a toute liberté pour l'explorer dans l'espace de visualisation. Si, lors de son exploration, l'utilisateur désire sélectionner un sous-groupe plus précis au sein des individus affichés, il a à sa disposition deux manières de le faire : soit par une sélection directe via un dispositif d'interaction, soit par commande vocale en verbalisant le sous-groupe d’intérêt via la commande \textit{Select} (voir Figure \ref{Fig:5_sub_selection_pymol}).
 
-Au-delà du changement visuel induit par la sélection dans l'espace de visualisation, ce changement va également produire un rafraîchissement de l'affichage de l'espace d'analyses, de la même manière que la précédente sélection effectuée dans l'espace d'analyses induisait une synchronisation dans l'espace de visualisation. Cependant, pour que la synchronisation ait lieu, il est nécessaire qu'au moins un graphe corresponde au niveau hiérarchique structural des individus de la sélection. Si ce n'est pas le cas, la sélection n'aura pas d'effet. Sinon, les individus seront mis en avant dans les graphes concernés. Il est cependant aussi possible, malgré la présence de graphes du bon niveau hiérarchique structural, d'activer un mode asynchrone. Dans ce mode asynchrone, aucune action effectué dans chacun des espaces n'aura d'influence sur le second espace. La synchronisation pourra se réactiver à tout moment, aux conditions exposées précédemment, lorsque les niveaux structurels des deux espaces seront identiques.
+Au-delà du changement visuel induit par la sélection dans l'espace de visualisation, ce changement va également produire un rafraîchissement de l'affichage de l'espace d'analyses, de la même manière que la précédente sélection effectuée dans l'espace d'analyses induisait une synchronisation dans l'espace de visualisation (cf. Figure \ref{Fig:5_sub_selection}). Cependant, pour que la synchronisation ait lieu, il est nécessaire qu'au moins un graphe corresponde au niveau hiérarchique structural des individus de la sélection. Si ce n'est pas le cas, la sélection n'aura pas d'effet. Sinon, les individus seront mis en avant dans les graphes concernés. Il est cependant aussi possible, malgré la présence de graphes du bon niveau hiérarchique structural, d'activer un mode asynchrone. Dans ce mode asynchrone, aucune action effectué dans chacun des espaces n'aura d'influence sur le second espace. La synchronisation pourra se réactiver à tout moment, aux conditions exposées précédemment, lorsque les niveaux structurels des deux espaces seront identiques.
 
 
 \subsection{Évaluation par la méthode HTA}

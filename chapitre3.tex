@@ -314,7 +314,7 @@ Des méthodes ergonomiques comme la HTA nous ont permis de mettre en évidence l
 
 \section{La visualisation adaptative au service de la visualisation moléculaire}
 
-Nous avons souligné dans le chapitre 2 \commentaire{MB: chapitre 2? pas plutot 1?} l'importance que prenait la visualisation et la représentation de structures 3d de molécules pour la compréhension de leur fonctionnement. En plus de permettre d'appréhender leur rôle biologique, la visualisation moléculaire est également un excellent vecteur de communication dans le monde scientifique. Fort de ce constat, nous nous sommes intéressés aux améliorations possibles que nous pourrions apporter (1) aux méthodes de contrôle visuelles de simulations moléculaires distantes, (2) aux moyens de communication scientifique actuels qu'offre la visualisation moléculaire. %Ces deux aspects de la visualisation moléculaire se concentrent exclusivement autour de l'échange de représentations graphiques générés par un certain nombre de logiciels experts comme PyMol, VMD ou YASARA.
+Nous avons souligné dans le chapitre 1 l'importance que prenait la visualisation et la représentation de structures 3d de molécules pour la compréhension de leur fonctionnement. En plus de permettre d'appréhender leur rôle biologique, la visualisation moléculaire est également un excellent vecteur de communication dans le monde scientifique. Fort de ce constat, nous nous sommes intéressés aux améliorations possibles que nous pourrions apporter (1) aux méthodes de contrôle visuelles de simulations moléculaires distantes, (2) aux moyens de communication scientifique actuels qu'offre la visualisation moléculaire. %Ces deux aspects de la visualisation moléculaire se concentrent exclusivement autour de l'échange de représentations graphiques générés par un certain nombre de logiciels experts comme PyMol, VMD ou YASARA.
 
 %pour ne citer qu'eux. Un rendu en deux dimensions d'une vue sur une partie ou l'ensemble d'une molécule permet, avec ou sans légendes appropriées, de rendre compte d'un phénomène ou d'une singularité structurelle précise. Si cette singularité est structurelle, elle est par définition 3d et pourrait donc être représentée de façon plus précise par un rendu 3d.
 
@@ -406,7 +406,7 @@ Pour une étape supplémentaire vers une immersion plus importante, un rendu st�
   {\includegraphics[width=.75\linewidth]{./figures/ch3/molexplorer_screenshot.png}}
     \caption[Captures d'écran du mode d'exploration de modèles 3d au sein de l'application.]{{\it Captures d'écran du mode d'exploration de modèles 3d au sein de l'application. La différence de point de vue entre les deux captures d'écran est le résultat d'une rotation du périphérique mobile tenu par l'utilisateur.}}
   \label{Fig:molexplorer_screenshot}
-  \hspace{0.2cm}
+  % \hspace{0.2cm}
 \end{figure}
 
 \subsubsection{Bilan}
@@ -416,3 +416,20 @@ La préparation des images utilisées au sein de l'application est simple et rap
 La performance de l'application permet son utilisation sur la plupart des smartphones et tablettes Android et iOS de moins de 5 ans et la quasi-intégralité des derniers smartphones/tablettes. Notre application est gratuite et le code source est disponible à la demande.
 
 Les limitations de notre application résident tout d'abord dans la résolution des écrans des périphériques. Les cartes de profondeur sont pour le moment limitées à des résolutions assez basses et peuvent faire apparaître des artefacts quand les détails de la scènes sont trop fins. La limitation de la résolution des cartes de profondeur considérées dans l'application est due à la limitation technique du moteur Unity3D qui ne peut gérer des objets 3d de plus de 65536 sommets. Ceci implique donc l'utilisation de cartes de profondeur de 255*255 pixels de résolution au maximum. Il n'existe par contre aucune limitation dans la résolution de la texture tant que celle-ci est aux mêmes dimensions que la carte de profondeur. L'utilisation d'images 2d ne permet évidemment pas un contrôle total de l'objet 3d généré et de sa manipulation dans l'espace. Notre mode d'importation d'objets 3d permet de pallier en partie cette limitation mais la performance du rendu est moindre, tout autant que la facilité de création de nouvelles structures.
+
+\section{Conclusion}
+
+Notre travail s'est axé autour de deux axes forts, mis en avant dans ce chapitre. Nous venons tout juste de voir comment de simples techniques empruntées à la RV pouvaient fournir d'utiles outils de représentation améliorée permettant d'appréhender les structures moléculaires complexe 3d de façon plus intuitive que les représentations 2d actuelles.
+Nous avons également mis en avant nos efforts pour palier certains manques méthodologiques préjudiciables pour une expérience immersive optimale. La navigation était donc au coeur de notre approche pour la mise en place de chemins de navigation contraints par le contenu et la tâche.
+
+Finalement, ces contributions peuvent s'inscrire dans une échelle d'immersion croissante rapportant le degré d'immersion maximum que l'on peut attendre de chacune de ces contributions (cf. Figure \ref{Fig:immersion_scale}). L'échelle ne se veut pas absolue et met en avant les degrés d'immersion relatifs entre certains outils de RV.
+
+\begin{figure}[h]
+  \centering
+  {\includegraphics[width=.75\linewidth]{./figures/ch3/immersion_scale.pdf}}
+    \caption[Échelle d'immersion dans laquelle s'inscrivent nos contributions.]{{\it Échelle d'immersion relative mettant en avant le degré d'immersion exploré par nos différentes contributions comparées à des techniques déjà existantes. Nos contributions sur périphérique mobile sont en bleues alors que nos paradigmes de navigation sont représentés en vert.}}
+  \label{Fig:immersion_scale}
+  % \hspace{0.2cm}
+\end{figure}
+
+Maintenant que certains outils ont été mis en place, nous pouvons nous intéresser à l'intégration du processus d'étude de biologie structurale au sein de dispositifs immersifs. Cette intégration ne peut se faire que par la mise en place d'outils de navigation et doit passer par une réflexion autour de l'homogénéité des espaces qu'elle met en jeu.
