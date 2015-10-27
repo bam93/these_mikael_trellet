@@ -5,12 +5,12 @@
 \minitoc
 \cleardoublepage
 
-\commentaire{MB: Quelques commentaires generaux, apres lecture de ce chapitre:
-- tu ne parles pas du tout de l'implementation (ou des implementations) des approches que tu decris; cela est tres probablement secondaire d'un point de vue info, mais le biologiste en moi se revolte de cette omission
-- de maniere generale - a mon gout - le chapitre manque d'illustrations (surtout pour etre plus digerable pour Serge ou tout autre non-informaticien). J'aurai voulu voir une image concernant la vue eclatee "theorique" vs "implementation"; aussi les etapes/taches du HTA auraient gagne en clarte avec des mini-illustrations 
-- qu'en est-il de l'experimentation reelle de ces approches: en contexte tablette vs immersif (CAVE?) vs Desktop? Ou des impressions des utilisateurs. En fait est-ce que de vrais utilisateurs ont teste ces outils?
-- le placement des illustrations "holomol" est tout regroupe a la fin, j'imagine que les images vont etre dispatches dans le texte?
-- une partie des concepts discutes dans l'article Faraday Discussion auraient merites d'etre incorpores dans le chapitre; d'ailleurs une remarque generale.. parle-t-on quelque part du lien entre ce que tu decris dans la these et les publications qui en decoulent?}
+% \commentaire{MB: Quelques commentaires generaux, apres lecture de ce chapitre:
+% - tu ne parles pas du tout de l'implementation (ou des implementations) des approches que tu decris; cela est tres probablement secondaire d'un point de vue info, mais le biologiste en moi se revolte de cette omission
+% - de maniere generale - a mon gout - le chapitre manque d'illustrations (surtout pour etre plus digerable pour Serge ou tout autre non-informaticien). J'aurai voulu voir une image concernant la vue eclatee "theorique" vs "implementation"; aussi les etapes/taches du HTA auraient gagne en clarte avec des mini-illustrations 
+% - qu'en est-il de l'experimentation reelle de ces approches: en contexte tablette vs immersif (CAVE?) vs Desktop? Ou des impressions des utilisateurs. En fait est-ce que de vrais utilisateurs ont teste ces outils?
+% - le placement des illustrations "holomol" est tout regroupe a la fin, j'imagine que les images vont etre dispatches dans le texte?
+% - une partie des concepts discutes dans l'article Faraday Discussion auraient merites d'etre incorpores dans le chapitre; d'ailleurs une remarque generale.. parle-t-on quelque part du lien entre ce que tu decris dans la these et les publications qui en decoulent?}
 La visualisation de modèles 3d de protéines ou de complexes moléculaires est une étape indispensable en biologie structurale (voir Figure \ref{Fig:schema_seq_bio_struct}). Le rôle historique de la visualisation moléculaire pour communiquer et comprendre le fonctionnement des complexes moléculaires a été mis en avant dans le premier chapitre (voir section \ref{visu_molecular}) et a été récemment l'un des sujets d'une revue complète \cite{kehrer_visualization_2013}.
 
 Nous avons effectué un inventaire rapide en visualisation moléculaire dans la section \ref{visu_molecular} permettant de mettre en avant des informations structurelles ou physico-chimiques au moyen de représentations graphiques aujourd'hui standardisées (formes, couleur, etc.) et de techniques de rendu photo-réaliste (ombres, éclairage, texture, etc.). La RV et les technologies s'y rapportant constituent un complément à la visualisation afin d'améliorer notamment la perception de la profondeur, en offrant un espace de travail plus large, et des modalités d'interactions plus adaptées aux objets manipulés, intrinsèquement tridimensionnels.
@@ -19,7 +19,7 @@ Nous avons effectué un inventaire rapide en visualisation moléculaire dans la 
 
 Dans les précédents chapitres, nous avons cependant mis en exergue le manque de paradigme de navigation adapté à l'exploration de données scientifiques par nature abstraite. Nous avons aussi souligné l'importance de mettre l'utilisateur au coeur des processus de modélisation, de simulation et d'analyse. Nous aborderons dans ce chapitre nos contributions en tentant d'apporter des réponses à ces deux problématiques.
 
-La première contribution de notre travail eut pour principal objectif de combler les lacunes en terme de navigation dans les données moléculaires, qui constituent aujourd'hui un frein important à l'utilisabilité des dispositifs immersifs, même bon marché. La conscience spatiale dégradée et la perte de repère dans les scène virtuelles, induites par des techniques de navigation inadaptées aux contenus et à la tâche, constituent la principale cause du mal du simulateur, et réduisent la qualité de l'expérience et la performance de l'utilisateur. Le mal du simulateur, a été étudié de manière récurrente en RV en faisant l'objet de nombreuses études \cite{laviola_jr_discussion_2000,davis2014systematic}. Ces études ont cependant ciblé principalement l'exploration de mondes virtuels réalistes, les études concernant l'exploration de données abstraites et scientifiques étant beaucoup plus rares. Nous étudierons donc les méthodes de navigation dans des scènes réalistes pour identifier les progrès à réaliser dans les scènes de données abstraites, puis nous présenterons nos contributions pour répondre au besoin de paradigmes de navigation adaptés aux données moléculaires. Nous évaluerons ensuite ces paradigmes à l'aide d'une méthodologie théorique d'évaluation de nos paradigmes appliqués à la réalisation de tâches métier complexes, conçues avec l'aide des experts du domaine et de spécialistes en ergonomie.
+La première contribution de notre travail eut pour principal objectif de combler les lacunes en terme de navigation dans les données moléculaires, qui constituent aujourd'hui un frein important à l'utilisabilité des dispositifs immersifs, même bon marché. La conscience spatiale dégradée et la perte de repère dans les scène virtuelles, induites par des techniques de navigation inadaptées aux contenus et à la tâche, constituent la principale cause du mal du simulateur, et réduisent la qualité de l'expérience et la performance de l'utilisateur. Le mal du simulateur, a été étudié de manière récurrente en RV en faisant l'objet de nombreuses études \cite{laviola_jr_discussion_2000,davis2014systematic}. Ces études ont cependant ciblé principalement l'exploration de mondes virtuels réalistes, les études concernant l'exploration de données abstraites et scientifiques étant beaucoup plus rares. Nous étudierons donc les méthodes de navigation dans des scènes réalistes pour identifier les progrès à réaliser dans les scènes de données abstraites, puis nous présenterons nos contributions pour répondre au besoin de paradigmes de navigation adaptés aux données moléculaires \cite{trellet2014content}. Nous évaluerons ensuite ces paradigmes à l'aide d'une méthodologie théorique d'évaluation de nos paradigmes appliqués à la réalisation de tâches métier complexes, conçues avec l'aide des experts du domaine et de spécialistes en ergonomie.
 
 Le seconde contribution eut pour objectif de fournir aux experts des techniques d'exploration et de navigation leur permettant de suivre une simulation moléculaire, grâce à des outils re-situant l'expert au coeur du processus de simulation, et non plus seulement en aval de ce processus. En effet, les simulations moléculaires de grande échelle s’exécutant souvent sur plusieurs jours ou semaines sur les centres de calcul font fréquemment l'objet d'une perte de temps de calcul importante liée à un manque d'outils de supervision pendant une simulation, simulation ayant éventuellement évoluée vers des états aberrants ou incohérents d'un point de vue biologique. Pour répondre à cette problématique, la prise en compte des contraintes organisationnelles des centres de calcul et des limites des ressources des laboratoires est cruciales. D'une part, les accès aux centres de calcul sont souvent très contraignants du fait d'une exigence de sécurité très élevée. D'autre part, les laboratoires disposent de ressources de communication réseau et de stockage limitées au regard de la quantité de données produites par les centres de calcul. Dans l'optique d'apporter des solutions à cette problématique tout en respectant ces lourdes contraintes, nous avons travaillé sur une approche offrant aux experts la possibilité d'accéder au quotidien à des résumés visuels de leur résultat de simulation en cours avec un niveau de rendu et de contrôle de leur scène virtuelle moléculaire suffisant pour être utilisés comme supervision des résultats de simulation. Cette approche fut aussi l'occasion d'exploiter les nouvelles ressources de visualisation et d'interaction mobiles propices au partage de résultats moléculaires dans un domaine où la communication scientifique est très centrée autour du rendu visuel de complexes biomoléculaires.
 
@@ -48,11 +48,12 @@ Nous avons mis en évidence le besoin de mettre en place des paradigmes de navig
 %Une piste de réflexion étudiée pour faire du processus de navigation un processus intuitif pour l'utilisateur est de le rendre cohérent avec les données qu'il observe. Si la trajectoire suivie par un utilisateur durant son exploration possède des échos dans la nature même de ce qu'il voit, alors nous parvenons à fournir une information pendant que l'utilisateur effectue une simple tâche de navigation. 
 
 
-A l'image de ce qui a été fait de manière implicite en terme de navigation dans les scènes réalistes, il est  important de prendre en compte le contenu virtuel à explorer pour mettre en place un paradigme de navigation efficace. De la même façon, la navigation étant le support d'un nombre important de tâches en visualisation moléculaire, il nous a paru important de prendre également en compte l'activité des experts. 
+A l'image de ce qui a été fait de manière implicite en terme de navigation dans les scènes réalistes, il est important de prendre en compte le contenu virtuel à explorer pour mettre en place un paradigme de navigation efficace. De la même façon, la navigation étant le support d'un nombre important de tâches en visualisation moléculaire, il nous a paru important de prendre également en compte l'activité des experts. 
 
 %Il nous a donc paru nécessaire et évident d'utiliser à la fois le contenu moléculaire et la tâche des experts pour guider les paradigmes de navigation. 
 
-Ce travail a été réalisé en collaboration avec des biologistes travaillant sur des exemples concrets de modélisation de phénomènes biologiques et utilisant l'outil de la visualisation moléculaire quotidiennement. Nous avons par ailleurs travaillé avec des ergonomes dont les approches d'analyse et de recueil des informations au travers d'entretiens encadrés furent très utiles à l'identification des besoins des experts. Il fut important dans notre approche d'associer les experts du domaine dans toute la phase de conception de paradigmes afin d'éviter un écart trop important entre leurs attentes et le résultat final. Nous avons ensuite après la conception et le développement de chaque paradigme de navigation, mis en place un protocole d'évaluation sous la forme d'une décomposition hiérarchique en utilisant la méthodologie de \textit{Hierarchical Task Analysis} (HTA) afin d'évaluer la performance de nos paradigmes de navigation par rapport à une navigation libre \cite{annett2003hierarchical}.
+Ce travail \cite{trellet2014content} a été réalisé en collaboration avec des biologistes travaillant sur des exemples concrets de modélisation de phénomènes biologiques et utilisant l'outil de la visualisation moléculaire quotidiennement. Nous avons par ailleurs travaillé avec des ergonomes dont les approches d'analyse et de recueil des informations au travers d'entretiens encadrés furent très utiles à l'identification des besoins des experts. Il fut important dans notre approche d'associer les experts du domaine dans toute la phase de conception de paradigmes afin d'éviter un écart trop important entre leurs attentes et le résultat final. Nous avons ensuite après la conception et le développement de chaque paradigme de navigation, mis en place un protocole d'évaluation sous la forme d'une décomposition hiérarchique en utilisant la méthodologie de \textit{Hierarchical Task Analysis} (HTA) afin d'évaluer la performance de nos paradigmes de navigation par rapport à une navigation libre \cite{annett2003hierarchical}.
+
 
 \subsection{Symétrie moléculaire et axes remarquables comme ancrage visuel}
 
@@ -83,7 +84,7 @@ Ces assemblages moléculaires  font souvent l'objet d'axes ou de centres de sym�
 
 %Un schéma rapportant les notions d'orientation à la fois de la scène virtuelle et de la caméra (ou par extension de l'utilisateur puisqu'ils sont considérés comme fusionnés) est fournie dans la Figure .
 
-Lors de la phase d'exploration non détaillée d'un complexe moléculaire, la navigation consiste à se déplacer autour de l'objet d'intérêt. Les axes de symétrie constituant une orientation préférentielle pérenne tout au long de l'expérience virtuelle\ref{Fig:orientation_camera_EV}, ils sont à la base de la conception nos paradigmes de navigation afin d'offrir des repères spatiaux durant toute cette phase de la navigation. Lors de la phase d'exploration plus détaillée, l'utilisateur étant immergé au milieu de son complexe moléculaire, l'orientation préférentielle de la structure est plus difficilement perceptible, et il s'agit de fournir des indices visuels plus éloignés. Pour ajouter d'autres indices, nous avons donc choisi d'utiliser une approche par \textit{skybox}. Il s'agit de présenter à l'utilisateur un paysage distant  dont la perception lors de l'activité de navigation détaillée permet à l'utilisateur de se construire des repères visuels éloignés améliorant sa conscience spatiale. Le choix de la skybox doit respecter un certain nombre de pré-requis afin de remplir complètement son rôle \cite{vinson_design_1999}, de permettre à l'utilisateur de mieux mieux percevoir son orientation dans la scène virtuelle lors de la navigation. %La skybox sélectionnée doit comporter deux parties supérieures et inférieures distinctes qui correspondraient à la partie haute et la partie basse de la molécule après sa réorientation. Elle peut très bien remplacer un environnement moléculaire (une membrane typiquement) non explicite et absent du modèle 3d observé.
+Lors de la phase d'exploration non détaillée d'un complexe moléculaire, la navigation consiste à se déplacer autour de l'objet d'intérêt. Les axes de symétrie constituant une orientation préférentielle pérenne tout au long de l'expérience virtuelle, ils sont à la base de la conception nos paradigmes de navigation afin d'offrir des repères spatiaux durant toute cette phase de la navigation. Lors de la phase d'exploration plus détaillée, l'utilisateur étant immergé au milieu de son complexe moléculaire, l'orientation préférentielle de la structure est plus difficilement perceptible, et il s'agit de fournir des indices visuels plus éloignés. Pour ajouter d'autres indices, nous avons donc choisi d'utiliser une approche par \textit{skybox}. Il s'agit de présenter à l'utilisateur un paysage distant  dont la perception lors de l'activité de navigation détaillée permet à l'utilisateur de se construire des repères visuels éloignés améliorant sa conscience spatiale. Le choix de la skybox doit respecter un certain nombre de pré-requis afin de remplir complètement son rôle \cite{vinson_design_1999}, de permettre à l'utilisateur de mieux mieux percevoir son orientation dans la scène virtuelle lors de la navigation. %La skybox sélectionnée doit comporter deux parties supérieures et inférieures distinctes qui correspondraient à la partie haute et la partie basse de la molécule après sa réorientation. Elle peut très bien remplacer un environnement moléculaire (une membrane typiquement) non explicite et absent du modèle 3d observé.
 
 % \begin{figure}[h]
 %   \centering
@@ -99,16 +100,45 @@ Lors de la phase d'exploration non détaillée d'un complexe moléculaire, la na
 %De nombreux indices et informations peuvent être récoltés à partir des vues externes d'un complexe moléculaire. 
 Nous savons que la forme générale d'une protéine peut fournir des indices importants sur son rôle fonctionnel. %Nous avons également mis en avant dans la section \ref{visu_molecular} que certaines propriétés physico-chimiques ou géométriques comme la polarité, l'accessibilité au solvant ou l'intégration au sein de l'environnement peuvent être obtenues à partir d'une exploration succincte d'un complexe. 
 Souvent associée au premières étapes de la visualisation, comme énoncé par Shneidermann \cite{shneiderman_eyes_1996}, l'exploration de complexes moléculaires passe par un parcours extérieur du complexe observé. Nous avons mis en place des chemins de navigations circulaires préférentiels autour de la molécule d'intérêt construits en fonction des symétries de la structure observée. 
+
+\begin{figure}[htb]
+  \centering
+  {\includegraphics[width=.5\linewidth]{./figures/ch3/degree_of_freedom_glic}}
+    \caption[Représentation des chemins de navigation générés en exploration externe et interne d'un complexe moléculaire.]{{\it Suivant sa position relative au complexe et dépendant du mode de navigation, la caméra possède un nombre de degrés de liberté prédéfinis en terme de position. Dans notre illustration, les mouvements de translation possibles sont représentés en rouge alors que les points de vue autorisés sont représentés par des flèches noires. Au cours d'une navigation verticale, la caméra est contrainte sur un axe parallèle à l'axe de symétrie (en vert) à l'extérieur de la protéine (en haut à gauche) ou à l'intérieur (en haut à droite). Une navigation extérieure contraint le vecteur forward de la caméra à faire face à la protéine alors qu'à l'intérieur la caméra peut tourner à 360 degrés. Enfin, les chemins de navigation horizontaux à l'extérieur de la protéine (en bas) contraignent le vecteur right de la caméra de façon à ce qu'ils soient circulaires ou perpendiculaires par rapport à l'axe de la protéine.}}
+  \label{Fig:degree_of_freedom_glic}
+  \hspace{0.2cm}
+\end{figure}
+
 Dans notre technique de navigation, durant l'étape d'exploration externe, l'utilisateur manipule 3 degrés de liberté afin de modifier la position de son point de vue. Le premier lui permet de tourner autour de la molécule en imposant à la caméra une trajectoire circulaire à une distance constante et autour de l'axe de symétrie. Le second permet de se rapprocher de la molécule en modifiant la distance de cette trajectoire circulaire. Le troisième permet de manipuler l'altitude de cette trajectoire circulaire. Tout au long du déplacement de son point de vue, l'orientation du point de vue de l'utilisateur est stable et co-linéaire par l'axe de symétrie du complexe (voir Figure \ref{Fig:degree_of_freedom_glic}. Cette propriété constitue un repère stable important participant à une meilleure conscience spatiale du sujet. Lorsque l'utilisateur atteint en terme d'altitude des extrémités hautes et basses du complexe observé, d'autres contraintes sont progressivement appliquées de manière à contraindre le focus de la caméra sur le barycentre de la protéine.
 
-Concernant une exploration plus détaillée pour observer des phénomènes se situant à l'intérieur des complexes moléculaires, nous proposons d'autres chemins préférentiels, toujours construits autour des axes ou des centres de symétrie, mais adaptés à une modalité d'exploration non plus externe mais interne du complexe.  
+Concernant une exploration plus détaillée pour observer des phénomènes se situant à l'intérieur des complexes moléculaires, nous proposons d'autres chemins préférentiels, toujours construits autour des axes ou des centres de symétrie, mais adaptés à une modalité d'exploration non plus externe mais interne du complexe. 
 
-Par ailleurs, ce paradigme a été adapté à d'autres types de symétrie notamment pour les symétries centrales. Dans ce cas le degré de liberté permettant de modifier la distance du point de vue par rapport à l'objet d'intérêt est conservée, avec deux degrés de liberté pour la rotation autour de la molécules à la place d'un seul pour les symétries axiales, la notion d'altitude le long d'un axe n'ayant plus de sens dans le cas de la symétrie centrale. Nous avons mis en place ces calculs de chemins préférentiels en s'inspirant de techniques utilisées dans d'autre cadre \cite{khan_hovercam:_2005,hanson_constrained_1997}.
+Par ailleurs, ce paradigme a été adapté à d'autres types de symétrie notamment pour les symétries centrales. Dans ce cas le degré de liberté permettant de modifier la distance du point de vue par rapport à l'objet d'intérêt est conservée, avec deux degrés de liberté pour la rotation autour de la molécules à la place d'un seul pour les symétries axiales, la notion d'altitude le long d'un axe n'ayant plus de sens dans le cas de la symétrie centrale. Nous avons mis en place ces calculs de chemins préférentiels en s'inspirant de techniques utilisées dans d'autres cadres \cite{khan_hovercam:_2005,hanson_constrained_1997}.
+
+Les deux modes d'exploration externes et internes sont illustrés dans les Figures \ref{Fig:unitymol_external_exploration} et \ref{Fig:unitymol_internal_exploration} à partir de notre implémentation des paradigmes au sein du logiciel expert UnityMol \cite{lv2013game}. 
 
 %. Dans cette optique, nous avons mis en place la possibilité d'effectuer une transition automatique entre l'extérieur et l'intérieur d'un complexe. A la demande de l'utilisateur, un chemin de navigation rectiligne est calculé pour rejoindre l'intérieur du complexe. Ce chemin part de la position extérieure actuelle de l'utilisateur et rejoint le point de projection de sa position sur l'axe de symétrie de façon à ce que l'axe de symétrie et la trajectoire du chemin créé soient perpendiculaires. 
 
 
-
+\begin{figure}[htb]
+  \begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=.95\linewidth]{./figures/ch3/unitymol_external_exploration}}
+    \caption{}
+  \label{Fig:unitymol_external_exploration}
+  % \hspace{0.3cm}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=.95\linewidth]{./figures/ch3/unitymol_internal_exploration}}
+    \caption{}
+  \label{Fig:unitymol_internal_exploration}
+  % \hspace{0.3cm}
+\end{subfigure}
+    \caption[Captures d'écran de l'exploration guidée dans UnityMol]{{\it Implémentation de nos paradigmes de navigation guidée au sein de UnityMol pour l'exploration de GLIC (représenté en sphères) autour d'un axe de symétrie (en rouge, invisible dans la version publique). (a) Capture d'écran d'un point de vue utilisateur pendant une exploration externe de la protéine GLIC.
+    (b) Capture d'écran d'un point de vue utilisateur pendant une exploration externe de la protéine GLIC.}}
+  % \hspace{0.2cm}
+\end{figure}
 
 
 
@@ -125,13 +155,7 @@ Par ailleurs, ce paradigme a été adapté à d'autres types de symétrie notamm
 %afin qu'une simple décision de l'utilisateur d'aller à sa droite ou à sa gauche lui permette de tourner autour de la molécule. 
 
 %Cela répond à une première difficulté qui est le suivi d'une trajectoire circulaire lorsque aucune contrainte n'est donnée à l'utilisateur. Il est souvent complexe de gérer des trajectoires circulaires lorsque seuls les axes de translations usuels sont contrôlés par l'utilisateur. 
-\begin{figure}[h]
-  \centering
-  {\includegraphics[width=.5\linewidth]{./figures/ch3/degree_of_freedom_glic}}
-    \caption[Représentation des chemins de navigation générés en exploration externe et interne d'un complexe moléculaire.]{{\it Suivant sa position relative au complexe et dépendant du mode de navigation, la caméra possède un nombre de degrés de liberté prédéfinis en terme de position. Dans notre illustration, les mouvements de translation possibles sont représentés en rouge alors que les points de vue autorisés sont représentés par des flèches noires. Au cours d'une navigation verticale, la caméra est contrainte sur un axe parallèle à l'axe de symétrie (en vert) quand elle est située à l'extérieur de la protéine (en haut à gauche) ou le long de ce même axe (en haut à droite). Une navigation extérieure contraint le vecteur forward de la caméra pour qu'elle fasse face à la protéine alors qu'à l'intérieur la caméra peut tourner à 360 degrés sur elle-même. Enfin, les chemins de navigation horizontaux à l'extérieur de la protéine (en bas) contraignent le vecteur right de la caméra de façon à ce qu'ils soient circulaires ou perpendiculaires à la protéine pour un effet de zoom avant/arrière.}}
-  \label{Fig:degree_of_freedom_glic}
-  \hspace{0.2cm}
-\end{figure}
+
 
 
 %Lorsque l'intérieur d'une protéine est atteinte, un nouveau set de chemins de navigation est proposé afin de monter ou descendre dans le complexe le long de l'axe de symétrie. Dans ce mode de navigation, un seul degré de liberté en translation est possible ainsi qu'un seul degré de rotation, autour du vecteur \textit{up} de la caméra, comme si l'utilisateur tournait sur lui-même en gardant sa position, comme s'il se trouvait dans un ascenseur panoramique et qu'il dirigeait sa trajectoire verticale. Il est cependant possible d'alterner, pour la translation, vers un déplacement toujours le long de l'axe mais orienté de façon à être face aux extrémités de l'axe de symétrie. A la manière de l'exploration d'un tunnel, ce dernier représentant notre axe de symétrie, l'utilisateur sera capable d'avancer ou de reculer dans ce tunnel. Il pourra de nouveau tourner sur lui même autour du vecteur \textit{up} de la caméra.
@@ -165,6 +189,15 @@ L'algorithme utilisé pour obtenir les cônes de vue peut être décomposé de l
 	\item L'ensemble des coordonnées 3d des atomes voisins stockés précédemment sont décalés dans l'espace d'un vecteur correspondant aux coordonnées 3d de la cible. Cela entraîne la création d'une sphère centrée sur les coordonnées de l'atome ciblé.
 	\item L'ensemble des coordonnées cartésiennes des atomes contenus dans la sphère sont transformées en coordonnées sphériques. Les coordonnées sphériques sont composées de 3 paramètres : une distance radiale à l'origine \textit{r}, un angle polaire $\theta$ (theta) et un azimuth $\phi$ (phi). En mettant de côté la distance radiale, nous obtenons pour chaque atome une information de direction par rapport à l'origine donnée par les angles $\theta$ et $\phi$. Il est possible de fixer la distance radiale de tous les atomes voisins à la valeur de \textit{d} et ainsi mettre en place une projection de ces atomes sur la sphère de rayon \textit{d}. Lorsque la projection est effectuée, la recherche du plus large cône de vue passera par la recherche du plus grand cercle vide à la surface de la sphère. Le concept est illustré dans la Figure \ref{Fig:voronoi_2D_algo}
 	\item Puisque la valeur de la distance radiale est identique pour l'ensemble des atomes voisins, il est possible de créer un nuage de points correspondant aux valeurs de $\phi$ en fonction des valeurs de $\theta$ afin d'obtenir une représentation aplatie de la surface de la sphère en 2d contenant l'ensemble des points projetés (un point = un atome). La matrice 2d ainsi obtenue est étendue de 50\% le long des ordonnées et des abscisses afin de prendre en compte la périodicité de la sphère. Il n'est pas nécessaire de l'étendre au-delà de 50\% puisque la taille maximum d'un cercle vide sera la taille du plus long côté de la matrice. Si aucune extension n'est effectuée, nous pourrions manquer les solutions qui apparaîtraient à l'extrémité de la matrice où deux régions de la sphère aplatie se rejoindraient. Nous pouvons d'ailleurs voir dans la Figure \ref{Fig:voronoi_diagram} que l'absence d'extensions nous aurait fait manquer deux solutions. Pour synthétiser, ces nuages de points 2d peuvent être considérés comme une carte 2d de la distribution à la surface de la sphère des atomes ayant été projetés.
+
+\begin{figure}[htb]
+  \centering
+  {\includegraphics[width=.8\linewidth]{./figures/ch3/voronoi_diagram}}
+    \caption[Graphique représentant les angles $\phi$ en fonction des angles $\theta$ des atomes voisins de la cible.]{{\it En haut, graphique représentant les angles $\phi$ en fonction des angles $\theta$ des atomes voisins de la cible, chaque atome est représenté par un point bleu. En bas, même graphique contenant en plus les sommets (en vert) et les segments (lignes noirs) du diagramme de Voronoi ayant été calculé sur les coordonnées sphériques des atomes voisins (en bleu). Les cercles rouges représentent les plus larges cercles vides pouvant être trouvés au sein des points bleus.}}
+  \label{Fig:voronoi_diagram}
+  % \hspace{0.2cm}
+\end{figure}
+
 	\item A partir de la liste des atomes formés par les paires $\theta$/$\phi$, un diagramme de Voronoi est calculé. Nous obtenons une liste de sommets de Voronoi associés chacun à un triplet des trois atomes les plus proches.
 	\item La distance entre chaque sommet de Voronoi et les trois points les plus proches est calculée et les plus grandes valeurs de cette distance indiqueront les plus grands cercles vides présents sur la surface de la sphère. Ces cercles auront pour centre un sommet de Voronoi et passeront obligatoirement par les trois points les plus proches puisque l'algorithme de Voronoi impose que chaque sommet soit équidistant d'au moins 3 points, ceux-ci étant également les plus proches. Le cercle avec le rayon le plus large sera considéré comme le cercle vide le plus grand (cf. Figure \ref{Fig:voronoi_diagram}). Il est important de noter qu'en dépit de l'extension de la matrice, nous ne sélectionnons pas de centres de cercles situés à l'extérieur de la boîte entourant les premières coordonnées sphériques tracées (en pointillé dans la Figure \ref{Fig:voronoi_diagram}) et correspondant aux extensions. Cependant les points appartenant au cercle peuvent eux se situer dans les parties étendues du graphe.
 	\item Les valeurs $\theta$/$\phi$ du centre des plus larges cercles vides sont transformés en coordonnées cartésiennes. Le rayon des cercles donne un angle d'ouverture qui sera utilisé par la suite pour calculer une trajectoire optimale (voir ci-dessous).
@@ -173,32 +206,46 @@ L'algorithme utilisé pour obtenir les cônes de vue peut être décomposé de l
 
 Cet algorithme a une complexité faible en $\theta(n.\log{n})$, avec $n$ désignant le nombre d'atomes autour de la cible, puisque la recherche des voisins de la cible est calculée en $n$-1 itérations (constant) et que le diagramme de Voronoi et la recherche du cercle le plus large est effectué en $\theta(n.\log{n})$ dans le pire des cas où tous les atomes du système sont considérés comme voisins et situés dans la sphère de rayon \textit{d}. L'algorithme est capable de fournir une liste des vues les plus dégagées sur une cible de façon très performante et permet à l'utilisateur de changer de point de vue en temps interactif.
 
-\begin{figure}[h]
-  \centering
-  {\includegraphics[width=.5\linewidth]{./figures/ch3/voronoi_diagram}}
-    \caption[Graphique représentant les angles $\phi$ en fonction des angles $\theta$ des atomes voisins de la cible.]{{\it En haut, graphique représentant les angles $\phi$ en fonction des angles $\theta$ des atomes voisins de la cible, chaque atome est représenté par un point bleu. En bas, même graphique contenant en plus les sommets (en vert) et les segments (lignes noirs) du diagramme de Voronoi ayant été calculé sur les coordonnées sphériques des atomes voisins (en bleu). Les cercles rouges représentent les plus larges cercles vides pouvant être trouvés au sein des points bleus.}}
-  \label{Fig:voronoi_diagram}
-  \hspace{0.2cm}
-\end{figure}
-
 \subsubsection{Atteindre les points de vue optimaux}
 
 La recherche d'un point de vue optimal peut être effectuée sur n'importe quelle région du complexe moléculaire étudié, nous avons cependant mis en avant son apport dans le cas de régions d'intérêt à observer enfouies dans le complexe et très difficilement atteignables. Le chemin entre la position d'un utilisateur au moment où il décide de rentrer dans un mode de recherche de point de vue optimal et la position optimale trouvée passe souvent par le passage au travers du complexe, dans des régions potentiellement denses en atomes et perturbantes pour le point de vue de l'utilisateur. Il nous a donc paru nécessaire de mettre en application les recommandations énoncées dans la section \ref{cybersickness} qui rappelaient l'importance des transitions entre points de vue, afin tout d'abord de minimiser l'impact négatif que pourrait avoir ce déplacement sur l'utilisateur et ensuite pour permettre à l'utilisateur de préserver une bonne conscience spatiale de l'environnement pendant le déplacement et ainsi pouvoir se situer rapidement lors de son positionnement final devant la cible visée.
-Une transition progressive et automatique est ainsi mise en place. Pour calculer les différents points du chemin reliant la position initiale de l'utilisateur à la position optimale de visualisation de sa cible, l'algorithme développé précédemment est utilisé de façon répété à différentes valeurs de \textit{d} et appliqué à une aire restreinte de la surface de la sphère correspondant aux aires délimitées par les cercles vides identifiés lors de la première itération de l'algorithme. Comme illustré dans la Figure \ref{Fig:optimal_pov_camera_path} nous obtenons un chemin de navigation avec le moins d'occultation pendant la majorité de la phase d'approche de la position optimale.
 
-\begin{figure}[h]
+\begin{figure}[htb]
   \centering
   {\includegraphics[width=.5\linewidth]{./figures/ch3/optimal_pov_camera_path}}
-    \caption[Schéma de l'algorithme de recherche du meilleur chemin de caméra pour atteindre un point de vue optimal.]{{\it Schéma de l'algorithme de recherche du meilleur chemin de caméra pour atteindre un point de vue optimal. La cible à visualiser est représentée en vert et ses atomes voisins en rouge. Chaque cercle représente une distance précise entre la caméra et la cible, le cercle le plus petit désignant la distance désirée par l'utilisateur. Pour chaque distance, l'algorithme de point de vue optimal est utilisé afin d'obtenir les meilleurs point de vue sur la cible. Les cônes bleus représentent les cônes de vue les plus larges trouvés alors qu'en vert et violet sont représentés les aires vides les plus larges entre les différentes distances de caméra. Le chemin qu'empruntera la caméra pour atteindre le point de vue optimal est ainsi représenté grâce aux symboles de couleur noire. Ce chemin est calculé pour garder un point de vue le plus dégagé possible jusqu'à atteindre le point final.}}
+    \caption[Schéma de l'algorithme de recherche du meilleur chemin de caméra pour atteindre un point de vue optimal.]{{\it Schéma de l'algorithme de recherche du meilleur chemin de caméra pour atteindre un point de vue optimal. La cible à visualiser est représentée en vert et ses atomes voisins en rouge. Chaque cercle représente une distance précise entre la caméra et la cible, le plus petit désignant la distance de caméra désirée. Pour chaque distance, l'algorithme de point de vue optimal est répété afin d'obtenir les meilleurs point de vue sur la cible. Les cônes bleus représentent les cônes de vue les plus larges trouvés alors qu'en vert et violet sont représentés les aires vides les plus larges entre les différentes distances de caméra. Le chemin qu'empruntera la caméra pour atteindre le point de vue optimal est représenté grâce aux symboles de couleur noire.}}
   \label{Fig:optimal_pov_camera_path}
-  \hspace{0.2cm}
+  % \hspace{0.2cm}
 \end{figure}
+
+Une transition progressive et automatique est ainsi mise en place. Pour calculer les différents points du chemin reliant la position initiale de l'utilisateur à la position optimale de visualisation de sa cible, l'algorithme développé précédemment est utilisé de façon répété à différentes valeurs de \textit{d} et appliqué à une aire restreinte de la surface de la sphère correspondant aux aires délimitées par les cercles vides identifiés lors de la première itération de l'algorithme. Comme illustré dans la Figure \ref{Fig:optimal_pov_camera_path} nous obtenons un chemin de navigation avec le moins d'occultation pendant la majorité de la phase d'approche de la position optimale.
 
 Cela permet également de laisser à l'utilisateur la possibilité de choisir entre la position offrant le plus large cône de vue sur la cible ou la position dont le chemin d'accès est le plus dégagé parmi les positions optimales recensées. %Selon la distance entre la position initiale de l'utilisateur et les positions optimales identifiées, la première partie de la trajectoire peut être calculée comme une ligne droite afin de réduire le nombre d'itérations de l'algorithme, ce dernier demandant en plus un temps de calcul augmentant à chaque pas de temps à cause de la taille de la sphère créée et du nombre de voisins considérés.
 
 Le passage d'un point de vue optimal à un autre est le fruit de techniques d'interpolation classiques respectant si il y a lieu, l'orientation préférentielle relative au type de symétrie de la structure.
 
 %prenant en compte la préservation du focus sur la cible, la recherche d'une orientation de la caméra dont le vecteur \textit{up} est le plus parallèle possible de l'axe de symétrie et le chemin le plus court pour atteindre la nouvelle position.
+
+
+\begin{figure}[h]
+  \begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=.95\linewidth]{./figures/ch3/unitymol_optimal_pov}}
+    \caption{}
+  \label{Fig:unitymol_optimal_pov}
+  % \hspace{0.3cm}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  {\includegraphics[width=.95\linewidth]{./figures/ch3/unitymol_optimal_pov2}}
+    \caption{}
+  \label{Fig:unitymol_optimal_pov2}
+  % \hspace{0.3cm}
+\end{subfigure}
+    \caption[Captures d'écran de la recherche de point de vue optimale dans UnityMol]{{\it Implémentation de nos paradigmes de navigation guidée au sein de UnityMol pour l'exploration de GLIC (représenté en sphères) autour d'un axe de symétrie (en rouge, invisible dans la version publique). (a) Capture d'écran d'un point de vue utilisateur pendant une exploration externe de la protéine GLIC.
+    (b) Capture d'écran d'un point de vue utilisateur pendant une exploration externe de la protéine GLIC.}}
+  % \hspace{0.2cm}
+\end{figure}
 
 \subsubsection{Grande densité atomique}
 
@@ -212,11 +259,11 @@ Nous avons de nouveau utilisé la géométrie du complexe moléculaire comme bas
   {\includegraphics[width=.5\linewidth]{./figures/ch3/fragmented_view}}
     \caption[Illustration d'une protéine présentant un pore central constituant son axe de symétrie.]{{\it Illustration d'une protéine présentant un pore central constituant son axe de symétrie. A gauche, les monomères du complexe moléculaires sont écartées de l'axe de symétrie. Au centre, différentes région d'intérêt ont été identifiées le long des monomères et le complexe est écarté de façon verticale. A droite sont combinées la séparation des monomères et des régions d'intérêt. Illustration de Davide Spalvieri.}}
   \label{Fig:fragmented_view}
-  \hspace{0.2cm}
+  % \hspace{0.2cm}
 \end{figure}
 
 
-\subsubsection{Evaluation par analyse hiérarchique de la tâche} \label{hta_eval}
+\subsubsection{Évaluation par analyse hiérarchique de la tâche} \label{hta_eval}
 
 Nous avons choisi d'évaluer nos paradigmes de navigation au moyen de la décomposition hiérarchique de deux tâches identifiées comme habituelles pour les experts scientifiques. Le choix de ces tâches a pu se faire grâce à la contribution d'ergonomes et au moyen de méthodes d'entretiens supervisés.
 Nous sommes partis du constat que l'évaluation systématique de tâches métier est très complexe à mettre en place à cause de plusieurs facteurs: (1) la spécialisation de l'outil évalué est très importante et nous faisons face à un outil dont la nature (PyMol, VMD, Yasara) varie suivant les usages usuels et individuels des experts scientifiques interrogés. (2) L'implémentation et l'adaptation de nos paradigmes sur un ensemble représentatif d'outils spécialisés est compliquée et très chronophage. (3) Notre démarche est biaisée de part son approche basée sur l'exécution de tâches expertes par rapport à des paradigmes de navigation proposées actuellement dans les outils de visualisation. %L'utilisation de tâches expertes pour l'évaluation d'une approche basée sur ces tâches nous parait litigieuse. 
@@ -307,9 +354,9 @@ Fort du constat de l'absence de développements de navigation spécifiques à la
 
 Nos développements se sont basés sur le contenu et la tâche mais se sont voulus indépendants de toute considération de contexte et nos paradigmes peuvent être utilisés sur n'importe quelle plateforme et sont complètement indépendants des périphériques d'interaction utilisés. Cette généricité permet une utilisation à la fois au sein d'EV immersifs mais également de stations de travail fixes.
 
-La généricité de notre approche peut également être soulignée par le nombre d'applications potentielles auxquelles elle peut répondre. En effet, les applications venant de domaines où la visualisation de données abstraites présentant une densité importante d'informations pourrait bénéficier de notre étude. \commentaire{MB: me semble que la phrase precedente n'est pas une phrase entiere} La mécanique des fluides, les sciences des matériaux, la climatologie, la médecine ou l'astronomie sont des exemples de disciplines où les données ne comportent pas toujours une orientation spatiale précise mais où la visualisation joue un rôle central.
+La généricité de notre approche peut également être soulignée par le nombre d'applications potentielles auxquelles elle peut répondre. En effet, les domaines mettant en jeu une visualisation de données abstraites présentant une densité importante d'informations pourraient bénéficier de notre étude. La mécanique des fluides, les sciences des matériaux, la climatologie, la médecine ou l'astronomie sont des exemples de disciplines où les données ne comportent pas toujours une orientation spatiale précise mais où la visualisation joue un rôle central.
 
-Des méthodes ergonomiques comme la HTA nous ont permis de mettre en évidence les apports en terme de performance et de simplification des processus de nos paradigmes de navigation. 
+Des méthodes ergonomiques comme la HTA nous ont finalement permis de mettre en évidence les apports en terme de performance et de simplification des processus de nos paradigmes de navigation. L'apport de ces paradigmes est indéniables pour les tâches explorées, il est certainement extensible à d'autres tâches expertes impliquant une exploration avancée des caractéristiques structurelles d'une protéine. 
 
 
 \section{La visualisation adaptative au service de la visualisation moléculaire}
@@ -344,17 +391,22 @@ Pour répondre à ces deux objectifs conjoints, d'une part de fournir un outil d
 
 %Notre approche se place au plus près des techniques d'immersion cognitive qui cherche à jouer sur la réflexion des utilisateurs pour les immerger dans la scène virtuelle représentée. Les aspects 3d sont importants et la perception de l'objet jouera un rôle dans l'immersion mais elle sera naturellement limitée par le dispositif et l'absence de stimuli sensoriels autres que visuels. C'est donc la perception de profondeur, l'imagination de l'utilisateur et sa capacité de réflexion qui auront un rôle prépondérant pour son implication.
 
-\begin{figure}[h]
+\subsubsection{Donner à percevoir la profondeur sur dispositif mobile grâce à la visualisation adaptative}
+
+Notre approche se base sur l'utilisation d'images 2d, beaucoup plus légères que des modèles 3d et permettant un certain degré de personnalisation de la part des utilisateurs. Indépendante des formats de fichier utilisés dans les logiciels de visualisation, notre application ne nécessite qu'un périphérique mobile pour fonctionner et donner à percevoir la profondeur de contenus 3d moléculaires. %Un nombre important de visualiseurs moléculaires peuvent être utilisés pour générer du contenu, VMD, Chimera, PyMol ou Yasara peuvent par exemple être utilisés pour générer ces scènes.
+
+
+\begin{figure}[htb]
 \begin{subfigure}{.5\textwidth}
   \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch3/depthmol3d_process_edit}}
+  {\includegraphics[width=.65\linewidth]{./figures/ch3/depthmol3d_process_edit}}
     \caption{}
   \label{Fig:depthmol3d_process}
   % \hspace{0.3cm}
 \end{subfigure}
 \begin{subfigure}{.5\textwidth}
   \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch3/heightmap_texture_unity}}
+  {\includegraphics[width=.65\linewidth]{./figures/ch3/heightmap_texture_unity_edit}}
     \caption{}
   \label{Fig:heightmap_texture_unity}
   % \hspace{0.3cm}
@@ -363,37 +415,32 @@ Pour répondre à ces deux objectifs conjoints, d'une part de fournir un outil d
 (b) Le processus d'obtention d'un objet 3d à partir de 2 images. La première étape consiste à analyser la carte de profondeur pixel par pixel et de générer une surface aux dimensions identiques (à un facteur d'échelle près) dont la hauteur de chaque sommet sera corrélée avec le niveau de gris du pixel correspondant.}}
 \end{figure}
 
-\subsubsection{Donner à percevoir la profondeur sur dispositif mobile grâce à la visualisation adaptative}
-
-Notre approche se base sur l'utilisation d'images 2d, beaucoup plus légères que des modèles 3d et permettant un certain degré de personnalisation de la part des utilisateurs. Indépendante des formats de fichier utilisés dans les logiciels de visualisation, notre application ne nécessite qu'un périphérique mobile pour fonctionner et donner à percevoir la profondeur de contenus 3d moléculaires. %Un nombre important de visualiseurs moléculaires peuvent être utilisés pour générer du contenu, VMD, Chimera, PyMol ou Yasara peuvent par exemple être utilisés pour générer ces scènes.
-
 Dans notre approche, deux images sont construites pour donner à percevoir la profondeur, une image de \textbf{texture} et une \textbf{carte de profondeur} (cf. Figure \ref{Fig:depthmol3d_process}). L'image de \textit{texture} est une capture simple de la scène 3d moléculaire alors que la \textit{carte de profondeur} embarque les informations de distance à l'écran pour l'image de texture. L'information de distance est codée grâce à un gradient de couleur grise. Ce gradient de gris correspond à la distance entre chaque point de la scène moléculaire 3d et l'écran. De ce fait, plus un objet est distant de la caméra (ou plus simplement de l'écran de la station de travail) et plus la couleur est sombre. Une fois que les deux images ont été générées, elles doivent être transférées sur le périphérique mobile où elles sont lues et traitées par notre application. Un navigateur de fichier intégré permet à l'utilisateur de trouver ses images et de les charger. 
 
 Le traitement effectué par l'application permet tout d'abord de créer un objet 3d à partir de la carte de profondeur, objet dont la surface est ensuite colorée par la texture associée (\ref{Fig:heightmap_texture_unity}). Le niveau de gris de chaque pixel de la carte de profondeur est ainsi interprété en tant que hauteur et correspond à un sommet de la surface 3d générée. %Lorsque tous les pixels de la carte de profondeur ont été traités, les sommets de la surface 3d sont reliés par des segments afin de créer des objets continus qui seront ensuite colorés par la texture.
 
-Sans disposer de rendu stéréoscopique sur dispositif mobile, la profondeur de la scène 3d générée est donnée à percevoir à l'utilisateur à l'aide de techniques de visualisation adapative.  L'orientation du périphérique, mesurée par un accéléromètre ou un gyroscope embarqués dans la majorité des périphériques mobiles d'aujourd'hui permet de présenter à l'utilisateur d'observer de manière active sa molécules selon plusieurs points de vue. Il est possible par ailleurs d'utiliser jusque 4 images (2 fois deux images contenant une carte de profondeur et une texture associée) afin de créer des scènes plus complexes avec plusieurs plans. Cette possibilité permet notamment l'ajout d'informations complémentaires comme des annotations ou de situer la molécule d'intérêt dans son environnement présenté en arrière plan (voir Figure \ref{Fig:depthmol3d_exemple}).
+Sans disposer de rendu stéréoscopique sur dispositif mobile, la profondeur de la scène 3d générée est donnée à percevoir à l'utilisateur à l'aide de techniques de visualisation adaptative.  L'orientation du périphérique, mesurée par un accéléromètre ou un gyroscope embarqués dans la majorité des périphériques mobiles d'aujourd'hui permet de présenter à l'utilisateur d'observer de manière active sa molécules selon plusieurs points de vue. Il est possible par ailleurs d'utiliser jusque 4 images (2 fois deux images contenant une carte de profondeur et une texture associée) afin de créer des scènes plus complexes avec plusieurs plans. Cette possibilité permet notamment l'ajout d'informations complémentaires comme des annotations ou de situer la molécule d'intérêt dans son environnement présenté en arrière plan (voir Figure \ref{Fig:depthmol3d_exemple}).
 
 %Plusieurs exemples sont fournis avec l'application et permettent à l'utilisateur d'appréhender les rendus 3d possibles et d'avoir une première prise en main des possibilités qu'offrent notre approche. Les 5 exemples sont illustrés dans la Figure 
-\begin{figure}[h]
-\begin{subfigure}{.5\textwidth}
-  \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch3/depthmol3d_exemple}}
-    \caption{}
-  \label{Fig:depthmol3d_exemple}
-  % \hspace{0.3cm}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch3/depthmol3d_screenshots}}
-    \caption{}
-  \label{Fig:depthmol3d_screenshots}
-  % \hspace{0.3cm}
-\end{subfigure}
-
-\caption[Exemples de scènes moléculaires créées pour l'application mobile.]{{\it (a) Scènes moléculaires proposées par défaut en exemple au sein de l'application.
-A. Visualisation d'une poche de liaison à la surface de GLIC (Ligand-Gated Ion Channel), une protéine transmembranaire responsable du passage des ions et des molécules d'eau à travers la membrane cellulaire. Scène extraite de VMD. B. Carte de basse résolution obtenue à partir de cryo-EM pour un filament d'actine. La position de la structure atomique dans l'enveloppe de basse résolution est en premier-plan alors que la carte électromagnétique est présentée en arrière-plan. Visualisation provenant de Chimera C. Couple verticale du modèle de la capside du virus Influenza A exposant la membrane externe et l'intérieur du virus. GraphiteLifeExplorer a été utilisé pour visualiser la coupure. D. Interaction entre une protéine SNARE et une membrane biologique lors d'une dynamique moléculaire (arrière-plan). Un graphe 3d rapportant le taux de courbure de la membrane est présenté en premier-plan. La surface 3d a été générée par Paraview (programme de visualisation scientifique) E. Scènes extraites d'un programme d'animation, MolecularMaya, dédié à la création de films scientifiques pour une audience large. Les scènes extraites mettent en avant deux virus au milieu de villosités à gauche et de multiples virus à droite.
-(b) Captures d'écran provenant de l'application mobile développée et mettant en avant le menu principal de l'application permettant de charger une image ou un objet 3d (en haut) et une scène 3d type représentant la surface d'une protéine avec les différentes options de paramétrisation (en bas).}}
-\end{figure}
+% \begin{figure}[htb]
+% \begin{subfigure}{.6\textwidth}
+%   \centering
+%   {\includegraphics[width=.9\linewidth]{./figures/ch3/depthmol3d_exemple}}
+%     \caption{}
+%   \label{Fig:depthmol3d_exemple}
+%   % \hspace{0.3cm}
+% \end{subfigure}
+% \begin{subfigure}{.4\textwidth}
+%   \centering
+%   {\includegraphics[width=.9\linewidth]{./figures/ch3/depthmol3d_screenshots}}
+%     \caption{}
+%   \label{Fig:depthmol3d_screenshots}
+%   % \hspace{0.3cm}
+% \end{subfigure}
+% \caption[Exemples de scènes moléculaires créées pour l'application mobile.]{{\it (a) Scènes moléculaires proposées par défaut en exemple au sein de l'application.
+% A. Visualisation d'une poche de liaison à la surface de GLIC (Ligand-Gated Ion Channel), une protéine transmembranaire responsable du passage des ions et des molécules d'eau à travers la membrane cellulaire. Scène extraite de VMD. B. Carte de basse résolution obtenue à partir de cryo-EM pour un filament d'actine. La position de la structure atomique dans l'enveloppe de basse résolution est en premier-plan alors que la carte électromagnétique est présentée en arrière-plan. Visualisation provenant de Chimera C. Couple verticale du modèle de la capside du virus Influenza A exposant la membrane externe et l'intérieur du virus. GraphiteLifeExplorer a été utilisé pour visualiser la coupure. D. Interaction entre une protéine SNARE et une membrane biologique lors d'une dynamique moléculaire (arrière-plan). Un graphe 3d rapportant le taux de courbure de la membrane est présenté en premier-plan. La surface 3d a été générée par Paraview (programme de visualisation scientifique) E. Scènes extraites d'un programme d'animation, MolecularMaya, dédié à la création de films scientifiques pour une audience large. Les scènes extraites mettent en avant deux virus au milieu de villosités à gauche et de multiples virus à droite.
+% (b) Captures d'écran provenant de l'application mobile développée et mettant en avant le menu principal de l'application permettant de charger une image ou un objet 3d (en haut) et une scène 3d type représentant la surface d'une protéine avec les différentes options de paramétrisation (en bas).}}
+% \end{figure}
 
 \subsubsection{Vers une véritable immersion sur dispositif mobile}
 
@@ -401,9 +448,9 @@ Un deuxième mode de visualisation permet d'importer directement des fichiers d'
 
 Pour une étape supplémentaire vers une immersion plus importante, un rendu stéréoscopique peut être effectué au sein d'un support de casque, à la manière de ce que proposent de nombreux acteurs de la RV aujourd'hui n'ayant pas franchi le pas de la conception de casques de RV mais fournissant des supports pour l'utilisation de smartphones (voir section \ref{dispositifs_RV}). Dans cette configuration, un simple mouvement de tête permet de regarder une zone différente de la molécule (voir Figure \ref{Fig:molexplorer_screenshot}). Cette approche est rendue possible par un mode stéréoscopique \textit{side-by-side} intégré au sein de l'application. 
 
-\begin{figure}[h]
+\begin{figure}[htb]
   \centering
-  {\includegraphics[width=.75\linewidth]{./figures/ch3/molexplorer_screenshot.png}}
+  {\includegraphics[width=.65\linewidth]{./figures/ch3/molexplorer_screenshot.png}}
     \caption[Captures d'écran du mode d'exploration de modèles 3d au sein de l'application.]{{\it Captures d'écran du mode d'exploration de modèles 3d au sein de l'application. La différence de point de vue entre les deux captures d'écran est le résultat d'une rotation du périphérique mobile tenu par l'utilisateur.}}
   \label{Fig:molexplorer_screenshot}
   % \hspace{0.2cm}
