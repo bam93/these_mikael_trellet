@@ -233,16 +233,16 @@ De la même façon que pour l'action, la désignation d'un sous-ensemble structu
 
 \begin{enumerate}
   \item Composant seul, l'ensemble des individus appartenant au concept indiqué sera pris en compte.
-  \item Combinaison d'un composant moléculaire et d'un ensemble d'identifiant (unique, listé ou sous forme de plages continues). Cohérence entre identifiant et composant requis.
+  \item Combinaison d'un composant moléculaire et d'un ensemble d'identifiants (unique, listé ou sous forme de plages continues). Cohérence entre identifiant et composant requis.
   \item Propriété seule, l'ensemble des individus possédant la propriété indiquée sera pris en compte.
-  \item Combinaison d'un composant et d'une propriété. Cohérence nécessaire entre propriété et composant requis.
+  \item Combinaison d'un composant et d'une propriété. Cohérence nécessaire entre propriété et composant.
 \end{enumerate}
 
-Par soucis d'homogénéité, chaque sous-groupe structurel, mais s'il est désigné par un concept sans identifiant, est ramené à la liste d'individus le composant. SPARQL permet de récupérer directement les individus désignés par le sous-groupe structurel. Cette étape permet de désambiguïsé les résultats entre les commandes. La commande générée sera par contre plus complexe puisqu'elle comportera à chaque fois la liste détaillée des individus concernés par la commande.
+Par soucis d'homogénéité, chaque sous-groupe structurel, même s'il est désigné par un concept sans identifiant, est ramené à la liste d'individus du composant. SPARQL permet de récupérer directement les individus désignés par le sous-groupe structurel. Cette étape permet de désambiguer les résultats entre les commandes. La commande générée sera par contre plus complexe puisqu'elle comportera à chaque fois la liste détaillée des individus concernés par la commande.
 
-Par défaut, le sous-ensemble structurel désigné dans la commande vocale dépendra directement du jeu de données affiché dans l'espace de travail afin d'éviter une surcharge de précision à donner par l'utilisateur. Par exemple, si deux modèles sont affichés dans l'espace de travail, la commande \textit{Alanine 147} désignera uniquement les alanines dont l'identifiant est 147 parmi les deux modèles affichés.
+Par défaut, le sous-ensemble structurel désigné dans la commande vocale dépendra directement du jeu de données affiché dans l'espace de travail afin d'éviter une surcharge de précision à donner par l'utilisateur. Par exemple, si deux modèles sont affichés dans l'espace de travail, la commande \textit{Alanine 147} désignera uniquement les alanines dont l'identifiant est 147 parmi les deux modèles affichés. \commentaire{MB: je ne suis pas sur de voir quelle aurait ete l'alternative; du coup cet exemple ne m'aide pas vraiment a comprendre ce concept}
 
-Si tous les pré-requis associés à une action sont respectés, alors la commande est ordonnée et transformé en fonction de l'environnement de visualisation utilisé. La dernière étape est donc une simple transformation des concepts et des individus en une formulation compréhensible par les espaces de travail.
+Si tous les pré-requis associés à une action sont respectés, alors la commande est ordonnée et transformée en fonction de l'environnement de visualisation utilisé. La dernière étape est une simple transformation des concepts et des individus en une formulation compréhensible par les espaces de travail.
 
 \begin{figure}[htb]
   \centering
@@ -259,9 +259,9 @@ L'ontologie métier définie dans la section \ref{owl_ontology} et la base de do
 
 La conception de notre programme repose sur une architecture logicielle complexe. Dans le schéma illustré dans la Figure \ref{Fig:platform_architecture}, nous l'avons volontairement placé au centre d'une boucle bi-latérale de communication reliant l'espace de visualisation à l'espace d'analyse.
 
-Notre base de données est hébergée dans un serveur web \textit{Virtuoso} accessible depuis le réseau afin de garantir un accès privilégié et optimisé à nos données. 
+Notre base de données est hébergée dans un serveur web \textit{Virtuoso} accessible depuis le réseau afin de garantir un accès privilégié et optimisé à nos données. \commentaire{MB: c'est quoi un serveur web virtuoso??}
 
-Notre cas d'étude est une simulation moléculaire test reprenant l'évolution structurelle et énergétique d'une protéine transmembranaire, GLIC, pendant 2 ns ($2*10^{-9}$s). Des modèles statiques de cette évolution ont été générés tous les 8 ps ($2*10^{-12}$s) créant ainsi 251 fichiers PDB. Le système contient également un ligand identifié de GLIC, le bromoforme, dont on cherche à connaître le mode de liaison et surtout son impact sur la forme de GLIC au cours du temps. Le solvant utilisé pour la simulation est un modèle simplifié <<gros-grain>> d'eau.
+Notre cas d'étude est une simulation moléculaire test reprenant l'évolution structurelle et énergétique d'une protéine transmembranaire, GLIC, pendant 2 ns ($2*10^{-9}$s). Des modèles statiques de cette évolution ont été générés tous les 8 ps ($2*10^{-12}$s) créant ainsi 251 fichiers PDB. Le système contient également un ligand identifié de GLIC, le bromoforme, dont on cherche à connaître le mode de liaison et surtout son impact sur la forme de GLIC au cours du temps. Le solvant utilisé pour la simulation est un modèle simplifié <<gros-grain>> d'eau. \commentaire{MB: modele simplifie gros-grain d'eau?? je ne comprends pas.. ca ne correspond a aunune simu que j'arrive a identifier}
 
 \subsection{Création de la base de donnée RDF}
 
