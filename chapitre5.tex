@@ -16,7 +16,7 @@ La définition du Visual Analytics nous a permis dans le chapitre précédent de
 \end{figure}
 
 
-\section{Approche applicative de la sémantique}
+\section{La représentation sémantique pour l'interaction}
 
 % Parmi les solutions possibles, une première pourrait être de mettre en place un suivi strict des données en assignant des identifiants uniques aux données représentant les mêmes concepts afin de garder une cohérence complète entre chaque élément affiché dans l'espace de visualisation et chaque élément de l'espace d'analyse. L'un des problèmes de cette solution se trouve dans la possibilité pour les espaces d'évoluer rapidement et demande donc ainsi une évolution constante du pool \commentaire{MB: pool en francais?} d'identifiants. 
 
@@ -129,7 +129,7 @@ Lorsque les données ont été intégrées au sein de la base RDF, sous forme d'
 
 Notre implémentation de SPARQL a pris plusieurs formes afin de répondre à plusieurs besoins au sein de notre plateforme. Au delà du fait que SPARQL est utilisé pour implémenter les fonctionnalités de Visual Analytics ciblé, un des premiers besoins identifié dans les environnement immersifs, illustrant la puissance de la modélisation par ontologie OWL et base de données RDF, fut la mise en place d'un moteur d'interprétation de mots-clés en commandes applicatives.
 
-\subsection{Une approche opérationnelle d'interprétation de commande vocale par ensemble de mots-clés}
+\subsection{Une approche opérationnelle d'interprétation de commande vocale}
 
 Une des techniques d'interaction plébiscitée au sein des environnements immersifs est la commande vocale. Elle traduit une phrase ou un groupe de mots édicté par l'utilisateur en une commande interprétable par l'application déclenchant ainsi une action appropriée. Les commandes vocales ont également pour intérêt de pouvoir être combinées à des commandes gestuelles. Un effet serait par exemple d'apporter un filtre supplémentaire sur le champ de sélection des objets virtuels concernés par une commande vocale, prémices de commandes multimodale.
 
